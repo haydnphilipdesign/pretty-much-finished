@@ -1,0 +1,21 @@
+/* PARESS - Main CSS Entry Point */
+
+
+/* Consolidated CSS structure - May 2025 */
+
+
+/* Import core CSS with Tailwind directives */
+
+@import './core.css';
+
+/* Import enhanced components */
+
+@import './glass-cards.css';
+
+/* Import contrast system */
+
+@import './contrast-system.css';
+
+/* Import specific page fixes */
+
+@import './page-specific.css';

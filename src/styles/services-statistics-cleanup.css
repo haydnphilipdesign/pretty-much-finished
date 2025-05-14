@@ -1,0 +1,92 @@
+/**
+ * Service Cards and Statistics Fixes - May 2025
+ * 
+ * Clean up styles for services and statistics sections
+ */
+
+/* Services Section Cleanup */
+.services-section .bg-blue-900\/80 {
+  background-color: rgba(30, 58, 138, 0.95) !important; /* Darker, more opaque background */
+}
+
+/* Improved text readability on service cards */
+.services-section p,
+section p.text-white\/80, 
+section p.text-white\/90 {
+  color: rgba(255, 255, 255, 0.95) !important; /* Brighter text */
+  line-height: 1.6 !important;
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1) !important; /* Subtle text shadow for better contrast */
+}
+
+.services-section h3 {
+  letter-spacing: -0.01em !important;
+  line-height: 1.3 !important;
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2) !important; /* Text shadow for headings */
+  font-weight: 700 !important;
+}
+
+/* Darker service card background for better contrast */
+.bg-blue-900\/90 {
+  background-color: rgba(30, 58, 138, 0.95) !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -4px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* View All Services button enhancements */
+a[href="/services"].bg-white {
+  font-weight: 600 !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 
+              0 8px 10px -6px rgba(0, 0, 0, 0.1) !important;
+}
+
+a[href="/services"].bg-white:hover {
+  background-color: #f59e0b !important; /* amber-500 */
+  color: #111827 !important; /* gray-900 */
+  transform: translateY(-2px) !important;
+}
+
+/* Statistics Section Cleanup */
+.statistics-section .bg-amber-500\/10 {
+  background-color: rgba(245, 158, 11, 0.1) !important;
+}
+
+.statistics-section h2.text-amber-500 {
+  color: #f59e0b !important;
+}
+
+.statistics-section .bg-gray-800\/80 {
+  background-color: rgba(31, 41, 55, 0.9) !important;
+}
+
+/* Statistics card enhancements */
+.statistics-section .rounded-xl {
+  border-radius: 0.75rem !important;
+}
+
+.statistics-section div[class*="AnimatedCounter"] {
+  color: #f59e0b !important; /* amber-500 */
+  font-size: 3.5rem !important;
+  line-height: 1 !important;
+}
+
+/* Consistent amber color across both sections */
+div.bg-amber-500, 
+div.text-amber-500,
+div.border-amber-500\/20,
+div.text-amber-400 {
+  --amber-color: #f59e0b !important;
+  color: #f59e0b !important;
+  border-color: rgba(245, 158, 11, 0.2) !important;
+}
+
+/* Fixed spacing in both sections */
+section.py-24 {
+  padding-top: 6rem !important;
+  padding-bottom: 6rem !important;
+}
+
+@media (min-width: 768px) {
+  section.py-24 {
+    padding-top: 8rem !important;
+    padding-bottom: 8rem !important;
+  }
+}

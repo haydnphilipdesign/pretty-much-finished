@@ -1,0 +1,27 @@
+.sectionContainer {
+  @apply space-y-6 bg-white/90 backdrop-blur-sm rounded-lg p-6 shadow-lg;
+}
+
+.sectionHeader {
+  @apply space-y-2;
+}
+
+.sectionTitle {
+  @apply text-2xl font-semibold text-brand-navy;
+}
+
+.sectionDescription {
+  @apply text-slate-600;
+}
+
+.formGroup {
+  @apply space-y-4;
+}
+
+.formLabel {
+  @apply block text-sm font-medium text-slate-700;
+}
+
+.formInput {
+  @apply mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-brand-gold focus:ring-brand-gold sm:text-sm;
+}

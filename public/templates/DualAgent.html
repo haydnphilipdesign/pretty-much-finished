@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Real Estate Transaction Cover Sheets</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 10px;
+            margin: 0;
+            padding: 5px;
+            background-color: #f5f5f5;
+        }
+        
+        .page-container {
+            max-width: 8.5in;
+            margin: 0 auto;
+        }
+        
+        .cover-sheet {
+            width: 8.5in;
+            border: 1px solid #000;
+            background-color: #fff;
+            margin-bottom: 5px;
+            page-break-after: always;
+            box-sizing: border-box;
+            padding: 0.18in;
+            display: flex;
+            flex-direction: column;
+            min-height: 10.5in;
+        }
+        
+        h1 {
+            text-align: center;
+            font-size: 12.5px;
+            font-weight: bold;
+            margin: 1px 0 5px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            flex-shrink: 0;
+        }
+        
+        .header-section {
+            border-bottom: 1px solid #000;
+            margin: 0;
+            padding-bottom: 3px;
+            margin-bottom: 3px;
+            flex-shrink: 0;
+            /* Added for print background */
+            background-color: #f8f8f8;
+        }
+        
+        .info-row {
+            display: flex;
+            margin-bottom: 1px;
+        }
+        
+        .info-field {
+            flex: 1;
+            margin-right: 5px;
+        }
+        
+        .info-field:last-child {
+            margin-right: 0;
+        }
+        
+        .info-field label {
+            font-weight: bold;
+            font-size: 9.5px;
+            text-transform: uppercase;
+        }
+        
+        .info-field .line {
+            border-bottom: 1px solid #000;
+            height: 10px;
+            /* Added for print color */
+            border-bottom-color: #444;
+        }
+        
+        .main-content {
+            display: flex;
+            margin-top: 3px;
+            flex-grow: 1;
+        }
+        
+        .left-column {
+            width: 55%;
+            padding-right: 10px;
+            padding-left: 10px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .right-column {
+            width: 45%;
+            border-left: 1px solid #000;
+            padding-left: 10px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .section-container {
+            margin-bottom: 0;
+            padding-bottom: 0px;
+            flex-shrink: 0;
+        }
+        
+        .section-header {
+            background-color: #f0f0f0;
+            font-weight: bold;
+            font-size: 10px;
+            padding: 1.8px 3px;
+            margin: 3px 0 2px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 2.2px;
+        }
+        /* Flexbox header for Yes/No options */
+        
+        .section-header-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .yes-no-group {
+            display: flex;
+            gap: 5px;
+            /* Space between Yes and No */
+            font-weight: normal;
+            /* Normal weight for options */
+            font-size: 9px;
+            /* Smaller font for options */
+        }
+        
+        .yes-no-group div {
+            display: flex;
+            align-items: center;
+        }
+        
+        .yes-no-group input[type="checkbox"] {
+            transform: scale(0.9);
+            /* Slightly smaller */
+            margin-right: 1px;
+        }
+        
+        .yes-no-group label {
+            font-size: 9px;
+            /* Match group font size */
+            margin-right: 0;
+        }
+        
+        .checkbox-row {
+            line-height: 1.3;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            padding: 1px 0;
+            min-height: 1.3em;
+            gap: 1.5px 12px;
+            /* Vertical and horizontal gap */
+        }
+        
+        .checkbox-item {
+            display: inline-flex;
+            /* Use inline-flex */
+            align-items: center;
+            /* Align items vertically */
+            margin-bottom: 1px;
+            /* Minimal space below items */
+            white-space: normal;
+            /* Allow text wrapping */
+            line-height: 1.15;
+            /* Adjust line height for wrapped text */
+        }
+        
+        input[type="checkbox"] {
+            margin-right: 3px;
+            /* Add space to the right of the checkbox */
+            vertical-align: middle;
+            padding: 0;
+            margin: 0;
+            /* Reset default padding/margin */
+            transform: scale(1.1);
+            flex-shrink: 0;
+            /* Added for print */
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+        
+        label {
+            font-size: 9.5px;
+            vertical-align: middle;
+            margin-right: 2px;
+            /* Minimal space after label if needed */
+            padding: 0;
+            line-height: 1.15;
+            /* Consistent line height */
+        }
+        
+        .key-label {
+            font-weight: bold;
+            font-size: 9.5px;
+            vertical-align: middle;
+            margin-right: 3px;
+            /* Space after key label */
+            flex-shrink: 0;
+            /* Prevent label from shrinking */
+            line-height: 1.15;
+        }
+        
+        .contact-field {
+            margin-bottom: 3px;
+            /* Space below contact block */
+        }
+        
+        .contact-field label,
+        .referral-section label {
+            font-weight: bold;
+            font-size: 9.5px;
+            text-transform: uppercase;
+            margin-bottom: 1px;
+            margin-right: 3px;
+            vertical-align: middle;
+            display: inline-block;
+            /* Ensure label is on its own line if needed */
+            padding: 0;
+        }
+        
+        .contact-field .line {
+            border-bottom: 1px solid #000;
+            height: 10.5px;
+            /* Height of the line */
+            margin-bottom: 1.8px;
+            /* Space below line */
+            margin-top: 1.8px;
+            /* Space above line */
+            clear: both;
+            /* Ensure line is below label */
+            /* Added for print */
+            border-bottom-color: #444;
+        }
+        
+        .detail-line {
+            display: flex;
+            align-items: center;
+            /* Vertically center label and line */
+            margin-bottom: 3px;
+            /* Space between detail lines */
+            min-height: 12.5px;
+            /* Ensure minimum height */
+        }
+        
+        .detail-label {
+            font-weight: bold;
+            font-size: 9px;
+            /* Slightly smaller label */
+            width: 40px;
+            /* Fixed width for alignment */
+            padding-right: 3px;
+            /* Space between label and line */
+            flex-shrink: 0;
+            /* Prevent label shrinking */
+            text-transform: uppercase;
+        }
+        
+        .detail-line .line {
+            flex-grow: 1;
+            /* Line takes remaining space */
+            border-bottom: 1px solid #000;
+            height: 10.5px;
+            /* Match contact field line height */
+            /* Added for print */
+            border-bottom-color: #444;
+        }
+        
+        .underline {
+            border-bottom: 1px solid #000;
+            height: 10px;
+            display: inline-block;
+            vertical-align: bottom;
+            margin-left: 3px;
+            /* Added for print */
+            border-bottom-color: #444;
+        }
+        
+        .underline-small {
+            width: 50px;
+        }
+        
+        .underline-medium {
+            width: 100px;
+        }
+        
+        .underline-large {
+            width: 150px;
+        }
+        
+        .underline-xl {
+            width: 200px;
+        }
+        
+        .underline-flex {
+            flex-grow: 1;
+        }
+        /* For flexible underlines */
+        
+        .mini-divider {
+            border-top: 1px dotted #aaa;
+            /* Dotted divider for screen */
+            margin: 2px 0;
+        }
+        
+        .commission-details-section .checkbox-row {
+            justify-content: space-between;
+            /* Distribute items */
+        }
+        
+        .commission-grid-item {
+            width: 48%;
+            /* Adjust width for 2 items per row */
+            display: flex;
+            align-items: center;
+        }
+        
+        .commission-grid-item .key-label {
+            margin-right: 3px;
+        }
+        
+        .commission-grid-item .underline {
+            flex-grow: 1;
+            /* Allow underline to fill space */
+        }
+        
+        .single-field-line {
+            display: flex;
+            align-items: center;
+            margin-bottom: 3px;
+            min-height: 12.5px;
+        }
+        
+        .single-field-line .key-label {
+            margin-right: 3px;
+        }
+        
+        .single-field-line .line {
+            flex-grow: 1;
+            border-bottom: 1px solid #000;
+            height: 10.5px;
+            /* Added for print */
+            border-bottom-color: #444;
+        }
+        
+        .paired-field-line {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 3px;
+            gap: 10px;
+            /* Add gap between pairs */
+        }
+        
+        .field-pair-item {
+            flex: 1;
+            /* Each item takes equal space */
+            display: flex;
+            align-items: center;
+            min-height: 12.5px;
+        }
+        
+        .field-pair-item .key-label {
+            margin-right: 3px;
+        }
+        
+        .field-pair-item .line {
+            flex-grow: 1;
+            border-bottom: 1px solid #000;
+            height: 10.5px;
+            /* Added for print */
+            border-bottom-color: #444;
+        }
+        
+        .referral-section .single-field-line {
+            align-items: baseline;
+            /* Align baseline for percentage */
+        }
+        
+        .percentage {
+            font-weight: bold;
+        }
+        
+        .quick-reference-box {
+            background-color: #f9f9f9;
+            /* Light background for screen */
+            border: 1px solid #ccc;
+            /* Standard light border for screen */
+            padding: 4px;
+            margin-top: 4px;
+            margin-bottom: 4px;
+            border-radius: 3px;
+        }
+        
+        .quick-reference-box .section-header {
+            /* Use default section header styling or define specific if needed */
+            background-color: #f0f0f0;
+            font-weight: bold;
+            font-size: 10px;
+            padding: 1.8px 3px;
+            margin: 0 0 2px 0;
+            /* Adjust margin slightly */
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 2.2px;
+        }
+        
+        .controls {
+            text-align: center;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #e0e0e0;
+        }
+        /* --- Start Screen Styles --- */
+        
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 10px;
+            /* Base screen font size */
+            margin: 0;
+            padding: 5px;
+            background-color: #f5f5f5;
+        }
+        /* ... other screen styles ... */
+        
+        .bordered-section {
+            border: 2px solid #666;
+            background-color: #f8f8f8;
+            padding: 4px;
+            margin-top: 4px;
+            margin-bottom: 4px;
+            border-radius: 3px;
+        }
+        
+        .bordered-section .section-header {
+            background-color: transparent;
+            border-bottom: 1px solid #ddd;
+            font-weight: bold;
+            margin-top: 0;
+            margin-bottom: 2px;
+            padding: 1.8px 3px;
+            font-size: 10px;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+        }
+        
+        .line,
+        .info-field .line,
+        .underline {
+            border-bottom: 1px solid #000;
+            /* Standard black line for screen */
+            height: 10px;
+            /* Standard height for screen */
+        }
+        
+        .mini-divider {
+            border-top: 1px dotted #aaa;
+            /* Dotted divider for screen */
+            margin: 2px 0;
+        }
+        
+        .quick-reference-box {
+            background-color: #f9f9f9;
+            /* Light background for screen */
+            border-width: 1px;
+            /* Standard border */
+            border-color: #ccc;
+        }
+        
+        .header-section {
+            background-color: #f8f8f8;
+            /* Light background for screen */
+            border-bottom: 1px solid #000;
+            /* Keep header border solid */
+        }
+        /* --- End Screen Styles --- */
+        /* --- Start Print Styles (Replace Entire Block) --- */
+        
+        @media print {
+            @page {
+                size: letter;
+                margin: 0.2in;
+                /* Slightly reduce margin to prevent bottom cutoff */
+            }
+            body,
+            html {
+                font-size: 7pt;
+                margin: 0;
+                padding: 0;
+                height: 100%;
+                background: none !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            .cover-sheet {
+                border: none !important;
+                width: 8in;
+                height: 10.5in;
+                padding: 0.15in;
+                margin: 0 auto;
+                box-sizing: border-box;
+                overflow: hidden;
+                page-break-after: always;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                background-color: #fff !important;
+                box-shadow: none;
+                border-radius: 0;
+            }
+            .main-content {
+                overflow: hidden;
+                box-sizing: border-box;
+                flex-grow: 1;
+                display: flex;
+            }
+            .left-column,
+            .right-column {
+                overflow: hidden;
+                padding: 0 4pt;
+                /* consistent and tighter padding */
+                display: flex;
+                flex-direction: column;
+                flex-grow: 1;
+                justify-content: space-between;
+            }
+            .right-column {
+                border-left: 1pt solid #000;
+            }
+            .bordered-section {
+                border: 1pt solid #333 !important;
+                padding: 3pt !important;
+                margin: 3pt 0 !important;
+                border-radius: 0 !important;
+                background-color: #f8f8f8 !important;
+            }
+            .bordered-section .section-header {
+                border-bottom: 0.75pt solid #666 !important;
+                background-color: transparent !important;
+                font-weight: 600 !important;
+                padding: 1.5pt 0 !important;
+                margin-bottom: 1.5pt !important;
+                border-radius: 0 !important;
+                font-size: 7pt !important;
+                text-transform: uppercase !important;
+                letter-spacing: 0.4px !important;
+                color: #000 !important;
+            }
+            .line,
+            .underline {
+                height: 8pt !important;
+                border-bottom: 0.75pt solid #000 !important;
+            }
+            input[type="checkbox"] {
+                transform: scale(0.9);
+                margin-right: 3px;
+                /* Ensure consistent margin for print */
+            }
+            h1 {
+                font-size: 9pt !important;
+                margin: 2pt 0 4pt 0 !important;
+            }
+            .header-section {
+                padding-bottom: 2pt !important;
+                margin-bottom: 3pt !important;
+                border-bottom: 1pt solid #000 !important;
+                background-color: #f8f8f8 !important;
+            }
+            .mini-divider {
+                border-top: 0.5pt solid #ccc !important;
+                margin: 1.5pt 0 !important;
+            }
+            .section-container,
+            .checkbox-row,
+            .info-row,
+            .detail-line,
+            .contact-field,
+            .paired-field-line,
+            .single-field-line {
+                margin-top: 0.5pt !important;
+                margin-bottom: 0.5pt !important;
+                padding: 0 !important;
+                line-height: 1.1 !important;
+            }
+            label,
+            .key-label,
+            .detail-label,
+            .section-header,
+            .info-field label {
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            .quick-reference-box {
+                border: 1.25pt solid #333 !important;
+                background-color: #f8f8f8 !important;
+                padding: 3pt !important;
+                margin: 3pt 0 !important;
+                border-radius: 0 !important;
+            }
+            .quick-reference-box .section-header {
+                border-bottom: 0.75pt solid #666 !important;
+                background-color: transparent !important;
+                font-weight: 600 !important;
+                padding: 1.5pt 0 !important;
+                margin-bottom: 1.5pt !important;
+                border-radius: 0 !important;
+                font-size: 7pt !important;
+                text-transform: uppercase !important;
+                letter-spacing: 0.4px !important;
+                color: #000 !important;
+            }
+            .controls {
+                display: none;
+            }
+        }
+        /* --- End Print Styles --- */
+    </style>
+</head>
+
+<body>
+    <div class="page-container">
+        <!-- Dual Agent Cover Sheet -->
+        <div class="cover-sheet">
+            <!-- Header -->
+            <h1>DUAL AGENT</h1>
+            <div class="header-section bordered-section">
+                <div class="info-row">
+                    <div class="info-field">
+                        <label>Property Address:</label>
+                        <div class="line" id="property-address" style="text-indent: 10px; padding-left: 10px;">{{#if propertyAddress}}{{propertyAddress}}{{/if}}</div>
+                    </div>
+                    <div class="info-field">
+                        <label>MLS#:</label>
+                        <div class="line" id="mls-number">{{#if mlsNumber}}{{mlsNumber}}{{/if}}</div>
+                    </div>
+                    <div class="info-field">
+                        <label>AGENT:</label>
+                        <div class="line" id="agent-name">{{#if agentName}}{{agentName}}{{/if}}</div>
+                    </div>
+                </div>
+                <div class="info-row">
+                    <div class="info-field">
+                        <label>Closing Date:</label>
+                        <div class="line"></div>
+                    </div>
+                    <div class="info-field">
+                        <label>Time:</label>
+                        <div class="line"></div>
+                    </div>
+                    <div class="info-field">
+                        <label>Location:</label>
+                        <div class="line"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content Area -->
+            <div class="main-content">
+                <!-- Left Column -->
+                <div class="left-column">
+
+                    <!-- INITIAL DOCUMENTATION (Restore Border Class) -->
+                    <div class="section-container bordered-section">
+                        <div class="section-header">Initial Documentation</div>
+                        <div class="checkbox-row">
+                            <div class="checkbox-item"><input type="checkbox" id="da-aos"><label for="da-aos">AOS</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-check"><label for="da-check">Check</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-spd"><label for="da-spd">SPD</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-prequal"><label for="da-prequal">PreQual/POF</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-sec"><label for="da-sec">SEC</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-wire-notice"><label for="da-wire-notice">Wire Notice</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-hw"><label for="da-hw">HW</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-deed"><label for="da-deed">Deed</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-ref-form"><label for="da-ref-form">Referral Form</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-rlbphd"><label for="da-rlbphd">RLBPHD</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-fyp"><label for="da-fyp">FYP Form</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-wn"><label for="da-wn">WN</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-dmn"><label for="da-dmn">DMN</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-cn"><label for="da-cn">CN</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-dual-agency"><label for="da-dual-agency">Dual Agency</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-kpss-aba"><label for="da-kpss-aba">KPSS ABA Form</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-bec"><label for="da-bec">BEC</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-bac"><label for="da-bac">BAC</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-kw-disclosure"><label for="da-kw-disclosure">KW Disclosure</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-cbc"><label for="da-cbc">CBC</label></div>
+                        </div>
+                        <div class="checkbox-row">
+                            <span class="key-label">KW Addendum signed:</span>
+                            <div class="checkbox-item"><input type="checkbox" id="da-kw-buyer"><label for="da-kw-buyer">Buyer</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-kw-seller"><label for="da-kw-seller">Seller</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-kw-agent"><label for="da-kw-agent">Agent</label></div>
+                        </div>
+                    </div>
+
+                    <!-- CONTRACT PROCESSING (Remove Border) -->
+                    <div class="section-container">
+                        <div class="section-header">Contract Processing</div>
+                        <div class="checkbox-row">
+                            <div class="checkbox-item"><input type="checkbox" id="da-file-started"><label for="da-file-started">File started</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-submitted-contract"><label for="da-submitted-contract">Submitted Contract Folder</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-approved"><label for="da-approved">Approved</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-comm-submitted"><label for="da-comm-submitted">Commission Submitted</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-pending-checklist"><label for="da-pending-checklist">Added to Pending Checklist</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-date-calendar"><label for="da-date-calendar">Date on Calendar</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-tasks-set"><label for="da-tasks-set">Tasks set up</label></div>
+                        </div>
+                        <div class="checkbox-row">
+                            <span class="key-label">Intro & AOS Copy to:</span>
+                            <div class="checkbox-item"><input type="checkbox" id="da-aos-buyer"><label for="da-aos-buyer">Buyer</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-aos-bank"><label for="da-aos-bank">Bank</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-aos-attorney"><label for="da-aos-attorney">Attorney</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-aos-seller"><label for="da-aos-seller">Seller</label></div>
+                        </div>
+                    </div>
+
+                    <!-- DEPOSITS & MORTGAGE (Remove Border) -->
+                    <div class="section-container">
+                        <div class="section-header">Deposits & Mortgage</div>
+                        <div class="checkbox-row" style="display: flex; align-items: center; width: 100%;">
+                            <span class="key-label" style="flex-shrink: 0;">EMD Due:</span>
+                            <span class="underline" style="flex-grow: 1; margin-left: 3px;"></span>
+                            <span class="key-label" style="margin-left: 10px; flex-shrink: 0;">Amount:</span>
+                            <span class="underline" style="flex-grow: 1; margin-left: 3px;"></span>
+                        </div>
+                        <div class="checkbox-row">
+                            <span class="key-label">Follow up on:</span>
+                            <div class="checkbox-item"><input type="checkbox" id="da-dep-followup"><label for="da-dep-followup">Deposit</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-mort-app-followup"><label for="da-mort-app-followup">Mortgage Application</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-appr-followup"><label for="da-appr-followup">Appraisal</label></div>
+                        </div>
+                        <div class="checkbox-row">
+                            <div class="checkbox-item"><input type="checkbox" id="da-1st-dep-rec"><label for="da-1st-dep-rec">1st Deposit received</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-2nd-dep-rec"><label for="da-2nd-dep-rec">2nd Deposit received</label></div>
+                        </div>
+                    </div>
+
+                    <!-- INSPECTIONS & REPORTS (Remove Border) -->
+                    <div class="section-container">
+                        <div class="section-header">Inspections & Reports</div>
+                        <div class="checkbox-row">
+                            <div class="checkbox-item"><input type="checkbox" id="da-instruct-sent-seller"><label for="da-instruct-sent-seller">Inspection Instructions sent to Seller</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-pass-gate"><label for="da-pass-gate">Pass @ Gate</label></div>
+                        </div>
+                        <div class="checkbox-row">
+                            <div class="checkbox-item"><input type="checkbox" id="da-home-insp-sched"><label for="da-home-insp-sched">Home Inspection Scheduled</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-house-septic-ready"><label for="da-house-septic-ready">House & Septic Ready</label></div>
+                        </div>
+                        <div class="checkbox-row">
+                            <span class="key-label">Inspection Types:</span>
+                            <div class="checkbox-item"><input type="checkbox" id="da-insp-general"><label for="da-insp-general">General</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-insp-termite"><label for="da-insp-termite">Termite</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-insp-radon"><label for="da-insp-radon">Radon</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-insp-water"><label for="da-insp-water">Water</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-insp-septic"><label for="da-insp-septic">Septic</label></div>
+                        </div>
+                        <div class="checkbox-row" style="display: flex; align-items: center; width: 100%;">
+                            <span class="key-label" style="flex-shrink: 0;">Inspection Date:</span>
+                            <span class="underline" style="flex-grow: 1; margin-left: 3px;"></span>
+                            <span class="key-label" style="margin-left: 10px; flex-shrink: 0;">Inspector:</span>
+                            <span class="underline" style="flex-grow: 1; margin-left: 3px;"></span>
+                        </div>
+                        <div class="checkbox-row">
+                            <div class="checkbox-item"><input type="checkbox" id="da-insp-rep-rec"><label for="da-insp-rep-rec">Inspection Reports received</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-insp-rep-sent-client"><label for="da-insp-rep-sent-client">sent to Buyer</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-brti-rec"><label for="da-brti-rec">BRTI Prepared</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-brti-sent-seller"><label for="da-brti-sent-seller">sent to Seller</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-cit-prep"><label for="da-cit-prep">CIT Prepared</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-cit-sent"><label for="da-cit-sent">Sent</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-cit-signed"><label for="da-cit-signed">Signed</label></div>
+                        </div>
+                    </div>
+
+                    <!-- TITLE & CERTIFICATES (Remove Border) -->
+                    <div class="section-container">
+                        <div class="section-header">Resale Certificate & C/O</div>
+                        <div class="checkbox-row">
+                            <span class="key-label">Resale Certificate:</span>
+                            <div class="checkbox-item"><input type="checkbox" id="da-order-resale-cert"><label for="da-order-resale-cert">Order Resale Cert.</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-req-pay-seller"><label for="da-req-pay-seller">Request Payment from Seller</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-check-sent"><label for="da-check-sent">Check Sent</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-resale-rec"><label for="da-resale-rec">Received</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-resale-copy-buyer"><label for="da-resale-copy-buyer">Copy sent to Buyer</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-resale-title-co"><label for="da-resale-title-co">Title Co</label></div>
+                        </div>
+                        <div class="checkbox-row">
+                            <span class="key-label">Receipt of Documents:</span>
+                            <div class="checkbox-item"><input type="checkbox" id="da-rec-docs-sent"><label for="da-rec-docs-sent">sent</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-rec-docs-signed"><label for="da-rec-docs-signed">Receipt of Documents signed</label></div>
+                        </div>
+                        <div class="checkbox-row">
+                            <span class="key-label">C/O Req Payment:</span>
+                            <div class="checkbox-item"><input type="checkbox" id="da-co-req-sent"><label for="da-co-req-sent">Sent</label></div>
+                            <span class="key-label" style="margin-left: 5px;">INSPECTION DATE:</span><span class="underline underline-medium"></span>
+                            <div class="checkbox-item" style="margin-left: 5px;"><input type="checkbox" id="da-co-copy-buyer"><label for="da-co-copy-buyer">Copy to Buyer</label></div>
+                        </div>
+                    </div>
+
+                    <!-- APPRAISAL & MORTGAGE (Remove Border) -->
+                    <div class="section-container">
+                        <div class="section-header">Appraisal & Mortgage</div>
+                        <div class="checkbox-row">
+                            <span class="key-label">Mortgage Type:</span><span class="underline underline-large"></span>
+                        </div>
+                        <div class="checkbox-row">
+                            <span class="key-label">Appraisal:</span>
+                            <div class="checkbox-item"><input type="checkbox" id="da-appr-ordered"><label for="da-appr-ordered">Ordered</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-appr-sched"><label for="da-appr-sched">Scheduled</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-appr-valok"><label for="da-appr-valok">Value OK?</label></div>
+                        </div>
+                        <div class="checkbox-row">
+                            <span class="key-label">Repairs:</span>
+                            <div class="checkbox-item"><input type="checkbox" id="da-rep-needed"><label for="da-rep-needed">Repairs Needed</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-rep-noneeded"><label for="da-rep-noneeded">No Repairs Needed</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-appr-completed"><label for="da-appr-completed">Completed</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-appr-notified-lender"><label for="da-appr-notified-lender">Notified Lender</label></div>
+                        </div>
+                        <div class="checkbox-row">
+                            <span class="key-label">Mortgage Commitment Due:</span><span class="underline underline-medium"></span>
+                            <div class="checkbox-item" style="margin-left: 5px;"><input type="checkbox" id="da-mort-comm-req"><label for="da-mort-comm-req">Requested</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-mort-comm-rec"><label for="da-mort-comm-rec">Received</label></div>
+                        </div>
+                    </div>
+
+                    <!-- WARRANTY, REPAIRS, & UTILITY INFO (Remove Border) -->
+                    <div class="section-container">
+                        <div class="section-header">Warranty, Repairs, & Utility Info</div>
+                        <div class="checkbox-row">
+                            <span class="key-label">Utility Info:</span>
+                            <div class="checkbox-item"><input type="checkbox" id="da-util-rec"><label for="da-util-rec">Received</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-util-sent"><label for="da-util-sent">Sent</label></div>
+                        </div>
+                        <div class="checkbox-row">
+                            <span class="key-label">Warranty:</span>
+                            <div class="checkbox-item"><input type="checkbox" id="da-warr-yes"><label for="da-warr-yes">Yes</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-warr-no"><label for="da-warr-no">No</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-warr-ordered"><label for="da-warr-ordered">Ordered</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-warr-invoice-sent"><label for="da-warr-invoice-sent">Invoice sent to Title Company</label></div>
+                        </div>
+                        <div class="checkbox-row">
+                            <span class="key-label">Warranty Company:</span>
+                            <span class="underline underline-xl" id="warranty-company"></span>
+                        </div>
+                        <div class="checkbox-row">
+                            <span class="key-label">Warranty Cost:</span>
+                            <span class="underline underline-medium" id="warranty-cost"></span>
+                            <span class="key-label" style="margin-left: 10px;">Paid By:</span>
+                            <div class="checkbox-item"><input type="checkbox" id="warranty-seller"><label for="warranty-seller">Seller</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="warranty-buyer"><label for="warranty-buyer">Buyer</label></div>
+                        </div>
+                        <div class="checkbox-row">
+                            <span class="key-label">BRTI repairs:</span>
+                            <div class="checkbox-item"><input type="checkbox" id="da-brti-finished"><label for="da-brti-finished">Repairs finished</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-brti-req-receipts"><label for="da-brti-req-receipts">request receipts</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-brti-receipts-rec-sent"><label for="da-brti-receipts-rec-sent">Receipts received and sent to Agent/Buyer</label></div>
+                        </div>
+                    </div>
+
+                    <!-- CLOSING (Remove Border) -->
+                    <div class="section-container">
+                        <div class="section-header">Closing</div>
+                        <div class="checkbox-row">
+                            <span class="key-label">Seller attending:</span>
+                            <div class="checkbox-item"><input type="checkbox" id="da-close-attend-yes"><label for="da-close-attend-yes">Yes</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-close-attend-no"><label for="da-close-attend-no">No</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-close-mailed"><label for="da-close-mailed">Mailed Docs</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-close-sign-early"><label for="da-close-sign-early">Sign early at Title Office</label></div>
+                        </div>
+                        <div class="checkbox-row">
+                            <div class="checkbox-item"><input type="checkbox" id="da-close-escrow-req"><label for="da-close-escrow-req">Requested Escrow Check</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-close-receipt-conf"><label for="da-close-receipt-conf">Confirmed Receipt</label></div>
+                        </div>
+                    </div>
+
+
+                    <!-- CLOSING DATE TRACKING (Remove Border) -->
+                    <div class="section-container">
+                        <div class="section-header">Closing Date Tracking</div>
+                        <div class="checkbox-row" style="display: flex; align-items: center; width: 100%;">
+                            <span class="key-label" style="flex-shrink: 0;">Closing Date:</span>
+                            <span class="underline" style="flex-grow: 1; margin-left: 3px;"></span>
+                            <div class="checkbox-item" style="margin-left: 5px; flex-shrink: 0;"><input type="checkbox" id="da-confirmed"><label for="da-confirmed">Confirmed</label></div>
+                        </div>
+                        <div class="checkbox-row">
+                            <div class="checkbox-item"><input type="checkbox" id="da-all-parties-notified"><label for="da-all-parties-notified">All Parties Notified</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-extension-signed"><label for="da-extension-signed">Extension Signed</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="da-calendar-updated"><label for="da-calendar-updated">Calendar Updated</label></div>
+                        </div>
+                        <div class="checkbox-row">
+                            <span class="checkbox-item">
+                 <span class="key-label">Closing Time Preferred:</span>
+                            <span class="underline underline-xl"></span>
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- COMMISSION DETAILS (Restore Border Class) -->
+                    <div class="section-container bordered-section">
+                        <div class="section-header">Commission Details</div>
+                        <div class="commission-section">
+                            <div class="commission-row">
+                                <span class="key-label">Buyer's Agent Commission:</span>
+                                <span class="underline underline-medium" id="buyers-commission">{{#if buyersCommission}}{{buyersCommission}}{{/if}}</span>
+                                <span class="key-label">%</span>
+                            </div>
+                            <div class="commission-row">
+                                <span class="key-label">Listing Agent Commission:</span>
+                                <span class="underline underline-medium" id="listing-commission">{{#if listingCommission}}{{listingCommission}}{{/if}}</span>
+                                <span class="key-label">%</span>
+                            </div>
+                            <div class="commission-row">
+                                <span class="key-label">Total Commission:</span>
+                                <span class="underline underline-medium" id="total-commission">{{#if totalCommission}}{{totalCommission}}{{/if}}</span>
+                                <span class="key-label">%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- End Left Column -->
+
+                <!-- Right Column -->
+                <div class="right-column">
+                    <!-- Buyer Section (Add Border Class) -->
+                    <div class="section-container bordered-section">
+                        <div class="section-header">Buyer</div>
+                        <div class="contact-field">
+                            <div class="detail-line"><span class="detail-label">Name:</span>
+                                <div class="line" id="buyer-name">{{#if buyerName}}{{buyerName}}{{/if}}</div>
+                            </div>
+                            <div class="detail-line"><span class="detail-label">Address:</span>
+                                <div class="line" id="buyer-address" style="text-indent: 10px; padding-left: 5px;">{{#if buyerAddress}}{{buyerAddress}}{{/if}}</div>
+                            </div>
+                            <div class="detail-line"><span class="detail-label">Phone:</span>
+                                <div class="line" id="buyer-phone">{{#if buyerPhone}}{{buyerPhone}}{{/if}}</div>
+                            </div>
+                            <div class="detail-line"><span class="detail-label">Email:</span>
+                                <div class="line" id="buyer-email">{{#if buyerEmail}}{{buyerEmail}}{{/if}}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Seller Section (Add Border Class) -->
+                    <div class="section-container bordered-section">
+                        <div class="section-header">Seller</div>
+                        <div class="contact-field">
+                            <div class="detail-line"><span class="detail-label">Name:</span>
+                                <div class="line" id="seller-name">{{#if sellerName}}{{sellerName}}{{/if}}</div>
+                            </div>
+                            <div class="detail-line"><span class="detail-label">Address:</span>
+                                <div class="line" id="seller-address" style="text-indent: 10px; padding-left: 5px;">{{#if sellerAddress}}{{sellerAddress}}{{/if}}</div>
+                            </div>
+                            <div class="detail-line"><span class="detail-label">Phone:</span>
+                                <div class="line" id="seller-phone">{{#if sellerPhone}}{{sellerPhone}}{{/if}}</div>
+                            </div>
+                            <div class="detail-line"><span class="detail-label">Email:</span>
+                                <div class="line" id="seller-email">{{#if sellerEmail}}{{sellerEmail}}{{/if}}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Attorney (Remove Border) -->
+                    <div class="section-container">
+                        <div class="section-header">Attorney</div>
+                        <div class="contact-field">
+                            <div class="detail-line"><span class="detail-label">Name:</span>
+                                <div class="line" id="attorney-name">{{#if attorneyName}}{{attorneyName}}{{/if}}</div>
+                            </div>
+                            <div class="detail-line"><span class="detail-label">Contact:</span>
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AGENT INFORMATION (Remove Border) -->
+                    <div class="section-container">
+                        <div class="section-header">Agent Information</div>
+                        <div class="contact-field">
+                            <div class="detail-line"><span class="detail-label">Name:</span>
+                                <div class="line" id="agent-name-section">{{#if agentName}}{{agentName}}{{/if}}</div>
+                            </div>
+                            <div class="detail-line"><span class="detail-label">Phone:</span>
+                                <div class="line"></div>
+                            </div>
+                            <div class="detail-line"><span class="detail-label">Email:</span>
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TITLE AGENT INFORMATION (Remove Border) -->
+                    <div class="section-container">
+                        <div class="section-header">Title Agent Information</div>
+                        <div class="contact-field">
+                            <div class="detail-line"><span class="detail-label">Name:</span>
+                                <div class="line" id="title-company">{{#if titleCompany}}{{titleCompany}}{{/if}}</div>
+                            </div>
+                            <div class="detail-line"><span class="detail-label">Phone:</span>
+                                <div class="line"></div>
+                            </div>
+                            <div class="detail-line"><span class="detail-label">Email:</span>
+                                <div class="line"></div>
+                            </div>
+                            <div class="checkbox-row" style="margin-top: 2px;">
+                                <div class="checkbox-item"><input type="checkbox" id="da-seller-info-sent"><label for="da-seller-info-sent">Title Ordered</label></div>
+                                <div class="checkbox-item"><input type="checkbox" id="rofr" {{#if rofr}}checked{{/if}}><label for="rofr">ROFR</label></div>
+                                <div class="checkbox-item"><input type="checkbox" id="da-title-tc-invoice-sent"><label for="da-title-tc-invoice-sent">TC Invoice sent</label></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- HOA INFORMATION (Add Border Class) -->
+                    <div class="section-container bordered-section">
+                        <div class="section-header section-header-flex">
+                            <span>HOA Information</span>
+                            <div class="yes-no-group">
+                                <div><input type="checkbox" id="da-hoa-yes" {{#if hoaYes}}checked{{/if}}><label for="da-hoa-yes">Yes</label></div>
+                                <div><input type="checkbox" id="da-hoa-no" {{#unless hoaNo}}checked{{/unless}}><label for="da-hoa-no">No</label></div>
+                            </div>
+                        </div>
+                        <div class="paired-field-line">
+                            <div class="field-pair-item">
+                                <label class="key-label" style="text-transform: uppercase;">Association:</label>
+                                <div class="line" id="hoa-association">{{#if hoaAssociation}}{{hoaAssociation}}{{/if}}</div>
+                            </div>
+                            <div class="field-pair-item">
+                                <label class="key-label" style="text-transform: uppercase;">RESALE EXPIRES:</label>
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                        <div class="mini-divider"></div>
+                        <div class="paired-field-line">
+                            <div class="field-pair-item">
+                                <label class="key-label" style="text-transform: uppercase;">EMAIL:</label>
+                                <div class="line"></div>
+                            </div>
+                            <div class="field-pair-item">
+                                <label class="key-label" style="text-transform: uppercase;">PHONE:</label>
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                        <div class="mini-divider"></div>
+                        <div class="single-field-line">
+                            <label class="key-label" style="text-transform: uppercase;">SELLER SENT PAYMENT ON:</label>
+                            <div class="line"></div>
+                        </div>
+                        <div class="contact-field">
+                            <!-- Added from Buyer for consistency -->
+                            <div class="detail-line"><span class="detail-label">Name:</span>
+                                <div class="line" id="seller-name">{{#if sellerName}}{{sellerName}}{{/if}}</div>
+                            </div>
+                            <div class="detail-line"><span class="detail-label">Contact:</span>
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Resale Certificate Received Section (Remove Border) -->
+                    <div class="section-container">
+                        <div class="section-header section-header-flex">
+                            <span>Resale Certificate Received</span>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="da-resale-cert-received">
+                                <label for="da-resale-cert-received">Received</label>
+                            </div>
+                        </div>
+                        <div class="contact-field">
+                            <div class="detail-line"><span class="detail-label">Notes:</span>
+                                <div class="line"></div>
+                            </div>
+                            <div class="detail-line"><span class="detail-label"></span>
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Certificate of Occupancy Section (Remove Border) -->
+                    <div class="section-container">
+                        <div class="section-header section-header-flex">
+                            <span>Certificate of Occupancy</span>
+                            <div class="yes-no-group">
+                                <div><input type="checkbox" id="da-co-yes" {{#if coYes}}checked{{/if}}><label for="da-co-yes">Yes</label></div>
+                                <div><input type="checkbox" id="da-co-no" {{#unless coNo}}checked{{/unless}}><label for="da-co-no">No</label></div>
+                            </div>
+                        </div>
+                        <div class="single-field-line">
+                            <label class="key-label" style="text-transform: uppercase;">Municipality:</label>
+                            <div class="line" id="municipality">{{#if municipality}}{{municipality}}{{/if}}</div>
+                        </div>
+                        <div class="checkbox-row">
+                            <div class="field-pair-item">
+                                <label class="key-label" style="text-transform: uppercase;">REQUESTED:</label>
+                                <div class="line"></div>
+                            </div>
+                            <div class="field-pair-item">
+                                <label class="key-label" style="text-transform: uppercase;">RECEIVED:</label>
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                        <div class="single-field-line">
+                            <label class="key-label" style="text-transform: uppercase;">C/O INSPECTION ON:</label>
+                            <div class="line"></div>
+                        </div>
+                    </div>
+
+                    <!-- Lender Information Section (Restore Border Class) -->
+                    <div class="section-container bordered-section">
+                        <div class="section-header">Lender Information</div>
+                        <div class="contact-field">
+                            <div class="detail-line"><span class="detail-label">Name:</span>
+                                <div class="line"></div>
+                            </div>
+                            <div class="detail-line"><span class="detail-label">Phone:</span>
+                                <div class="line"></div>
+                            </div>
+                            <div class="detail-line"><span class="detail-label">Email:</span>
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Inspection Details Section (Remove Border) -->
+                    <div class="section-container">
+                        <div class="section-header">Inspection Details</div>
+                        <div class="single-field-line">
+                            <label class="key-label" style="text-transform: uppercase;">INSPECTOR:</label>
+                            <div class="line"></div>
+                        </div>
+                        <div class="paired-field-line">
+                            <div class="field-pair-item">
+                                <label class="key-label" style="text-transform: uppercase;">CONTINGENCY DATE:</label>
+                                <div class="line"></div>
+                            </div>
+                            <div class="field-pair-item">
+                                <label class="key-label" style="text-transform: uppercase;">INSPECTION DATE:</label>
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Utilities Information Section (Remove Border) -->
+                    <div class="section-container">
+                        <div class="section-header">Utilities Information</div>
+                        <div class="paired-field-line">
+                            <div class="field-pair-item">
+                                <label class="key-label" style="text-transform: uppercase;">WATER TYPE:</label>
+                                <div class="line"></div>
+                            </div>
+                            <div class="field-pair-item">
+                                <label class="key-label" style="text-transform: uppercase;">SEWER TYPE:</label>
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Referral Information Section (Remove Border) -->
+                    <div class="section-container">
+                        <div class="section-header section-header-flex">
+                            <span>Referral Information</span>
+                            <div class="yes-no-group">
+                                <div><input type="checkbox" id="da-ref-yes" {{#if referralYes}}checked{{/if}}><label for="da-ref-yes">Yes</label></div>
+                                <div><input type="checkbox" id="da-ref-no" {{#unless referralNo}}checked{{/unless}}><label for="da-ref-no">No</label></div>
+                            </div>
+                        </div>
+                        <div class="referral-section">
+                            <div class="single-field-line">
+                                <label class="key-label">DUE TO:</label>
+                                <div class="line" style="flex-grow: 1;" id="referral-party">{{#if referralParty}}{{referralParty}}{{/if}}</div>
+                                <span class="percentage" style="flex-shrink: 0; margin-left: 3px;" id="referral-fee">{{#if referralFee}}{{referralFee}}%{{/if}}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Notes Section (Remove Border) -->
+                    <div class="section-container">
+                        <div class="section-header">Notes</div>
+                        <div class="notes-section">
+                            <hr>
+                            <hr>
+                        </div>
+                    </div>
+
+                    <!-- Quick Reference Section (Add bordered-section class back) -->
+                    <div class="section-container quick-reference-box bordered-section">
+                        <div class="section-header">Quick Reference</div>
+                        <div class="single-field-line">
+                            <label class="key-label">Contract Date:</label>
+                            <div class="line" id="contract-date">{{#if contractDate}}{{contractDate}}{{/if}}</div>
+                        </div>
+                        <div class="single-field-line">
+                            <label class="key-label">Acceptance Date:</label>
+                            <div class="line" id="acceptance-date">{{#if acceptanceDate}}{{acceptanceDate}}{{/if}}</div>
+                        </div>
+                        <div class="single-field-line">
+                            <label class="key-label">Price:</label>
+                            <div class="line" id="sale-price">{{#if salePrice}}{{salePrice}}{{/if}}</div>
+                        </div>
+                        <div class="single-field-line">
+                            <label class="key-label">Seller's Assist:</label>
+                            <div class="line" id="sellers-assist">{{#if sellersAssist}}{{sellersAssist}}{{/if}}</div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- End Right Column -->
+            </div>
+            <!-- End Main Content -->
+        </div>
+        <!-- End Cover Sheet -->
+
+        <div class="controls">
+            <button id="print-button">Print Cover Sheet</button>
+        </div>
+    </div>
+
+    <script>
+        const printButton = document.getElementById('print-button');
+        if (printButton) {
+            printButton.addEventListener('click', function() {
+                window.print();
+            });
+        }
+    </script>
+</body>
+
+</html>

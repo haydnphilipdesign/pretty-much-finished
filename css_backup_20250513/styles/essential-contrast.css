@@ -1,0 +1,383 @@
+/**
+ * Essential Contrast Fixes
+ * These rules ensure text is visible against its background and fix common styling issues
+ */
+
+
+/* 
+ * IMPORTANT: Tailwind modifier syntax reminder
+ * Always connect modifiers like hover:, focus:, sm: directly to the class without spaces
+ * CORRECT: hover:text-gray-200  
+ * WRONG:   hover:text-gray-200
+ */
+
+
+/* Force dark text on light backgrounds */
+
+.bg-white,
+section.bg-white,
+div.bg-white,
+.bg-gray-50,
+section.bg-gray-50,
+div.bg-gray-50,
+.bg-gray-100,
+section.bg-gray-100,
+div.bg-gray-100,
+.bg-blue-50,
+.bg-blue-100,
+.bg-yellow-50,
+.bg-yellow-100,
+.service-card,
+
+/* Targeting service cards specifically */
+
+.feature-card,
+.card,
+[class*="card-white"]
+/* Target any class containing "card-white" */
+
+{
+    @apply text-gray-900 !important;
+    /* Forcing dark text */
+}
+
+
+/* Force dark text on various elements that might be in light sections */
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+li,
+a:not(.btn):not([class*="bg-"]),
+label {
+    @apply text-gray-900;
+    /* Default to dark, can be overridden by more specific rules */
+}
+
+
+/* Force white text on dark backgrounds */
+
+.bg-blue-600,
+.bg-blue-700,
+.bg-blue-800,
+.bg-blue-900,
+.bg-gray-600,
+.bg-gray-700,
+.bg-gray-800,
+.bg-gray-900,
+.bg-slate-900,
+.bg-black,
+.bg-brand-blue,
+[class*="card-dark"],
+[class*="card-navy"],
+.dark-section {
+    @apply text-white !important;
+    /* Forcing light text */
+}
+
+
+/* Ensure paragraphs, list items and spans in sections get proper contrast */
+
+section p,
+section li,
+section span,
+.card p,
+.card li,
+.card span {
+    @apply text-gray-700;
+    /* Slightly lighter but still dark and readable */
+}
+
+
+/* Any card on light background gets dark text */
+
+div[class*="card"]:not([class*="dark"]):not([class*="navy"]):not([class*="blue"]) {
+    @apply text-gray-900;
+}
+
+
+/* Specific targeting for service cards bullet points and descriptions */
+
+.service-card ul li,
+.service-card p,
+.service-card .service-description,
+div[id*="service"] ul li,
+div[id*="service"] p,
+div[class*="service"] ul li,
+div[class*="service"] p {
+    @apply text-gray-800 !important;
+}
+
+
+/* Override any style that might be causing light text on light background */
+
+body {
+    color: #1e293b !important;
+    /* Default dark text - Tailwind slate-800 */
+}
+
+
+/* Utility classes to force text colors when needed */
+
+.text-force-dark {
+    @apply text-gray-900 !important;
+}
+
+.text-force-light {
+    @apply text-white !important;
+}
+
+
+/* ======== ADDITIONAL STYLING FIXES ======== */
+
+
+/* Fix for header navigation links */
+
+header nav a,
+nav a,
+.header-nav a,
+.main-nav a,
+.navbar a,
+.navigation a {
+    @apply text-gray-800 font-medium !important;
+    /* Set dark color for nav links */
+}
+
+
+/* Style for active/hover nav links */
+
+header nav a:hover,
+nav a:hover,
+.header-nav a:hover,
+.main-nav a:hover,
+.navbar a:hover,
+.navigation a:hover,
+header nav a.active,
+nav a.active,
+.header-nav a.active,
+.main-nav a.active,
+.navbar a.active,
+.navigation a.active {
+    @apply text-brand-blue font-bold !important;
+    /* Brand color for hover/active state */
+}
+
+
+/* Fix for "How We'll Work Together" section */
+
+section:has(h2:contains("How We Work Together")),
+section:has(h2:contains("how we work together")),
+section:has(h3:contains("How We Work Together")),
+section h2:contains("How We Work Together"),
+section:has(.work-together),
+section.work-process,
+section.work-together,
+section.how-we-work,
+div.how-we-work {
+    @apply bg-gray-100 !important;
+    /* Light gray background for this section */
+}
+
+
+/* Apply specific background to the How We Work Together section */
+
+div[id*="work"],
+section[id*="work"],
+div[class*="work"],
+section[class*="work"],
+div[id*="process"],
+section[id*="process"] {
+    @apply bg-gray-100 !important;
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+}
+
+
+/* Ensure section titles are visible */
+
+section h1,
+section h2,
+section h3 {
+    @apply text-gray-900 font-bold !important;
+}
+
+
+/* Dark backgrounds need white headings */
+
+.bg-blue-600 h1,
+.bg-blue-700 h1,
+.bg-blue-800 h1,
+.bg-blue-900 h1,
+.bg-gray-800 h1,
+.bg-gray-900 h1,
+.bg-brand-blue h1,
+.bg-slate-900 h1,
+.bg-black h1,
+.bg-blue-600 h2,
+.bg-blue-700 h2,
+.bg-blue-800 h2,
+.bg-blue-900 h2,
+.bg-gray-800 h2,
+.bg-gray-900 h2,
+.bg-brand-blue h2,
+.bg-slate-900 h2,
+.bg-black h2,
+.bg-blue-600 h3,
+.bg-blue-700 h3,
+.bg-blue-800 h3,
+.bg-blue-900 h3,
+.bg-gray-800 h3,
+.bg-gray-900 h3,
+.bg-brand-blue h3,
+.bg-slate-900 h3,
+.bg-black h3 {
+    @apply text-white font-bold !important;
+}
+
+
+/* Call-to-action buttons need proper styling */
+
+.btn,
+button[class*="btn"],
+a[class*="btn"],
+.cta,
+.call-to-action {
+    @apply font-medium !important;
+}
+
+.btn-primary,
+button[class*="primary"],
+a[class*="primary"] {
+    @apply bg-brand-blue text-white !important;
+}
+
+.btn-secondary,
+button[class*="secondary"],
+a[class*="secondary"] {
+    @apply bg-gray-100 text-gray-900 !important;
+}
+
+
+/* Card content styling */
+
+.card-content,
+.card-body,
+div[class*="card"] div,
+.feature-content {
+    @apply text-gray-800 !important;
+}
+
+
+/* Fix for light borders on light backgrounds */
+
+.card,
+.border,
+.border-light,
+div[class*="card"],
+.service-card {
+    @apply border border-gray-200 !important;
+}
+
+
+/* Process steps/icons stronger visibility */
+
+.step,
+.process-step,
+.icon-container,
+[class*="step"],
+[class*="icon"] {
+    @apply text-brand-blue !important;
+}
+
+
+/* Footer links and text */
+
+footer,
+footer p,
+footer div,
+footer span {
+    @apply text-gray-200 !important;
+}
+
+footer a {
+    @apply text-white font-medium !important;
+}
+
+footer a:hover {
+    @apply text-gray-200 underline !important;
+}
+
+
+/* Make icons visible */
+
+svg,
+svg path,
+svg circle,
+i[class*="icon"],
+span[class*="icon"] {
+    @apply text-current !important;
+    /* Inherit text color */
+}
+
+
+/* Timeline items visibility */
+
+.timeline-item,
+.process-step,
+[class*="timeline"],
+[class*="process"] {
+    @apply text-gray-800 !important;
+}
+
+
+/* Headers with dark backgrounds need contrast */
+
+header.bg-blue-600,
+header.bg-blue-700,
+header.bg-blue-800,
+header.bg-blue-900,
+header.bg-gray-800,
+header.bg-gray-900,
+header.bg-brand-blue,
+header.bg-black,
+nav.bg-blue-600,
+nav.bg-blue-700,
+nav.bg-blue-800,
+nav.bg-blue-900,
+nav.bg-gray-800,
+nav.bg-gray-900,
+nav.bg-brand-blue,
+nav.bg-black {
+    @apply text-white !important;
+}
+
+header.bg-blue-600 a,
+header.bg-blue-700 a,
+header.bg-blue-800 a,
+header.bg-blue-900 a,
+header.bg-gray-800 a,
+header.bg-gray-900 a,
+header.bg-brand-blue a,
+header.bg-black a,
+nav.bg-blue-600 a,
+nav.bg-blue-700 a,
+nav.bg-blue-800 a,
+nav.bg-blue-900 a,
+nav.bg-gray-800 a,
+nav.bg-gray-900 a,
+nav.bg-brand-blue a,
+nav.bg-black a {
+    @apply text-white hover:text-gray-200 !important;
+}
+
+
+/* Fix hover states */
+
+a:not(.btn) {
+    @apply text-white hover:text-gray-200 !important;
+}

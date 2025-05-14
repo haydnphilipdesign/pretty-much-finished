@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utility Information Sheet</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        
+        h1 {
+            font-size: 1.5em;
+        }
+        
+        h2 {
+            font-size: 1.2em;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        label {
+            display: block;
+            margin: 5px 0;
+        }
+        
+        input[type="text"] {
+            width: 300px;
+            padding: 5px;
+            margin-left: 10px;
+        }
+        
+        .cost-field {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Utility Information Sheet</h1>
+
+    <label><strong>Property Address:</strong> <input type="text" name="property_address"></label>
+
+    <div class="section">
+        <h2>Electric</h2>
+        <label><input type="checkbox"> Met-ED (800-545-7741)</label>
+        <label><input type="checkbox"> PP&L (800-342-5775)</label>
+        <label><input type="checkbox"> Other <input type="text" name="electric_other"></label>
+        <div class="cost-field">
+            Average Monthly Cost: $ <input type="text" name="electric_cost">
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Cable</h2>
+        <label><input type="checkbox"> Blue Ridge Cable (570-421-0780)</label>
+        <label><input type="checkbox"> Direct TV (888-679-8671)</label>
+        <label><input type="checkbox"> Dish Network (610-381-6315)</label>
+        <label><input type="checkbox"> RCN (800-746-4726)</label>
+        <label><input type="checkbox"> Service Electric (800-232-9100)</label>
+        <label><input type="checkbox"> Other <input type="text" name="cable_other"></label>
+        <div class="cost-field">
+            Average Monthly Cost: $ <input type="text" name="cable_cost">
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Phone & Internet</h2>
+        <label><input type="checkbox"> RCN (800-746-4726)</label>
+        <label><input type="checkbox"> Service Electric (610-841-4100)</label>
+        <label><input type="checkbox"> Verizon (800-660-2215)</label>
+        <label><input type="checkbox"> Blue Ridge Cable (570-421-0780)</label>
+        <label><input type="checkbox"> AT&T (800-222-0300)</label>
+        <label><input type="checkbox"> Other <input type="text" name="phone_other"></label>
+        <div class="cost-field">
+            Average Monthly Cost: $ <input type="text" name="phone_cost">
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Water</h2>
+        <label><input type="checkbox"> PA American Water Company (800-565-7292)</label>
+        <label><input type="checkbox"> Easton Suburban Water Comp (610-258-7181)</label>
+        <label><input type="checkbox"> Municipality</label>
+        <label><input type="checkbox"> Other <input type="text" name="water_other"></label>
+        <label><input type="checkbox"> On Site Well</label>
+        <div class="cost-field">
+            Average Quarterly Cost: $ <input type="text" name="water_cost">
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Sewer</h2>
+        <label><input type="checkbox"> Northampton County Court House (610-559-3000)</label>
+        <label><input type="checkbox"> Lehigh County Authority (610-398-1444)</label>
+        <label><input type="checkbox"> Municipality</label>
+        <label><input type="checkbox"> Other</label>
+        <label><input type="checkbox"> On-Site Septic</label>
+        <div class="cost-field">
+            Average Quarterly Cost: $ <input type="text" name="sewer_cost">
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>HOA</h2>
+        <label>Company: <input type="text" name="hoa_company"></label>
+        <label>Phone: <input type="text" name="hoa_phone"></label>
+        <label>Monthly or Yearly Dues: $ <input type="text" name="hoa_dues"></label>
+    </div>
+
+    <div class="section">
+        <h2>Signature</h2>
+        <label>Completed By: <input type="text" name="completed_by"></label>
+        <label>Date: <input type="text" name="date"></label>
+    </div>
+</body>
+
+</html>

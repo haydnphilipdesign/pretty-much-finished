@@ -1,0 +1,4 @@
+.gradient-container {
+  flex-grow: 1;
+  background: linear-gradient(to bottom, #1e3a8a, rgba(30, 58, 138, 0.9));
+}

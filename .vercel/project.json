@@ -1,0 +1,15 @@
+{
+  "projectId": "prj_E0WfvrsJkQRKBf2yUedifP43Mfc6",
+  "orgId": "team_NDQv6ERGaJAl0CDNKtMqNcut",
+  "settings": {
+    "createdAt": 1741985616713,
+    "framework": "vite",
+    "devCommand": null,
+    "installCommand": null,
+    "buildCommand": null,
+    "outputDirectory": null,
+    "rootDirectory": null,
+    "directoryListing": false,
+    "nodeVersion": "20.x"
+  }
+}

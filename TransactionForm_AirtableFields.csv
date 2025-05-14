@@ -1,0 +1,31 @@
+﻿Field Name,Field Type,Example,Field Id,Table Id
+Address,singleLineText,"112 Morris Pl, Bushkill, PA 18324",fldypnfnHhplWYcCW,tblHyCJCpQSgjn0md
+Agent Name,singleLineText,Jess Keller,fldFD4xHD0vxnSOHJ,tblHyCJCpQSgjn0md
+Broker EIN,singleLineText,12-3456789,fld20VbKbWzdR4Sp7,tblHyCJCpQSgjn0md
+MLS Number,singleLineText,123456 | PM-123456,fld6O2FgIXQU5G27o,tblHyCJCpQSgjn0md
+Referral Party,singleLineText,Firstname Lastname,fldzVtmn8uylVxuTF,tblHyCJCpQSgjn0md
+Buyer Paid Percentage,number,0.50,flddRltdGj05Clzpa,tblHyCJCpQSgjn0md
+Buyer’s Agent Percentage,number,3.00,fld5KRrToAAt5kOLd,tblHyCJCpQSgjn0md
+Listing Agent Percentage,number,3.00,flduuQQT7o6XAGlRe,tblHyCJCpQSgjn0md
+Referral Fee,number,25.00,fldewmjoaJVwiMF46,tblHyCJCpQSgjn0md
+Total Commission Percentage,number,6.00,fldE8INzEorBtx2uN,tblHyCJCpQSgjn0md
+Fixed Commission Amount,currency,"10,000.00",fldNXNV9Yx2LwJPhN,tblHyCJCpQSgjn0md
+Sale Price,currency,"450,000.00",fldhHjBZJISmnP8SK,tblHyCJCpQSgjn0md
+Sellers Assist,currency,"5,000.00",fldTvXx96Na0zRh6W,tblHyCJCpQSgjn0md
+Total Commission,currency,"20,000.00",fldsOqVJDGYKUjD8L,tblHyCJCpQSgjn0md
+Agent ,singleSelect,"BUYERS AGENT | LISTING AGENT | DUAL AGENT",fldOVyoxz38rWwAFy,tblHyCJCpQSgjn0md
+Commission Base,singleSelect,"SALE PRICE | NET PRICE",fldwx7zlKIGGIAxfq,tblHyCJCpQSgjn0md
+Property Status,singleSelect,"OCCUPIED | VACANT",fldV2eLxz6w0TpLFU,tblHyCJCpQSgjn0md
+Referral,singleSelect,"YES | NO",fldLVyXkhqppQ7WpC,tblHyCJCpQSgjn0md
+Requires Follow Up,singleSelect,"YES | NO",fldIG7LFmo1Sro6Oz,tblHyCJCpQSgjn0md
+Update MLS,singleSelect,"YES | NO",fldw3GlfvKtyNfIAW,tblHyCJCpQSgjn0md
+Winterized,singleSelect,"YES | NO",fldExdgBDgdB1i9jy,tblHyCJCpQSgjn0md
+Additional Information,richText,Buyer is paying cash.,fld30htJ7euVerCLW,tblHyCJCpQSgjn0md
+Special Instructions,richText,Buyer is Deaf. Prefers Email Communication,fldDWN8jU4kdCffzu,tblHyCJCpQSgjn0md
+Urgent Issues,richText,Seller is impatient and is talking about walking away.,fldgW16aPdFMdspO6,tblHyCJCpQSgjn0md
+Client Address,singleLineText,"123 Main St, City, St 11111",fldz1IpeR1256LhuC,tblvdy7T9Hv4SasdI
+Client Name,singleLineText,Firstname Lastname,fldSqxNOZ9B5PgSab,tblvdy7T9Hv4SasdI
+Client Email,email,client@gmail.com,flddP6a8EG6qTJdIi,tblvdy7T9Hv4SasdI
+Client Type,singleSelect,"BUYER | SELLER",fldSY6vbE1zAhJZqd,tblvdy7T9Hv4SasdI
+Marital Status,singleSelect,"SINGLE | MARRIED | DIVORCED | DIVORCE IN PROGRESS | WIDOWED",fldeK6mjSfxELU0MD,tblvdy7T9Hv4SasdI
+Client Phone,phoneNumber,(555) 555-5555,fldBnh8W6iGW014yY,tblvdy7T9Hv4SasdI

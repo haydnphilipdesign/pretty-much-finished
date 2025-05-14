@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Debbie O'Brien Signature</title>
+  <style>
+    @font-face {
+      font-family: 'Amsterdam Signature';
+      src: url('/AmsterdamSignature-PKO4P.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e0e0e0;
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+      margin: 0;
+    }
+
+    /* Subtle noise texture using a data URI for a repeating pattern */
+    .noise-overlay {
+        /* Base color is set first */
+        background-color: var(--base-color);
+        /* Noise pattern overlay */
+        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAUVBMVEWFhYWDg4N3d3dtbW17e3t1dXWBgYGHh4d5eXlzc3OLi4ubm5uVlZWPj4+NjY19fX2JiYl/f39ra2uRkZGZmZlpaWmXl5dvb29xcXGTk5NnZ2c8TV1mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVDjL7dSxCsAgDAVQW9jbEURBUQXB/3//dt1fTgaDbmnGxckCBKkKqkqoBEp/70IQMUHIyiCC7J7JOf7/q+HiBI+U4UK0fVKoSpA/qff+0KAoSO+9AKY5AAdPhIFGbbK0QG0AAAD//wMAKnM4yCLOKJUAAAAASUVORK5CYII=');
+        /* Blend mode can be used, but simple overlay often works */
+        /* background-blend-mode: overlay; */
+        /* Ensure the noise pattern repeats */
+        background-repeat: repeat;
+        /* Set position relative for potential pseudo-elements if needed later */
+        position: relative;
+    }
+     /* Define base colors using CSS variables */
+    .info-top { --base-color: #1a3d5c; }
+    .info-bottom { --base-color: #d4b886; }
+
+
+    .card-wrapper {
+      max-width: 800px;
+      width: 100%;
+      background-color: #ffffff; /* Fallback */
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      /* Ensure rounded corners */
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: row;
+      /* Added border */
+      border: 2px solid #102a43; /* Slightly darker blue border */
+    }
+
+    .image-section {
+      width: 45%;
+      flex-shrink: 0;
+    }
+
+    .image-section img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .info-section {
+      width: 55%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Applied noise-overlay class */
+    .info-top {
+      /* background-color: #1a3d5c; <- Handled by noise-overlay */
+      color: #d4b886;
+      padding: 20px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-grow: 1;
+    }
+
+    .name-title-group {
+        display: flex;
+        flex-direction: column;
+        flex-shrink: 1;
+        flex-grow: 1;
+        margin-right: 15px;
+    }
+
+
+    .info-top .name {
+      font-family: 'Amsterdam Signature', cursive;
+      font-size: 3.8em;
+      margin: 0 0 5px 0;
+      line-height: 1;
+      font-weight: normal;
+    }
+
+    .info-top .title,
+    .info-top .company {
+        font-family: Arial, sans-serif;
+        font-size: 0.9em;
+        margin: 0 0 3px 0;
+        line-height: 1.2;
+        color: #d4b886;
+        font-weight: normal;
+    }
+    .info-top .company {
+        font-size: 0.8em;
+        margin-bottom: 0;
+    }
+
+    .info-top .logo-image {
+        width: 80px;
+        height: auto;
+        flex-shrink: 0;
+    }
+
+    /* Applied noise-overlay class */
+    .info-bottom {
+      /* background-color: #d4b886; <- Handled by noise-overlay */
+      color: #1a3d5c;
+      padding: 15px 30px;
+      flex-shrink: 0;
+    }
+
+    .info-bottom ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .info-bottom li {
+      margin-bottom: 6px;
+      font-size: 0.9em;
+      font-family: Arial, sans-serif;
+    }
+    .info-bottom li::before {
+        content: "";
+        margin-right: 8px;
+    }
+
+    .info-bottom a {
+      color: #1a3d5c;
+      text-decoration: none;
+    }
+
+    .info-bottom a:hover {
+      text-decoration: underline;
+    }
+
+    /* Basic responsive adjustments */
+    @media (max-width: 600px) {
+        .card-wrapper {
+            flex-direction: column;
+            border-width: 1px; /* Thinner border on mobile */
+        }
+        .image-section,
+        .info-section {
+            width: 100%;
+        }
+        .image-section {
+            max-height: 250px;
+        }
+        .info-top {
+            padding: 15px 20px;
+            align-items: center;
+        }
+        .info-top .name {
+            font-size: 2.8em;
+        }
+        .info-top .logo-image {
+            width: 60px;
+        }
+        .info-bottom {
+            padding: 15px 20px;
+        }
+        .info-bottom li {
+            font-size: 0.85em;
+        }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="card-wrapper">
+    <div class="image-section">
+      <img src="/optimized/debbie.jpg" alt="Debbie O'Brien">
+    </div>
+    <div class="info-section">
+      <!-- Added noise-overlay class -->
+      <div class="info-top noise-overlay">
+        <div class="name-title-group">
+            <h1 class="name">Debbie O'Brien</h1>
+            <p class="title">Transaction Coordinator</p>
+            <p class="company">PA Real Estate Support Services</p>
+        </div>
+        <img src="/logo-sm.png" alt="Company Logo" class="logo-image">
+      </div>
+      <!-- Added noise-overlay class -->
+      <div class="info-bottom noise-overlay">
+        <ul>
+          <li>🕓 Monday–Friday, 9:00AM–5:00PM</li>
+          <li>☎️ Office: 570.588.4637</li>
+          <li>📧 <a href="mailto:debbie@parealestatesupport.com">debbie@parealestatesupport.com</a></li>
+          <li>🌐 <a href="https://parealestatesupport.com" target="_blank">parealestatesupport.com</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

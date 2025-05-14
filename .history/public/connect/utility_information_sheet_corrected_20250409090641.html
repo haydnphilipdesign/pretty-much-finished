@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Utility Information Sheet</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        @page {
+            size: letter;
+            margin: 0.5in;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.2;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            font-size: 10px;
+        }
+        
+        .container {
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 0;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        
+        .header p {
+            margin: 5px 0 0;
+            font-size: 10px;
+        }
+        
+        .property-info {
+            margin-bottom: 15px;
+        }
+        
+        .property-info h2 {
+            margin: 0 0 5px 0;
+            font-size: 12px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 3px;
+        }
+        
+        .property-row {
+            display: flex;
+            margin-bottom: 8px;
+        }
+        
+        .property-label {
+            font-weight: bold;
+            width: 120px;
+            margin-right: 10px;
+        }
+        
+        .property-value {
+            flex: 1;
+            border-bottom: 1px dotted #999;
+            min-height: 14px;
+        }
+        
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        
+        .utility-section {
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            padding: 8px;
+            margin-bottom: 15px;
+            background-color: #f9f9f9;
+        }
+        
+        .utility-section h3 {
+            margin: 0 0 8px 0;
+            font-size: 12px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+        }
+        
+        .checkbox-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .checkbox-list li {
+            margin-bottom: 4px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .checkbox {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border: 1px solid #333;
+            margin-right: 5px;
+            position: relative;
+        }
+        
+        .checkbox-list label {
+            font-size: 10px;
+        }
+        
+        .input-line {
+            display: flex;
+            margin-top: 8px;
+            align-items: center;
+        }
+        
+        .input-label {
+            font-weight: bold;
+            margin-right: 5px;
+            font-size: 10px;
+            min-width: 80px;
+        }
+        
+        .input-field {
+            flex: 1;
+            border-bottom: 1px solid #999;
+            min-height: 14px;
+        }
+        
+        .cost-field {
+            width: 60px;
+            text-align: right;
+            border-bottom: 1px solid #999;
+            min-height: 14px;
+        }
+        
+        .column-2 {
+            column-count: 2;
+            column-gap: 15px;
+        }
+        
+        .column-3 {
+            column-count: 3;
+            column-gap: 15px;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .service-block {
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            padding: 5px;
+        }
+        
+        .service-block h4 {
+            margin: 0 0 5px 0;
+            font-size: 11px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 3px;
+        }
+        
+        .completion-section {
+            margin-top: 15px;
+            border-top: 1px solid #ccc;
+            padding-top: 10px;
+        }
+        
+        .completion-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        
+        .footer-text {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 9px;
+            color: #666;
+        }
+        
+        @media print {
+            body {
+                width: 8.5in;
+                height: 11in;
+            }
+            .container {
+                margin: 0;
+                padding: 0;
+            }
+            .utility-section {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-file-alt"></i> Property Utility Information Sheet</h1>
+            <p>Utility information for home sellers and buyers</p>
+        </div>
+
+        <div class="property-info">
+            <div class="property-row">
+                <div class="property-label"><i class="fas fa-map-marker-alt"></i> Property Address:</div>
+                <div class="property-value"></div>
+            </div>
+        </div>
+
+        <div class="grid-container">
+            <div class="utility-section">
+                <h3><i class="fas fa-bolt"></i> Electric</h3>
+                <ul class="checkbox-list">
+                    <li>
+                        <div class="checkbox"></div>
+                        <label>Met-ED (800-545-7741)</label>
+                    </li>
+                    <li>
+                        <div class="checkbox"></div>
+                        <label>PP&L (800-342-5775)</label>
+                    </li>
+                    <li>
+                        <div class="checkbox"></div>
+                        <label>Other: <span class="input-field"></span></label>
+                    </li>
+                </ul>
+                <div class="input-line">
+                    <div class="input-label">Account #:</div>
+                    <div class="input-field"></div>
+                </div>
+                <div class="input-line">
+                    <div class="input-label">Monthly: $</div>
+                    <div class="cost-field"></div>
+                </div>
+            </div>
+
+            <div class="utility-section">
+                <h3><i class="fas fa-tint"></i> Water</h3>
+                <ul class="checkbox-list">
+                    <li>
+                        <div class="checkbox"></div>
+                        <label>PA American Water Company (800-565-7292)</label>
+                    </li>
+                    <li>
+                        <div class="checkbox"></div>
+                        <label>Easton Suburban Water Comp (610-258-7181)</label>
+                    </li>
+                    <li>
+                        <div class="checkbox"></div>
+                        <label>Municipality</label>
+                    </li>
+                    <li>
+                        <div class="checkbox"></div>
+                        <label>Other: <span class="input-field"></span></label>
+                    </li>
+                    <li>
+                        <div class="checkbox"></div>
+                        <label>On Site Well</label>
+                    </li>
+                </ul>
+                <div class="input-line">
+                    <div class="input-label">Account #:</div>
+                    <div class="input-field"></div>
+                </div>
+                <div class="input-line">
+                    <div class="input-label">Quarterly: $</div>
+                    <div class="cost-field"></div>
+                </div>
+            </div>
+
+            <div class="utility-section">
+                <h3><i class="fas fa-water"></i> Sewer</h3>
+                <ul class="checkbox-list">
+                    <li>
+                        <div class="checkbox"></div>
+                        <label>Northampton County Court House (610-559-3000)</label>
+                    </li>
+                    <li>
+                        <div class="checkbox"></div>
+                        <label>Lehigh County Authority (610-398-1444)</label>
+                    </li>
+                    <li>
+                        <div class="checkbox"></div>
+                        <label>Municipality</label>
+                    </li>
+                    <li>
+                        <div class="checkbox"></div>
+                        <label>Other: <span class="input-field"></span></label>
+                    </li>
+                    <li>
+                        <div class="checkbox"></div>
+                        <label>On-Site Septic</label>
+                    </li>
+                </ul>
+                <div class="input-line">
+                    <div class="input-label">Account #:</div>
+                    <div class="input-field"></div>
+                </div>
+                <div class="input-line">
+                    <div class="input-label">Quarterly: $</div>
+                    <div class="cost-field"></div>
+                </div>
+            </div>
+
+            <div class="utility-section">
+                <h3><i class="fas fa-fire"></i> Gas / Oil / Propane</h3>
+                <ul class="checkbox-list column-2">
+                    <li>
+                        <div class="checkbox"></div>
+                        <label>Suburban Propane (610-759-0474)</label>
+                    </li>
+                    <li>
+                        <div class="checkbox"></div>
+                        <label>UGI (610-866-0951)</label>
+                    </li>
+                    <li>
+                        <div class="checkbox"></div>
+                        <label>Lehigh Fuels (610-266-8990)</label>
+                    </li>
+                    <li>
+                        <div class="checkbox"></div>
+                        <label>Reimer Bros (610-863-4105)</label>
+                    </li>
+                    <li>
+                        <div class="checkbox"></div>
+                        <label>Lessig Oil + Propane (610-863-3835)</label>
+                    </li>
+                    <li>
+                        <div class="checkbox"></div>
+                        <label>AmeriGas (570-424-5901)</label>
+                    </li>
+                    <li>
+                        <div class="checkbox"></div>
+                        <label>Tolinos (610-588-3338)</label>
+                    </li>
+                    <li>
+                        <div class="checkbox"></div>
+                        <label>Fuel Cell (610-759-0143)</label>
+                    </li>
+                    <li>
+                        <div class="checkbox"></div>
+                        <label>Fritch (610-691-1212)</label>
+                    </li>
+                    <li>
+                        <div class="checkbox"></div>
+                        <label>Reichenbach (610-434-7234)</label>
+                    </li>
+                    <li>
+                        <div class="checkbox"></div>
+                        <label>Other: <span class="input-field"></span></label>
+                    </li>
+                </ul>
+                <div class="input-line">
+                    <div class="input-label">Account #:</div>
+                    <div class="input-field"></div>
+                </div>
+                <div class="input-line">
+                    <div class="input-label">Monthly: $</div>
+                    <div class="cost-field"></div>
+                </div>
+            </div>
+
+            <div class="utility-section">
+                <h3><i class="fas fa-tv"></i> Cable TV</h3>
+                <ul class="checkbox-list">
+                    <li>
+                        <div class="checkbox"></div>
+                        <label>Blue Ridge Cable (570-421-0780)</label>
+                    </li>
+                    <li>
+                        <div class="checkbox"></div>
+                        <label>Direct TV (888-679-8671)</label>
+                    </li>
+                    <li>
+                        <div class="checkbox"></div>
+                        <label>Dish Network (610-381-6315)</label>
+                    </li>
+                    <li>
+                        <div class="checkbox"></div>
+                        <label>RCN (800-746-4726)</label>
+                    </li>
+                    <li>
+                        <div class="checkbox"></div>
+                        <label>Service Electric (800-232-9100)</label>
+                    </li>
+                    <li>
+                        <div class="checkbox"></div>
+                        <label>Other: <span class="input-field"></span></label>
+                    </li>
+                </ul>
+                <div class="input-line">
+                    <div class="input-label">Account #:</div>
+                    <div class="input-field"></div>
+                </div>
+                <div class="input-line">
+                    <div class="input-label">Monthly: $</div>
+                    <div class="cost-field"></div>
+                </div>
+            </div>
+
+            <div class="utility-section">
+                <h3><i class="fas fa-wifi"></i> Internet/Phone</h3>
+                <ul class="checkbox-list">
+                    <li>
+                        <div class="checkbox"></div>
+                        <label>RCN (800-746-4726)</label>
+                    </li>
+                    <li>
+                        <div class="checkbox"></div>
+                        <label>Service Electric (610-841-4100)</label>
+                    </li>
+                    <li>
+                        <div class="checkbox"></div>
+                        <label>Verizon (800-660-2215)</label>
+                    </li>
+                    <li>
+                        <div class="checkbox"></div>
+                        <label>Blue Ridge Cable (570-421-0780)</label>
+                    </li>
+                    <li>
+                        <div class="checkbox"></div>
+                        <label>AT&T (800-222-0300)</label>
+                    </li>
+                    <li>
+                        <div class="checkbox"></div>
+                        <label>Other: <span class="input-field"></span></label>
+                    </li>
+                </ul>
+                <div class="input-line">
+                    <div class="input-label">Account #:</div>
+                    <div class="input-field"></div>
+                </div>
+                <div class="input-line">
+                    <div class="input-label">Monthly: $</div>
+                    <div class="cost-field"></div>
+                </div>
+            </div>
+
+            <div class="utility-section">
+                <h3><i class="fas fa-bell"></i> Alarm</h3>
+                <ul class="checkbox-list">
+                    <li>
+                        <div class="checkbox"></div>
+                        <label>ADT (888-281-1765)</label>
+                    </li>
+                    <li>
+                        <div class="checkbox"></div>
+                        <label>Fox Brothers Alarm (610-252-7880)</label>
+                    </li>
+                    <li>
+                        <div class="checkbox"></div>
+                        <label>Other: <span class="input-field"></span></label>
+                    </li>
+                    <li>
+                        <div class="checkbox"></div>
+                        <label>N/A</label>
+                    </li>
+                </ul>
+                <div class="input-line">
+                    <div class="input-label">Account #:</div>
+                    <div class="input-field"></div>
+                </div>
+                <div class="input-line">
+                    <div class="input-label">Monthly: $</div>
+                    <div class="cost-field"></div>
+                </div>
+            </div>
+
+            <div class="utility-section">
+                <h3><i class="fas fa-building"></i> HOA</h3>
+                <div class="input-line">
+                    <div class="input-label">Company:</div>
+                    <div class="input-field"></div>
+                </div>
+                <div class="input-line">
+                    <div class="input-label">Phone:</div>
+                    <div class="input-field"></div>
+                </div>
+                <div class="input-line">
+                    <div class="input-label">Website:</div>
+                    <div class="input-field"></div>
+                </div>
+                <div class="input-line" style="align-items: flex-start;">
+                    <div class="input-label">Dues: $</div>
+                    <div class="cost-field"></div>
+                    <div style="margin-left: 10px; display: flex; align-items: center; gap: 5px; font-size: 9px;">
+                        <div class="checkbox"></div> Monthly
+                        <div class="checkbox"></div> Quarterly
+                        <div class="checkbox"></div> Yearly
+                    </div>
+                </div>
+            </div>
+
+            <div class="utility-section">
+                <h3><i class="fas fa-trash"></i> Trash</h3>
+                <ul class="checkbox-list column-2">
+                    <li>
+                        <div class="checkbox"></div>
+                        <label>Allied Waste Services (215-723-0400)</label>
+                    </li>
+                    <li>
+                        <div class="checkbox"></div>
+                        <label>Mascaro Sanitation (800-333-4624)</label>
+                    </li>
+                    <li>
+                        <div class="checkbox"></div>
+                        <label>McAuliffe (610-767-3152)</label>
+                    </li>
+                    <li>
+                        <div class="checkbox"></div>
+                        <label>Reiss Brothers (610-432-7574)</label>
+                    </li>
+                    <li>
+                        <div class="checkbox"></div>
+                        <label>Township</label>
+                    </li>
+                    <li>
+                        <div class="checkbox"></div>
+                        <label>Waste Management (800-621-2100)</label>
+                    </li>
+                    <li>
+                        <div class="checkbox"></div>
+                        <label>Strohl's (610-837-9929)</label>
+                    </li>
+                    <li>
+                        <div class="checkbox"></div>
+                        <label>Swint (610-253-8535)</label>
+                    </li>
+                    <li>
+                        <div class="checkbox"></div>
+                        <label>Other: <span class="input-field"></span></label>
+                    </li>
+                </ul>
+                <div class="input-line">
+                    <div class="input-label">Account #:</div>
+                    <div class="input-field"></div>
+                </div>
+                <div class="input-line">
+                    <div class="input-label">Monthly: $</div>
+                    <div class="cost-field"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="utility-section">
+            <h3><i class="fas fa-plus-circle"></i> Additional Services</h3>
+            <div class="services-grid">
+                <div class="service-block">
+                    <h4><i class="fas fa-leaf"></i> Lawn Care</h4>
+                    <div class="input-line">
+                        <div class="input-label">Company:</div>
+                        <div class="input-field"></div>
+                    </div>
+                    <div class="input-line">
+                        <div class="input-label">Phone:</div>
+                        <div class="input-field"></div>
+                    </div>
+                    <div class="input-line">
+                        <div class="input-label">Monthly: $</div>
+                        <div class="cost-field"></div>
+                    </div>
+                </div>
+
+                <div class="service-block">
+                    <h4><i class="fas fa-swimming-pool"></i> Pool Care</h4>
+                    <div class="input-line">
+                        <div class="input-label">Company:</div>
+                        <div class="input-field"></div>
+                    </div>
+                    <div class="input-line">
+                        <div class="input-label">Phone:</div>
+                        <div class="input-field"></div>
+                    </div>
+                    <div class="input-line">
+                        <div class="input-label">Monthly: $</div>
+                        <div class="cost-field"></div>
+                    </div>
+                </div>
+
+                <div class="service-block">
+                    <h4><i class="fas fa-snowflake"></i> Snow Removal</h4>
+                    <div class="input-line">
+                        <div class="input-label">Company:</div>
+                        <div class="input-field"></div>
+                    </div>
+                    <div class="input-line">
+                        <div class="input-label">Phone:</div>
+                        <div class="input-field"></div>
+                    </div>
+                    <div class="input-line">
+                        <div class="input-label">Monthly: $</div>
+                        <div class="cost-field"></div>
+                    </div>
+                </div>
+
+                <div class="service-block">
+                    <h4><i class="fas fa-shield-alt"></i> Pest Control</h4>
+                    <div class="input-line">
+                        <div class="input-label">Company:</div>
+                        <div class="input-field"></div>
+                    </div>
+                    <div class="input-line">
+                        <div class="input-label">Phone:</div>
+                        <div class="input-field"></div>
+                    </div>
+                    <div class="input-line">
+                        <div class="input-label">Monthly: $</div>
+                        <div class="cost-field"></div>
+                    </div>
+                </div>
+
+                <div class="service-block">
+                    <h4><i class="fas fa-building"></i> HOA Management</h4>
+                    <div class="input-line">
+                        <div class="input-label">Company:</div>
+                        <div class="input-field"></div>
+                    </div>
+                    <div class="input-line">
+                        <div class="input-label">Phone:</div>
+                        <div class="input-field"></div>
+                    </div>
+                    <div class="input-line">
+                        <div class="input-label">Monthly: $</div>
+                        <div class="cost-field"></div>
+                    </div>
+                </div>
+
+                <div class="service-block">
+                    <h4><i class="fas fa-ellipsis-h"></i> Other</h4>
+                    <div class="input-line">
+                        <div class="input-label">Company:</div>
+                        <div class="input-field"></div>
+                    </div>
+                    <div class="input-line">
+                        <div class="input-label">Phone:</div>
+                        <div class="input-field"></div>
+                    </div>
+                    <div class="input-line">
+                        <div class="input-label">Monthly: $</div>
+                        <div class="cost-field"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="utility-section completion-section">
+            <h3><i class="fas fa-clipboard-check"></i> Completion Information</h3>
+            <div class="completion-grid">
+                <div>
+                    <div class="input-line">
+                        <div class="input-label">Completed By:</div>
+                        <div class="input-field"></div>
+                    </div>
+                    <div class="input-line">
+                        <div class="input-label">Completion Date:</div>
+                        <div class="input-field"></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="input-line">
+                        <div class="input-label">Account Manager:</div>
+                        <div class="input-field"></div>
+                    </div>
+                    <div class="input-line">
+                        <div class="input-label">Realtor:</div>
+                        <div class="input-field"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-text">
+                <p>PA Real Estate Support Services, LLC • (215) 345-6789 • support@paress.com • www.paresupport.com</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simple print functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            // Add print button if needed
+            const printButton = document.createElement('button');
+            printButton.innerHTML = '<i class="fas fa-print"></i> Print Form';
+            printButton.style.position = 'fixed';
+            printButton.style.bottom = '20px';
+            printButton.style.right = '20px';
+            printButton.style.padding = '10px 15px';
+            printButton.style.backgroundColor = '#4a90e2';
+            printButton.style.color = 'white';
+            printButton.style.border = 'none';
+            printButton.style.borderRadius = '5px';
+            printButton.style.cursor = 'pointer';
+            printButton.style.fontSize = '14px';
+            printButton.style.fontWeight = 'bold';
+            printButton.style.boxShadow = '0 2px 5px rgba(0,0,0,0.2)';
+
+            printButton.addEventListener('click', () => {
+                window.print();
+            });
+
+            document.body.appendChild(printButton);
+
+            // Hide print button when printing
+            const mediaQueryList = window.matchMedia('print');
+            mediaQueryList.addListener(function(mql) {
+                if (mql.matches) {
+                    printButton.style.display = 'none';
+                } else {
+                    printButton.style.display = 'block';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test PDF Modules</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.5;
+        }
+        
+        button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        
+        pre {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+        
+        .error {
+            color: red;
+        }
+        
+        .success {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Test PDF Modules</h1>
+
+    <button id="testButton">Test PDF Positions Module</button>
+
+    <div id="results">
+        <p>Click the button above to test.</p>
+    </div>
+
+    <script>
+        document.getElementById('testButton').addEventListener('click', async() => {
+            const resultsElement = document.getElementById('results');
+            resultsElement.innerHTML = '<p>Testing, please wait...</p>';
+
+            try {
+                const response = await fetch('/api/test-pdfPositions');
+                const data = await response.json();
+
+                let resultHtml = '<h2>Test Results</h2>';
+                resultHtml += `<p class="${data.success ? 'success' : 'error'}">Overall test ${data.success ? 'succeeded' : 'failed'}</p>`;
+                resultHtml += `<p>CJS file exists: ${data.cjsExists ? 'Yes' : 'No'}</p>`;
+                resultHtml += `<p>JS file exists: ${data.jsExists ? 'Yes' : 'No'}</p>`;
+
+                if (data.importError) {
+                    resultHtml += `<p class="error">Import error: ${data.importError}</p>`;
+                } else {
+                    resultHtml += `<p class="success">Module imported successfully</p>`;
+                }
+
+                resultHtml += `<p>Current working directory: ${data.cwd}</p>`;
+                resultHtml += `<p>Module directory: ${data.dirname}</p>`;
+
+                if (data.moduleKeys && data.moduleKeys.length > 0) {
+                    resultHtml += `<p>Module exports: ${data.moduleKeys.join(', ')}</p>`;
+                }
+
+                resultHtml += '<h3>Full Response</h3>';
+                resultHtml += `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+
+                resultsElement.innerHTML = resultHtml;
+            } catch (error) {
+                resultsElement.innerHTML = `<p class="error">Error testing endpoint: ${error.message}</p>`;
+            }
+        });
+    </script>
+</body>
+
+</html>

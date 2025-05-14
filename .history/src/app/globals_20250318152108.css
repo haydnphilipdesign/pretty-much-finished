@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes progress {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-progress {
+  animation: progress 2s ease-in-out infinite;
+}
+
+/* Add these focus styles to your globals.css */
+:focus-visible {
+  outline: 2px solid #3b82f6; /* blue-500 */
+  outline-offset: 2px;
+  border-radius: 0.25rem;
+}
+
+/* Add smooth focus transitions */
+button, a, input, select, textarea {
+  transition: outline-color 0.2s ease-in-out;
+}
+
+// ... rest of existing styles ... 

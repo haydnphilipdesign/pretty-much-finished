@@ -1,0 +1,89 @@
+/**
+ * Header Navigation Text Contrast Fix - May 2025
+ * 
+ * This file contains specific fixes for the header navigation text
+ * to ensure it's readable regardless of background.
+ */
+
+/* Header navigation text styling with high specificity */
+header nav a.relative,
+header nav a.relative:link,
+header nav a.relative:visited,
+header nav a[href="/"]:not([href*="agent-portal"]),
+header nav a[href="/about"]:not([href*="agent-portal"]),
+header nav a[href="/services"]:not([href*="agent-portal"]),
+header nav a[href="/work-with-me"]:not([href*="agent-portal"]) {
+  color: white !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8) !important;
+  font-weight: 500 !important;
+}
+
+/* Hover states for nav links */
+header nav a.relative:hover,
+header nav a[href="/"]:hover:not([href*="agent-portal"]),
+header nav a[href="/about"]:hover:not([href*="agent-portal"]),
+header nav a[href="/services"]:hover:not([href*="agent-portal"]),
+header nav a[href="/work-with-me"]:hover:not([href*="agent-portal"]) {
+  color: white !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9) !important;
+}
+
+/* Active state for nav links */
+header nav a.relative[class*="text-white"],
+header nav a[href="/"]:active:not([href*="agent-portal"]),
+header nav a[href="/about"]:active:not([href*="agent-portal"]),
+header nav a[href="/services"]:active:not([href*="agent-portal"]),
+header nav a[href="/work-with-me"]:active:not([href*="agent-portal"]) {
+  color: white !important;
+  font-weight: 600 !important;
+}
+
+/* Agent Portal button specifically */
+header nav a[href="/agent-portal"],
+header nav a[href*="agent-portal"],
+a[href*="agent-portal"] {
+  background-color: #f59e0b !important; /* amber-500 */
+  color: #111827 !important; /* gray-900 */
+  text-shadow: none !important;
+  font-weight: 600 !important;
+}
+
+header nav a[href="/agent-portal"]:hover,
+header nav a[href*="agent-portal"]:hover,
+a[href*="agent-portal"]:hover {
+  background-color: #d97706 !important; /* amber-600 */
+  color: #111827 !important; /* gray-900 */
+}
+
+/* Mobile menu specificity enhancements */
+header .absolute.top-20 nav a {
+  color: white !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Mobile menu agent portal button */
+header .absolute.top-20 nav a[href="/agent-portal"],
+header .absolute.top-20 nav a[href*="agent-portal"] {
+  background-color: #f59e0b !important; /* amber-500 */
+  color: #111827 !important; /* gray-900 */
+  text-shadow: none !important;
+}
+
+/* Force white text in mobile menu items */
+header button + div nav a,
+.overflow-hidden a[href] {
+  color: white !important;
+}
+
+/* Force amber background for Agent Portal button */
+a.bg-amber-500, 
+a.hover\:bg-amber-600:hover,
+button.bg-amber-500,
+button.hover\:bg-amber-600:hover {
+  background-color: #f59e0b !important; /* amber-500 */
+}
+
+a.hover\:bg-amber-600:hover,
+button.hover\:bg-amber-600:hover {
+  background-color: #d97706 !important; /* amber-600 */
+}

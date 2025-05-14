@@ -1,0 +1,71 @@
+/**
+ * Brand Cream Color System
+ * Implements #e9c77b as the primary accent color
+ */
+
+
+/* Navigation text colors */
+
+.text-brand-cream {
+    color: #e9c77b !important;
+}
+
+.bg-brand-cream {
+    background-color: #e9c77b !important;
+}
+
+.border-brand-cream {
+    border-color: #e9c77b !important;
+}
+
+
+/* Override original gold colors */
+
+.text-brand-gold {
+    color: #e9c77b !important;
+}
+
+.bg-brand-gold {
+    background-color: #e9c77b !important;
+}
+
+.border-brand-gold {
+    border-color: #e9c77b !important;
+}
+
+
+/* Navigation links */
+
+header nav a {
+    color: #e9c77b !important;
+}
+
+header nav a:hover {
+    color: white !important;
+}
+
+header.scrolled nav a:hover {
+    color: #e9c77b !important;
+}
+
+
+/* Agent Portal button */
+
+a[href="/agent-portal"] {
+    background-color: #e9c77b !important;
+    color: #0F1C2E !important;
+}
+
+
+/* Make accent elements use cream */
+
+.accent-element {
+    color: #e9c77b !important;
+}
+
+
+/* Statistics section */
+
+.statistics-section span {
+    color: #e9c77b !important;
+}

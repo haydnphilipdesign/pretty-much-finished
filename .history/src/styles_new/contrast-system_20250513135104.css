@@ -1,0 +1,250 @@
+/* Automatic Contrast System */
+
+
+/* Force dark text on light backgrounds */
+
+.bg-white,
+.bg-gray-50,
+.bg-gray-100,
+.bg-blue-50,
+.bg-blue-100,
+.bg-yellow-50,
+.bg-yellow-100,
+.service-card,
+.feature-card,
+.card,
+[class*="card-white"] {
+    @apply text-gray-900 !important;
+}
+
+
+/* Force white text on dark backgrounds */
+
+.bg-blue-600,
+.bg-blue-700,
+.bg-blue-800,
+.bg-blue-900,
+.bg-gray-600,
+.bg-gray-700,
+.bg-gray-800,
+.bg-gray-900,
+.bg-slate-900,
+.bg-black,
+.bg-brand-blue,
+[class*="card-dark"],
+[class*="card-navy"],
+.dark-section {
+    @apply text-white !important;
+}
+
+
+/* Ensure paragraphs and text elements have proper contrast */
+
+section p,
+section li,
+section span,
+.card p,
+.card li,
+.card span {
+    @apply text-gray-700;
+}
+
+
+/* Card-specific contrast rules */
+
+div[class*="card"]:not([class*="dark"]):not([class*="navy"]):not([class*="blue"]) {
+    @apply text-gray-900;
+}
+
+
+/* Service card specific contrast */
+
+.service-card ul li,
+.service-card p,
+.service-card .service-description,
+div[id*="service"] ul li,
+div[id*="service"] p,
+div[class*="service"] ul li,
+div[class*="service"] p {
+    @apply text-gray-800 !important;
+}
+
+
+/* Navigation contrast fixes */
+
+header nav a,
+nav a,
+.header-nav a,
+.main-nav a,
+.navbar a,
+.navigation a {
+    @apply text-gray-800 font-medium !important;
+}
+
+
+/* Navigation hover states */
+
+header nav a:hover,
+nav a:hover,
+.header-nav a:hover,
+.main-nav a:hover,
+.navbar a:hover,
+.navigation a:hover,
+header nav a.active,
+nav a.active,
+.header-nav a.active,
+.main-nav a.active,
+.navbar a.active,
+.navigation a.active {
+    @apply text-brand-blue font-bold !important;
+}
+
+
+/* Section heading contrast */
+
+section h1,
+section h2,
+section h3 {
+    @apply text-gray-900 font-bold !important;
+}
+
+
+/* Dark background heading contrast */
+
+.bg-blue-600 h1,
+.bg-blue-700 h1,
+.bg-blue-800 h1,
+.bg-blue-900 h1,
+.bg-gray-800 h1,
+.bg-gray-900 h1,
+.bg-brand-blue h1,
+.bg-slate-900 h1,
+.bg-black h1,
+.bg-blue-600 h2,
+.bg-blue-700 h2,
+.bg-blue-800 h2,
+.bg-blue-900 h2,
+.bg-gray-800 h2,
+.bg-gray-900 h2,
+.bg-brand-blue h2,
+.bg-slate-900 h2,
+.bg-black h2,
+.bg-blue-600 h3,
+.bg-blue-700 h3,
+.bg-blue-800 h3,
+.bg-blue-900 h3,
+.bg-gray-800 h3,
+.bg-gray-900 h3,
+.bg-brand-blue h3,
+.bg-slate-900 h3,
+.bg-black h3 {
+    @apply text-white font-bold !important;
+}
+
+
+/* Button contrast */
+
+.btn-primary,
+button[class*="primary"],
+a[class*="primary"] {
+    @apply bg-brand-blue text-white !important;
+}
+
+.btn-secondary,
+button[class*="secondary"],
+a[class*="secondary"] {
+    @apply bg-gray-100 text-gray-900 !important;
+}
+
+
+/* Footer contrast */
+
+footer,
+footer p,
+footer div,
+footer span {
+    @apply text-gray-200 !important;
+}
+
+footer a {
+    @apply text-white font-medium !important;
+}
+
+footer a:hover {
+    @apply text-gray-200 underline !important;
+}
+
+
+/* Icon contrast */
+
+svg,
+svg path,
+svg circle,
+i[class*="icon"],
+span[class*="icon"] {
+    @apply text-current !important;
+}
+
+
+/* List contrast */
+
+.list-disc li,
+.list-decimal li {
+    @apply text-gray-900;
+}
+
+ul.text-white li,
+ul.text-gray-100 li,
+ul.text-gray-200 li {
+    @apply text-inherit;
+}
+
+
+/* Fix amber/gold/yellow text contrast */
+
+.text-amber-500,
+.text-amber-400,
+.text-amber-300,
+.text-yellow-500,
+.text-yellow-400,
+.text-yellow-300,
+.text-brand-gold {
+    color: #854d0e !important;
+}
+
+
+/* Fix amber/gold/yellow background contrast */
+
+.bg-amber-50 *,
+.bg-amber-100 *,
+.bg-amber-200 *,
+.bg-yellow-50 *,
+.bg-yellow-100 *,
+.bg-yellow-200 * {
+    @apply text-gray-900 !important;
+}
+
+
+/* Form element contrast */
+
+input,
+select,
+textarea {
+    @apply text-gray-900 placeholder-gray-500;
+}
+
+label {
+    @apply text-gray-700;
+}
+
+
+/* Dark background form adjustments */
+
+.bg-blue-800 label,
+.bg-blue-900 label,
+.bg-gray-800 label,
+.bg-gray-900 label,
+.bg-brand-blue label,
+.bg-black label {
+    @apply text-white;
+}

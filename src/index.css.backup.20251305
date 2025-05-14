@@ -1,0 +1,39 @@
+/* Tailwind directives first */ 
+@tailwind base; 
+@tailwind components; 
+ 
+/* Import custom styles */ 
+@import './styles/glass-cards-improved.css'; 
+@import './styles/enhanced-text-contrast.css'; 
+@import './styles/contrast-variables.css'; 
+@import './styles/design-system.css'; 
+@import './styles/minimal-contrast.css'; 
+@import './styles/scrollbar-fix.css'; 
+@import './styles/transition-fixes.css'; 
+@import './styles/services-page-fixes.css'; 
+@import './styles/home-page-fixes.css'; 
+@import './styles/statistics-cards-fix.css'; 
+ 
+/* Tailwind utilities last */ 
+@tailwind utilities; 
+Applying Standard CSS Import approach...
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap'
+ 
+/* Import enhanced glass card and contrast fixes first */ 
+@import './styles/glass-cards-improved.css'; 
+@import './styles/enhanced-text-contrast.css'; 
+ 
+/* Import other essential styles */ 
+@import './styles/contrast-variables.css'; 
+@import './styles/design-system.css'; 
+@import './styles/minimal-contrast.css'; 
+@import './styles/scrollbar-fix.css'; 
+@import './styles/transition-fixes.css'; 
+@import './styles/services-page-fixes.css'; 
+@import './styles/home-page-fixes.css'; 
+@import './styles/statistics-cards-fix.css'; 
+ 
+/* Tailwind directives */ 
+@tailwind base; 
+@tailwind components; 
+@tailwind utilities; 

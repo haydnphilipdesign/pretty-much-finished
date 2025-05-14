@@ -1,0 +1,4 @@
+{
+    "editor.experimental.asyncTokenization": false,
+    "typescript.tsserver.web.projectWideIntellisense.enabled": false
+}

@@ -1,0 +1,9 @@
+{
+  "name": "pa-real-estate-support-services-api",
+  "version": "1.0.0",
+  "description": "API functions for PA Real Estate Support Services",
+  "dependencies": {
+    "pdf-lib": "^1.17.1",
+    "nodemailer": "^6.9.0"
+  }
+}

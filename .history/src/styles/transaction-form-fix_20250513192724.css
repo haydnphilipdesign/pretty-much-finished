@@ -1,0 +1,288 @@
+/**
+ * Transaction Form Transparency Fix
+ *
+ * This file fixes transparency issues in the transaction form
+ * by making form fields, buttons, and dropdowns fully opaque for better readability.
+ *
+ * This CSS uses !important to override any existing styles that might be causing
+ * transparency issues in the transaction form.
+ */
+
+
+/* ==== GLOBAL FORM CONTAINER FIX ==== */
+
+
+/* Ensure the form container has a solid background */
+
+.transaction-form-container,
+.glass-card-navy .transaction-form-container,
+.glass-card .transaction-form-container,
+.glass-card-blue .transaction-form-container,
+.glass-card-dark .transaction-form-container {
+    background-color: white !important;
+    opacity: 1 !important;
+}
+
+
+/* ==== FORM FIELDS FIX ==== */
+
+
+/* Make input fields, selects, and textareas fully opaque with good contrast */
+
+.transaction-form-container input,
+.transaction-form-container select,
+.transaction-form-container textarea,
+.transaction-form-container [data-radix-select-trigger],
+.glass-card-navy .transaction-form-container input,
+.glass-card-navy .transaction-form-container select,
+.glass-card-navy .transaction-form-container textarea,
+.glass-card-navy .transaction-form-container [data-radix-select-trigger] {
+    background-color: white !important;
+    border: 1px solid #d1d5db !important;
+    /* gray-300 */
+    color: #1e3a8a !important;
+    /* dark blue text */
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+    opacity: 1 !important;
+}
+
+
+/* Fix placeholder text color for better readability */
+
+.transaction-form-container input::placeholder,
+.transaction-form-container textarea::placeholder,
+.glass-card-navy .transaction-form-container input::placeholder,
+.glass-card-navy .transaction-form-container textarea::placeholder {
+    color: #6b7280 !important;
+    /* gray-500 */
+    opacity: 1 !important;
+}
+
+
+/* Fix focus states */
+
+.transaction-form-container input:focus,
+.transaction-form-container select:focus,
+.transaction-form-container textarea:focus,
+.transaction-form-container [data-radix-select-trigger]:focus,
+.glass-card-navy .transaction-form-container input:focus,
+.glass-card-navy .transaction-form-container select:focus,
+.glass-card-navy .transaction-form-container textarea:focus,
+.glass-card-navy .transaction-form-container [data-radix-select-trigger]:focus {
+    border-color: #e9c77b !important;
+    /* gold accent color */
+    box-shadow: 0 0 0 3px rgba(233, 199, 123, 0.3) !important;
+    outline: none !important;
+}
+
+
+/* ==== DROPDOWN MENUS FIX ==== */
+
+
+/* Fix dropdown menus to be fully opaque */
+
+.transaction-form-container [role="listbox"],
+.transaction-form-container [data-radix-select-viewport],
+.transaction-form-container [data-radix-popper-content-wrapper],
+.glass-card-navy .transaction-form-container [role="listbox"],
+.glass-card-navy .transaction-form-container [data-radix-select-viewport],
+.glass-card-navy .transaction-form-container [data-radix-popper-content-wrapper] {
+    background-color: white !important;
+    border: 1px solid #d1d5db !important;
+    /* gray-300 */
+    color: #1e3a8a !important;
+    /* dark blue text */
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+    opacity: 1 !important;
+}
+
+
+/* Fix dropdown items */
+
+.transaction-form-container [role="option"],
+.glass-card-navy .transaction-form-container [role="option"] {
+    color: #1e3a8a !important;
+    /* dark blue text */
+    background-color: white !important;
+    opacity: 1 !important;
+}
+
+
+/* Fix dropdown item hover/focus state */
+
+.transaction-form-container [role="option"]:hover,
+.transaction-form-container [role="option"][data-highlighted="true"],
+.transaction-form-container [role="option"]:focus,
+.transaction-form-container [role="option"][data-state="checked"],
+.glass-card-navy .transaction-form-container [role="option"]:hover,
+.glass-card-navy .transaction-form-container [role="option"][data-highlighted="true"],
+.glass-card-navy .transaction-form-container [role="option"]:focus,
+.glass-card-navy .transaction-form-container [role="option"][data-state="checked"] {
+    background-color: #e9c77b !important;
+    /* gold accent color */
+    color: #1e3a8a !important;
+    /* dark blue text */
+}
+
+
+/* ==== BUTTONS FIX ==== */
+
+
+/* Fix primary buttons */
+
+.transaction-form-container .btn-primary,
+.transaction-form-container button[type="submit"],
+.transaction-form-container .primary-button,
+.glass-card-navy .transaction-form-container .btn-primary,
+.glass-card-navy .transaction-form-container button[type="submit"],
+.glass-card-navy .transaction-form-container .primary-button {
+    background-color: #e9c77b !important;
+    /* gold accent color */
+    color: #1e3a8a !important;
+    /* dark blue text */
+    border: 1px solid #e9c77b !important;
+    font-weight: 600 !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    opacity: 1 !important;
+}
+
+
+/* Fix secondary buttons */
+
+.transaction-form-container .btn-secondary,
+.transaction-form-container .secondary-button,
+.glass-card-navy .transaction-form-container .btn-secondary,
+.glass-card-navy .transaction-form-container .secondary-button {
+    background-color: white !important;
+    color: #1e3a8a !important;
+    /* dark blue text */
+    border: 1px solid #d1d5db !important;
+    /* gray-300 */
+    font-weight: 500 !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    opacity: 1 !important;
+}
+
+
+/* Fix button hover states */
+
+.transaction-form-container .btn-primary:hover,
+.transaction-form-container button[type="submit"]:hover,
+.transaction-form-container .primary-button:hover,
+.glass-card-navy .transaction-form-container .btn-primary:hover,
+.glass-card-navy .transaction-form-container button[type="submit"]:hover,
+.glass-card-navy .transaction-form-container .primary-button:hover {
+    background-color: #f0d28e !important;
+    /* lighter gold */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+
+/* ==== LABELS FIX ==== */
+
+
+/* Fix labels for better readability */
+
+.transaction-form-container label,
+.glass-card-navy .transaction-form-container label {
+    color: #1e3a8a !important;
+    /* dark blue text */
+    font-weight: 500 !important;
+    opacity: 1 !important;
+}
+
+
+/* ==== CARD BACKGROUNDS FIX ==== */
+
+
+/* Fix card backgrounds to be opaque */
+
+.transaction-form-container .card,
+.transaction-form-container [class*="glass-effect"],
+.transaction-form-container [class*="glass-card"],
+.glass-card-navy .transaction-form-container .card,
+.glass-card-navy .transaction-form-container [class*="glass-effect"],
+.glass-card-navy .transaction-form-container [class*="glass-card"] {
+    background-color: white !important;
+    border: 1px solid #e5e7eb !important;
+    /* gray-200 */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    opacity: 1 !important;
+}
+
+
+/* Fix headings in cards */
+
+.transaction-form-container .card h1,
+.transaction-form-container .card h2,
+.transaction-form-container .card h3,
+.transaction-form-container .card h4,
+.transaction-form-container .card h5,
+.transaction-form-container .card h6,
+.transaction-form-container [class*="glass-card"] h1,
+.transaction-form-container [class*="glass-card"] h2,
+.transaction-form-container [class*="glass-card"] h3,
+.transaction-form-container [class*="glass-card"] h4,
+.transaction-form-container [class*="glass-card"] h5,
+.transaction-form-container [class*="glass-card"] h6 {
+    color: #1e3a8a !important;
+    /* dark blue text */
+    text-shadow: none !important;
+    opacity: 1 !important;
+}
+
+
+/* Fix text in cards */
+
+.transaction-form-container .card p,
+.transaction-form-container [class*="glass-card"] p,
+.transaction-form-container .card span,
+.transaction-form-container [class*="glass-card"] span,
+.transaction-form-container .card div,
+.transaction-form-container [class*="glass-card"] div {
+    color: #1f2937 !important;
+    /* gray-800 */
+    opacity: 1 !important;
+}
+
+
+/* ==== ADDITIONAL UI COMPONENTS FIX ==== */
+
+
+/* Fix any other UI components that might be transparent */
+
+.transaction-form-container .radix-select,
+.transaction-form-container .select-container,
+.transaction-form-container .dropdown,
+.transaction-form-container .dropdown-menu,
+.transaction-form-container .menu,
+.transaction-form-container .popover,
+.transaction-form-container .tooltip,
+.transaction-form-container .dialog,
+.transaction-form-container .modal,
+.transaction-form-container .overlay,
+.transaction-form-container .panel,
+.transaction-form-container .accordion,
+.transaction-form-container .tabs,
+.transaction-form-container .tab-panel,
+.transaction-form-container .combobox,
+.transaction-form-container .listbox,
+.transaction-form-container .menu-item,
+.transaction-form-container .option {
+    background-color: white !important;
+    color: #1e3a8a !important;
+    /* dark blue text */
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    opacity: 1 !important;
+}

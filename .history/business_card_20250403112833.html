@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Debbie O'Brien Signature</title>
+  <style>
+    @font-face {
+      font-family: 'Amsterdam Signature';
+      src: url('AmsterdamSignature-PKO4P.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e0e0e0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 5px;
+      margin: 0;
+      min-height: 100vh;
+    }
+
+    .card-wrapper {
+      width: 250px;
+      height: 125px;
+      background-color: #ffffff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border-radius: 3px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: row;
+    }
+
+    .image-section {
+      width: 30%;
+      flex-shrink: 0;
+    }
+
+    .image-section img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .info-section {
+      width: 70%;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .info-top {
+      background-color: #1a3d5c;
+      color: #d4b886;
+      padding: 5px 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center; /* Center items vertically */
+      flex: 1.3;
+    }
+
+    .name-title-group {
+        display: flex;
+        flex-direction: column;
+        flex-shrink: 1;
+        flex-grow: 1;
+        margin-right: 5px;
+    }
+
+    .info-top .name {
+      font-family: 'Amsterdam Signature', cursive;
+      font-size: 2.2em;
+      margin: 0em; /* Reduced size to fit */
+      margin: 0 0 1px 0;
+      line-height: 0.9;
+      font-weight: normal;
+    }
+
+    .info-top .title,
+    .info-top .company {
+        font-family: Arial, sans-serif;
+        font-size: 0.55em;
+        margin: 0;
+        line-height: 1.1;
+        color: #d4b886;
+        font-weight: normal;
+        padding-top: 1px; /* Push down a little */
+    }
+
+    .info-top .company {
+        font-size: 0.5em;
+        margin-bottom: 0;
+    }
+
+    .info-top .logo-image {
+        width: 50px;
+        height: auto;
+        flex-shrink: 0;
+        margin: auto 0; /* Center vertically */
+    }
+
+    .info-bottom {
+      background-color: #d4b886;
+      color: #1a3d5c;
+      padding: 3px 8px;
+      flex: 0.7;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .info-bottom ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .info-bottom li {
+      margin-bottom: 1px;
+      font-size: 0.5em;
+      font-family: Arial, sans-serif;
+      font-weight: 900; /* Extra bold for better readability */
+      letter-spacing: 0.02em; /* Slightly increase letter spacing for readability */
+      white-space: nowrap; /* Prevent line breaks within list items */
+      display: flex;
+      align-items: center;
+    }
+
+    .info-bottom li::before {
+        display: inline-block;
+        margin-right: 4px;
+        flex-shrink: 0;
+    }
+
+    .info-bottom a {
+      color: #1a3d5c;
+      text-decoration: none;
+    }
+
+    .info-bottom a:hover {
+      text-decoration: underline;
+    }
+
+    /* Remove media query as we're optimizing for a specific size */
+  </style>
+</head>
+<body>
+  <div class="card-wrapper">
+    <div class="image-section">
+      <img src="https://parealestatesupport.com/optimized/debbie.jpg" alt="Debbie O'Brien">
+    </div>
+    <div class="info-section">
+      <div class="info-top">
+        <div class="name-title-group">
+            <h1 class="name">Debbie O'Brien</h1>
+            <p class="title">Transaction Coordinator</p>
+            <p class="company">PA Real Estate Support Services</p>
+        </div>
+        <img src="https://parealestatesupport.com/logo-sm.png" alt="Company Logo" class="logo-image">
+      </div>
+      <div class="info-bottom">
+        <ul>
+          <li><span>🕓</span> Monday–Friday, 9:00AM–5:00PM</li>
+          <li><span>☎️</span> Office: 570.588.4637</li>
+          <li><span>📧</span> <a href="mailto:debbie@parealestatesupport.com">debbie@parealestatesupport.com</a></li>
+          <li><span>🌐</span> <a href="https://parealestatesupport.com" target="_blank">parealestatesupport.com</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

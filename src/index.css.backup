@@ -1,0 +1,812 @@
+@tailwind base;
+@tailwind components;
+@layer components {
+    .section {
+        @apply py-12 md:py-16;
+    }
+    .container {
+        @apply max-w-6xl mx-auto px-4 sm: px-6 lg: px-8;
+    }
+    /* Animation Classes */
+    .animation-class {
+        @apply bg-brand-blue/50 rounded-full hover:bg-brand-blue transition-colors duration-300;
+    }
+    /* Hero Elements */
+    .hero-button-blue {
+        @apply bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-full transition-all duration-300;
+    }
+    .hero-button-white {
+        @apply bg-white hover:bg-white/90 text-blue-600 py-2 rounded-full transition-all duration-300;
+    }
+    /* Typography */
+    .hero-heading {
+        @apply text-3xl sm: text-4xl md:text-5xl font-bold mb-4 leading-tight;
+    }
+    .hero-subheading {
+        @apply text-lg md:text-xl mb-6 text-blue-100 font-light;
+    }
+}
+
+
+/* Base styles */
+
+@layer base {
+    html,
+    body {
+        @apply text-brand-blue bg-white text-base overflow-x-hidden;
+        width: 100%;
+        max-width: 100%;
+        height: 100%;
+    }
+    /* Ensure root elements fill the viewport */
+    #root,
+    .app-root {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+    /* Make sure the content area grows to push footer down */
+    main {
+        flex: 1 0 auto;
+        display: flex;
+        flex-direction: column;
+    }
+    /* Ensure the footer stays at the bottom */
+    footer {
+        flex-shrink: 0;
+        width: 100%;
+        position: relative;
+        z-index: 10;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply text-brand-blue font-serif;
+    }
+    h1 {
+        @apply text-3xl md:text-4xl lg: text-5xl;
+    }
+    h2 {
+        @apply text-2xl md:text-3xl;
+    }
+    h3 {
+        @apply text-xl md:text-2xl;
+    }
+    h4 {
+        @apply text-lg md:text-xl;
+    }
+    h5 {
+        @apply text-base md:text-lg;
+    }
+    h6 {
+        @apply text-sm md:text-base;
+    }
+    p {
+        @apply text-base leading-relaxed;
+    }
+    a {
+        @apply text-brand-blue hover:text-brand-gold transition-colors duration-300;
+    }
+     ::selection {
+        @apply bg-brand-gold/20 text-brand-blue;
+    }
+}
+
+
+/* Custom utility classes */
+
+@layer utilities {
+    .text-shadow-sm {
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+    .text-shadow {
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .text-shadow-md {
+        text-shadow: 0 4px 8px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.08);
+    }
+    .text-shadow-lg {
+        text-shadow: 0 15px 30px rgba(0, 0, 0, 0.11), 0 5px 15px rgba(0, 0, 0, 0.08);
+    }
+    .text-shadow-none {
+        text-shadow: none;
+    }
+}
+
+
+/* Persistent background and overlay */
+
+.persistent-background,
+.persistent-overlay {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: none !important;
+    transform: none !important;
+}
+
+.persistent-background {
+    z-index: 0;
+}
+
+.persistent-overlay {
+    z-index: 5;
+    pointer-events: none;
+}
+
+
+/* Page transition animations */
+
+[data-hero-content] {
+    transition-property: opacity, transform;
+    transition-timing-function: ease-out;
+    transition-duration: 0ms;
+    /* Only apply duration when explicitly set */
+}
+
+
+/* Prevent slideshow transitions during page transitions */
+
+body[data-animating-hero="true"] [data-hero-container="true"] img {
+    transition: none !important;
+}
+
+
+/* Make sure slideshow background stays visible during transitions */
+
+.page-transitioning [data-hero-container="true"] {
+    z-index: 1;
+    position: relative;
+}
+
+
+/* Pattern dots animation */
+
+.pattern-dots {
+    background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 30px 30px;
+}
+
+
+/* High-end transition styles */
+
+.luxury-transition {
+    transition: all 0.8s cubic-bezier(0.2, 0.0, 0.0, 1.0);
+}
+
+
+/* Special transition treatment for hero background vs content */
+
+[data-exclude-from-transition="true"] {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 0;
+    transition: none !important;
+}
+
+
+/* Glass card base styles */
+
+.glass-card-base {
+    @apply backdrop-blur-md rounded-xl p-6 relative;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1), 0 3px 15px -3px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+
+/* Glass card variants */
+
+.glass-card {
+    @apply glass-card-base bg-white/80 border border-white/30 text-gray-900;
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1), 0 3px 15px -3px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.2) inset;
+}
+
+.glass-card-navy {
+    @apply glass-card-base bg-blue-900/80 border border-blue-800/50 text-white;
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.15), 0 3px 15px -3px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(59, 130, 246, 0.2) inset;
+}
+
+.glass-card-blue {
+    @apply glass-card-base bg-blue-700/80 border border-blue-600/50 text-white;
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.15), 0 3px 15px -3px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(59, 130, 246, 0.2) inset;
+}
+
+.glass-card-dark {
+    @apply glass-card-base bg-gray-900/80 border border-gray-800/50 text-white;
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.15), 0 3px 15px -3px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(75, 85, 99, 0.2) inset;
+}
+
+.glass-card-gold {
+    @apply glass-card-base bg-amber-400/90 border border-amber-300/50 text-gray-900;
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1), 0 3px 15px -3px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(251, 191, 36, 0.4) inset;
+}
+
+.glass-card-white {
+    @apply glass-card-base bg-white/95 border border-white/50 text-gray-900;
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1), 0 3px 15px -3px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+}
+
+.glass-card-frost {
+    @apply glass-card-base bg-blue-50/95 border border-blue-100/50 text-gray-900;
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1), 0 3px 15px -3px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(219, 234, 254, 0.5) inset;
+}
+
+.glass-card-light {
+    @apply glass-card-base bg-gray-800/80 border border-gray-700/50 text-white;
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.15), 0 3px 15px -3px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(75, 85, 99, 0.2) inset;
+}
+
+
+/* Glass card hover effects */
+
+.glass-card:hover,
+.glass-card-navy:hover,
+.glass-card-blue:hover,
+.glass-card-dark:hover,
+.glass-card-gold:hover,
+.glass-card-white:hover,
+.glass-card-frost:hover,
+.glass-card-light:hover {
+    @apply transform -translate-y-1;
+    box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.15), 0 5px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Special glass card for login */
+
+.glass-card-login {
+    @apply glass-card-base bg-white/95 border border-white/50 text-gray-900;
+    box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.1), 0 5px 15px -3px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+}
+
+.glass-card-login:hover {
+    @apply transform -translate-y-1;
+    box-shadow: 0 20px 35px -5px rgba(0, 0, 0, 0.12), 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.6) inset;
+}
+
+
+/* Glass card for home page hero sections */
+
+.hero-glass-card {
+    @apply glass-card-base bg-blue-900/75 border border-blue-800/50 text-white;
+    box-shadow: 0 20px 35px -5px rgba(0, 0, 0, 0.15), 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(59, 130, 246, 0.2) inset;
+}
+
+.hero-glass-card:hover {
+    @apply transform -translate-y-1;
+    box-shadow: 0 25px 40px -5px rgba(0, 0, 0, 0.2), 0 12px 18px -3px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(59, 130, 246, 0.3) inset;
+}
+
+
+/* ========== Utility Helpers ========== */
+
+
+/* Opacity control classes */
+
+.glass-opacity-light {
+    background-opacity: 0.7 !important;
+}
+
+.glass-opacity-medium {
+    background-opacity: 0.85 !important;
+}
+
+.glass-opacity-heavy {
+    background-opacity: 0.95 !important;
+}
+
+
+/* ========== Context-specific adaptations ========== */
+
+
+/* Adjust for hero sections */
+
+[data-hero-component="true"] .glass-card,
+[data-hero-component="true"] .glass-card-navy,
+[data-hero-component="true"] .glass-card-blue {
+    @apply bg-opacity-90;
+}
+
+
+/* Prevent conflicts with other UI components */
+
+.ReactModal__Content .glass-card,
+.dialog-content .glass-card,
+.modal-content .glass-card {
+    @apply shadow-none;
+}
+
+
+/* ========== Ensure paragraph styling is consistent ========== */
+
+.glass-card p,
+.glass-card-white p,
+.glass-card-frost p {
+    @apply text-gray-700 mb-4 last:mb-0;
+}
+
+.glass-card-navy p,
+.glass-card-blue p,
+.glass-card-dark p,
+.glass-card-gold p,
+.glass-card-light p {
+    @apply text-white/90 mb-4 last:mb-0;
+}
+
+
+/* Ensure links have proper hover states */
+
+.glass-card a:not(.btn),
+.glass-card-white a:not(.btn),
+.glass-card-frost a:not(.btn) {
+    @apply text-blue-600 hover:text-blue-800 underline;
+}
+
+.glass-card-navy a:not(.btn),
+.glass-card-blue a:not(.btn),
+.glass-card-dark a:not(.btn),
+.glass-card-gold a:not(.btn),
+.glass-card-light a:not(.btn) {
+    @apply text-blue-200 hover:text-white underline;
+}
+
+
+/* ========== Accessibility Enhancements ========== */
+
+
+/* Focus states for interactive elements */
+
+.glass-card:focus-within,
+.glass-card-navy:focus-within,
+.glass-card-blue:focus-within,
+.glass-card-dark:focus-within,
+.glass-card-gold:focus-within,
+.glass-card-white:focus-within,
+.glass-card-frost:focus-within,
+.glass-card-light:focus-within {
+    @apply ring-2 ring-blue-400 ring-offset-2 ring-offset-white/10;
+    outline: none;
+}
+
+
+/* Fix for links inside cards */
+
+.glass-card a:not(.btn),
+.glass-card-white a:not(.btn),
+.glass-card-frost a:not(.btn) {
+    @apply text-blue-700 hover:text-blue-900;
+}
+
+.glass-card-navy a:not(.btn),
+.glass-card-blue a:not(.btn),
+.glass-card-dark a:not(.btn),
+.glass-card-light a:not(.btn) {
+    @apply text-blue-200 hover:text-white;
+}
+
+.glass-card-gold a:not(.btn) {
+    @apply text-blue-900 hover:text-gray-900;
+}
+
+
+/**
+ * Enhanced Text Contrast Fixes
+ * 
+ * This file ensures proper text contrast against all backgrounds and card types
+ * to meet accessibility standards and improve readability.
+ */
+
+
+/* ========== Glass Card Text Contrast Fixes ========== */
+
+
+/* Base text styling for all glass cards */
+
+.glass-card,
+.glass-card-navy,
+.glass-card-blue,
+.glass-card-dark,
+.glass-card-gold,
+.glass-card-white,
+.glass-card-frost,
+.glass-card-light {
+    @apply leading-relaxed;
+}
+
+
+/* Ensure headings have proper contrast */
+
+.glass-card h1,
+.glass-card h2,
+.glass-card h3,
+.glass-card h4,
+.glass-card h5,
+.glass-card h6 {
+    @apply text-gray-900;
+}
+
+.glass-card-white h1,
+.glass-card-white h2,
+.glass-card-white h3,
+.glass-card-white h4,
+.glass-card-white h5,
+.glass-card-white h6,
+.glass-card-frost h1,
+.glass-card-frost h2,
+.glass-card-frost h3,
+.glass-card-frost h4,
+.glass-card-frost h5,
+.glass-card-frost h6 {
+    @apply text-gray-900;
+}
+
+.glass-card-navy h1,
+.glass-card-navy h2,
+.glass-card-navy h3,
+.glass-card-navy h4,
+.glass-card-navy h5,
+.glass-card-navy h6,
+.glass-card-blue h1,
+.glass-card-blue h2,
+.glass-card-blue h3,
+.glass-card-blue h4,
+.glass-card-blue h5,
+.glass-card-blue h6,
+.glass-card-dark h1,
+.glass-card-dark h2,
+.glass-card-dark h3,
+.glass-card-dark h4,
+.glass-card-dark h5,
+.glass-card-dark h6,
+.glass-card-gold h1,
+.glass-card-gold h2,
+.glass-card-gold h3,
+.glass-card-gold h4,
+.glass-card-gold h5,
+.glass-card-gold h6,
+.glass-card-light h1,
+.glass-card-light h2,
+.glass-card-light h3,
+.glass-card-light h4,
+.glass-card-light h5,
+.glass-card-light h6 {
+    @apply text-white;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Ensure paragraphs have proper contrast */
+
+.glass-card p {
+    @apply text-gray-700;
+}
+
+.glass-card-white p,
+.glass-card-frost p {
+    @apply text-gray-700;
+}
+
+.glass-card-navy p,
+.glass-card-blue p,
+.glass-card-dark p,
+.glass-card-light p {
+    @apply text-white text-opacity-90;
+}
+
+.glass-card-gold p {
+    @apply text-gray-900;
+}
+
+
+/* ========== Background Specific Text Contrast ========== */
+
+
+/* Light backgrounds */
+
+.bg-white,
+.bg-gray-50,
+.bg-gray-100,
+.bg-blue-50,
+.bg-blue-100 {
+    @apply text-gray-900;
+}
+
+.bg-white p,
+.bg-gray-50 p,
+.bg-gray-100 p,
+.bg-blue-50 p,
+.bg-blue-100 p {
+    @apply text-gray-700;
+}
+
+
+/* Dark backgrounds */
+
+.bg-blue-600,
+.bg-blue-700,
+.bg-blue-800,
+.bg-blue-900,
+.bg-gray-600,
+.bg-gray-700,
+.bg-gray-800,
+.bg-gray-900,
+.bg-brand-blue,
+.bg-black {
+    @apply text-white;
+}
+
+.bg-blue-600 p,
+.bg-blue-700 p,
+.bg-blue-800 p,
+.bg-blue-900 p,
+.bg-gray-600 p,
+.bg-gray-700 p,
+.bg-gray-800 p,
+.bg-gray-900 p,
+.bg-brand-blue p,
+.bg-black p {
+    @apply text-white text-opacity-90;
+}
+
+
+/* Gold/amber backgrounds */
+
+.bg-brand-gold,
+.bg-amber-300,
+.bg-amber-400,
+.bg-amber-500,
+.bg-yellow-300,
+.bg-yellow-400,
+.bg-yellow-500 {
+    @apply text-gray-900;
+}
+
+.bg-brand-gold p,
+.bg-amber-300 p,
+.bg-amber-400 p,
+.bg-amber-500 p,
+.bg-yellow-300 p,
+.bg-yellow-400 p,
+.bg-yellow-500 p {
+    @apply text-gray-800;
+}
+
+
+/* ========== Component Specific Fixes ========== */
+
+
+/* Navigation items in dark headers */
+
+.bg-brand-blue nav a {
+    @apply text-white hover:text-yellow-300;
+}
+
+
+/* Hero section text */
+
+[data-hero-component="true"] h1,
+[data-hero-component="true"] h2 {
+    @apply text-white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+[data-hero-component="true"] p {
+    @apply text-white text-opacity-90;
+}
+
+
+/* Footer text */
+
+footer p {
+    @apply text-gray-700;
+}
+
+footer h3,
+footer h4 {
+    @apply text-gray-900;
+}
+
+footer a:not(.btn) {
+    @apply text-gray-700 hover:text-blue-700;
+}
+
+
+/* ========== Form Element Contrast ========== */
+
+
+/* Input fields */
+
+input,
+select,
+textarea {
+    @apply text-gray-900 placeholder-gray-500;
+}
+
+
+/* Labels */
+
+label {
+    @apply text-gray-700;
+}
+
+
+/* Dark background form adjustments */
+
+.bg-blue-800 label,
+.bg-blue-900 label,
+.bg-gray-800 label,
+.bg-gray-900 label,
+.bg-brand-blue label,
+.bg-black label {
+    @apply text-white;
+}
+
+
+/* ========== Button Contrast Fixes ========== */
+
+
+/* Primary buttons */
+
+.btn-primary {
+    @apply bg-blue-700 text-white;
+}
+
+.btn-primary:hover {
+    @apply bg-blue-800;
+}
+
+
+/* Secondary buttons */
+
+.btn-secondary {
+    @apply bg-amber-400 text-gray-900;
+}
+
+.btn-secondary:hover {
+    @apply bg-amber-500;
+}
+
+
+/* Outline buttons */
+
+.btn-outline {
+    @apply border-2 border-blue-700 text-blue-700;
+}
+
+.btn-outline:hover {
+    @apply bg-blue-700 text-white;
+}
+
+
+/* Dark background buttons */
+
+.bg-blue-800 .btn-outline,
+.bg-blue-900 .btn-outline,
+.bg-gray-800 .btn-outline,
+.bg-gray-900 .btn-outline,
+.bg-black .btn-outline {
+    @apply border-white text-white;
+}
+
+.bg-blue-800 .btn-outline:hover,
+.bg-blue-900 .btn-outline:hover,
+.bg-gray-800 .btn-outline:hover,
+.bg-gray-900 .btn-outline:hover,
+.bg-black .btn-outline:hover {
+    @apply bg-white text-blue-900;
+}
+
+
+/* Import other essential styles */
+
+@import './styles/contrast-variables.css';
+@import './styles/design-system.css';
+@import './styles/minimal-contrast.css';
+@import './styles/scrollbar-fix.css';
+@import './styles/transition-fixes.css';
+@import './styles/services-page-fixes.css';
+@import './styles/home-page-fixes.css';
+@import './styles/statistics-cards-fix.css';
+
+/* Tailwind utilities */
+
+@tailwind utilities;
+
+/* PARESS - Main CSS Entry Point */
+
+
+/* Import modular CSS from styles_new directory */
+
+@import './styles_new/index.css';
+
+/* This file has been consolidated into modular components 
+   in the styles_new directory for better maintainability */
+
+
+/* Consolidated CSS structure - May 2025 */
+
+
+/* Import core CSS with Tailwind directives */
+
+@import './styles/core.css';
+
+/* Import enhanced components */
+
+@import './styles/glass-cards.css';
+
+/* Import contrast system */
+
+@import './styles/contrast-system.css';
+
+/* Import specific page fixes */
+
+@import './styles/page-specific.css';
+
+/* Ensure proper text contrast across the site */
+
+body {
+    @apply text-gray-900;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* Default text colors for better contrast */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    @apply text-gray-900;
+}
+
+p,
+span,
+li {
+    @apply text-gray-700;
+}
+
+
+/* Ensure links are always visible */
+
+a {
+    @apply text-blue-600 hover:text-blue-800;
+}
+
+
+/* Dark mode adjustments */
+
+.dark {
+    @apply bg-gray-900;
+}
+
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4,
+.dark h5,
+.dark h6 {
+    @apply text-white;
+}
+
+.dark p,
+.dark span,
+.dark li {
+    @apply text-gray-300;
+}
+
+.dark a {
+    @apply text-blue-400 hover:text-blue-300;
+}

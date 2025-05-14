@@ -1,0 +1,186 @@
+/**
+ * Header and Navigation Contrast Fixes
+ * 
+ * This file contains specific fixes for text contrast issues
+ * in the header and navigation areas.
+ */
+
+
+/* Make navigation links more visible on blue background */
+
+nav a,
+.nav-link,
+a[href*="Home"],
+a[href*="About"],
+a[href*="Services"],
+a[href*="Work With Me"] {
+    color: white !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4) !important;
+    font-weight: 600 !important;
+    /* Increased from 500 to 600 */
+    transition: all 0.3s ease !important;
+    padding: 0.5rem 1rem !important;
+    border-radius: 0.375rem !important;
+    background-color: rgba(0, 0, 0, 0.1) !important;
+    backdrop-filter: blur(4px) !important;
+    letter-spacing: 0.02em !important;
+}
+
+nav a:hover,
+.nav-link:hover,
+a[href*="Home"]:hover,
+a[href*="About"]:hover,
+a[href*="Services"]:hover,
+a[href*="Work With Me"]:hover {
+    color: #FFB81C !important;
+    /* brand-gold */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+    background-color: rgba(0, 0, 0, 0.2) !important;
+    transform: translateY(-1px) !important;
+}
+
+
+/* Enhance active/current navigation item */
+
+nav a.active,
+.nav-link.active,
+a[href*="Home"].active,
+a[href*="About"].active,
+a[href*="Services"].active,
+a[href*="Work With Me"].active {
+    color: #FFB81C !important;
+    /* brand-gold */
+    font-weight: 700 !important;
+    /* Increased from 600 to 700 */
+    background-color: rgba(0, 0, 0, 0.2) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+
+/* Improve contrast for hero taglines */
+
+.hero-tagline,
+.hero-text,
+[data-hero-text="true"] {
+    color: white !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4) !important;
+    font-weight: 500 !important;
+}
+
+
+/* Fixed header "Let me handle the paperwork..." text */
+
+header h1,
+header .header-tagline,
+header .large-text {
+    color: white !important;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4) !important;
+    font-weight: 600 !important;
+}
+
+
+/* Improve Agent Portal button */
+
+a[href*="Agent Portal"] {
+    background-color: #FFB81C !important;
+    /* brand-gold */
+    color: #0F1C2E !important;
+    /* brand-navy */
+    font-weight: 600 !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+    border: 2px solid rgba(255, 255, 255, 0.2) !important;
+    transition: all 0.2s ease !important;
+}
+
+a[href*="Agent Portal"]:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+    background-color: #ffc445 !important;
+    /* slightly lighter gold for hover */
+}
+
+
+/* Start a Transaction button enhancements */
+
+a[href*="Start a Transaction"],
+button:contains("Start a Transaction"),
+.transaction-button {
+    background-color: white !important;
+    color: #0066CC !important;
+    /* brand-blue */
+    font-weight: 600 !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25) !important;
+    border: 2px solid rgba(255, 255, 255, 0.8) !important;
+    transition: all 0.2s ease !important;
+}
+
+a[href*="Start a Transaction"]:hover,
+button:contains("Start a Transaction"):hover,
+.transaction-button:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35) !important;
+    background-color: #f8f8f8 !important;
+}
+
+
+/* "Submit your transaction details..." text */
+
+header p,
+header .tagline,
+.hero-subtitle {
+    color: rgba(255, 255, 255, 0.9) !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+
+/* Add subtle overlay to hero header for better text contrast */
+
+header::before,
+.hero-section::before,
+[data-hero-component="true"]::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1));
+    pointer-events: none;
+    z-index: 0;
+}
+
+
+/* Ensure header content appears above the overlay */
+
+header>*,
+.hero-section>*,
+[data-hero-component="true"]>* {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* Fix for clock icon and "Average Closing Time" text */
+
+.text-brand-blue,
+[class*="icon-"],
+.statistics-text,
+.clock-icon+span {
+    color: #0066CC !important;
+    /* brand-blue */
+    font-weight: 500 !important;
+}
+
+
+/* Better contrast for header on scroll */
+
+header.scrolled,
+.header-scrolled,
+.sticky-header.scrolled {
+    background-color: rgba(0, 102, 204, 0.98) !important;
+    /* Increased opacity from 0.95 to 0.98 */
+    backdrop-filter: blur(12px) !important;
+    /* Increased blur from 8px to 12px */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2) !important;
+    /* Enhanced shadow */
+}

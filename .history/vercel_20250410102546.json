@@ -1,0 +1,76 @@
+{
+    "version": 2,
+    "builds": [{
+            "src": "server/api/*.js",
+            "use": "@vercel/node"
+        },
+        {
+            "src": "src/pages/api/*.ts",
+            "use": "@vercel/node"
+        },
+        {
+            "src": "src/pages/api/*.js",
+            "use": "@vercel/node"
+        },
+        {
+            "src": "package.json",
+            "use": "@vercel/static-build",
+            "config": {
+                "distDir": "build"
+            }
+        }
+    ],
+    "routes": [{
+            "src": "^/api/direct-email-test",
+            "dest": "api/direct-email-test.js"
+        },
+        {
+            "src": "^/api/direct-pdf-test",
+            "dest": "api/direct-pdf-test.js"
+        },
+        {
+            "src": "^/api/test-email",
+            "dest": "api/test-email.js"
+        },
+        {
+            "src": "^/api/test-pdf",
+            "dest": "api/test-pdf.js"
+        },
+        {
+            "src": "^/api/generateCoverSheet",
+            "dest": "api/generateCoverSheet.js"
+        },
+        {
+            "src": "^/api/sendEmail",
+            "dest": "api/sendEmail.js"
+        },
+        {
+            "src": "^/api/(.+)",
+            "dest": "api/$1.js"
+        },
+        {
+            "src": "^/static/(.*)",
+            "dest": "/static/$1"
+        },
+        {
+            "src": "^/assets/(.*)",
+            "dest": "/assets/$1"
+        },
+        {
+            "src": "^/favicon.ico",
+            "dest": "/favicon.ico"
+        },
+        {
+            "src": "^/manifest.json",
+            "dest": "/manifest.json"
+        },
+        {
+            "src": "^/robots.txt",
+            "dest": "/robots.txt"
+        },
+        {
+            "src": "^/.*",
+            "dest": "/index.html"
+        }
+    ]
+}

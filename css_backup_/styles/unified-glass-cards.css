@@ -1,0 +1,232 @@
+/**
+ * Unified Glass Card System
+ * A comprehensive system for consistent glass card styling throughout the website
+ */
+
+/* Base glass card styling */
+.glass-card {
+  position: relative;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px -5px rgba(0, 0, 0, 0.15), 
+              0 5px 20px -5px rgba(0, 0, 0, 0.12), 
+              0 0 0 1px rgba(255, 255, 255, 0.3) inset, 
+              0 7px 20px -3px rgba(255, 255, 255, 0.2) inset;
+}
+
+/* Blue glass card - for blue backgrounds */
+.glass-card-blue {
+  background-color: rgba(0, 102, 204, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: white;
+}
+
+.glass-card-blue h2,
+.glass-card-blue h3,
+.glass-card-blue h4 {
+  color: white !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.glass-card-blue p,
+.glass-card-blue li,
+.glass-card-blue span:not(.icon) {
+  color: #E6F0FF !important;
+}
+
+/* Navy glass card - for dark blue backgrounds */
+.glass-card-navy {
+  background-color: rgba(15, 28, 46, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: white;
+}
+
+.glass-card-navy h2,
+.glass-card-navy h3,
+.glass-card-navy h4 {
+  color: white !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.glass-card-navy p,
+.glass-card-navy li,
+.glass-card-navy span:not(.icon) {
+  color: #E6F0FF !important;
+}
+
+/* White glass card - for light backgrounds */
+.glass-card-white {
+  background-color: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #1A1A1A;
+}
+
+.glass-card-white h2,
+.glass-card-white h3,
+.glass-card-white h4 {
+  color: #0066CC !important;
+}
+
+.glass-card-white p,
+.glass-card-white li,
+.glass-card-white span:not(.icon) {
+  color: #1A1A1A !important;
+}
+
+/* Gold glass card - for accent areas */
+.glass-card-gold {
+  background-color: rgba(255, 184, 28, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #0F1C2E;
+}
+
+.glass-card-gold h2,
+.glass-card-gold h3,
+.glass-card-gold h4 {
+  color: #0F1C2E !important;
+}
+
+.glass-card-gold p,
+.glass-card-gold li,
+.glass-card-gold span:not(.icon) {
+  color: #1A1A1A !important;
+}
+
+/* Frost glass card - for light backgrounds */
+.glass-card-frost {
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #1A1A1A;
+}
+
+.glass-card-frost h2,
+.glass-card-frost h3,
+.glass-card-frost h4 {
+  color: #0066CC !important;
+}
+
+.glass-card-frost p,
+.glass-card-frost li,
+.glass-card-frost span:not(.icon) {
+  color: #1A1A1A !important;
+}
+
+/* Dark glass card - for dark backgrounds */
+.glass-card-dark {
+  background-color: rgba(15, 28, 46, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.glass-card-dark h2,
+.glass-card-dark h3,
+.glass-card-dark h4 {
+  color: white !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.glass-card-dark p,
+.glass-card-dark li,
+.glass-card-dark span:not(.icon) {
+  color: #E6F0FF !important;
+}
+
+/* Light glass card - for light backgrounds */
+.glass-card-light {
+  background-color: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  color: #1A1A1A;
+}
+
+.glass-card-light h2,
+.glass-card-light h3,
+.glass-card-light h4 {
+  color: #0066CC !important;
+}
+
+.glass-card-light p,
+.glass-card-light li,
+.glass-card-light span:not(.icon) {
+  color: #1A1A1A !important;
+}
+
+/* Card content styling */
+.glass-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.glass-card-subtitle {
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}
+
+.glass-card-content {
+  font-size: 1rem;
+}
+
+/* Card hover effects */
+.glass-card:hover,
+.glass-card-blue:hover,
+.glass-card-navy:hover,
+.glass-card-white:hover,
+.glass-card-gold:hover,
+.glass-card-frost:hover,
+.glass-card-dark:hover,
+.glass-card-light:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px -5px rgba(0, 0, 0, 0.15);
+}
+
+/* Ensure form elements in cards have proper contrast */
+.glass-card input,
+.glass-card textarea,
+.glass-card select {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #1A1A1A;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.glass-card-blue input,
+.glass-card-navy input,
+.glass-card-dark input,
+.glass-card-blue textarea,
+.glass-card-navy textarea,
+.glass-card-dark textarea,
+.glass-card-blue select,
+.glass-card-navy select,
+.glass-card-dark select {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #1A1A1A;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Ensure labels have proper contrast */
+.glass-card label,
+.glass-card-white label,
+.glass-card-frost label,
+.glass-card-light label,
+.glass-card-gold label {
+  color: #1A1A1A !important;
+  font-weight: 500;
+}
+
+.glass-card-blue label,
+.glass-card-navy label,
+.glass-card-dark label {
+  color: white !important;
+  font-weight: 500;
+}

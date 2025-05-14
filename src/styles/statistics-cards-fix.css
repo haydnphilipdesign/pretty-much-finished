@@ -1,0 +1,173 @@
+/**
+ * Statistics Cards Fix
+ * This file contains specific fixes for the "Proven Excellence in Numbers" section cards
+ */
+
+
+/* Statistics section background */
+
+section.statistics-section,
+section.py-16.md\:py-24.relative.overflow-hidden.max-w-full.statistics-section,
+section.py-24.relative.overflow-hidden.max-w-full.statistics-section {
+    background-color: #0F1C2E !important;
+    /* Dark navy background */
+    color: white !important;
+    position: relative !important;
+    z-index: 5 !important;
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+    overflow: hidden !important;
+}
+
+
+/* Statistics section heading */
+
+section.statistics-section h2 {
+    color: #FFB81C !important;
+    /* Brand gold color for heading */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4) !important;
+    font-weight: 700 !important;
+}
+
+
+/* Statistics section subheading */
+
+section.statistics-section p {
+    color: rgba(255, 255, 255, 0.95) !important;
+}
+
+
+/* Statistics cards - base styling */
+
+section.statistics-section .content-card,
+section.statistics-section .glass-card-navy,
+.grid.grid-cols-1.sm\:grid-cols-2.lg\:grid-cols-4 .content-card,
+.grid.grid-cols-1.sm\:grid-cols-2.lg\:grid-cols-4 .glass-card-navy {
+    background-color: rgba(15, 28, 46, 0.7) !important;
+    /* Semi-transparent navy */
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.3), 0 3px 15px -3px rgba(0, 0, 0, 0.2) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    padding: 1.5rem !important;
+    border-radius: 1rem !important;
+    transition: all 0.3s ease !important;
+    height: 100% !important;
+}
+
+
+/* Statistics cards - hover effect */
+
+section.statistics-section .content-card:hover,
+section.statistics-section .glass-card-navy:hover,
+.grid.grid-cols-1.sm\:grid-cols-2.lg\:grid-cols-4 .content-card:hover,
+.grid.grid-cols-1.sm\:grid-cols-2.lg\:grid-cols-4 .glass-card-navy:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: 0 15px 40px -5px rgba(0, 0, 0, 0.3), 0 5px 20px -5px rgba(0, 0, 0, 0.25) !important;
+    background-color: rgba(15, 28, 46, 0.8) !important;
+    /* Slightly more opaque on hover */
+    border: 1px solid rgba(255, 184, 28, 0.2) !important;
+}
+
+
+/* Statistics cards - icon container */
+
+section.statistics-section .content-card [class*="bg-"],
+section.statistics-section .glass-card-navy [class*="bg-"] {
+    background-color: rgba(255, 184, 28, 0.15) !important;
+    /* Semi-transparent gold */
+    border: 1px solid rgba(255, 184, 28, 0.3) !important;
+    width: 8rem !important;
+    height: 8rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 9999px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 1.5rem !important;
+    box-shadow: 0 0 30px rgba(255, 184, 28, 0.2) !important;
+}
+
+
+/* Statistics cards - value text */
+
+section.statistics-section .content-card .statistic-value,
+section.statistics-section .glass-card-navy .statistic-value {
+    color: #FFB81C !important;
+    /* Brand gold for numbers */
+    font-weight: 700 !important;
+    font-size: 2rem !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+
+/* Statistics cards - label text */
+
+section.statistics-section .content-card .statistic-label,
+section.statistics-section .glass-card-navy .statistic-label {
+    color: white !important;
+    font-weight: 600 !important;
+    font-size: 1rem !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+}
+
+
+/* Statistics cards - description text */
+
+section.statistics-section .content-card .statistic-description,
+section.statistics-section .glass-card-navy .statistic-description {
+    color: white !important;
+    font-size: 0.875rem !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+}
+
+
+/* Statistics cards - icon number */
+
+section.statistics-section .content-card .statistic-icon-number,
+section.statistics-section .glass-card-navy .statistic-icon-number {
+    color: #FFB81C !important;
+    /* Brand gold for icon numbers */
+    font-weight: 700 !important;
+}
+
+
+/* Ensure proper z-index for all elements */
+
+section.statistics-section .relative.z-10 {
+    z-index: 10 !important;
+}
+
+
+/* Support for mobile responsiveness */
+
+@media (max-width: 640px) {
+    section.statistics-section .grid.grid-cols-1.sm\:grid-cols-2.lg\:grid-cols-4 {
+        grid-template-columns: 1fr !important;
+    }
+    section.statistics-section .content-card,
+    section.statistics-section .glass-card-navy {
+        margin-bottom: 1rem !important;
+    }
+}
+
+
+/* Ensure decorative elements don't interfere with content */
+
+section.statistics-section .absolute:not(.z-10):not(.inset-0) {
+    pointer-events: none !important;
+}
+
+
+/* Fix Safari backdrop-filter issues */
+
+@supports not (backdrop-filter: blur(12px)) {
+    section.statistics-section .content-card,
+    section.statistics-section .glass-card-navy,
+    .grid.grid-cols-1.sm\:grid-cols-2.lg\:grid-cols-4 .content-card,
+    .grid.grid-cols-1.sm\:grid-cols-2.lg\:grid-cols-4 .glass-card-navy {
+        background-color: rgba(15, 28, 46, 0.9) !important;
+        /* Darker background for browsers without backdrop-filter */
+    }
+}

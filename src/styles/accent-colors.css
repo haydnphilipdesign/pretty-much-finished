@@ -1,0 +1,74 @@
+/**
+ * Accent Colors CSS
+ * Implements the brand-cream accent color (#e9c77b) throughout the site
+ */
+
+
+/* Basic accent color classes */
+
+.accent-element,
+.accent-color,
+.accent-text {
+    color: #e9c77b !important;
+}
+
+.accent-bg,
+.accent-background {
+    background-color: #e9c77b !important;
+}
+
+.accent-border {
+    border-color: #e9c77b !important;
+}
+
+
+/* Replace brand-gold with brand-cream in key accent locations */
+
+.glass-card-title .text-brand-gold,
+.glass-card-navy .text-brand-gold,
+.content-card .text-brand-gold,
+.statistics-section .text-\[\#FFB81C\],
+span.text-brand-gold.font-bold,
+div.text-brand-gold.font-semibold {
+    color: #e9c77b !important;
+}
+
+
+/* Update icon containers that used gold to use cream */
+
+.bg-brand-gold\/20,
+.bg-\[rgba\(255\,184\,28\,0\.15\)\],
+div.w-12.h-12.bg-gradient-to-br.from-brand-gold\/20.to-brand-blue\/20 {
+    background-color: rgba(233, 199, 123, 0.2) !important;
+    background-image: none !important;
+}
+
+
+/* Update border colors using gold to use cream */
+
+.border-\[rgba\(255\,184\,28\,0\.3\)\],
+.border-brand-gold,
+.border-brand-gold\/30 {
+    border-color: rgba(233, 199, 123, 0.3) !important;
+}
+
+
+/* Update buttons using brand-gold to use cream */
+
+a.bg-brand-gold,
+button.bg-brand-gold,
+.bg-gradient-to-r.from-brand-gold {
+    background: #e9c77b !important;
+    background-image: none !important;
+}
+
+
+/* Make "let's get started" button use the new color */
+
+.glass-card-cta a,
+.glass-card-cta button,
+.glass-card-navy a[class*="bg-white"],
+a.inline-flex.items-center.gap-2[class*="bg-white"].rounded-xl {
+    border: 2px solid #e9c77b !important;
+    color: #0F1C2E !important;
+}

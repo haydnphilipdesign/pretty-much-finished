@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Real Estate Transaction Cover Sheets</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 10px;
+            margin: 0;
+            padding: 5px;
+            background-color: #f5f5f5;
+        }
+        
+        .page-container {
+            max-width: 8.5in;
+            margin: 0 auto;
+        }
+        
+        .cover-sheet {
+            width: 8.5in;
+            border: 1px solid #000;
+            background-color: #fff;
+            margin-bottom: 5px;
+            page-break-after: always;
+            box-sizing: border-box;
+            padding: 0.18in;
+            display: flex;
+            flex-direction: column;
+            min-height: 10.5in;
+        }
+        
+        h1 {
+            text-align: center;
+            font-size: 12.5px;
+            font-weight: bold;
+            margin: 1px 0 5px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            flex-shrink: 0;
+        }
+        
+        .header-section {
+            border-bottom: 1px solid #000;
+            margin: 0;
+            padding-bottom: 3px;
+            margin-bottom: 3px;
+            flex-shrink: 0;
+        }
+        
+        .info-row {
+            display: flex;
+            margin-bottom: 1px;
+        }
+        
+        .info-field {
+            flex: 1;
+            margin-right: 5px;
+        }
+        
+        .info-field:last-child {
+            margin-right: 0;
+        }
+        
+        .info-field label {
+            font-weight: bold;
+            font-size: 9.5px;
+            text-transform: uppercase;
+        }
+        
+        .info-field .line {
+            border-bottom: 1px solid #000;
+            height: 10px;
+        }
+        
+        .main-content {
+            display: flex;
+            margin-top: 3px;
+            flex-grow: 1;
+        }
+        
+        .left-column {
+            width: 55%;
+            padding-right: 10px;
+            padding-left: 10px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .right-column {
+            width: 45%;
+            border-left: 1px solid #000;
+            padding-left: 10px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .section-container {
+            margin-bottom: 0;
+            padding-bottom: 0px;
+            flex-shrink: 0;
+        }
+        
+        .section-header {
+            background-color: #f0f0f0;
+            font-weight: bold;
+            font-size: 10px;
+            padding: 1.8px 3px;
+            margin: 3px 0 2px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+            border-bottom: 1px solid #000;
+            padding-bottom: 2.2px;
+        }
+        
+        .checkbox-row {
+            line-height: 1.3;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            padding: 1px 0;
+            min-height: 1.3em;
+            gap: 1.5px 12px;
+        }
+        
+        .checkbox-item {
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 1px;
+            white-space: normal;
+            line-height: 1.15;
+        }
+        
+        input[type="checkbox"] {
+            margin-right: 3px;
+            vertical-align: middle;
+            padding: 0;
+            margin: 0;
+            transform: scale(1.1);
+            flex-shrink: 0;
+        }
+        
+        label {
+            font-size: 9.5px;
+            vertical-align: middle;
+            margin-right: 2px;
+            padding: 0;
+            line-height: 1.15;
+        }
+        
+        .key-label {
+            font-weight: bold;
+            font-size: 9.5px;
+            vertical-align: middle;
+            margin-right: 3px;
+            flex-shrink: 0;
+            line-height: 1.15;
+        }
+        
+        .contact-field {
+            margin-bottom: 3px;
+        }
+        
+        .contact-field label,
+        .referral-section label {
+            font-weight: bold;
+            font-size: 9.5px;
+            text-transform: uppercase;
+            margin-bottom: 1px;
+            margin-right: 3px;
+            vertical-align: middle;
+            display: inline-block;
+            padding: 0;
+        }
+        
+        .contact-field .line {
+            border-bottom: 1px solid #000;
+            height: 10.5px;
+            margin-bottom: 1.8px;
+            margin-top: 1.8px;
+            clear: both;
+        }
+        
+        .detail-line {
+            display: flex;
+            align-items: center;
+            margin-bottom: 3px;
+            min-height: 12.5px;
+        }
+        
+        .detail-label {
+            font-weight: bold;
+            font-size: 9px;
+            width: 40px;
+            padding-right: 3px;
+            flex-shrink: 0;
+            text-transform: uppercase;
+        }
+        
+        .detail-line .line {
+            flex-grow: 1;
+            height: 10.5px;
+            margin-bottom: 0;
+            margin-top: 0;
+        }
+        
+        .co-section+.contact-field,
+        .hoa-section+.contact-field,
+        .referral-yn-section+.contact-field {
+            margin-top: 0px;
+        }
+        
+        .label-checkbox-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1px;
+        }
+        
+        .label-checkbox-group label {
+            margin-bottom: 0;
+            white-space: nowrap;
+            margin-right: 4px;
+        }
+        
+        .yes-no-group {
+            display: inline-flex;
+            align-items: center;
+            margin-left: 3px;
+        }
+        
+        .yes-no-group div {
+            margin-right: 5px;
+        }
+        
+        .yes-no-group input[type="checkbox"] {
+            margin-right: 3px;
+        }
+        
+        .yes-no-group label {
+            font-size: 9px;
+            font-weight: normal;
+            text-transform: none;
+            margin-bottom: 0;
+            margin-right: 0;
+        }
+        
+        .notes-section {
+            margin-top: 5px;
+            margin-bottom: 3px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .notes-section .line {
+            height: 11px;
+            margin-bottom: 1.8px;
+        }
+        
+        .mini-divider {
+            border-top: 1px dashed #ccc;
+            height: 1px;
+            margin: 4px 0;
+            /* Add vertical margin */
+        }
+        
+        .underline {
+            border-bottom: 1px solid #000;
+            display: inline-block;
+            margin-left: 3px;
+            height: 10px;
+            /* Match line height */
+            vertical-align: bottom;
+        }
+        
+        .underline-short {
+            width: 50px;
+            flex-grow: 0;
+        }
+        
+        .underline-medium {
+            width: 100px;
+            flex-grow: 0;
+        }
+        
+        .underline-long {
+            width: 150px;
+            flex-grow: 0;
+        }
+        
+        .underline-xl {
+            width: 200px;
+            flex-grow: 0;
+        }
+        
+        .percentage {
+            font-size: 9.5px;
+            margin-left: 2px;
+            font-weight: bold;
+        }
+        
+        .field-group {
+            margin-bottom: 1px;
+        }
+        /* Add space below the first row in Commission Details */
+        
+        .commission-details-section .checkbox-row:first-child {
+            margin-bottom: 4px;
+        }
+        
+        .notes-section hr {
+            border: none;
+            border-top: 1px solid #000;
+            margin: 14px 0;
+            padding: 0;
+        }
+        
+        .commission-details-section .commission-grid-item {
+            flex-basis: calc(50% - 6px);
+            /* Calculate 50% minus half the column-gap (12px / 2) */
+            flex-grow: 0;
+            /* Prevent items from growing */
+            flex-shrink: 0;
+            /* Prevent items from shrinking */
+            box-sizing: border-box;
+            /* Include padding/border in width calculation */
+        }
+        /* Increased gap specifically for Initial Docs section */
+        
+        .initial-docs-section .checkbox-row {
+            gap: 1.5px 18px;
+            /* Increased horizontal gap */
+        }
+        /* Add this class from Seller.html */
+        
+        .single-field-line {
+            display: flex;
+            align-items: center;
+            margin-bottom: 3px;
+            /* Match detail-line */
+            min-height: 12.5px;
+            /* Match detail-line */
+        }
+        
+        .single-field-line .key-label {
+            margin-right: 3px;
+            flex-shrink: 0;
+            /* Inherits font-weight/size from .key-label */
+            text-transform: uppercase;
+            /* Ensure uppercase if needed */
+        }
+        
+        .single-field-line .line {
+            flex-grow: 1;
+            border-bottom: 1px solid #000;
+            height: 10.5px;
+            /* Match contact-field .line */
+        }
+        /* Style for the Quick Reference box */
+        
+        .quick-reference-box {
+            border: 2px solid #333;
+            padding: 4px;
+            margin-top: 6px;
+            margin-bottom: 4px;
+            border-radius: 3px;
+        }
+        
+        .quick-reference-box .section-header {
+            background-color: #dcdcdc;
+            border-bottom: 1px solid #aaa;
+            color: #000;
+            font-weight: bold;
+            font-size: 10px;
+            padding: 1.8px 3px;
+            margin: 0 0 2px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+            padding-bottom: 2.2px;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+        }
+        /* Generic style for bordered sections */
+        
+        .bordered-section {
+            border: 2px solid #666;
+            padding: 4px;
+            margin-top: 4px;
+            margin-bottom: 4px;
+            background-color: #f8f8f8;
+            border-radius: 3px;
+        }
+        /* Style header within bordered sections */
+        
+        .bordered-section .section-header {
+            background-color: transparent;
+            border-bottom: 1px solid #ddd;
+            font-weight: bold;
+            margin-top: 0;
+            margin-bottom: 2px;
+            padding: 1.8px 3px;
+            font-size: 10px;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+        }
+        /* Specific adjustment for Quick Reference header if needed */
+        
+        .quick-reference-box .section-header {
+            flex-grow: 1;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        /* --- Layout Adjustments for Left Column Bordered Sections --- */
+        /* Target bordered sections ONLY in the left column */
+        
+        .left-column .bordered-section {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            flex-shrink: 1;
+            justify-content: space-between;
+        }
+        /* Ensure direct children of these sections don't shrink */
+        
+        .left-column .bordered-section>* {
+            flex-shrink: 0;
+        }
+        /* --- End Layout Adjustments --- */
+        
+        .bordered-section {
+            border-color: #333;
+        }
+        
+        .section-header {
+            font-weight: 600;
+            border-bottom: 0.75pt solid #666;
+        }
+        
+        .line {
+            border-bottom-color: #444;
+        }
+        
+        .quick-reference-box {
+            background-color: #ededed;
+            border-width: 2px;
+        }
+        
+        .header-section {
+            background-color: #f8f8f8;
+        }
+        
+        input[type="checkbox"] {
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+        
+        @media print {
+            body {
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+            label,
+            .key-label,
+            .detail-label {
+                color: #000;
+            }
+            .bordered-section,
+            .line,
+            .section-header {
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+            /* --- Start of New Print Styles --- */
+            @page {
+                size: letter;
+                margin: 0.25in;
+            }
+            body,
+            html {
+                margin: 0;
+                padding: 0;
+                height: 100%;
+                background: none !important;
+                font-size: 7pt;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            .page-container {
+                max-width: none;
+                margin: 0;
+                padding: 0;
+            }
+            .cover-sheet {
+                width: 8in;
+                height: 10.5in;
+                padding: 0.15in;
+                margin: 0 auto;
+                box-sizing: border-box;
+                overflow: hidden;
+                border: none;
+                page-break-after: always;
+                display: flex;
+                flex-direction: column;
+                background-color: #fff !important;
+                box-shadow: none;
+                border-radius: 0;
+                justify-content: space-between;
+            }
+            .main-content {
+                overflow: hidden;
+                box-sizing: border-box;
+                flex-grow: 1;
+                display: flex;
+                height: 100%;
+            }
+            .left-column,
+            .right-column {
+                overflow: hidden;
+                box-sizing: border-box;
+                padding-top: 0;
+                padding-bottom: 0;
+                display: flex;
+                flex-direction: column;
+                flex-grow: 1;
+                height: 100%;
+                justify-content: space-between;
+            }
+            .right-column {
+                border-left: 1pt solid #000;
+                padding-left: 6pt;
+                justify-content: space-between;
+            }
+            .left-column {
+                padding-right: 6pt;
+                padding-left: 0;
+            }
+            .section-container {
+                margin-top: 2pt !important;
+                margin-bottom: 2pt !important;
+                padding-top: 0 !important;
+                padding-bottom: 0 !important;
+                line-height: 1.15 !important;
+                flex-shrink: 0;
+            }
+            .right-column .section-container:has(.notes-section) {
+                display: flex;
+                flex-direction: column;
+            }
+            .notes-section {
+                margin-top: 1pt !important;
+                margin-bottom: 1pt !important;
+                display: flex;
+                flex-direction: column;
+            }
+            .notes-section hr {
+                height: auto !important;
+                margin: 0 !important;
+                border-style: solid;
+                border-width: 0 0 0.75pt 0;
+                border-color: #aaa;
+                width: 100%;
+                padding-bottom: 14pt;
+                flex-shrink: 0;
+            }
+            .checkbox-row,
+            .info-row,
+            .detail-line,
+            .contact-field,
+            .paired-field-line,
+            .single-field-line {
+                margin-top: 1pt !important;
+                margin-bottom: 1pt !important;
+                padding-top: 0 !important;
+                padding-bottom: 0 !important;
+                line-height: 1.15 !important;
+            }
+            .checkbox-row {
+                gap: 1pt 6pt !important;
+            }
+            .info-field .line,
+            .detail-line .line,
+            .single-field-line .line,
+            .paired-field-line .line {
+                height: 8pt !important;
+                border-bottom-width: 0.75pt !important;
+            }
+            .underline {
+                height: 8pt !important;
+                border-bottom-width: 0.75pt !important;
+            }
+            label,
+            .key-label,
+            .detail-label,
+            .section-header,
+            .info-field label {
+                padding: 0 !important;
+            }
+            input[type="checkbox"] {
+                transform: scale(0.95);
+                margin-right: 3px;
+            }
+            h1 {
+                margin: 3pt 0 !important;
+                font-size: 9pt !important;
+                flex-shrink: 0;
+            }
+            .header-section {
+                padding-bottom: 2pt !important;
+                margin-bottom: 2pt !important;
+                flex-shrink: 0;
+            }
+            .bordered-section {
+                border-width: 1pt !important;
+                padding: 3pt !important;
+                margin-top: 3pt !important;
+                margin-bottom: 3pt !important;
+            }
+            .bordered-section .section-header {
+                border-bottom-width: 0.75pt !important;
+                padding: 1.5pt 0 !important;
+                margin-bottom: 1.5pt !important;
+                background-color: transparent !important;
+            }
+            .mini-divider {
+                border-top-width: 0.5pt !important;
+                margin: 1.5pt 0 !important;
+            }
+            .controls {
+                display: none;
+            }
+            /* --- End of New Print Styles --- */
+        }
+        /* New class for headers with inline elements */
+        
+        .section-header-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .section-header-flex>span {
+            flex-shrink: 0;
+            margin-right: 5px;
+        }
+        
+        .section-header-flex .checkbox-item,
+        .section-header-flex .yes-no-group {
+            margin-right: 0;
+            margin-bottom: 0;
+            margin-left: 0;
+        }
+        
+        .section-header-flex .checkbox-item label {
+            font-weight: normal;
+            text-transform: none;
+        }
+        /* Flexbox header for Yes/No options */
+        
+        .section-header-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .yes-no-group {
+            display: flex;
+            gap: 5px;
+        }
+        
+        .yes-no-group div {
+            display: flex;
+            align-items: center;
+        }
+        
+        .yes-no-group label {
+            margin-left: 2px;
+            font-weight: normal;
+            text-transform: none;
+        }
+        /* Styles for Referral Section */
+        
+        .referral-section .single-field-line {
+            align-items: baseline;
+        }
+        
+        .percentage {
+            font-weight: bold;
+        }
+        
+        @media print {
+            .section-header-flex {}
+            .yes-no-group {}
+            .yes-no-group label {
+                font-weight: normal !important;
+            }
+            .percentage {
+                font-weight: bold !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page-container">
+        <!-- BUYER COVER SHEET -->
+        <div class="cover-sheet">
+            <h1>BUYER'S AGENT</h1>
+
+            <!-- Header Info Section -->
+            <div class="header-section bordered-section">
+                <div class="info-row">
+                    <div class="info-field">
+                        <label>Property Address:</label>
+                        <div class="line" id="property-address" style="text-indent: 10px; padding-left: 10px;">{{#if propertyAddress}}{{propertyAddress}}{{/if}}</div>
+                    </div>
+                    <div class="info-field">
+                        <label>MLS#:</label>
+                        <div class="line" id="mls-number">{{#if mlsNumber}}{{mlsNumber}}{{/if}}</div>
+                    </div>
+                    <div class="info-field">
+                        <label>AGENT:</label>
+                        <div class="line" id="agent-name">{{#if agentName}}{{agentName}}{{/if}}</div>
+                    </div>
+                </div>
+
+                <div class="info-row">
+                    <div class="info-field">
+                        <label>CLOSING DATE:</label>
+                        <div class="line"></div>
+                    </div>
+                    <div class="info-field">
+                        <label>TIME:</label>
+                        <div class="line"></div>
+                    </div>
+                    <div class="info-field">
+                        <label>LOCATION:</label>
+                        <div class="line"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-content">
+                <!-- Left Column - Updated Checklist based on new image -->
+                <div class="left-column">
+
+                    <!-- INITIAL DOCUMENTATION -->
+                    <div class="section-container initial-docs-section bordered-section">
+                        <div class="section-header">Initial Documentation</div>
+                        <div class="checkbox-row">
+                            <div class="checkbox-item"><input type="checkbox" id="b-aos"><label for="b-aos">AOS</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="b-check"><label for="b-check">Check</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="b-spd"><label for="b-spd">SPD</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="b-prequal"><label for="b-prequal">PreQual/POF</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="b-sec"><label for="b-sec">SEC</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="b-wire-notice"><label for="b-wire-notice">Wire Notice</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="b-hw"><label for="b-hw">HW</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="b-deed"><label for="b-deed">Deed</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="b-ref-form"><label for="b-ref-form">Referral Form</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="b-rlbphd"><label for="b-rlbphd">RLBPHD</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="b-fyp"><label for="b-fyp">FYP Form</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="b-wn"><label for="b-wn">WN</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="b-dmn"><label for="b-dmn">DMN</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="b-cn"><label for="b-cn">CN</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="b-dual-agency"><label for="b-dual-agency">KPSS ABA Form</label></div>
+                        </div>
+                        <div class="checkbox-row">
+                            <span class="key-label">KW Addendum signed:</span>
+                            <div class="checkbox-item"><input type="checkbox" id="s-kw-buyer"><label for="s-kw-buyer">Buyer</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="s-kw-seller"><label for="s-kw-seller">Seller</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="s-kw-agent"><label for="s-kw-agent">Agent</label></div>
+                        </div>
+                    </div>
+                    <!-- Removed previous checklist structure -->
+
+                    <!-- CONTRACT PROCESSING -->
+                    <div class="section-container">
+                        <div class="section-header">Contract Processing</div>
+                        <div class="checkbox-row">
+                            <div class="checkbox-item"><input type="checkbox" id="b-file-started"><label for="b-file-started">File started</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="b-submitted-folder"><label for="b-submitted-folder">Submitted Contract Folder</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="b-approved"><label for="b-approved">Approved</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="b-comm-submitted"><label for="b-comm-submitted">Comm Submitted</label></div>
+                        </div>
+                        <div class="checkbox-row">
+                            <div class="checkbox-item"><input type="checkbox" id="b-pending-checklist"><label for="b-pending-checklist">Pending Checklist</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="b-date-calendar"><label for="b-date-calendar">Date on Calendar</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="b-tasks-set"><label for="b-tasks-set">Tasks set</label></div>
+                        </div>
+                        <div class="checkbox-row">
+                            <span class="key-label">AOS Copy to:</span>
+                            <div class="checkbox-item"><input type="checkbox" id="b-aos-client"><label for="b-aos-client">Client</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="b-aos-bank"><label for="b-aos-bank">Bank</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="b-aos-attorney"><label for="b-aos-attorney">Attorney</label></div>
+                        </div>
+                        <div class="checkbox-row">
+                            <div class="checkbox-item"><input type="checkbox" id="b-intro-email"><label for="b-intro-email">Introduction email sent to Buyer</label></div>
+                        </div>
+                    </div>
+
+                    <!-- DEPOSITS & MORTGAGE -->
+                    <div class="section-container">
+                        <div class="section-header">Deposits & Mortgage</div>
+                        <div class="checkbox-row">
+                            <span class="key-label">EMD Due:</span>
+                            <span class="underline underline-medium"></span>
+                            <span class="key-label">Amount:</span>
+                            <span class="underline underline-medium"></span>
+                        </div>
+                        <div class="checkbox-row">
+                            <span class="key-label">Follow up on:</span>
+                            <div class="checkbox-item"><input type="checkbox" id="b-follow-deposit"><label for="b-follow-deposit">Deposit</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="b-follow-mortgage"><label for="b-follow-mortgage">Mortgage Application</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="b-follow-appraisal"><label for="b-follow-appraisal">Appraisal</label></div>
+                        </div>
+                        <div class="checkbox-row">
+                            <div class="checkbox-item"><input type="checkbox" id="b-1st-deposit"><label for="b-1st-deposit">1st Deposit received</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="b-2nd-deposit"><label for="b-2nd-deposit">2nd Deposit received</label></div>
+                        </div>
+                    </div>
+
+                    <!-- INSPECTIONS & REPORTS -->
+                    <div class="section-container">
+                        <div class="section-header">Inspections & Reports</div>
+                        <div class="checkbox-row">
+                            <div class="checkbox-item"><input type="checkbox" id="b-home-insp-sched"><label for="b-home-insp-sched">Home Inspection Scheduled</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="b-house-septic-ready"><label for="b-house-septic-ready">House & Septic Ready</label></div>
+                        </div>
+                        <div class="checkbox-row">
+                            <span class="key-label">Inspection Types:</span>
+                            <div class="checkbox-item"><input type="checkbox" id="b-insp-general"><label for="b-insp-general">General</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="b-insp-termite"><label for="b-insp-termite">Termite</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="b-insp-radon"><label for="b-insp-radon">Radon</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="b-insp-mold"><label for="b-insp-mold">Water</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="b-insp-septic"><label for="b-insp-septic">Septic</label></div>
+                        </div>
+                        <div class="checkbox-row">
+                            <span class="checkbox-item" style="margin-right: 10px;">
+                 <span class="key-label">Inspection Date:</span>
+                            <span class="underline underline-medium"></span>
+                            </span>
+                            <span class="checkbox-item">
+                 <span class="key-label">Inspector:</span>
+                            <span class="underline underline-medium"></span>
+                            </span>
+                        </div>
+                        <div class="checkbox-row">
+                            <div class="checkbox-item"><input type="checkbox" id="b-insp-reports-recvd"><label for="b-insp-reports-recvd">Inspection Reports received</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="b-insp-reports-sent"><label for="b-insp-reports-sent">sent to Client</label></div>
+                        </div>
+                        <div class="checkbox-row">
+                            <div class="checkbox-item"><input type="checkbox" id="b-sent-rerminder"><label for="b-sent-rerminder">Sent Rerminder</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="b-brti-prepared"><label for="b-brti-prepared">BRTI Prepared</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="b-sent-additional"><label for="b-sent-additional">Sent</label></div>
+                        </div>
+                        <div class="checkbox-row">
+                            <div class="checkbox-item"><input type="checkbox" id="b-cit-addendum-prepared"><label for="b-cit-addendum-prepared">CIT Addendum Prepared</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="b-cit-sent"><label for="b-cit-sent">Sent</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="b-fully-signed"><label for="b-fully-signed">Fully Signed</label></div>
+                        </div>
+                    </div>
+
+                    <!-- TITLE & CERTIFICATES -->
+                    <div class="section-container">
+                        <div class="section-header">Resale Cert * C/O</div>
+                        <div class="checkbox-row">
+                            <span class="key-label">Resale Certificate Received:</span>
+                            <div class="checkbox-item"><input type="checkbox" id="b-resale-copy-buyer"><label for="b-resale-copy-buyer">Copy sent to Buyer</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="b-resale-copy-titleco"><label for="b-resale-copy-titleco">Title Co</label></div>
+                        </div>
+                        <div class="checkbox-row">
+                            <div class="checkbox-item"><input type="checkbox" id="b-receipt-docs-sent"><label for="b-receipt-docs-sent">Receipt of Documents sent</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="b-receipt-docs-signed"><label for="b-receipt-docs-signed">Receipt of Documents signed</label></div>
+                        </div>
+                        <div class="checkbox-row">
+                            <span class="key-label">C/O Received:</span>
+                            <div class="checkbox-item"><input type="checkbox" id="b-co-copy-buyer"><label for="b-co-copy-buyer">Copy sent to Buyer</label></div>
+                        </div>
+                    </div>
+
+                    <!-- APPRAISAL & MORTGAGE -->
+                    <div class="section-container">
+                        <div class="section-header">Appraisal & Mortgage</div>
+                        <div class="checkbox-row">
+                            <span class="key-label">Mortgage Type:</span>
+                            <span class="underline underline-long"></span>
+                        </div>
+                        <div class="checkbox-row">
+                            <span class="key-label">Appraisal:</span>
+                            <div class="checkbox-item"><input type="checkbox" id="b-appr-ordered"><label for="b-appr-ordered">Ordered</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="b-appr-scheduled"><label for="b-appr-scheduled">Scheduled</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="b-appr-value-ok"><label for="b-appr-value-ok">Value OK?</label></div>
+                        </div>
+                        <div class="checkbox-row">
+                            <span class="key-label">Repairs:</span>
+                            <div class="checkbox-item"><input type="checkbox" id="b-appr-repair-yes"><label for="b-appr-repair-yes">Repairs Needed</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="b-appr-repair-no"><label for="b-appr-repair-no">No Repairs Needed</label></div>
+                        </div>
+                        <div class="checkbox-row">
+                            <span class="checkbox-item" style="margin-right: 10px;">
+                 <span class="key-label">Mortgage Commitment Due:</span>
+                            <span class="underline underline-short"></span>
+                            </span>
+                            <div class="checkbox-item"><input type="checkbox" id="b-mort-commit-requested"><label for="b-mort-commit-requested">Requested</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="b-mort-commit-received"><label for="b-mort-commit-received">Received</label></div>
+                        </div>
+                    </div>
+
+                    <!-- WARRANTY, REPAIRS, & UTILITY INFO -->
+                    <div class="section-container">
+                        <div class="section-header">Warranty, Repairs, & Utility Info</div>
+                        <!-- Utility Information Subsection -->
+                        <div class="checkbox-row">
+                            <div class="checkbox-item"><input type="checkbox" id="b-utility-info-req"><label for="b-utility-info-req">Utility Info Requested</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="b-utility-info-received"><label for="b-utility-info-received">Utility Info Received</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="b-utility-info-sent"><label for="b-utility-info-sent">Sent</label></div>
+                        </div>
+
+                        <!-- Warranty Subsection -->
+                        <div class="mini-divider"></div>
+                        <div class="checkbox-row">
+                            <span class="key-label">Warranty:</span>
+                            <div class="checkbox-item"><input type="checkbox" id="b-warranty-yes" {{#if warrantyYes}}checked{{/if}}><label for="b-warranty-yes">Yes</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="b-warranty-no" {{#if warrantyNo}}checked{{/if}}><label for="b-warranty-no">No</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="b-warranty-ordered"><label for="b-warranty-ordered">Ordered</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="b-invoice-to-title"><label for="b-invoice-to-title">Invoice sent to Title Company</label></div>
+                        </div>
+                        <div class="checkbox-row">
+                            <span class="key-label">Warranty Company:</span>
+                            <span class="underline underline-xl" id="warranty-company">{{#if warrantyCompany}}{{warrantyCompany}}{{/if}}</span>
+                        </div>
+                        <div class="checkbox-row">
+                            <span class="key-label">Warranty Cost:</span>
+                            <span class="underline underline-medium" id="warranty-cost">{{#if warrantyCost}}{{warrantyCost}}{{/if}}</span>
+                            <span class="key-label" style="margin-left: 10px;">Paid By:</span>
+                            <div class="checkbox-item"><input type="checkbox" id="warranty-seller" {{#if warrantyPaidBySeller}}checked{{/if}}><label for="warranty-seller">Seller</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="warranty-buyer" {{#if warrantyPaidByBuyer}}checked{{/if}}><label for="warranty-buyer">Buyer</label></div>
+                        </div>
+
+                        <!-- Repairs Subsection -->
+                        <div class="mini-divider"></div>
+                        <div class="checkbox-row">
+                            <span class="key-label">BRTI repairs:</span>
+                            <div class="checkbox-item"><input type="checkbox" id="b-repairs-finished"><label for="b-repairs-finished">Repairs finished</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="b-request-receipts"><label for="b-request-receipts">request receipts</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="b-receipts-received"><label for="b-receipts-received">Receipts received and sent to Buyer</label></div>
+                        </div>
+                    </div>
+
+                    <!-- CLOSING DATE TRACKING -->
+                    <div class="section-container bordered-section">
+                        <div class="section-header">Closing Date Tracking</div>
+                        <div class="checkbox-row" style="display: flex; align-items: center; width: 100%;">
+                            <span class="key-label" style="flex-shrink: 0;">Closing Date:</span>
+                            <span class="underline" style="flex-grow: 1; margin-left: 3px;"></span>
+                            <div class="checkbox-item" style="margin-left: 5px; flex-shrink: 0;"><input type="checkbox" id="b-confirmed"><label for="b-confirmed">Confirmed</label></div>
+                        </div>
+                        <div class="checkbox-row">
+                            <div class="checkbox-item"><input type="checkbox" id="b-all-parties-notified"><label for="b-all-parties-notified">All Parties Notified</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="b-extension-signed"><label for="b-extension-signed">Extension Signed</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="b-calendar-updated"><label for="b-calendar-updated">Calendar Updated</label></div>
+                        </div>
+                        <div class="checkbox-row">
+                            <span class="checkbox-item">
+                 <span class="key-label">Closing Time Preferred:</span>
+                            <span class="underline underline-xl"></span>
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- COMMISSION DETAILS -->
+                    <div class="section-container commission-details-section bordered-section">
+                        <div class="section-header">Commission Details</div>
+                        <!-- First row of the 2x2 grid -->
+                        <div class="checkbox-row">
+                            <div class="checkbox-item commission-grid-item" style="display: flex; align-items: center;">
+                                <label for="b-agent-percent" class="key-label">Buyer's Agent %:</label><span class="underline underline-medium" id="buyers-agent-percent">{{#if buyersAgentPercent}}{{buyersAgentPercent}}{{/if}}</span>
+                            </div>
+                        </div>
+                        <!-- Second row of the 2x2 grid -->
+                        <div class="checkbox-row">
+                            <div class="checkbox-item commission-grid-item" style="display: flex; align-items: center;">
+                                <label for="b-total-commission" class="key-label">Total Commission %:</label><span class="underline underline-medium" id="total-commission">{{#if totalCommissionPercent}}{{totalCommissionPercent}}{{/if}}</span>
+                            </div>
+                            <div class="checkbox-item commission-grid-item" style="display: flex; align-items: center;">
+                                <label for="s-paid-commission" class="key-label">Seller Paid Commission:</label><span class="underline underline-medium"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- End Left Column -->
+
+                <!-- Right Column - Remove Utilities, Referral, Notes -->
+                <div class="right-column">
+                    <!-- Buyer Section -->
+                    <div class="section-container bordered-section">
+                        <div class="section-header">Buyer</div>
+                        <div class="contact-field">
+                            <div class="detail-line"><span class="detail-label">Name:</span>
+                                <div class="line" id="buyer-name">{{#if buyerName}}{{buyerName}}{{/if}}</div>
+                            </div>
+                            <div class="detail-line"><span class="detail-label">Address:</span>
+                                <div class="line" id="buyer-address" style="text-indent: 10px; padding-left: 5px;">{{#if buyerAddress}}{{buyerAddress}}{{/if}}</div>
+                            </div>
+                            <div class="detail-line"><span class="detail-label">Phone:</span>
+                                <div class="line" id="buyer-phone">{{#if buyerPhone}}{{buyerPhone}}{{/if}}</div>
+                            </div>
+                            <div class="detail-line"><span class="detail-label">Email:</span>
+                                <div class="line" id="buyer-email">{{#if buyerEmail}}{{buyerEmail}}{{/if}}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Attorney Section -->
+                    <div class="section-container">
+                        <div class="section-header">Attorney</div>
+                        <div class="contact-field">
+                            <div class="detail-line"><span class="detail-label">Name:</span>
+                                <div class="line" id="attorney-name">{{#if attorneyName}}{{attorneyName}}{{/if}}</div>
+                            </div>
+                            <div class="detail-line"><span class="detail-label">Contact:</span>
+                                <div class="line" id="attorney-contact">{{#if attorneyContact}}{{attorneyContact}}{{/if}}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Seller Section -->
+                    <div class="section-container bordered-section">
+                        <div class="section-header">Seller</div>
+                        <div class="contact-field">
+                            <div class="detail-line"><span class="detail-label">Name:</span>
+                                <div class="line" id="seller-name">{{#if sellerName}}{{sellerName}}{{/if}}</div>
+                            </div>
+                            <div class="detail-line"><span class="detail-label">Address:</span>
+                                <div class="line" id="seller-address" style="text-indent: 10px; padding-left: 5px;">{{#if sellerAddress}}{{sellerAddress}}{{/if}}</div>
+                            </div>
+                            <div class="detail-line"><span class="detail-label">Phone:</span>
+                                <div class="line" id="seller-phone">{{#if sellerPhone}}{{sellerPhone}}{{/if}}</div>
+                            </div>
+                            <div class="detail-line"><span class="detail-label">Email:</span>
+                                <div class="line" id="seller-email">{{#if sellerEmail}}{{sellerEmail}}{{/if}}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Listing Agent Section -->
+                    <div class="section-container">
+                        <div class="section-header">Listing Agent</div>
+                        <div class="contact-field">
+                            <div class="detail-line"><span class="detail-label">Name:</span>
+                                <div class="line" id="agent-name-section">{{#if agentName}}{{agentName}}{{/if}}</div>
+                            </div>
+                            <div class="detail-line"><span class="detail-label">Phone:</span>
+                                <div class="line" id="agent-phone">{{#if agentPhone}}{{agentPhone}}{{/if}}</div>
+                            </div>
+                            <div class="detail-line"><span class="detail-label">Email:</span>
+                                <div class="line" id="agent-email">{{#if agentEmail}}{{agentEmail}}{{/if}}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Title Agent Section -->
+                    <div class="section-container">
+                        <div class="section-header">Title Agent</div>
+                        <div class="contact-field">
+                            <div class="detail-line"><span class="detail-label">Name:</span>
+                                <div class="line" id="title-company">{{#if titleCompany}}{{titleCompany}}{{/if}}</div>
+                            </div>
+                            <div class="detail-line"><span class="detail-label">Phone:</span>
+                                <div class="line" id="title-phone">{{#if titlePhone}}{{titlePhone}}{{/if}}</div>
+                            </div>
+                            <div class="detail-line"><span class="detail-label">Email:</span>
+                                <div class="line" id="title-email">{{#if titleEmail}}{{titleEmail}}{{/if}}</div>
+                            </div>
+                        </div>
+                        <div class="checkbox-row">
+                            <div style="display: flex; align-items: center;">
+                                <div class="checkbox-item" style="margin-right: 10px;"><input type="checkbox" id="b-title-ordered"><label for="b-title-ordered">Title Ordered</label></div>
+                                <div class="checkbox-item" style="margin-right: 10px;"><input type="checkbox" id="b-tc-invoice-sent"><label for="b-tc-invoice-sent">TC Invoice sent</label></div>
+                                <span class="key-label">Date Ordered: <span class="underline underline-medium"></span></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- HOA Section -->
+                    <div class="section-container bordered-section">
+                        <div class="section-header">HOA</div>
+                        <div class="contact-field">
+                            <div class="detail-line"><span class="detail-label">Name:</span>
+                                <div class="line" id="hoa-association">{{#if hoaAssociation}}{{hoaAssociation}}{{/if}}</div>
+                            </div>
+                            <div class="detail-line"><span class="detail-label">Contact:</span>
+                                <div class="line" id="hoa-contact">{{#if hoaContact}}{{hoaContact}}{{/if}}</div>
+                            </div>
+                            <span>Resale Certificate Received</span>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="resale-cert-received" {{#if resaleCertReceived}}checked{{/if}}>
+                            </div>
+                        </div>
+                        <div class="contact-field">
+                            <div class="detail-line"><span class="detail-label">Notes:</span>
+                                <div class="line" id="municipality">{{#if municipality}}{{municipality}}{{/if}}</div>
+                            </div>
+                            <div class="detail-line"><span class="detail-label"></span>
+                                <div class="line" id="warranty-company">{{#if warrantyCompany}}{{warrantyCompany}}{{/if}}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- C/O Section -->
+                    <div class="section-container">
+                        <div class="section-header section-header-flex">
+                            <span>C/O</span>
+                            <div class="yes-no-group">
+                                <div><input type="checkbox" id="co-received-yes" {{#if coYes}}checked{{/if}}><label for="co-received-yes">Yes</label></div>
+                                <div><input type="checkbox" id="co-received-no" {{#if coNo}}checked{{/if}}><label for="co-received-no">No</label></div>
+                            </div>
+                        </div>
+                        <div class="contact-field">
+                            <div class="detail-line"><span class="detail-label">Notes:</span>
+                                <div class="line" id="special-instructions">{{specialInstructions}}</div>
+                            </div>
+                            <div class="detail-line"><span class="detail-label"></span>
+                                <div class="line" id="additional-information">{{additionalNotes}}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Lender Information Section -->
+                    <div class="section-container bordered-section">
+                        <div class="section-header">Lender Information</div>
+                        <div class="contact-field">
+                            <div class="detail-line"><span class="detail-label">Name:</span>
+                                <div class="line" id="lender-name">{{#if lenderName}}{{lenderName}}{{/if}}</div>
+                            </div>
+                            <div class="detail-line"><span class="detail-label">Phone:</span>
+                                <div class="line" id="lender-phone">{{#if lenderPhone}}{{lenderPhone}}{{/if}}</div>
+                            </div>
+                            <div class="detail-line"><span class="detail-label">Email:</span>
+                                <div class="line" id="lender-email">{{#if lenderEmail}}{{lenderEmail}}{{/if}}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- START: Added Referral Information Section -->
+                    <div class="section-container">
+                        <div class="section-header section-header-flex">
+                            <span>Referral Information</span>
+                            <div class="yes-no-group">
+                                <div><input type="checkbox" id="buy-ref-yes"><label for="buy-ref-yes">Yes</label></div>
+                                <div><input type="checkbox" id="buy-ref-no"><label for="buy-ref-no">No</label></div>
+                            </div>
+                        </div>
+                        <div class="referral-section">
+                            <div class="single-field-line">
+                                <label class="key-label">DUE TO:</label>
+                                <div class="line" style="flex-grow: 1;" id="referral-party">{{referralParty}}</div>
+                                <span class="percentage" style="flex-shrink: 0; margin-left: 3px;" id="referral-fee">{{referralFee}}%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END: Added Referral Information Section -->
+
+                    <!-- Notes Section (Moved Up) -->
+                    <div class="section-container">
+                        <div class="section-header">Notes</div>
+                        <div class="notes-section">
+                            <hr>
+                            <hr>
+                        </div>
+                    </div>
+
+                    <!-- Quick Reference Section (Moved Down, Added Class) -->
+                    <!-- Add class="quick-reference-box" -->
+                    <div class="section-container quick-reference-box bordered-section">
+                        <div class="section-header">Quick Reference</div>
+                        <div class="single-field-line">
+                            <label class="key-label">Contract Date:</label>
+                            <div class="line" id="contract-date">{{#if contractDate}}{{contractDate}}{{/if}}</div>
+                        </div>
+                        <div class="single-field-line">
+                            <label class="key-label">Acceptance Date:</label>
+                            <div class="line" id="acceptance-date">{{#if acceptanceDate}}{{acceptanceDate}}{{/if}}</div>
+                        </div>
+                        <div class="single-field-line">
+                            <label class="key-label">Price:</label>
+                            <div class="line" id="sale-price">{{#if salePrice}}{{salePrice}}{{/if}}</div>
+                        </div>
+                        <div class="single-field-line">
+                            <label class="key-label">Seller's Assist:</label>
+                            <div class="line" id="sellers-assist">{{#if sellersAssist}}{{sellersAssist}}{{/if}}</div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- End Right Column -->
+            </div>
+            <!-- End Main Content -->
+        </div>
+        <!-- End Cover Sheet -->
+
+        <div class="controls">
+            <button id="print-button">Print Cover Sheet</button>
+        </div>
+    </div>
+
+    <script>
+        const printButton = document.getElementById('print-button');
+        if (printButton) {
+            printButton.addEventListener('click', function() {
+                window.print();
+            });
+        }
+    </script>
+</body>
+
+</html>

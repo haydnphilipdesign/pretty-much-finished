@@ -1,0 +1,204 @@
+/* 
+ * Card Component Styles
+ * This file defines consistent card styling throughout the application
+ */
+
+/* Base Card Styles */
+.card-base {
+  @apply rounded-xl overflow-hidden transition-all duration-300 shadow-md;
+}
+
+/* Standard Card */
+.card-standard {
+  @apply card-base bg-white p-6 border border-gray-100 hover:shadow-lg;
+}
+
+.card-standard:hover {
+  @apply transform -translate-y-1;
+}
+
+/* Hero Card (Glass Effect) */
+.card-hero {
+  @apply card-base bg-white/10 p-6 border border-white/20 shadow-lg;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+}
+
+.card-hero:hover {
+  @apply bg-white/15;
+}
+
+/* Dark Card */
+.card-dark {
+  @apply card-base bg-brand-blue/10 p-6 border border-brand-blue/20 hover:shadow-lg;
+  backdrop-filter: blur(4px) !important;
+  -webkit-backdrop-filter: blur(4px) !important;
+}
+
+.card-dark:hover {
+  @apply bg-brand-blue/15;
+}
+
+/* Feature Card */
+.card-feature {
+  @apply card-base bg-white p-6 border border-gray-100 hover:shadow-lg;
+}
+
+.card-feature:hover {
+  @apply transform -translate-y-2;
+}
+
+/* Card with Gradient Hover */
+.card-gradient-hover {
+  @apply relative;
+}
+
+.card-gradient-hover::before {
+  content: '';
+  @apply absolute -inset-0.5 bg-gradient-to-r from-brand-gold to-brand-blue rounded-xl blur opacity-0 transition duration-300;
+}
+
+.card-gradient-hover:hover::before {
+  @apply opacity-30;
+}
+
+.card-gradient-hover > div {
+  @apply relative bg-white rounded-xl p-6 shadow-lg transition-all duration-300 h-full z-10;
+}
+
+/* Card Components */
+
+/* Card Icon */
+.card-icon {
+  @apply w-14 h-14 rounded-full flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110;
+}
+
+.card-icon-standard {
+  @apply bg-gradient-to-br from-brand-gold/20 to-brand-blue/20;
+}
+
+.card-icon-hero {
+  @apply bg-gradient-to-br from-brand-gold/20 to-white/20;
+}
+
+.card-icon-dark {
+  @apply bg-white/10;
+}
+
+/* Card Titles */
+.card-title {
+  @apply text-xl font-bold mb-3 break-words;
+}
+
+.card-title-standard {
+  @apply text-brand-blue;
+}
+
+.card-title-hero {
+  @apply text-white;
+}
+
+.card-title-dark {
+  @apply text-brand-blue;
+}
+
+/* Card Subtitles */
+.card-subtitle {
+  @apply text-sm mb-4 italic;
+}
+
+.card-subtitle-standard {
+  @apply text-gray-600;
+}
+
+.card-subtitle-hero {
+  @apply text-blue-200;
+}
+
+.card-subtitle-dark {
+  @apply text-brand-blue/80;
+}
+
+/* Card Content */
+.card-content {
+  @apply text-base mb-4;
+}
+
+.card-content-standard {
+  @apply text-gray-600;
+}
+
+.card-content-hero {
+  @apply text-white/90;
+}
+
+.card-content-dark {
+  @apply text-gray-600;
+}
+
+/* Card List Items */
+.card-list-item {
+  @apply flex items-start text-sm mb-2;
+}
+
+.card-list-item-standard {
+  @apply text-gray-600;
+}
+
+.card-list-item-hero {
+  @apply text-blue-100;
+}
+
+.card-list-item-dark {
+  @apply text-gray-600;
+}
+
+.card-list-bullet {
+  @apply w-1.5 h-1.5 rounded-full mr-2 mt-1.5 flex-shrink-0;
+}
+
+.card-list-bullet-standard {
+  @apply bg-brand-gold;
+}
+
+.card-list-bullet-hero {
+  @apply bg-white/60;
+}
+
+.card-list-bullet-dark {
+  @apply bg-brand-blue/60;
+}
+
+/* Card Decorative Elements */
+.card-decorative-dot-1 {
+  @apply absolute -top-4 -right-4 w-8 h-8 rounded-full opacity-50;
+}
+
+.card-decorative-dot-2 {
+  @apply absolute -bottom-3 -left-3 w-6 h-6 rounded-full opacity-30;
+}
+
+.card-decorative-dot-1-hero {
+  @apply bg-blue-500;
+}
+
+.card-decorative-dot-2-hero {
+  @apply bg-blue-300;
+}
+
+/* Card Badge */
+.card-badge {
+  @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium mb-4;
+}
+
+.card-badge-standard {
+  @apply bg-blue-100 text-blue-800;
+}
+
+.card-badge-hero {
+  @apply bg-white/20 text-white;
+}
+
+.card-badge-dark {
+  @apply bg-brand-blue/20 text-brand-blue;
+}

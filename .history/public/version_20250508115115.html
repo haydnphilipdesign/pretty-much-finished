@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Version Verification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        h1 {
+            color: #2563eb;
+        }
+        
+        .card {
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .version {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1e40af;
+            margin-bottom: 10px;
+        }
+        
+        .deploy-date {
+            font-size: 18px;
+            color: #4b5563;
+        }
+        
+        .feature {
+            margin-top: 10px;
+            padding: 10px;
+            background: #eff6ff;
+            border-radius: 4px;
+        }
+        
+        .important {
+            color: #dc2626;
+            font-weight: bold;
+        }
+        
+        .button {
+            display: inline-block;
+            background: #2563eb;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+        
+        .button:hover {
+            background: #1d4ed8;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Version Verification Page</h1>
+
+    <div class="card">
+        <div class="version">Version: 1.0.5</div>
+        <div class="deploy-date">Deployed: <span id="deploy-date"></span></div>
+
+        <h2>Latest Features:</h2>
+        <div class="feature">
+            <p><span class="important">✓</span> Improved dialog handling for reset form</p>
+            <p><span class="important">✓</span> Fixed validation dialog closing</p>
+            <p><span class="important">✓</span> Improved scroll behavior on step changes</p>
+            <p><span class="important">✓</span> Optimized cache control for better updates</p>
+        </div>
+
+        <p>If you're seeing this page, you're viewing the latest version of the application.</p>
+
+        <a href="/" class="button">Return to Application</a>
+        <a href="/clear-cache.html" class="button">Clear Cache</a>
+    </div>
+
+    <script>
+        // Display the current deployment date and time
+        document.getElementById('deploy-date').textContent = new Date().toLocaleString();
+
+        // Check if the user has the latest version
+        function checkVersion() {
+            const versionTimestamp = Date.now();
+            console.log(`Current version timestamp: ${versionTimestamp}`);
+
+            // Store the version timestamp locally
+            localStorage.setItem('appVersionTimestamp', versionTimestamp);
+        }
+
+        // Run the version check
+        checkVersion();
+    </script>
+</body>
+
+</html>

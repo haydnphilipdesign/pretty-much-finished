@@ -1,0 +1,13 @@
+# Exclude unused serverless functions to stay under Hobby plan limit
+
+# Unused API files
+api/send-to-make.js
+api/pdf-upload.js
+api/fill-pdf.js
+api/simple-email.js
+api/send-transaction-email-fixed.js
+api/health.js
+api/[...path].js
+
+# Entire PDF folder is unused
+api/pdf/ 

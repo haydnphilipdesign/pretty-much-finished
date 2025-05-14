@@ -1,0 +1,11 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "API functions for PA Real Estate Support Services",
+  "main": "index.js",
+  "dependencies": {
+    "airtable": "^0.12.2",
+    "nodemailer": "^6.9.10",
+    "pdf-lib": "^1.17.1"
+  }
+}

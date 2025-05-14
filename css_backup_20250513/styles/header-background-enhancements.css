@@ -1,0 +1,179 @@
+/**
+ * Header Background Enhancements
+ * 
+ * This file provides gradient overlays and improved backgrounds
+ * for headers to ensure text has proper contrast.
+ */
+
+/* Base header enhancement with a subtle gradient overlay */
+header,
+.header,
+.hero-header,
+[data-header="true"],
+.site-header {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Add a subtle gradient overlay to all headers */
+header::before,
+.header::before,
+.hero-header::before,
+[data-header="true"]::before,
+.site-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.25),
+    rgba(0, 0, 0, 0.1)
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Ensure header content is above the overlay */
+header > *,
+.header > *,
+.hero-header > *,
+[data-header="true"] > *,
+.site-header > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Enhanced style for main hero headers */
+.hero-section,
+.main-hero,
+[data-hero-component="true"],
+.home-hero {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Add a more prominent gradient for hero sections */
+.hero-section::before,
+.main-hero::before,
+[data-hero-component="true"]::before,
+.home-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0.1)
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Make sure hero content is above the overlay */
+.hero-section > *,
+.main-hero > *,
+[data-hero-component="true"] > *,
+.home-hero > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Enhanced backgrounds for specific pages */
+/* Home page header */
+.home-hero,
+[data-page="home"] header,
+[data-page="home"] .hero-section {
+  background-color: #0066CC !important; /* brand-blue */
+  background-image: linear-gradient(
+    135deg,
+    #0066CC 0%,
+    #0052a3 50%,
+    #004080 100%
+  ) !important;
+}
+
+/* About page header */
+[data-page="about"] header,
+[data-page="about"] .hero-section {
+  background-color: #0066CC !important; /* brand-blue */
+  background-image: linear-gradient(
+    135deg,
+    #0066CC 0%,
+    #1a5ca3 60%,
+    #0F1C2E 100%
+  ) !important;
+}
+
+/* Services page header */
+[data-page="services"] header,
+[data-page="services"] .hero-section {
+  background-color: #0066CC !important; /* brand-blue */
+  background-image: linear-gradient(
+    135deg,
+    #0066CC 0%,
+    #0055a8 50%,
+    #004c99 100%
+  ) !important;
+}
+
+/* Work With Me page header */
+[data-page="work"] header,
+[data-page="work"] .hero-section,
+[data-page="work-with-me"] header,
+[data-page="work-with-me"] .hero-section {
+  background-color: #0066CC !important; /* brand-blue */
+  background-image: linear-gradient(
+    135deg,
+    #0066CC 0%,
+    #0058ad 50%,
+    #004080 100%
+  ) !important;
+}
+
+/* Add subtle texture to headers */
+header::after,
+.header::after,
+.hero-header::after,
+.hero-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.5;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Enhanced navigation background when scrolled */
+header.scrolled,
+.header.scrolled,
+.sticky-header.scrolled,
+.fixed-header.scrolled {
+  background-color: rgba(0, 102, 204, 0.92) !important; /* brand-blue with 92% opacity */
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Enhanced mobile header for better contrast */
+@media (max-width: 768px) {
+  header::before,
+  .header::before,
+  .hero-header::before,
+  .hero-section::before {
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.2)
+    );
+  }
+}

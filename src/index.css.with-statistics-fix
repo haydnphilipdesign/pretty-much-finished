@@ -1,0 +1,20 @@
+/**
+ * Main CSS Entry Point
+ * This file imports the consolidated CSS files that contain all necessary styles
+ * for the website with proper text contrast and consistent styling.
+ */
+
+/* Import consolidated CSS files */
+@import './styles/consolidated.css';
+@import './styles/consolidated-part2.css';
+
+/* Import specific section fixes */
+@import './styles/statistics-cards-fix.css';
+
+/* Import transaction form specific CSS - DO NOT MODIFY */
+@import './styles/transaction-form.css';
+
+/* Tailwind directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

@@ -1,0 +1,77 @@
+/* PARESS - Main CSS Entry Point */
+
+
+/* Core Tailwind directives and base styles */
+
+@import './core.css';
+
+/* Import enhanced glass card system */
+
+@import './glass-cards.css';
+
+/* Import automatic text contrast system */
+
+@import './contrast-system.css';
+
+/* Import page-specific fixes */
+
+@import './page-specific.css';
+
+/* Ensure proper text contrast across the site */
+
+body {
+    @apply text-gray-900;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* Default text colors for better contrast */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    @apply text-gray-900;
+}
+
+p,
+span,
+li {
+    @apply text-gray-700;
+}
+
+
+/* Ensure links are always visible */
+
+a {
+    @apply text-blue-600 hover:text-blue-800;
+}
+
+
+/* Dark mode adjustments */
+
+.dark {
+    @apply bg-gray-900;
+}
+
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4,
+.dark h5,
+.dark h6 {
+    @apply text-white;
+}
+
+.dark p,
+.dark span,
+.dark li {
+    @apply text-gray-300;
+}
+
+.dark a {
+    @apply text-blue-400 hover:text-blue-300;
+}

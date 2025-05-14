@@ -1,0 +1,44 @@
+{
+    "version": 2,
+    "builds": [{
+            "src": "server/api/*.js",
+            "use": "@vercel/node"
+        },
+        {
+            "src": "package.json",
+            "use": "@vercel/static-build",
+            "config": {
+                "distDir": "build"
+            }
+        }
+    ],
+    "routes": [{
+            "src": "/api/generateCoverSheet",
+            "dest": "server/api/generateCoverSheet.js"
+        },
+        {
+            "src": "/api/sendEmail",
+            "dest": "server/api/sendEmail.js"
+        },
+        {
+            "src": "/api/(.*)",
+            "dest": "server/api/$1.js"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "build/$1"
+        }
+    ],
+    "env": {
+        "AIRTABLE_API_KEY": "@airtable_api_key",
+        "AIRTABLE_BASE_ID": "@airtable_base_id",
+        "EMAIL_HOST": "smtp.gmail.com",
+        "EMAIL_PORT": "587",
+        "EMAIL_SECURE": "false",
+        "EMAIL_USER": "@email_user",
+        "EMAIL_PASSWORD": "@email_password",
+        "EMAIL_FROM": "noreply@parealestatesupport.com",
+        "EMAIL_RECIPIENT": "debbie@parealestatesupport.com",
+        "NODE_ENV": "production"
+    }
+}

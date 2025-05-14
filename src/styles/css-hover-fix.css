@@ -1,0 +1,53 @@
+/**
+ * CSS Hover Fix - May 2025
+ * 
+ * Fix for incorrect Tailwind hover syntax with space after colon
+ */
+
+/* Fix all hover: text-* instances */
+a, 
+footer a:not(.btn),
+.bg-brand-blue nav a,
+.glass-card a:not(.btn),
+.glass-card-white a:not(.btn),
+.glass-card-frost a:not(.btn),
+.glass-card-navy a:not(.btn),
+.glass-card-blue a:not(.btn),
+.glass-card-dark a:not(.btn),
+.glass-card-light a:not(.btn),
+.glass-card-gold a:not(.btn) {
+  @apply hover:text-blue-800;
+}
+
+/* Dark background text hover fixes */
+.glass-card-navy a:not(.btn),
+.glass-card-blue a:not(.btn),
+.glass-card-dark a:not(.btn),
+.glass-card-light a:not(.btn) {
+  @apply text-blue-200 hover:text-white;
+}
+
+/* Gold background text hover fixes */
+.glass-card-gold a:not(.btn) {
+  @apply text-blue-900 hover:text-gray-900;
+}
+
+/* Fix navigation hover states */
+.bg-brand-blue nav a {
+  @apply text-white hover:text-yellow-300;
+}
+
+/* Fix footer link hover states */
+footer a:not(.btn) {
+  @apply text-gray-700 hover:text-blue-700;
+}
+
+/* Fix global link hover states */
+a {
+  @apply text-blue-600 hover:text-blue-800;
+}
+
+/* Fix dark mode link hover states */
+.dark a {
+  @apply text-blue-400 hover:text-blue-300;
+}

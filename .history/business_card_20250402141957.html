@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deborah O'Brien - Transaction Coordinator</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Georgia:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f0f0f0; /* Light background to see the card */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .business-card {
+            background-color: #1a1a1a; /* Dark background */
+            color: #ffffff; /* White text */
+            width: 900px; /* Adjust width as needed */
+            max-width: 95%;
+            display: flex;
+            border-radius: 15px; /* Rounded corners for the whole card */
+            overflow: hidden; /* Hide overflowing parts */
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            position: relative; /* Needed for absolute positioning of dots */
+        }
+
+        .image-section {
+            flex-basis: 40%; /* Adjust width ratio */
+            position: relative; /* To potentially position elements within */
+            display: flex; /* Use flex to center image if needed */
+            align-items: center; /* Center vertically */
+            justify-content: center; /* Center horizontally */
+            padding: 30px 0 30px 30px; /* Padding around the image container */
+        }
+
+        .image-container {
+             /* Make container slightly larger or adjust positioning */
+            background-color: #ffffff; /* Background behind the image if needed */
+            border-radius: 25px; /* Rounded corners matching the style */
+            overflow: hidden; /* Ensure image stays within rounded bounds */
+            position: relative;
+            z-index: 1; /* Ensure image container is above the black background */
+            margin-right: -50px; /* Negative margin to create overlap */
+            box-shadow: 5px 0px 15px rgba(0,0,0,0.1); /* Subtle shadow */
+        }
+
+        .profile-image {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-height: 450px; /* Control max image height */
+            object-fit: cover; /* Cover the container */
+        }
+
+
+        .info-section {
+            flex-basis: 60%; /* Adjust width ratio */
+            padding: 50px 50px 50px 80px; /* Top, Right, Bottom, Left - Increased left padding due to overlap */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center content vertically */
+        }
+
+        .name {
+             /* Using Georgia font as per new.html example */
+            font-family: 'Georgia', serif;
+            font-size: 3.5em; /* Adjusted size slightly for longer name */
+            font-weight: 700;
+            margin: 0 0 5px 0;
+            line-height: 1.1;
+        }
+
+        .title {
+            font-size: 1.2em;
+            font-weight: 400; /* Adjusted weight */
+            text-transform: none; /* Removed uppercase */
+            letter-spacing: 1px; /* Reduced spacing */
+            margin: 0 0 40px 0; /* Space below title */
+            color: #cccccc; /* Slightly lighter gray */
+        }
+
+        .contact-info {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .contact-info li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 18px; /* Space between contact items */
+            font-size: 1em;
+        }
+
+        .contact-info li:last-child {
+            margin-bottom: 0;
+        }
+
+        .contact-info i {
+            font-size: 1.4em;
+            width: 35px; /* Fixed width for icons */
+            text-align: center;
+            margin-right: 15px; /* Space between icon and text */
+            color: #ffffff; /* White icons */
+        }
+        /* Style for links in contact info */
+        .contact-info a {
+            color: #ffffff; /* White link text */
+            text-decoration: none; /* Remove underline */
+        }
+        .contact-info a:hover {
+            text-decoration: underline; /* Add underline on hover */
+        }
+
+
+        .decorative-dots {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            display: grid;
+            grid-template-columns: repeat(2, 8px); /* 2 columns */
+            grid-template-rows: repeat(3, 8px);    /* 3 rows */
+            gap: 8px; /* Space between dots */
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            background-color: #ffffff;
+            border-radius: 50%; /* Make them circular */
+        }
+
+         /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .business-card {
+                flex-direction: column;
+                width: 90%;
+                max-width: 450px; /* Max width on smaller screens */
+            }
+
+            .image-section {
+                flex-basis: auto;
+                width: 100%;
+                padding: 20px;
+                justify-content: center; /* Center image container */
+            }
+
+            .image-container {
+                margin-right: 0; /* Remove overlap on mobile */
+                width: 80%; /* Adjust container size */
+                max-width: 250px;
+            }
+
+            .info-section {
+                flex-basis: auto;
+                width: 100%;
+                padding: 30px 30px 40px 30px; /* Adjust padding */
+                text-align: center; /* Center text */
+            }
+
+            .name {
+                font-size: 2.5em; /* Adjust size */
+            }
+
+            .title {
+                font-size: 1em;
+                letter-spacing: 1px;
+                margin-bottom: 30px;
+            }
+
+            .contact-info li {
+                justify-content: center; /* Center contact items */
+                font-size: 0.9em;
+                margin-bottom: 15px;
+            }
+
+             .contact-info i {
+                width: 30px;
+                font-size: 1.2em;
+                margin-right: 10px;
+            }
+
+            .decorative-dots {
+                top: 15px;
+                right: 15px;
+                grid-template-columns: repeat(2, 6px);
+                grid-template-rows: repeat(3, 6px);
+                gap: 6px;
+            }
+            .dot {
+                width: 6px;
+                height: 6px;
+            }
+        }
+
+         @media (max-width: 480px) {
+             .name {
+                 font-size: 2.2em; /* Further adjust size */
+             }
+             .title {
+                 font-size: 0.9em;
+             }
+             .contact-info li {
+                 font-size: 0.85em;
+             }
+         }
+
+    </style>
+</head>
+<body>
+
+    <div class="business-card">
+        <div class="image-section">
+            <div class="image-container">
+                <!-- Updated image src and alt text -->
+                <img src="https://parealestatesupport.com/optimized/debbie.jpg" alt="Deborah O'Brien" class="profile-image">
+            </div>
+        </div>
+        <div class="info-section">
+            <div class="decorative-dots">
+                <div class="dot"></div><div class="dot"></div>
+                <div class="dot"></div><div class="dot"></div>
+                <div class="dot"></div><div class="dot"></div>
+            </div>
+            <!-- Updated name -->
+            <h1 class="name">Deborah O'Brien</h1>
+            <!-- Updated title -->
+            <p class="title">Transaction Coordinator</p>
+            <ul class="contact-info">
+                <!-- Updated phone number -->
+                <li><i class="fas fa-phone-alt"></i> 570.588.4637</li>
+                <!-- Updated email address -->
+                <li><i class="fas fa-envelope"></i> <a href="mailto:debbie@parealestatesupport.com">debbie@parealestatesupport.com</a></li>
+                <!-- Replaced address with website -->
+                <li><i class="fas fa-globe"></i> <a href="https://parealestatesupport.com" target="_blank">parealestatesupport.com</a></li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html> 

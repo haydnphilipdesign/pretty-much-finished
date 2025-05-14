@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utility Information Sheet</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 2rem;
+            background-color: #f9f9f9;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        
+        h2 {
+            color: #34495e;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 5px;
+            margin-top: 2rem;
+        }
+        
+        h3 {
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+        }
+        
+        .section {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .service li {
+            margin-bottom: 4px;
+        }
+        
+        .fields label {
+            display: block;
+            font-weight: 500;
+            margin-top: 0.5rem;
+        }
+        
+        .fields input {
+            width: 100%;
+            padding: 0.5rem;
+            margin-top: 0.25rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        
+        .buttons {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        .buttons button {
+            background-color: #3498db;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .buttons button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Utility Information Sheet</h1>
+
+    <!-- Sections are grouped below by category-->
+    <div id="form-container"></div>
+
+    <div class="buttons">
+        <button onclick="window.print()">Print</button>
+        <button onclick="saveAsPDF()">Save as PDF</button>
+        <button onclick="clearForm()">Clear Form</button>
+    </div>
+
+    <script>
+        const services = [{
+            category: 'Main Utilities',
+            utilities: [{
+                name: 'Electric',
+                providers: ['Met-ED (800-545-7741)', 'PP&L (800-342-5775)'],
+                frequency: 'Monthly'
+            }, {
+                name: 'Gas / Oil / Propane',
+                providers: ['Suburban Propane (610-759-0474)', 'UGI (610-866-0951)', 'Lehigh Fuels (610-266-8990)', 'Reimer Bros (610-863-4105)', 'Lessig Oil + Propane (610-863-3835)', 'AmeriGas (570-424-5901)', 'Tolinos (610-588-3338)', 'Fuel Cell (610-759-0143)', 'Fritch (610-691-1212)', 'Reichenbach (610-434-7234)'],
+                frequency: 'Monthly'
+            }, {
+                name: 'Water',
+                providers: ['PA American Water Company (800-565-7292)', 'Easton Suburban Water Comp (610-258-7181)', 'Municipality', 'On Site Well'],
+                frequency: 'Quarterly'
+            }, {
+                name: 'Sewer',
+                providers: ['Northampton County Court House (610-559-3000)', 'Lehigh County Authority (610-398-1444)', 'Municipality', 'On-Site Septic'],
+                frequency: 'Quarterly'
+            }, {
+                name: 'Trash',
+                providers: ['Allied Waste Services (215-723-0400)', 'Mascaro Sanitation (800-333-4624)', 'McAuliffe (610-767-3152)', 'Reiss Brothers (610-432-7574)', 'Township', 'Waste Management (800-621-2100)', 'Strohl\'s (610-837-9929)', 'Swint (610-253-8535)'],
+                frequency: 'Monthly'
+            }]
+        }, {
+            category: 'Communication Services',
+            utilities: [{
+                name: 'Cable TV',
+                providers: ['Blue Ridge Cable (570-421-0780)', 'Direct TV (888-679-8671)', 'Dish Network (610-381-6315)', 'RCN (800-746-4726)', 'Service Electric (800-232-9100)'],
+                frequency: 'Monthly'
+            }, {
+                name: 'Internet/Phone',
+                providers: ['RCN (800-746-4726)', 'Service Electric (610-841-4100)', 'Verizon (800-660-2215)', 'Blue Ridge Cable (570-421-0780)', 'AT&T (800-222-0300)'],
+                frequency: 'Monthly'
+            }]
+        }, {
+            category: 'Property Services',
+            utilities: [{
+                name: 'HOA',
+                providers: [],
+                frequency: 'Monthly/Quarterly/Yearly'
+            }, {
+                name: 'Alarm',
+                providers: ['ADT (888-281-1765)', 'Fox Brothers Alarm (610-252-7880)'],
+                frequency: 'Monthly'
+            }]
+        }, {
+            category: 'Additional Services',
+            utilities: [{
+                name: 'Lawn Care',
+                providers: [],
+                frequency: 'Monthly'
+            }, {
+                name: 'Pool Care',
+                providers: [],
+                frequency: 'Monthly'
+            }, {
+                name: 'Snow Removal',
+                providers: [],
+                frequency: 'Monthly'
+            }]
+        }, {
+            category: 'General Information',
+            utilities: [{
+                name: 'Property Address'
+            }, {
+                name: 'Transaction Link'
+            }, {
+                name: 'Completed By'
+            }, {
+                name: 'Date'
+            }, {
+                name: 'Last Updated'
+            }]
+        }];
+
+        const container = document.getElementById("form-container");
+        services.forEach(section => {
+            const sectionDiv = document.createElement("div");
+            sectionDiv.className = "section";
+            sectionDiv.innerHTML = `<h2>${section.category}</h2>`;
+
+            section.utilities.forEach(utility => {
+                const utilityDiv = document.createElement("div");
+                utilityDiv.className = "service";
+                utilityDiv.innerHTML = `<h3>${utility.name}</h3>`;
+
+                if (utility.providers ? .length) {
+                    const ul = document.createElement("ul");
+                    utility.providers.forEach(p => {
+                        const li = document.createElement("li");
+                        li.textContent = p;
+                        ul.appendChild(li);
+                    });
+                    utilityDiv.appendChild(ul);
+                }
+
+                const fieldsDiv = document.createElement("div");
+                fieldsDiv.className = "fields";
+                if (section.category === 'General Information') {
+                    fieldsDiv.innerHTML = `
+            <label>${utility.name}:<input type="text" name="${utility.name.toLowerCase().replace(/\s+/g, '-')}"></label>
+          `;
+                } else {
+                    fieldsDiv.innerHTML = `
+            <label>Account #: <input type="text" name="${utility.name.toLowerCase()}-account"></label>
+            <label>Start/End Dates: <input type="text" name="${utility.name.toLowerCase()}-dates"></label>
+            <label>${utility.frequency} Cost: <input type="text" name="${utility.name.toLowerCase()}-cost"></label>
+          `;
+                }
+
+                utilityDiv.appendChild(fieldsDiv);
+                sectionDiv.appendChild(utilityDiv);
+            });
+
+            container.appendChild(sectionDiv);
+        });
+
+        function saveAsPDF() {
+            alert("Save as PDF functionality is not implemented in this example. Use browser's print to save as PDF.");
+        }
+
+        function clearForm() {
+            const inputs = document.querySelectorAll('input');
+            inputs.forEach(input => input.value = '');
+        }
+    </script>
+</body>
+
+</html>

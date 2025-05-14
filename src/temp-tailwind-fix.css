@@ -1,0 +1,18 @@
+/* Tailwind directives first */ 
+@tailwind base; 
+@tailwind components; 
+ 
+/* Import custom styles */ 
+@import './styles/glass-cards-improved.css'; 
+@import './styles/enhanced-text-contrast.css'; 
+@import './styles/contrast-variables.css'; 
+@import './styles/design-system.css'; 
+@import './styles/minimal-contrast.css'; 
+@import './styles/scrollbar-fix.css'; 
+@import './styles/transition-fixes.css'; 
+@import './styles/services-page-fixes.css'; 
+@import './styles/home-page-fixes.css'; 
+@import './styles/statistics-cards-fix.css'; 
+ 
+/* Tailwind utilities last */ 
+@tailwind utilities; 

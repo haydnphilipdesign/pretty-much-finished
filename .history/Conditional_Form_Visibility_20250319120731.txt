@@ -1,0 +1,63 @@
+ROLE VISIBILITY KEY: (L=Listing Agent,B=Buyer's Agent,D=Dual Agent,A=All Roles)
+
+1. Role Section:
+[A] Role Selection (required,select)
+
+2. Property Section:
+[A] MLS Number (required,text)
+[A] Property Address (required,text)
+[A] Sale Price (required,currency)
+[L/D] Property Status (required,radio)
+[L/D] Winterized Status (required if "Property Status" = "Vacant",switch)
+[L/D] Update MLS Status to Pending (required,switch)
+[L/D] Property Access Type (required,select)  
+[L/D] Lockbox Access Code (required if "Property Access Type" = "Electronic Lockbox", "Combo Lockbox" OR "Keypad",text)
+
+3. Client Section ([LB] at least one client required,[D] at least two clients required):
+[A] Name (required,text)
+[A] Email (required,email format)
+[A] Phone (required,phone format)
+[A] Address (required,text)
+[A] Marital Status (required,select)
+[D] Client Designation (required,select)
+
+4. Commission Section:
+[L/D] Total Commission % (required,number)
+[L/D] Listing Agent Commission % (required,number)
+[A] Buyers Agent Commission % (required,number)
+[A] Broker Fee (optional,number)
+[A] Seller's Assist Amount (optional,currency)
+[A] Is Referral (required,switch)
+[A] Referral Party (required if "Is Referral" = true,text)
+[A] Referral Fee (required if "Is Referral" = true,currency)
+[A] Broker EIN (required if "Is Referral" = true,text)
+
+5. Property Details Section:
+[A] Resale Certificate required (required,switch)
+[A] HOA Name (required if "Resale Certificate" = true,text)
+[A] CO required (required,switch)
+[A] Municipality/Township (required if "CO required" = true,text)
+[L/D] First Right of Refusal (required,switch)
+[L/D] First Right of Refusal Name (required if "First Right of Refusal" = true,text)
+[A] Attorney Representation (required,switch)
+[A] Attorney Name (required if "Attorney Representation" = true,text)
+[A] Home Warranty Purchased (required,switch)
+[A] Home Warranty Company (required if "Home Warranty Purchased" = true,text)
+[A] Warranty Cost (required if "Home Warranty Purchased" = true,currency)
+[A] Warranty Paid By (required if "Home Warranty Purchased" = true,select)
+[B/D] Title Company Name (required,text)
+
+6. Documents Section:
+[L] Listing Agent Required Documents
+[B] Buyer's Agent Required Documents
+[D] Dual Agent Required Documents
+[A] Document Confirmation (required,checkbox)
+
+7. Additional Info Section:
+[A] Special Instructions (optional,textarea)
+[A] Urgent Issues (optional,textarea)
+[A] Additional Notes (optional,textarea)
+
+8. Signature Section:
+[A] Digital Signature (required,text)
+[A] Confirm Accuracy (required,checkbox)

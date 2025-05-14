@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utility Information Sheet</title>
+    <style>
+        @page {
+            size: landscape;
+            margin: 0.25in;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.1;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 5px;
+            padding-bottom: 3px;
+            border-bottom: 1px solid #999;
+        }
+        
+        h1 {
+            font-size: 14pt;
+            color: #333;
+            margin: 0 0 2px 0;
+        }
+        
+        .header p {
+            margin: 0;
+            font-size: 10pt;
+        }
+        
+        .instructions {
+            font-size: 8pt;
+            color: #666;
+            margin: 5px 0;
+            padding: 3px;
+        }
+        
+        h2 {
+            font-size: 10pt;
+            color: #333;
+            margin: 0;
+            padding: 0 0 2px 0;
+            border-bottom: 1px solid #ccc;
+        }
+        
+        .section {
+            margin-bottom: 5px;
+            padding: 3px;
+            border: 1px solid #ccc;
+        }
+        
+        label {
+            display: block;
+            margin: 1px 0;
+            font-size: 9pt;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        input[type="text"] {
+            width: 120px;
+            padding: 1px 2px;
+            margin-left: 2px;
+            border: 1px solid #999;
+            font-size: 9pt;
+        }
+        
+        input[type="checkbox"] {
+            margin: 0 2px 0 0;
+            transform: scale(0.8);
+            vertical-align: middle;
+        }
+        
+        .cost-field {
+            margin-top: 2px;
+            padding-top: 2px;
+            border-top: 1px dotted #ccc;
+            font-size: 9pt;
+        }
+        
+        .cost-field input[type="text"] {
+            width: 60px;
+        }
+        
+        .property-address {
+            margin-bottom: 5px;
+            padding: 3px;
+            border: 1px solid #999;
+        }
+        
+        .property-address input[type="text"] {
+            width: 400px;
+        }
+        
+        .signature-section {
+            margin-top: 5px;
+            border-top: 1px solid #999;
+            padding-top: 3px;
+        }
+        
+        .footer {
+            margin-top: 5px;
+            padding-top: 3px;
+            border-top: 1px solid #ccc;
+            font-size: 7pt;
+            color: #666;
+            text-align: center;
+        }
+        
+        .columns {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 5px;
+        }
+        
+        .column {
+            flex: 1;
+        }
+        
+        .utility-group {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 5px;
+        }
+        
+        .utility-group .section {
+            flex: 1;
+            margin-bottom: 0;
+        }
+        
+        @media print {
+            body {
+                margin: 0;
+                padding: 0;
+                font-size: 9pt;
+            }
+            .section {
+                page-break-inside: avoid;
+            }
+            input[type="text"] {
+                border: 1px solid #999;
+                background-color: #fff;
+            }
+            .instructions {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Utility Information Sheet</h1>
+        <p>For Home Sellers and Buyers</p>
+    </div>
+
+    <div class="instructions">
+        <strong>Sellers:</strong> Complete with accurate utility information to help new homeowners. Include account numbers, contact info, and costs.
+        <strong>Buyers:</strong> Use this to set up your utility accounts before moving in.
+    </div>
+
+    <div class="property-address">
+        <label><strong>Property Address:</strong> <input type="text" name="property_address" placeholder="Enter full property address"></label>
+    </div>
+
+    <div class="columns">
+        <div class="column">
+            <div class="utility-group">
+                <div class="section">
+                    <h2>Electric</h2>
+                    <label><input type="checkbox"> Met-ED (800-545-7741)</label>
+                    <label><input type="checkbox"> PP&L (800-342-5775)</label>
+                    <label><input type="checkbox"> Other <input type="text" name="electric_other"></label>
+                    <div class="cost-field">
+                        Monthly: $ <input type="text" name="electric_cost">
+                    </div>
+                </div>
+                <div class="section">
+                    <h2>Gas / Oil / Propane</h2>
+                    <label><input type="checkbox"> Suburban Propane (610-759-0474)</label>
+                    <label><input type="checkbox"> UGI (610-866-0951)</label>
+                    <label><input type="checkbox"> Lehigh Fuels (610-266-8990)</label>
+                    <label><input type="checkbox"> Reimer Bros (610-863-4105)</label>
+                    <label><input type="checkbox"> Lessig Oil + Propane (610-863-3835)</label>
+                    <label><input type="checkbox"> AmeriGas (570-424-5901)</label>
+                    <label><input type="checkbox"> Tolinos (610-588-3338)</label>
+                    <label><input type="checkbox"> Fuel Cell (610-759-0143)</label>
+                    <label><input type="checkbox"> Fritch (610-691-1212)</label>
+                    <label><input type="checkbox"> Reichenbach (610-434-7234)</label>
+                    <label><input type="checkbox"> Other <input type="text" name="propane_other"></label>
+                    <div class="cost-field">
+                        Monthly: $ <input type="text" name="propane_cost">
+                    </div>
+                </div>
+            </div>
+
+            <div class="utility-group">
+                <div class="section">
+                    <h2>Water</h2>
+                    <label><input type="checkbox"> PA American Water Company (800-565-7292)</label>
+                    <label><input type="checkbox"> Easton Suburban Water Comp (610-258-7181)</label>
+                    <label><input type="checkbox"> Municipality</label>
+                    <label><input type="checkbox"> Other <input type="text" name="water_other"></label>
+                    <label><input type="checkbox"> On Site Well</label>
+                    <div class="cost-field">
+                        Quarterly: $ <input type="text" name="water_cost">
+                    </div>
+                </div>
+                <div class="section">
+                    <h2>Sewer</h2>
+                    <label><input type="checkbox"> Northampton County Court House (610-559-3000)</label>
+                    <label><input type="checkbox"> Lehigh County Authority (610-398-1444)</label>
+                    <label><input type="checkbox"> Municipality</label>
+                    <label><input type="checkbox"> Other <input type="text" name="sewer_other"></label>
+                    <label><input type="checkbox"> On-Site Septic</label>
+                    <div class="cost-field">
+                        Quarterly: $ <input type="text" name="sewer_cost">
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Trash</h2>
+                <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                    <div style="flex: 1;">
+                        <label><input type="checkbox"> Allied Waste Services (215-723-0400)</label>
+                        <label><input type="checkbox"> Mascaro Sanitation (800-333-4624)</label>
+                        <label><input type="checkbox"> McAuliffe (610-767-3152)</label>
+                        <label><input type="checkbox"> Reiss Brothers (610-432-7574)</label>
+                        <label><input type="checkbox"> Township</label>
+                    </div>
+                    <div style="flex: 1;">
+                        <label><input type="checkbox"> Waste Management (800-621-2100)</label>
+                        <label><input type="checkbox"> Strohl's (610-837-9929)</label>
+                        <label><input type="checkbox"> Swint (610-253-8535)</label>
+                        <label><input type="checkbox"> Other <input type="text" name="trash_other"></label>
+                    </div>
+                </div>
+                <div class="cost-field">
+                    Monthly: $ <input type="text" name="trash_cost">
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="utility-group">
+                <div class="section">
+                    <h2>Cable TV</h2>
+                    <label><input type="checkbox"> Blue Ridge Cable (570-421-0780)</label>
+                    <label><input type="checkbox"> Direct TV (888-679-8671)</label>
+                    <label><input type="checkbox"> Dish Network (610-381-6315)</label>
+                    <label><input type="checkbox"> RCN (800-746-4726)</label>
+                    <label><input type="checkbox"> Service Electric (800-232-9100)</label>
+                    <label><input type="checkbox"> Other <input type="text" name="cable_other"></label>
+                    <div class="cost-field">
+                        Monthly: $ <input type="text" name="cable_cost">
+                    </div>
+                </div>
+                <div class="section">
+                    <h2>Internet/Phone</h2>
+                    <label><input type="checkbox"> RCN (800-746-4726)</label>
+                    <label><input type="checkbox"> Service Electric (610-841-4100)</label>
+                    <label><input type="checkbox"> Verizon (800-660-2215)</label>
+                    <label><input type="checkbox"> Blue Ridge Cable (570-421-0780)</label>
+                    <label><input type="checkbox"> AT&T (800-222-0300)</label>
+                    <label><input type="checkbox"> Other <input type="text" name="phone_other"></label>
+                    <div class="cost-field">
+                        Monthly: $ <input type="text" name="phone_cost">
+                    </div>
+                </div>
+            </div>
+
+            <div class="utility-group">
+                <div class="section">
+                    <h2>HOA</h2>
+                    <label>Company: <input type="text" name="hoa_company"></label>
+                    <label>Phone: <input type="text" name="hoa_phone"></label>
+                    <div class="cost-field">
+                        Dues: $ <input type="text" name="hoa_dues">
+                        <select style="font-size: 8pt;">
+                            <option>Monthly</option>
+                            <option>Yearly</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="section">
+                    <h2>Alarm</h2>
+                    <label><input type="checkbox"> ADT (888-281-1765)</label>
+                    <label><input type="checkbox"> Fox Brothers Alarm (610-252-7880)</label>
+                    <label><input type="checkbox"> Other <input type="text" name="alarm_other"></label>
+                    <label><input type="checkbox"> N/A</label>
+                    <div class="cost-field">
+                        Monthly: $ <input type="text" name="alarm_cost">
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Additional Services</h2>
+                <div style="display: flex; gap: 5px;">
+                    <div style="flex: 1;">
+                        <h2 style="font-size: 9pt;">Lawn Care</h2>
+                        <label>Company: <input type="text" style="width: 100px;" name="lawn_company"></label>
+                        <label>Phone: <input type="text" style="width: 100px;" name="lawn_phone"></label>
+                        <label>Monthly: $ <input type="text" style="width: 50px;" name="lawn_cost"></label>
+                    </div>
+                    <div style="flex: 1;">
+                        <h2 style="font-size: 9pt;">Pool Care</h2>
+                        <label>Company: <input type="text" style="width: 100px;" name="pool_company"></label>
+                        <label>Phone: <input type="text" style="width: 100px;" name="pool_phone"></label>
+                        <label>Monthly: $ <input type="text" style="width: 50px;" name="pool_cost"></label>
+                    </div>
+                    <div style="flex: 1;">
+                        <h2 style="font-size: 9pt;">Snow Removal</h2>
+                        <label>Company: <input type="text" style="width: 100px;" name="snow_company"></label>
+                        <label>Phone: <input type="text" style="width: 100px;" name="snow_phone"></label>
+                        <label>Monthly: $ <input type="text" style="width: 50px;" name="snow_cost"></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="signature-section">
+        <div style="display: flex; gap: 20px;">
+            <label>Completed By: <input type="text" name="completed_by" placeholder="Full name"></label>
+            <label>Date: <input type="text" name="date" placeholder="MM/DD/YYYY" style="width: 100px;"></label>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>This document is provided for informational purposes only. Please verify all information with utility providers.</p>
+        <p>Last Updated:
+            <script>
+                document.write(new Date().toLocaleDateString())
+            </script>
+        </p>
+    </div>
+</body>
+
+</html>

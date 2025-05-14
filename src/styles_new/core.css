@@ -1,0 +1,210 @@
+/* PARESS Core CSS - May 2025 */
+
+
+/* All base styles and essential components */
+
+
+/* Import fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap');
+@tailwind base;
+@tailwind components;
+
+/* Base layer styles */
+
+@layer base {
+    html,
+    body {
+        @apply text-brand-blue bg-white text-base overflow-x-hidden;
+        width: 100%;
+        max-width: 100%;
+        height: 100%;
+    }
+    #root,
+    .app-root {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+    main {
+        flex: 1 0 auto;
+        display: flex;
+        flex-direction: column;
+    }
+    footer {
+        flex-shrink: 0;
+        width: 100%;
+        position: relative;
+        z-index: 10;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply text-brand-blue font-serif;
+    }
+    h1 {
+        @apply text-3xl;
+        /* Use md:text-4xl lg:text-5xl in your JSX/HTML */
+    }
+    h2 {
+        @apply text-2xl;
+        /* Use md:text-3xl in your JSX/HTML */
+    }
+    h3 {
+        @apply text-xl;
+        /* Use md:text-2xl in your JSX/HTML */
+    }
+    h4 {
+        @apply text-lg;
+        /* Use md:text-xl in your JSX/HTML */
+    }
+    h5 {
+        @apply text-base;
+        /* Use md:text-lg in your JSX/HTML */
+    }
+    h6 {
+        @apply text-sm;
+        /* Use md:text-base in your JSX/HTML */
+    }
+    p {
+        @apply text-base leading-relaxed;
+    }
+    a {
+        @apply text-brand-blue hover:text-brand-gold transition-colors duration-300;
+    }
+     ::selection {
+        @apply bg-brand-gold/20 text-brand-blue;
+    }
+}
+
+
+/* Component layer styles */
+
+@layer components {
+    .section {
+        @apply py-12;
+        /* Use md:py-16 in your JSX/HTML */
+    }
+    .container {
+        @apply max-w-6xl mx-auto px-4;
+        /* Use sm:px-6 lg:px-8 in your JSX/HTML */
+    }
+    .animation-class {
+        @apply bg-brand-blue/50 rounded-full hover:bg-brand-blue transition-colors duration-300;
+    }
+    .hero-button-blue {
+        @apply bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-full transition-all duration-300;
+    }
+    .hero-button-white {
+        @apply bg-white hover:bg-white/90 text-blue-600 py-2 rounded-full transition-all duration-300;
+    }
+    .hero-heading {
+        @apply text-3xl font-bold mb-4 leading-tight;
+        /* Use sm:text-4xl md:text-5xl in your JSX/HTML */
+    }
+    .hero-subheading {
+        @apply text-lg md:text-xl mb-6 text-blue-100 font-light;
+    }
+}
+
+
+/* Custom utility classes */
+
+@layer utilities {
+    .text-shadow-sm {
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+    .text-shadow {
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .text-shadow-md {
+        text-shadow: 0 4px 8px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.08);
+    }
+    .text-shadow-lg {
+        text-shadow: 0 15px 30px rgba(0, 0, 0, 0.11), 0 5px 15px rgba(0, 0, 0, 0.08);
+    }
+    .text-shadow-none {
+        text-shadow: none;
+    }
+}
+
+
+/* Persistent background and overlay */
+
+.persistent-background,
+.persistent-overlay {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: none !important;
+    transform: none !important;
+}
+
+.persistent-background {
+    z-index: 0;
+}
+
+.persistent-overlay {
+    z-index: 5;
+    pointer-events: none;
+}
+
+
+/* Page transition animations */
+
+[data-hero-content] {
+    transition-property: opacity, transform;
+    transition-timing-function: ease-out;
+    transition-duration: 0ms;
+    /* Only apply duration when explicitly set */
+}
+
+
+/* Prevent slideshow transitions during page transitions */
+
+body[data-animating-hero="true"] [data-hero-container="true"] img {
+    transition: none !important;
+}
+
+
+/* Make sure slideshow background stays visible during transitions */
+
+.page-transitioning [data-hero-container="true"] {
+    z-index: 1;
+    position: relative;
+}
+
+
+/* Pattern dots animation */
+
+.pattern-dots {
+    background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 30px 30px;
+}
+
+
+/* High-end transition styles */
+
+.luxury-transition {
+    transition: all 0.8s cubic-bezier(0.2, 0.0, 0.0, 1.0);
+}
+
+
+/* Special transition treatment for hero background vs content */
+
+[data-exclude-from-transition="true"] {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 0;
+    transition: none !important;
+}
+
+@tailwind utilities;

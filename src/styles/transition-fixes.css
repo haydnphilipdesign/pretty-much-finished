@@ -1,0 +1,62 @@
+/**
+ * Page Transition Timing Improvements
+ * 
+ * This file adds a delay to page transitions to ensure smooth scrolling
+ * and better user experience when navigating between pages.
+ */
+
+/* Prevent transition effects during scrolling */
+body[data-scrolling="true"] [data-hero-component="true"] {
+  transition: none !important;
+}
+
+body[data-scrolling="true"] [data-transition-element="true"] {
+  transition: none !important;
+}
+
+/* Create a cleaner transition when scrolling to top */
+.transition-delayed {
+  transition-delay: 300ms !important;
+}
+
+/* Ensure content remains visible during scrolling */
+.page-transitioning [data-hero-component="true"] {
+  opacity: 1 !important;
+  transition-duration: 800ms !important;
+}
+
+/* Improved hero section transition - REMOVED to prevent conflict with Framer Motion */
+/* [data-hero-component="true"] {
+  transition: opacity 0.6s ease-out !important;
+} */
+
+/* Only apply transition once scrolling is complete - REMOVED to prevent conflict */
+/* body:not([data-scrolling="true"]) .page-transitioning [data-hero-content] {
+  transition-duration: 600ms !important;
+} */
+
+/* Make sure navigation transitions smoothly */
+.nav-transition-element {
+  transition: all 0.4s ease-out;
+}
+
+/* Ensure fixed elements like the navbar don't jump during scrolling */
+.fixed-element-during-transition {
+  transition: all 0.4s ease-out !important;
+  transition-delay: 200ms !important;
+}
+
+/* Improve transition between different hero backgrounds */
+.hero-background-transition {
+  transition: opacity 0.8s ease-out !important;
+}
+
+/* Prevent CSS transitions from conflicting with Framer Motion */
+[data-hero-content="title"],
+[data-hero-content="subtitle"],
+[data-hero-content="cta"],
+[data-hero-content="cta-primary"],
+[data-hero-content="cta-secondary"],
+[data-hero-content="container"] {
+  transition: none !important;
+}

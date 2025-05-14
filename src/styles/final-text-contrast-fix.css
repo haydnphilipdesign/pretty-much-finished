@@ -1,0 +1,55 @@
+/**
+ * Final Text Contrast Emergency Fix - May 2025
+ */
+
+/* Override any remaining dark text on dark backgrounds with !important directives */
+.statistics-section p,
+.bg-blue-900\/95 p,
+.bg-blue-900\/90 p,
+.bg-blue-900 p,
+.bg-gray-800 p,
+.bg-gray-900 p,
+.glass-card-navy p,
+.glass-card-blue p,
+.glass-card-dark p {
+  color: white !important;
+  font-weight: 400 !important;
+  opacity: 1 !important;
+}
+
+/* Target specifically the elements we've seen in the screenshots */
+.bg-blue-600 p,
+.bg-blue-700 p,
+.bg-blue-800 p,
+.bg-blue-900 p,
+.bg-gray-800 p,
+.bg-gray-900 p,
+[class*="blue"] p,
+section.py-24 p,
+section.overflow-hidden p {
+  color: white !important;
+}
+
+/* Ensure "Let's Transform Your Business" section has correct text color */
+h2:contains("Let's Transform"),
+p:contains("seamless transaction coordination") {
+  color: white !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Ensure statistics cards have correct text color */
+div:contains("Years of Excellence") p,
+div:contains("Successful Transactions") p,
+div:contains("Agent Hours Saved") p,
+div:contains("Transaction Volume") p {
+  color: white !important;
+  opacity: 1 !important;
+}
+
+/* Apply this to every paragraph in the problem section */
+#statistics p,
+section[id="statistics"] p,
+.statistics-section p {
+  color: white !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+}

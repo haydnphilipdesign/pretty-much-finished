@@ -1,0 +1,907 @@
+/* Enhanced mobile experience */
+
+
+/* Fix for form content being covered by footer */
+
+.transaction-form-container {
+    padding-bottom: 100px;
+    /* Add padding to prevent content from being hidden under the mobile nav bar */
+}
+
+.modern-form-container {
+    margin-bottom: 120px;
+    /* Ensure enough space at the bottom on all devices */
+}
+
+@media (min-width: 768px) {
+    .modern-form-container {
+        margin-bottom: 60px;
+        /* Less space needed on desktop */
+    }
+}
+
+
+/* Mobile-friendly touch targets */
+
+.touch-target {
+    min-height: 44px;
+    /* Apple's recommended minimum height for touch targets */
+    min-width: 44px;
+}
+
+.input-touch-friendly {
+    height: 48px;
+    /* Larger height for better touch target */
+    font-size: 16px;
+    /* iOS will zoom in on inputs with smaller font sizes */
+}
+
+.select-touch-friendly {
+    height: 48px;
+    font-size: 16px;
+}
+
+
+/* Hide scrollbar but keep functionality */
+
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari and Opera */
+}
+
+
+/* Custom scrollbar for mobile */
+
+.custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: var(--brand-blue) rgba(229, 231, 235, 0.5);
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: rgba(229, 231, 235, 0.5);
+    border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: linear-gradient(to right, #2563eb, var(--brand-blue));
+    border-radius: 10px;
+    border: 2px solid rgba(229, 231, 235, 0.1);
+}
+
+
+/* Mobile scroll snap for forms */
+
+.scroll-snap-container {
+    scroll-snap-type: y mandatory;
+    overflow-y: auto;
+    height: calc(100vh - 180px);
+}
+
+.scroll-snap-item {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    padding: 16px 0;
+}
+
+
+/* Mobile optimized form group */
+
+.mobile-form-group {
+    margin-bottom: 24px;
+    position: relative;
+}
+
+
+/* Mobile compact labels */
+
+.mobile-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+
+/* Mobile floating action button */
+
+.mobile-fab {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(to right, #2563eb, var(--brand-blue));
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease;
+    z-index: 100;
+}
+
+.mobile-fab:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Mobile swipe area */
+
+.swipe-area {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    touch-action: pan-y;
+}
+
+
+/* Mobile-optimized form sections */
+
+@media (max-width: 640px) {
+    .section-content {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .form-section-mobile {
+        margin-bottom: 24px;
+        padding: 16px;
+        border-radius: 12px;
+        background-color: transparent !important;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+    }
+    .form-field-mobile {
+        margin-bottom: 16px;
+    }
+    .form-label-mobile {
+        font-size: 0.875rem;
+        font-weight: 500;
+        margin-bottom: 4px;
+        color: white !important;
+    }
+}
+
+
+/* Bottom safe area for mobile devices (especially iPhones) */
+
+.safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 20px);
+}
+
+
+/* Pull-to-refresh animation for mobile */
+
+.pull-indicator {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6b7280;
+    font-size: 0.875rem;
+}
+
+.pull-spinner {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #e5e7eb;
+    border-top-color: var(--brand-blue);
+    border-radius: 50%;
+    margin-right: 8px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* Mobile toast notifications */
+
+.mobile-toast {
+    position: fixed;
+    bottom: 70px;
+    left: 0;
+    right: 0;
+    margin: 0 16px;
+    padding: 12px 16px;
+    background: linear-gradient(to right, #2563eb, var(--brand-blue));
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    animation: slideUp 0.3s ease forwards;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+/* Touch ripple effect */
+
+.touch-ripple {
+    position: relative;
+    overflow: hidden;
+}
+
+.touch-ripple::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%, -50%);
+    transform-origin: 50% 50%;
+}
+
+.touch-ripple:focus:not(:active)::after {
+    animation: ripple 0.5s ease-out;
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0, 0);
+        opacity: 0.5;
+    }
+    20% {
+        transform: scale(40, 40);
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(70, 70);
+    }
+}
+
+
+/* Mobile gesture indicator */
+
+.gesture-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 4px;
+}
+
+.gesture-indicator svg {
+    margin: 0 4px;
+    animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateX(0);
+    }
+    40% {
+        transform: translateX(-4px);
+    }
+    60% {
+        transform: translateX(4px);
+    }
+}
+
+
+/* Bottom sheet for mobile forms */
+
+.bottom-sheet {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: transparent;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+    z-index: 900;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.bottom-sheet.open {
+    transform: translateY(0);
+}
+
+.bottom-sheet-handle {
+    width: 40px;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+    margin: 8px auto;
+}
+
+
+/* Mobile-friendly form row */
+
+.form-row-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+@media (min-width: 640px) {
+    .form-row-mobile {
+        flex-direction: row;
+    }
+}
+
+
+/* Mobile keyboard avoidance - pushes content up when keyboard is visible */
+
+.keyboard-avoid {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.keyboard-visible .keyboard-avoid {
+    transform: translateY(-40%);
+}
+
+
+/* Pull-to-refresh for mobile */
+
+.ptr-element {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: #aaa;
+    z-index: 10;
+    text-align: center;
+    height: 50px;
+    transition: all;
+}
+
+.ptr-element .ptr-icon {
+    display: block;
+    font-size: 30px;
+    transition: all 0.25s ease;
+}
+
+.ptr-refresh .ptr-icon {
+    transform: rotate(180deg);
+}
+
+.ptr-loading .ptr-icon {
+    display: none;
+}
+
+.ptr-loading .ptr-spinner {
+    display: block;
+    margin: 0 auto;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: ptr-spin 0.75s linear infinite;
+}
+
+@keyframes ptr-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* Form elements styling for better readability */
+
+
+/* Glass Card Form Elements */
+
+.glass-card-navy input,
+.glass-card-navy textarea,
+.glass-card-navy select {
+    @apply bg-white/20 border-white/30 text-white rounded-md px-3 py-2;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.glass-card-navy input:focus,
+.glass-card-navy textarea:focus,
+.glass-card-navy select:focus {
+    @apply border-blue-400 ring-2 ring-blue-400/30 outline-none;
+}
+
+.glass-card-navy input::placeholder,
+.glass-card-navy textarea::placeholder {
+    @apply text-white/60;
+}
+
+.glass-card-navy label {
+    @apply text-white font-medium;
+}
+
+
+/* Enhanced Step Wizard styling - better integrated with page */
+
+.step-wizard-container {
+    position: relative;
+    z-index: 10;
+}
+
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+    position: relative;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari and Opera */
+}
+
+
+/* Step indicator styling */
+
+.step-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 5px;
+    width: 68px;
+    min-width: 68px;
+    position: relative;
+}
+
+
+/* Connector lines between steps */
+
+.step-indicator::after {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    width: calc(100% - 10px);
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.2);
+    z-index: -1;
+}
+
+
+/* Remove connector line after last step */
+
+.step-indicator:last-child::after {
+    display: none;
+}
+
+
+/* Progress steps - active, completed, and pending states */
+
+.step-circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 14px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2;
+    transition: all 0.2s ease;
+}
+
+.step-active {
+    background-color: white;
+    color: #2563eb;
+    transform: scale(1.1);
+}
+
+.step-completed {
+    background-color: #bfdbfe;
+    color: #1e40af;
+}
+
+.step-pending {
+    background-color: rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.step-error {
+    border: 2px solid #ef4444;
+}
+
+.step-label {
+    margin-top: 8px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    white-space: nowrap;
+}
+
+.step-label-active {
+    color: white;
+    font-weight: 500;
+}
+
+
+/* Progress bar styling */
+
+.progress-bar {
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background-color: white;
+    border-radius: 2px;
+    transition: width 0.3s ease-in-out;
+}
+
+
+/* Enhanced modern form container - more integrated with page */
+
+.modern-form-container {
+    background: transparent;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+
+/* Glass effect for form container */
+
+.glass-effect {
+    background: transparent !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Section fade-in effect */
+
+.section-fade-in {
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Form dividers */
+
+.form-divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 24px 0;
+}
+
+.fancy-divider {
+    border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
+    background: none !important;
+}
+
+
+/* Info box styling */
+
+.info-box,
+.warning-box,
+.success-box {
+    background-color: transparent !important;
+    border-left: 4px solid rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 24px;
+    color: white !important;
+}
+
+.warning-box {
+    border-left-color: rgba(239, 68, 68, 0.7) !important;
+}
+
+.success-box {
+    border-left-color: rgba(16, 185, 129, 0.7) !important;
+}
+
+
+/* Form actions bar */
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    background-color: transparent;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+
+/* Mobile navigation bar - more integrated with design */
+
+.mobile-nav-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 12px 16px;
+    background-color: #1e40af;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 50;
+}
+
+
+/* Custom form field styling for better consistency */
+
+.custom-input {
+    width: 100%;
+    padding: 10px 12px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 6px;
+    font-size: 0.875rem;
+    transition: all 0.15s ease;
+    color: white;
+}
+
+.custom-input:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+}
+
+.custom-input.error {
+    border-color: #ef4444;
+    background-color: rgba(239, 68, 68, 0.1);
+}
+
+.custom-label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+    font-size: 0.875rem;
+    color: white;
+}
+
+.error-message {
+    margin-top: 4px;
+    font-size: 0.75rem;
+    color: #ef4444;
+}
+
+
+/* Responsive adjustments */
+
+@media (max-width: 640px) {
+    .step-indicator {
+        width: 60px;
+        min-width: 60px;
+    }
+    .step-circle {
+        width: 28px;
+        height: 28px;
+        font-size: 12px;
+    }
+    .step-label {
+        font-size: 10px;
+    }
+    .section-icon {
+        width: 40px;
+        height: 40px;
+    }
+    .section-title {
+        font-size: 1.25rem;
+    }
+}
+
+
+/* Transaction form-specific contrast fixes */
+
+.transaction-form-container .bg-white,
+.transaction-form-container .bg-white\/90,
+.transaction-form-container .bg-white\/95,
+.transaction-form-container .bg-gray-50,
+.transaction-form-container .bg-gray-100 {
+    background-color: transparent !important;
+}
+
+
+/* Override all panel/card colors */
+
+.transaction-form-container [class*="bg-gray-"],
+.transaction-form-container [class*="bg-white"],
+.transaction-form-container [class*="bg-blue-50"],
+.transaction-form-container [class*="bg-blue-100"] {
+    background-color: transparent !important;
+}
+
+
+/* Better text contrast on backgrounds */
+
+.transaction-form-container .text-gray-500,
+.transaction-form-container .text-gray-600,
+.transaction-form-container .text-gray-700,
+.transaction-form-container .text-gray-800 {
+    color: white !important;
+}
+
+
+/* Form field styling for better readability */
+
+.transaction-form-container input,
+.transaction-form-container select,
+.transaction-form-container textarea {
+    background-color: white !important;
+    border-color: #d1d5db !important;
+    /* gray-300 */
+    color: #1e3a8a !important;
+    /* dark blue text */
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+}
+
+.transaction-form-container input::placeholder,
+.transaction-form-container textarea::placeholder {
+    color: #6b7280 !important;
+    /* gray-500 */
+}
+
+.transaction-form-container label {
+    color: white !important;
+    font-weight: 500 !important;
+}
+
+
+/* List items should have white text for better readability */
+
+.transaction-form-container li,
+.transaction-form-container ul,
+.transaction-form-container ol {
+    color: white !important;
+}
+
+
+/* Fix info boxes to have solid backgrounds with proper borders */
+
+.transaction-form-container .info-box,
+.transaction-form-container .warning-box,
+.transaction-form-container .success-box {
+    background-color: white !important;
+    border-left: 4px solid #3b82f6 !important;
+    /* blue-500 */
+}
+
+
+/* Fix all headings to be white */
+
+.transaction-form-container h1,
+.transaction-form-container h2,
+.transaction-form-container h3,
+.transaction-form-container h4,
+.transaction-form-container h5,
+.transaction-form-container h6 {
+    color: white !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Fix the background for divs with specific classes */
+
+.transaction-form-container div[class*="bg-blue-"],
+.transaction-form-container div[class*="bg-gray-"],
+.transaction-form-container div[class*="bg-white"] {
+    background-color: white !important;
+}
+
+
+/* Fix the border colors */
+
+.transaction-form-container [class*="border-gray-"],
+.transaction-form-container [class*="border-blue-"] {
+    border-color: #d1d5db !important;
+    /* gray-300 */
+}
+
+
+/* Fix dropdown menu background for better readability */
+
+.transaction-form-container [data-radix-popper-content-wrapper] {
+    z-index: 9999 !important;
+}
+
+
+/* Override Radix UI dropdown styling for better readability */
+
+.transaction-form-container [role="listbox"],
+.transaction-form-container [data-radix-select-viewport] {
+    background-color: white !important;
+    border: 1px solid #d1d5db !important;
+    /* gray-300 */
+    color: #1e3a8a !important;
+    /* dark blue text */
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+}
+
+
+/* Fix dropdown items */
+
+.transaction-form-container [role="option"] {
+    color: #1e3a8a !important;
+    /* dark blue text */
+    background-color: white !important;
+}
+
+
+/* Fix dropdown item hover state */
+
+.transaction-form-container [role="option"]:hover,
+.transaction-form-container [role="option"][data-highlighted="true"],
+.transaction-form-container [role="option"]:focus {
+    background-color: #e9c77b !important;
+    /* gold accent color */
+    color: #1e3a8a !important;
+    /* dark blue text */
+}
+
+
+/* Ensure the check icon is visible */
+
+.transaction-form-container [role="option"] svg {
+    color: #1e3a8a !important;
+    /* dark blue text */
+}

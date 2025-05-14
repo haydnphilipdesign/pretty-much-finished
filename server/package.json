@@ -1,0 +1,10 @@
+{
+  "name": "pa-real-estate-support-services-server",
+  "version": "1.0.0",
+  "description": "Server-side code for PA Real Estate Support Services",
+  "main": "index.js",
+  "dependencies": {
+    "puppeteer": "^21.0.0",
+    "nodemailer": "^6.9.0"
+  }
+}

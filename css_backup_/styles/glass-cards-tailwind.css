@@ -1,0 +1,350 @@
+/* Enhanced Glass Card System - May 2025 Update */
+/* This version uses @layer to integrate properly with Tailwind */
+
+@layer components {
+  /* Base Glass Card - Foundation for all glass card variants */
+  .glass-card-base {
+    @apply relative rounded-xl p-6 shadow-lg overflow-hidden transition-all duration-300 ease-in-out;
+    transform: translateZ(0);
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+  }
+
+  /* Standard White Glass Card - Default */
+  .glass-card {
+    @apply glass-card-base bg-white/75 border border-white/40 text-gray-800;
+    box-shadow: 
+      0 10px 25px -5px rgba(0, 0, 0, 0.08),
+      0 8px 10px -6px rgba(0, 0, 0, 0.03),
+      0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+  }
+
+  .glass-card:hover {
+    @apply transform -translate-y-1;
+    box-shadow: 
+      0 20px 35px -5px rgba(0, 0, 0, 0.1),
+      0 10px 15px -3px rgba(0, 0, 0, 0.05),
+      0 0 0 1px rgba(255, 255, 255, 0.6) inset;
+  }
+
+  /* Navy Blue Glass Card - Elegant dark blue */
+  .glass-card-navy {
+    @apply glass-card-base bg-blue-900/85 border border-blue-700/50 text-white;
+    box-shadow: 
+      0 10px 25px -5px rgba(0, 0, 0, 0.15),
+      0 8px 10px -6px rgba(0, 0, 0, 0.1),
+      0 0 0 1px rgba(255, 255, 255, 0.15) inset;
+  }
+
+  .glass-card-navy:hover {
+    @apply transform -translate-y-1;
+    box-shadow: 
+      0 20px 35px -5px rgba(0, 0, 0, 0.2),
+      0 10px 15px -3px rgba(0, 0, 0, 0.15),
+      0 0 0 1px rgba(255, 255, 255, 0.25) inset;
+  }
+
+  /* Blue Glass Card - Lighter blue for visual variety */
+  .glass-card-blue {
+    @apply glass-card-base bg-blue-600/85 border border-blue-400/50 text-white;
+    box-shadow: 
+      0 10px 25px -5px rgba(0, 0, 0, 0.12),
+      0 8px 10px -6px rgba(0, 0, 0, 0.08),
+      0 0 0 1px rgba(59, 130, 246, 0.3) inset;
+  }
+
+  .glass-card-blue:hover {
+    @apply transform -translate-y-1;
+    box-shadow: 
+      0 20px 35px -5px rgba(0, 0, 0, 0.15),
+      0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 0 0 1px rgba(59, 130, 246, 0.4) inset;
+  }
+
+  /* Dark Glass Card - Sophisticated dark appearance */
+  .glass-card-dark {
+    @apply glass-card-base bg-gray-900/85 border border-gray-700/50 text-white;
+    box-shadow: 
+      0 10px 25px -5px rgba(0, 0, 0, 0.2),
+      0 8px 10px -6px rgba(0, 0, 0, 0.15),
+      0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+  }
+
+  .glass-card-dark:hover {
+    @apply transform -translate-y-1;
+    box-shadow: 
+      0 20px 35px -5px rgba(0, 0, 0, 0.25),
+      0 10px 15px -3px rgba(0, 0, 0, 0.2),
+      0 0 0 1px rgba(255, 255, 255, 0.15) inset;
+  }
+
+  /* Gold Glass Card - Warm premium appearance */
+  .glass-card-gold {
+    @apply glass-card-base bg-amber-500/85 border border-amber-400/50 text-white;
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.85), rgba(217, 119, 6, 0.85));
+    box-shadow: 
+      0 10px 25px -5px rgba(0, 0, 0, 0.12),
+      0 8px 10px -6px rgba(0, 0, 0, 0.08),
+      0 0 0 1px rgba(245, 158, 11, 0.3) inset;
+  }
+
+  .glass-card-gold:hover {
+    @apply transform -translate-y-1;
+    box-shadow: 
+      0 20px 35px -5px rgba(0, 0, 0, 0.15),
+      0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 0 0 1px rgba(245, 158, 11, 0.4) inset;
+  }
+
+  /* White Glass Card - For use on dark backgrounds */
+  .glass-card-white {
+    @apply glass-card-base bg-white/95 border border-white/50 text-gray-800;
+    box-shadow: 
+      0 10px 25px -5px rgba(0, 0, 0, 0.08),
+      0 8px 10px -6px rgba(0, 0, 0, 0.03),
+      0 0 0 1px rgba(255, 255, 255, 0.6) inset;
+  }
+
+  .glass-card-white:hover {
+    @apply transform -translate-y-1;
+    box-shadow: 
+      0 20px 35px -5px rgba(0, 0, 0, 0.1),
+      0 10px 15px -3px rgba(0, 0, 0, 0.05),
+      0 0 0 1px rgba(255, 255, 255, 0.7) inset;
+  }
+
+  /* Frost Glass Card - Very light, subtle frost effect, ideal for forms */
+  .glass-card-frost {
+    @apply glass-card-base bg-white/90 border border-gray-100/50 text-gray-800;
+    box-shadow: 
+      0 10px 25px -5px rgba(0, 0, 0, 0.06),
+      0 8px 10px -6px rgba(0, 0, 0, 0.02),
+      0 0 0 1px rgba(255, 255, 255, 0.7) inset;
+  }
+
+  .glass-card-frost:hover {
+    @apply transform -translate-y-1;
+    box-shadow: 
+      0 20px 35px -5px rgba(0, 0, 0, 0.08),
+      0 10px 15px -3px rgba(0, 0, 0, 0.03),
+      0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+  }
+
+  /* Light Glass Card - For dark backgrounds with a more transparent effect */
+  .glass-card-light {
+    @apply glass-card-base bg-white/30 border border-white/30 text-white;
+    box-shadow: 
+      0 10px 25px -5px rgba(0, 0, 0, 0.1),
+      0 8px 10px -6px rgba(0, 0, 0, 0.05),
+      0 0 0 1px rgba(255, 255, 255, 0.2) inset;
+  }
+
+  .glass-card-light:hover {
+    @apply transform -translate-y-1;
+    box-shadow: 
+      0 20px 35px -5px rgba(0, 0, 0, 0.12),
+      0 10px 15px -3px rgba(0, 0, 0, 0.08),
+      0 0 0 1px rgba(255, 255, 255, 0.3) inset;
+  }
+
+  /* Title styling for all cards */
+  .glass-card-title {
+    @apply text-xl font-bold mb-3;
+  }
+
+  /* Subtitle styling for all cards */
+  .glass-card-subtitle {
+    @apply text-sm mb-4;
+  }
+
+  /* Content styling for all cards */
+  .glass-card-content {
+    @apply text-base;
+  }
+
+  /* Consistent text colors for cards with dark backgrounds */
+  .glass-card-navy .glass-card-title,
+  .glass-card-blue .glass-card-title,
+  .glass-card-dark .glass-card-title,
+  .glass-card-gold .glass-card-title,
+  .glass-card-light .glass-card-title {
+    @apply text-white;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  .glass-card-navy .glass-card-subtitle,
+  .glass-card-blue .glass-card-subtitle,
+  .glass-card-dark .glass-card-subtitle,
+  .glass-card-gold .glass-card-subtitle,
+  .glass-card-light .glass-card-subtitle {
+    @apply text-blue-100;
+  }
+
+  .glass-card-navy .glass-card-content,
+  .glass-card-blue .glass-card-content,
+  .glass-card-dark .glass-card-content,
+  .glass-card-gold .glass-card-content,
+  .glass-card-light .glass-card-content {
+    @apply text-white/90;
+  }
+
+  /* Consistent text colors for cards with light backgrounds */
+  .glass-card .glass-card-title,
+  .glass-card-white .glass-card-title,
+  .glass-card-frost .glass-card-title {
+    @apply text-gray-900;
+  }
+
+  .glass-card .glass-card-subtitle,
+  .glass-card-white .glass-card-subtitle,
+  .glass-card-frost .glass-card-subtitle {
+    @apply text-gray-700;
+  }
+
+  .glass-card .glass-card-content,
+  .glass-card-white .glass-card-content,
+  .glass-card-frost .glass-card-content {
+    @apply text-gray-800;
+  }
+
+  /* Optimize form elements in frost cards specifically */
+  .glass-card-frost label {
+    @apply text-gray-700 font-medium mb-1 block;
+  }
+
+  .glass-card-frost input[type="text"],
+  .glass-card-frost input[type="email"],
+  .glass-card-frost input[type="password"],
+  .glass-card-frost input[type="number"],
+  .glass-card-frost input[type="tel"],
+  .glass-card-frost textarea,
+  .glass-card-frost select {
+    @apply bg-white/80 border border-gray-300 rounded-md px-3 py-2 w-full shadow-sm;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+
+  .glass-card-frost input[type="text"]:focus,
+  .glass-card-frost input[type="email"]:focus,
+  .glass-card-frost input[type="password"]:focus,
+  .glass-card-frost input[type="number"]:focus,
+  .glass-card-frost input[type="tel"]:focus,
+  .glass-card-frost textarea:focus,
+  .glass-card-frost select:focus {
+    @apply border-blue-500 ring-2 ring-blue-200 outline-none;
+  }
+
+  /* Login-specific Card - Used for the agent portal login */
+  .glass-card-login {
+    @apply glass-card-base bg-white/95 border border-gray-100 text-gray-800;
+    box-shadow: 
+      0 10px 25px -5px rgba(0, 0, 0, 0.1),
+      0 8px 10px -6px rgba(0, 0, 0, 0.05),
+      0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+  }
+
+  .glass-card-login:hover {
+    @apply transform -translate-y-1;
+    box-shadow: 
+      0 20px 35px -5px rgba(0, 0, 0, 0.12),
+      0 10px 15px -3px rgba(0, 0, 0, 0.08),
+      0 0 0 1px rgba(255, 255, 255, 0.6) inset;
+  }
+
+  /* Glass card for home page hero sections */
+  .hero-glass-card {
+    @apply glass-card-base bg-blue-900/75 border border-blue-800/50 text-white;
+    box-shadow: 
+      0 20px 35px -5px rgba(0, 0, 0, 0.15),
+      0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 0 0 1px rgba(59, 130, 246, 0.2) inset;
+  }
+
+  .hero-glass-card:hover {
+    @apply transform -translate-y-1;
+    box-shadow: 
+      0 25px 40px -5px rgba(0, 0, 0, 0.2),
+      0 12px 18px -3px rgba(0, 0, 0, 0.15),
+      0 0 0 1px rgba(59, 130, 246, 0.3) inset;
+  }
+}
+
+/* ========== Utility Helpers ========== */
+
+@layer utilities {
+  /* Opacity control classes */
+  .glass-opacity-light {
+    background-opacity: 0.7 !important;
+  }
+
+  .glass-opacity-medium {
+    background-opacity: 0.85 !important;
+  }
+
+  .glass-opacity-heavy {
+    background-opacity: 0.95 !important;
+  }
+
+  /* Adjust for hero sections */
+  [data-hero-component="true"] .glass-card,
+  [data-hero-component="true"] .glass-card-navy,
+  [data-hero-component="true"] .glass-card-blue {
+    @apply bg-opacity-90;
+  }
+}
+
+/* This section ensures proper text contrast */
+.glass-card h2, .glass-card h3, .glass-card h4,
+.glass-card-navy h2, .glass-card-navy h3, .glass-card-navy h4,
+.glass-card-blue h2, .glass-card-blue h3, .glass-card-blue h4,
+.glass-card-dark h2, .glass-card-dark h3, .glass-card-dark h4,
+.glass-card-gold h2, .glass-card-gold h3, .glass-card-gold h4,
+.glass-card-white h2, .glass-card-white h3, .glass-card-white h4,
+.glass-card-frost h2, .glass-card-frost h3, .glass-card-frost h4,
+.glass-card-light h2, .glass-card-light h3, .glass-card-light h4 {
+  @apply font-bold mb-3;
+}
+
+/* Ensure paragraph styling is consistent */
+.glass-card p,
+.glass-card-white p,
+.glass-card-frost p {
+  @apply text-gray-700 mb-4 last:mb-0;
+}
+
+.glass-card-navy p,
+.glass-card-blue p,
+.glass-card-dark p,
+.glass-card-gold p,
+.glass-card-light p {
+  @apply text-white mb-4 last:mb-0;
+  opacity: 0.9;
+}
+
+/* Focus states for interactive elements */
+.glass-card:focus-within,
+.glass-card-navy:focus-within,
+.glass-card-blue:focus-within,
+.glass-card-dark:focus-within,
+.glass-card-gold:focus-within,
+.glass-card-white:focus-within,
+.glass-card-frost:focus-within,
+.glass-card-light:focus-within {
+  @apply ring-2 ring-blue-400 ring-offset-2 ring-offset-white/10;
+  outline: none;
+}
+
+/* Ensure links have proper hover states */
+.glass-card a:not(.btn),
+.glass-card-white a:not(.btn),
+.glass-card-frost a:not(.btn) {
+  @apply text-blue-600 hover:text-blue-800 underline;
+}
+
+.glass-card-navy a:not(.btn),
+.glass-card-blue a:not(.btn),
+.glass-card-dark a:not(.btn),
+.glass-card-gold a:not(.btn),
+.glass-card-light a:not(.btn) {
+  @apply text-blue-200 hover:text-white underline;
+}

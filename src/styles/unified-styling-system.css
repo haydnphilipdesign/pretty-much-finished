@@ -1,0 +1,312 @@
+/**
+ * Unified Styling System
+ * This file provides a comprehensive styling system with proper text contrast
+ * and consistent card styling throughout the website.
+ */
+
+/* ===== CONSISTENT TEXT CONTRAST ===== */
+
+/* Ensure all text has proper contrast against its background */
+
+/* Headers */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--brand-blue) !important;
+}
+
+/* Dark backgrounds */
+.bg-brand-blue h1,
+.bg-brand-blue h2,
+.bg-brand-blue h3,
+.bg-brand-blue h4,
+.bg-brand-blue h5,
+.bg-brand-blue h6,
+.bg-brand-navy h1,
+.bg-brand-navy h2,
+.bg-brand-navy h3,
+.bg-brand-navy h4,
+.bg-brand-navy h5,
+.bg-brand-navy h6,
+.bg-blue-gradient h1,
+.bg-blue-gradient h2,
+.bg-blue-gradient h3,
+.bg-blue-gradient h4,
+.bg-blue-gradient h5,
+.bg-blue-gradient h6,
+.bg-navy-gradient h1,
+.bg-navy-gradient h2,
+.bg-navy-gradient h3,
+.bg-navy-gradient h4,
+.bg-navy-gradient h5,
+.bg-navy-gradient h6 {
+  color: white !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.bg-brand-blue p,
+.bg-brand-navy p,
+.bg-blue-gradient p,
+.bg-navy-gradient p {
+  color: #E6F0FF !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Navigation */
+header nav a {
+  color: white !important;
+  font-weight: 500 !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+header nav a:hover {
+  color: #FFB81C !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5) !important;
+}
+
+header.scrolled nav a {
+  color: #0F1C2E !important;
+  text-shadow: none !important;
+}
+
+header.scrolled nav a:hover {
+  color: #0066CC !important;
+}
+
+/* Footer */
+footer h3,
+footer h4 {
+  color: #0066CC !important;
+  font-weight: 600 !important;
+}
+
+footer p,
+footer a:not(.btn) {
+  color: #374151 !important;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: #0066CC !important;
+  color: white !important;
+}
+
+.btn-primary:hover {
+  background-color: #004C99 !important;
+}
+
+.btn-secondary {
+  background-color: #FFB81C !important;
+  color: #0F1C2E !important;
+}
+
+.btn-secondary:hover {
+  background-color: #D99500 !important;
+}
+
+/* ===== CONSISTENT CARD STYLING ===== */
+
+/* Base styles for all glass cards */
+.glass-card,
+.glass-card-blue,
+.glass-card-navy, 
+.glass-card-white,
+.glass-card-dark,
+.glass-card-frost,
+.glass-card-light,
+.glass-card-gold {
+  border-radius: 1rem;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Blue glass card */
+.glass-card-blue {
+  background-color: rgba(0, 102, 204, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.glass-card-blue h2,
+.glass-card-blue h3 {
+  color: white !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.glass-card-blue p,
+.glass-card-blue li,
+.glass-card-blue span {
+  color: #E6F0FF !important;
+}
+
+/* Navy glass card */
+.glass-card-navy {
+  background-color: rgba(15, 28, 46, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.glass-card-navy h2,
+.glass-card-navy h3 {
+  color: white !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.glass-card-navy p,
+.glass-card-navy li,
+.glass-card-navy span {
+  color: #E6F0FF !important;
+}
+
+/* White glass card */
+.glass-card-white {
+  background-color: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.glass-card-white h2,
+.glass-card-white h3 {
+  color: #0066CC !important;
+}
+
+.glass-card-white p,
+.glass-card-white li,
+.glass-card-white span {
+  color: #1A1A1A !important;
+}
+
+/* Gold glass card */
+.glass-card-gold {
+  background-color: rgba(255, 184, 28, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.glass-card-gold h2,
+.glass-card-gold h3 {
+  color: #0F1C2E !important;
+}
+
+.glass-card-gold p,
+.glass-card-gold li,
+.glass-card-gold span {
+  color: #1A1A1A !important;
+}
+
+/* Dark glass card */
+.glass-card-dark {
+  background-color: rgba(15, 28, 46, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-card-dark h2,
+.glass-card-dark h3 {
+  color: white !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.glass-card-dark p,
+.glass-card-dark li,
+.glass-card-dark span {
+  color: #E6F0FF !important;
+}
+
+/* Light glass card */
+.glass-card-light {
+  background-color: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.glass-card-light h2,
+.glass-card-light h3 {
+  color: #0066CC !important;
+}
+
+.glass-card-light p,
+.glass-card-light li,
+.glass-card-light span {
+  color: #1A1A1A !important;
+}
+
+/* Frost glass card */
+.glass-card-frost {
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.glass-card-frost h2,
+.glass-card-frost h3 {
+  color: #0066CC !important;
+}
+
+.glass-card-frost p,
+.glass-card-frost li,
+.glass-card-frost span {
+  color: #1A1A1A !important;
+}
+
+/* Card hover effects */
+.glass-card:hover,
+.glass-card-blue:hover,
+.glass-card-navy:hover,
+.glass-card-white:hover,
+.glass-card-gold:hover,
+.glass-card-frost:hover,
+.glass-card-dark:hover,
+.glass-card-light:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px -5px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== HERO SECTION FIXES ===== */
+
+[data-hero-component="true"] h1,
+[data-hero-component="true"] h2 {
+  color: white !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+}
+
+[data-hero-component="true"] p {
+  color: #E6F0FF !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* ===== FORM ELEMENT CONTRAST FIXES ===== */
+
+/* Ensure form elements have proper contrast */
+input, textarea, select {
+  background-color: white;
+  color: #1A1A1A;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+label {
+  color: #0066CC;
+  font-weight: 500;
+}
+
+/* Dark background form elements */
+.bg-brand-blue input,
+.bg-brand-navy input,
+.bg-blue-gradient input,
+.bg-navy-gradient input,
+.bg-brand-blue textarea,
+.bg-brand-navy textarea,
+.bg-blue-gradient textarea,
+.bg-navy-gradient textarea,
+.bg-brand-blue select,
+.bg-brand-navy select,
+.bg-blue-gradient select,
+.bg-navy-gradient select {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #1A1A1A;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.bg-brand-blue label,
+.bg-brand-navy label,
+.bg-blue-gradient label,
+.bg-navy-gradient label {
+  color: white;
+  font-weight: 500;
+}

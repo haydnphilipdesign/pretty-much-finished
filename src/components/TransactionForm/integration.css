@@ -1,0 +1,379 @@
+/* 
+ * Integration CSS Utilities
+ * A comprehensive set of CSS variables, utilities, and classes to ensure consistent
+ * styling and visual integration between the transaction form, step wizard, and page container.
+ */
+
+:root {
+  /* Base colors */
+  --integration-bg-primary: #ffffff;
+  --integration-bg-secondary: #f8fafc;
+  --integration-bg-tertiary: #f1f5f9;
+  --integration-text-primary: #0f172a;
+  --integration-text-secondary: #64748b;
+  --integration-text-tertiary: #94a3b8;
+  
+  /* Accent colors */
+  --integration-accent-primary: #3b82f6;  /* Blue 500 */
+  --integration-accent-secondary: #2563eb; /* Blue 600 */
+  --integration-accent-light: #eff6ff;     /* Blue 50 */
+  --integration-accent-dark: #1d4ed8;      /* Blue 700 */
+  
+  /* Success colors */
+  --integration-success: #10b981;          /* Emerald 500 */
+  --integration-success-light: #ecfdf5;    /* Emerald 50 */
+  --integration-success-dark: #059669;     /* Emerald 600 */
+  
+  /* Warning colors */
+  --integration-warning: #f59e0b;          /* Amber 500 */
+  --integration-warning-light: #fffbeb;    /* Amber 50 */
+  --integration-warning-dark: #d97706;     /* Amber 600 */
+  
+  /* Error colors */
+  --integration-error: #ef4444;            /* Red 500 */
+  --integration-error-light: #fef2f2;      /* Red 50 */
+  --integration-error-dark: #dc2626;       /* Red 600 */
+  
+  /* Border & outline */
+  --integration-border-color: #e2e8f0;     /* Slate 200 */
+  --integration-border-active: #cbd5e1;    /* Slate 300 */
+  --integration-outline: rgba(59, 130, 246, 0.5); /* Blue 500 with 50% opacity */
+  
+  /* Shadows */
+  --integration-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --integration-shadow-md:0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --integration-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  
+  /* Spacing & dimensions */
+  --integration-spacing-xs: 0.25rem;  /* 4px */
+  --integration-spacing-sm: 0.5rem;   /* 8px */
+  --integration-spacing-md:1rem;     /* 16px */
+  --integration-spacing-lg: 1.5rem;   /* 24px */
+  --integration-spacing-xl: 2rem;     /* 32px */
+  
+  /* Border radius */
+  --integration-radius-sm: 0.25rem;   /* 4px */
+  --integration-radius-md:0.5rem;    /* 8px */
+  --integration-radius-lg: 0.75rem;   /* 12px */
+  --integration-radius-xl: 1rem;      /* 16px */
+  --integration-radius-full: 9999px;  /* Rounded full */
+  
+  /* Typography */
+  --integration-font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --integration-font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --integration-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  
+  /* Font weights */
+  --integration-font-thin: 100;
+  --integration-font-light: 300;
+  --integration-font-normal: 400;
+  --integration-font-medium: 500;
+  --integration-font-semibold: 600;
+  --integration-font-bold: 700;
+  --integration-font-extrabold: 800;
+  
+  /* Transitions */
+  --integration-transition-fast: 150ms;
+  --integration-transition-normal: 300ms;
+  --integration-transition-slow: 500ms;
+  --integration-transition-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Z-index layers */
+  --integration-z-base: 1;
+  --integration-z-above: 10;
+  --integration-z-dropdown: 20;
+  --integration-z-sticky: 30;
+  --integration-z-fixed: 40;
+  --integration-z-modal: 50;
+  --integration-z-popover: 60;
+  --integration-z-tooltip: 70;
+}
+
+/* Dark mode overrides */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Base colors - dark mode */
+    --integration-bg-primary: #1e293b;     /* Slate 800 */
+    --integration-bg-secondary: #0f172a;   /* Slate 900 */
+    --integration-bg-tertiary: #0f172a;    /* Slate 900 */
+    --integration-text-primary: #f8fafc;   /* Slate 50 */
+    --integration-text-secondary: #cbd5e1; /* Slate 300 */
+    --integration-text-tertiary: #94a3b8;  /* Slate 400 */
+    
+    /* Border & outline - dark mode */
+    --integration-border-color: #334155;   /* Slate 700 */
+    --integration-border-active: #475569;  /* Slate 600 */
+    
+    /* Shadows - dark mode */
+    --integration-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+    --integration-shadow-md:0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.15);
+    --integration-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.35), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* ===== UTILITY CLASSES ===== */
+
+/* Background colors */
+.int-bg-primary { background-color: var(--integration-bg-primary); }
+.int-bg-secondary { background-color: var(--integration-bg-secondary); }
+.int-bg-tertiary { background-color: var(--integration-bg-tertiary); }
+.int-bg-accent { background-color: var(--integration-accent-primary); }
+.int-bg-accent-light { background-color: var(--integration-accent-light); }
+.int-bg-success { background-color: var(--integration-success); }
+.int-bg-warning { background-color: var(--integration-warning); }
+.int-bg-error { background-color: var(--integration-error); }
+
+/* Text colors */
+.int-text-primary { color: var(--integration-text-primary); }
+.int-text-secondary { color: var(--integration-text-secondary); }
+.int-text-tertiary { color: var(--integration-text-tertiary); }
+.int-text-accent { color: var(--integration-accent-primary); }
+.int-text-success { color: var(--integration-success); }
+.int-text-warning { color: var(--integration-warning); }
+.int-text-error { color: var(--integration-error); }
+
+/* Border utilities */
+.int-border { border: 1px solid var(--integration-border-color); }
+.int-border-t { border-top: 1px solid var(--integration-border-color); }
+.int-border-r { border-right: 1px solid var(--integration-border-color); }
+.int-border-b { border-bottom: 1px solid var(--integration-border-color); }
+.int-border-l { border-left: 1px solid var(--integration-border-color); }
+.int-border-accent { border-color: var(--integration-accent-primary); }
+
+/* Border radius */
+.int-radius-sm { border-radius: var(--integration-radius-sm); }
+.int-radius-md { border-radius: var(--integration-radius-md); }
+.int-radius-lg { border-radius: var(--integration-radius-lg); }
+.int-radius-xl { border-radius: var(--integration-radius-xl); }
+.int-radius-full { border-radius: var(--integration-radius-full); }
+
+/* Shadow utilities */
+.int-shadow-sm { box-shadow: var(--integration-shadow-sm); }
+.int-shadow-md { box-shadow: var(--integration-shadow-md); }
+.int-shadow-lg { box-shadow: var(--integration-shadow-lg); }
+
+/* Focus & active states */
+.int-focus {
+  outline: 2px solid var(--integration-outline);
+  outline-offset: 2px;
+}
+
+.int-active {
+  border-color: var(--integration-accent-primary);
+  box-shadow: 0 0 0 3px var(--integration-outline);
+}
+
+/* Transitions */
+.int-transition {
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+  transition-duration: var(--integration-transition-normal);
+  transition-timing-function: var(--integration-transition-ease);
+}
+
+.int-transition-fast {
+  transition-duration: var(--integration-transition-fast);
+}
+
+.int-transition-slow {
+  transition-duration: var(--integration-transition-slow);
+}
+
+/* Spacing utilities */
+.int-spacing-xs { padding: var(--integration-spacing-xs); }
+.int-spacing-sm { padding: var(--integration-spacing-sm); }
+.int-spacing-md { padding: var(--integration-spacing-md); }
+.int-spacing-lg { padding: var(--integration-spacing-lg); }
+.int-spacing-xl { padding: var(--integration-spacing-xl); }
+
+/* Typography */
+.int-font-sans { font-family: var(--integration-font-sans); }
+.int-font-serif { font-family: var(--integration-font-serif); }
+.int-font-mono { font-family: var(--integration-font-mono); }
+
+.int-font-thin { font-weight: var(--integration-font-thin); }
+.int-font-light { font-weight: var(--integration-font-light); }
+.int-font-normal { font-weight: var(--integration-font-normal); }
+.int-font-medium { font-weight: var(--integration-font-medium); }
+.int-font-semibold { font-weight: var(--integration-font-semibold); }
+.int-font-bold { font-weight: var(--integration-font-bold); }
+.int-font-extrabold { font-weight: var(--integration-font-extrabold); }
+
+/* Layout utilities */
+.int-flex { display: flex; }
+.int-flex-col { flex-direction: column; }
+.int-items-center { align-items: center; }
+.int-justify-between { justify-content: space-between; }
+.int-flex-1 { flex: 1 1 0%; }
+.int-flex-shrink-0 { flex-shrink: 0; }
+
+/* ===== COMPONENT INTEGRATION CLASSES ===== */
+
+/* Transaction Form & Wizard Integration */
+.int-form-container {
+  background-color: var(--integration-bg-primary);
+  border-radius: var(--integration-radius-lg);
+  box-shadow: var(--integration-shadow-md);
+  border: 1px solid var(--integration-border-color);
+  overflow: hidden;
+}
+
+.int-form-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--integration-spacing-md) var(--integration-spacing-lg);
+  border-bottom: 1px solid var(--integration-border-color);
+  background-color: var(--integration-bg-primary);
+  position: sticky;
+  top: 0;
+  z-index: var(--integration-z-sticky);
+}
+
+.int-wizard-container {
+  padding: var(--integration-spacing-md) var(--integration-spacing-lg);
+  background-color: var(--integration-bg-secondary);
+  border-bottom: 1px solid var(--integration-border-color);
+}
+
+.int-form-content {
+  padding: var(--integration-spacing-lg);
+}
+
+.int-mobile-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--integration-accent-primary);
+  color: white;
+  padding: var(--integration-spacing-md);
+  z-index: var(--integration-z-fixed);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Special integration for connecting components visually */
+.int-connect-top {
+  margin-top: -1px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  position: relative;
+  z-index: var(--integration-z-base);
+}
+
+.int-connect-bottom {
+  margin-bottom: -1px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  position: relative;
+  z-index: var(--integration-z-base);
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 767px) {
+  .int-form-container {
+    border-radius: 0;
+    box-shadow: none;
+    border-left: none;
+    border-right: none;
+  }
+  
+  .int-form-header {
+    padding: var(--integration-spacing-sm) var(--integration-spacing-md);
+  }
+  
+  .int-wizard-container {
+    padding: var(--integration-spacing-sm) var(--integration-spacing-md);
+  }
+  
+  .int-form-content {
+    padding: var(--integration-spacing-md);
+  }
+  
+  .int-mobile-nav {
+    padding-bottom: max(var(--integration-spacing-md), env(safe-area-inset-bottom, 0px));
+  }
+}
+
+/* ===== ANIMATIONS AND EFFECTS ===== */
+
+/* Loading state for integration */
+.int-loading {
+  position: relative;
+  overflow: hidden;
+}
+
+.int-loading::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateX(-100%);
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0,
+    rgba(255, 255, 255, 0.2) 20%,
+    rgba(255, 255, 255, 0.5) 60%,
+    rgba(255, 255, 255, 0)
+  );
+  animation: int-shimmer 2s infinite;
+}
+
+@keyframes int-shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Smooth transitions for component changes */
+.int-fade-in {
+  animation: int-fade-in var(--integration-transition-normal) var(--integration-transition-ease);
+}
+
+@keyframes int-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.int-slide-up {
+  animation: int-slide-up var(--integration-transition-normal) var(--integration-transition-ease);
+}
+
+@keyframes int-slide-up {
+  from { transform: translateY(10px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* ===== RESPONSIVE INTEGRATION ===== */
+
+@media (min-width: 640px) {
+  .int-sm\:form-container {
+    border-radius: var(--integration-radius-md);
+    box-shadow: var(--integration-shadow-sm);
+  }
+}
+
+@media (min-width: 768px) {
+  .int-md\:form-container {
+    border-radius: var(--integration-radius-lg);
+    box-shadow: var(--integration-shadow-md);
+  }
+  
+  .int-md\:hide-mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .int-lg\:form-container {
+    border-radius: var(--integration-radius-xl);
+    box-shadow: var(--integration-shadow-lg);
+  }
+}
+
+@media (max-width: 767px) {
+  .int-max-md\:hide-desktop {
+    display: none;
+  }
+}

@@ -1,0 +1,366 @@
+/**
+ * Minimal Contrast Fixes
+ * Core fixes for text visibility without using problematic Tailwind directives
+ */
+
+
+/* Basic text contrast */
+
+.bg-white,
+.bg-gray-50,
+.bg-gray-100,
+.bg-blue-50,
+.bg-blue-100,
+.service-card,
+.feature-card,
+.card {
+    color: #1e293b !important;
+    /* dark gray text */
+}
+
+
+/* Force dark text on light backgrounds */
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+li,
+label {
+    color: #1e293b;
+}
+
+
+/* Force white text on dark backgrounds */
+
+.bg-blue-600,
+.bg-blue-700,
+.bg-blue-800,
+.bg-blue-900,
+.bg-gray-600,
+.bg-gray-700,
+.bg-gray-800,
+.bg-gray-900,
+.bg-slate-900,
+.bg-black,
+.bg-brand-blue,
+[class*="card-dark"],
+[class*="card-navy"],
+.dark-section {
+    color: #ffffff !important;
+}
+
+
+/* Override any style that might be causing light text on light background */
+
+body {
+    color: #1e293b !important;
+}
+
+
+/* Service cards and sections */
+
+.service-card ul li,
+.service-card p,
+.service-card .service-description,
+div[id*="service"] ul li,
+div[id*="service"] p,
+div[class*="service"] ul li,
+div[class*="service"] p {
+    color: #1f2937 !important;
+}
+
+
+/* "How We'll Work Together" section */
+
+div[id*="work"],
+section[id*="work"],
+div[class*="work"],
+section[class*="work"],
+div[id*="process"],
+section[id*="process"] {
+    background-color: #f3f4f6 !important;
+    /* gray-100 */
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+}
+
+
+/* Section titles visibility */
+
+section h1,
+section h2,
+section h3 {
+    color: #1e293b !important;
+    font-weight: bold !important;
+}
+
+
+/* Dark backgrounds headings */
+
+.bg-blue-600 h1,
+.bg-blue-700 h1,
+.bg-blue-800 h1,
+.bg-blue-900 h1,
+.bg-gray-800 h1,
+.bg-gray-900 h1,
+.bg-brand-blue h1,
+.bg-slate-900 h1,
+.bg-black h1,
+.bg-blue-600 h2,
+.bg-blue-700 h2,
+.bg-blue-800 h2,
+.bg-blue-900 h2,
+.bg-gray-800 h2,
+.bg-gray-900 h2,
+.bg-brand-blue h2,
+.bg-slate-900 h2,
+.bg-black h2,
+.bg-blue-600 h3,
+.bg-blue-700 h3,
+.bg-blue-800 h3,
+.bg-blue-900 h3,
+.bg-gray-800 h3,
+.bg-gray-900 h3,
+.bg-brand-blue h3,
+.bg-slate-900 h3,
+.bg-black h3 {
+    color: #ffffff !important;
+    font-weight: bold !important;
+}
+
+
+/* ======== CARD STYLING - REVISED ======== */
+
+
+/* Standard card style for light backgrounds */
+
+.card,
+div[class*="card"]:not(.bg-blue-600):not(.bg-blue-700):not(.bg-blue-800):not(.bg-blue-900):not(.bg-brand-blue),
+.service-card,
+.feature-card {
+    background-color: #ffffff !important;
+    border: 1px solid #e5e7eb !important;
+    border-radius: 0.5rem !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+    transition: all 0.3s ease !important;
+}
+
+
+/* Hover effects for cards */
+
+.card:hover,
+div[class*="card"]:not(.bg-blue-600):not(.bg-blue-700):not(.bg-blue-800):not(.bg-blue-900):not(.bg-brand-blue):hover,
+.service-card:hover,
+.feature-card:hover {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05) !important;
+    transform: translateY(-2px) !important;
+}
+
+
+/* Blue section card style - more prominent with white background */
+
+.bg-blue-600 .card,
+.bg-blue-700 .card,
+.bg-blue-800 .card,
+.bg-blue-900 .card,
+.bg-brand-blue .card,
+.bg-blue-600 div[class*="card"],
+.bg-blue-700 div[class*="card"],
+.bg-blue-800 div[class*="card"],
+.bg-blue-900 div[class*="card"],
+.bg-brand-blue div[class*="card"],
+section.bg-blue-600 div,
+section.bg-blue-700 div,
+section.bg-blue-800 div,
+section.bg-blue-900 div,
+section.bg-brand-blue div {
+    background-color: #ffffff !important;
+    border: none !important;
+    border-radius: 0.5rem !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2) !important;
+    overflow: hidden !important;
+}
+
+
+/* Fix specifically for the blue feature section cards */
+
+.bg-blue-600 .feature-card,
+.bg-blue-700 .feature-card,
+.bg-blue-800 .feature-card,
+.bg-blue-900 .feature-card,
+.bg-brand-blue .feature-card,
+section[id*="elevate"]>div>div {
+    background-color: #ffffff !important;
+    border-radius: 0.5rem !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2) !important;
+    padding: 1.5rem !important;
+    margin: 0.5rem !important;
+}
+
+
+/* Core values section cards in dark background */
+
+section[id*="values"] .card,
+div[id*="values"] .card,
+.dark-section .card,
+.bg-gray-800 .card,
+.bg-gray-900 .card,
+.bg-slate-900 .card,
+.bg-black .card {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    border-radius: 0.75rem !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+    border: none !important;
+}
+
+
+/* Testimonial cards styling */
+
+[class*="testimonial"] .card,
+[id*="testimonial"] .card,
+.testimonial-card {
+    background-color: #ffffff !important;
+    border-radius: 0.75rem !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+    border: 1px solid #e5e7eb !important;
+    padding: 1.5rem !important;
+}
+
+
+/* Contact information cards */
+
+.contact-card,
+div[class*="contact"],
+section[id*="contact"] .card {
+    background-color: #ffffff !important;
+    border-radius: 0.5rem !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+    border: 1px solid #e5e7eb !important;
+    padding: 1.25rem !important;
+}
+
+
+/* Call-to-action box in blue section */
+
+div[class*="cta"],
+section[class*="cta"],
+.call-to-action,
+.cta {
+    background-color: #0066CC !important;
+    /* brand-blue */
+    border-radius: 0.5rem !important;
+    padding: 2rem !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2) !important;
+}
+
+
+/* Footer styling */
+
+footer,
+footer p,
+footer div,
+footer span {
+    color: #e5e7eb !important;
+    /* gray-200 */
+}
+
+footer a {
+    color: #ffffff !important;
+    font-weight: 500 !important;
+}
+
+
+/* Footer hover state */
+
+footer a:hover {
+    color: #e5e7eb !important;
+    /* gray-200 */
+    text-decoration: underline !important;
+}
+
+
+/* Fix for nav links */
+
+header nav a,
+nav a,
+.header-nav a,
+.main-nav a,
+.navbar a,
+.navigation a {
+    color: #1f2937 !important;
+    /* gray-800 */
+    font-weight: 500 !important;
+}
+
+
+/* Fix for hover/active nav links */
+
+header nav a:hover,
+nav a:hover,
+.header-nav a:hover,
+.main-nav a:hover,
+.navbar a:hover,
+.navigation a:hover,
+header nav a.active,
+nav a.active,
+.header-nav a.active,
+.main-nav a.active,
+.navbar a.active,
+.navigation a.active {
+    color: #0066CC !important;
+    /* brand-blue */
+    font-weight: 700 !important;
+}
+
+
+/* Process steps/icons stronger visibility */
+
+.step,
+.process-step,
+.icon-container,
+[class*="step"],
+[class*="icon"] {
+    color: #0066CC !important;
+    /* brand-blue */
+}
+
+
+/* Call-to-action buttons */
+
+.btn-primary,
+button[class*="primary"],
+a[class*="primary"] {
+    background-color: #0066CC !important;
+    /* brand-blue */
+    color: #ffffff !important;
+}
+
+.btn-secondary,
+button[class*="secondary"],
+a[class*="secondary"] {
+    background-color: #f3f4f6 !important;
+    /* gray-100 */
+    color: #1f2937 !important;
+    /* gray-800 */
+}
+
+
+/* Icons in blue section - ensure visibility */
+
+.bg-blue-600 svg,
+.bg-blue-700 svg,
+.bg-blue-800 svg,
+.bg-blue-900 svg,
+.bg-brand-blue svg,
+.bg-blue-600 [class*="icon"],
+.bg-blue-700 [class*="icon"],
+.bg-blue-800 [class*="icon"],
+.bg-blue-900 [class*="icon"],
+.bg-brand-blue [class*="icon"] {
+    color: #ffffff !important;
+}

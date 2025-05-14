@@ -1,0 +1,165 @@
+/**
+ * PARESS Core CSS - May 2025
+ * All base styles and essential components
+ */
+
+
+/* Import fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap');
+@tailwind base;
+@layer base {
+    html,
+    body {
+        @apply text-gray-900 bg-white text-base overflow-x-hidden;
+        width: 100%;
+        max-width: 100%;
+        height: 100%;
+    }
+    #root,
+    .app-root {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+    main {
+        flex: 1 0 auto;
+        display: flex;
+        flex-direction: column;
+    }
+    footer {
+        flex-shrink: 0;
+        width: 100%;
+        position: relative;
+        z-index: 1;
+    }
+    h1 {
+        @apply text-3xl;
+        /* Use md:text-4xl lg:text-5xl in your JSX/HTML */
+    }
+    h2 {
+        @apply text-2xl;
+        /* Use md:text-3xl in your JSX/HTML */
+    }
+    h3 {
+        @apply text-xl;
+        /* Use md:text-2xl in your JSX/HTML */
+    }
+    h4 {
+        @apply text-lg;
+        /* Use md:text-xl in your JSX/HTML */
+    }
+    h5 {
+        @apply text-base;
+        /* Use md:text-lg in your JSX/HTML */
+    }
+    h6 {
+        @apply text-sm;
+        /* Use md:text-base in your JSX/HTML */
+    }
+    p {
+        @apply mb-4 last:mb-0;
+    }
+    a {
+        @apply text-brand-blue hover:text-brand-gold transition-colors duration-300;
+    }
+     ::selection {
+        @apply bg-brand-blue/20 text-brand-blue;
+    }
+}
+
+@tailwind components;
+@layer components {
+    .btn {
+        @apply inline-block px-6 py-2.5 font-semibold transition-all duration-300 relative overflow-hidden rounded-lg;
+    }
+    .btn-primary {
+        @apply bg-brand-blue text-white hover:bg-brand-blue/90 shadow-md hover:shadow-lg;
+    }
+    .btn-secondary {
+        @apply bg-brand-gold text-brand-blue hover:bg-brand-gold/90 shadow-sm hover:shadow-md;
+    }
+    .btn-outline {
+        @apply bg-transparent text-brand-blue border border-brand-blue hover:bg-brand-blue hover:text-white;
+    }
+    .input {
+        @apply w-full px-3 py-2 border border-gray-200 rounded-lg focus:border-brand-gold focus:ring-1 focus:ring-brand-gold/20 focus:outline-none transition-all duration-300;
+    }
+    .card {
+        @apply bg-white rounded-xl shadow-md p-5 transition-all duration-300 hover:shadow-lg;
+    }
+    .section {
+        @apply py-12;
+        /* Use md:py-16 in your JSX/HTML */
+    }
+    .container {
+        @apply max-w-6xl mx-auto px-4;
+        /* Use sm:px-6 lg:px-8 in your JSX/HTML */
+    }
+    .hero-button-blue {
+        @apply bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-full transition-all duration-300;
+    }
+    .hero-button-white {
+        @apply bg-white hover:bg-white/90 text-blue-600 py-2 rounded-full transition-all duration-300;
+    }
+    .hero-heading {
+        @apply text-3xl font-bold mb-4 leading-tight;
+        /* Use sm:text-4xl md:text-5xl in your JSX/HTML */
+    }
+    .hero-subheading {
+        @apply text-lg mb-6 text-blue-100 font-light;
+        /* Use md:text-xl in your JSX/HTML */
+    }
+    .content-section-layout {
+        @apply py-16 px-4 max-w-6xl mx-auto overflow-hidden;
+        /* Use sm:px-6 lg:px-8 in your JSX/HTML */
+    }
+}
+
+
+/* Animation keyframes */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-slide-up {
+    animation: slideUp 0.5s ease-out forwards;
+}
+
+.animate-scale-in {
+    animation: scaleIn 0.5s ease-out forwards;
+}
+
+@tailwind utilities;

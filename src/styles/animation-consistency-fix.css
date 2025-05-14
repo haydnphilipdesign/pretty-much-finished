@@ -1,0 +1,55 @@
+/**
+ * Animation Consistency Fix - May 2025
+ * 
+ * This file ensures that animations remain consistent between page visits
+ * by enforcing standardized animation parameters and removing randomization.
+ */
+
+/* Prevent page transition animations from varying */
+[data-page-transitioning-content="true"],
+[data-hero-content="container"],
+[data-hero-content="title"],
+[data-hero-content="subtitle"],
+[data-hero-component="true"] {
+  transition-duration: 700ms !important;
+  transition-timing-function: cubic-bezier(0.22, 0.03, 0.36, 1.0) !important;
+}
+
+/* Ensure consistent animation timing for all hero elements */
+.hero-content-animation,
+[data-hero-content],
+[data-hero-container] {
+  animation-duration: 700ms !important;
+  animation-timing-function: cubic-bezier(0.22, 0.03, 0.36, 1.0) !important;
+}
+
+/* Fix for entrance animations */
+@keyframes standardEntrance {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Fix for exit animations */
+@keyframes standardExit {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(-20px); }
+}
+
+/* Apply standardized animations to elements */
+.use-standard-animations {
+  animation-name: standardEntrance;
+  animation-duration: 700ms;
+  animation-timing-function: cubic-bezier(0.22, 0.03, 0.36, 1.0);
+  animation-fill-mode: both;
+}
+
+.exiting .use-standard-animations {
+  animation-name: standardExit;
+}
+
+/* Override Framer Motion animations */
+.framer-entrance-override {
+  transition-property: opacity, transform !important;
+  transition-duration: 700ms !important;
+  transition-timing-function: cubic-bezier(0.22, 0.03, 0.36, 1.0) !important;
+}

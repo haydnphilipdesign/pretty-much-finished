@@ -1,0 +1,331 @@
+/* Global Theme System with CSS Variables */
+
+:root {
+  /* Base colors - Light mode defaults */
+  --color-background: #ffffff;
+  --color-foreground: #1f2937;
+  --color-muted: #6b7280;
+  --color-muted-foreground: #9ca3af;
+  --color-card: #ffffff;
+  --color-card-foreground: #1f2937;
+  --color-border: #e5e7eb;
+  --color-input: #f9fafb;
+  --color-input-foreground: #1f2937;
+  
+  /* Primary brand colors */
+  --color-primary: #2563eb; /* brand-blue */
+  --color-primary-foreground: #ffffff;
+  --color-primary-muted: #bfdbfe;
+  
+  /* Secondary brand colors */
+  --color-secondary: #f59e0b; /* brand-gold */
+  --color-secondary-foreground: #000000;
+  --color-secondary-muted: #fde68a;
+  
+  /* Accent colors */
+  --color-accent: #3b82f6;
+  --color-accent-foreground: #ffffff;
+  --color-accent-muted: #93c5fd;
+  
+  /* Status colors */
+  --color-success: #10b981;
+  --color-success-foreground: #ffffff;
+  --color-warning: #f59e0b;
+  --color-warning-foreground: #000000;
+  --color-error: #ef4444;
+  --color-error-foreground: #ffffff;
+  --color-info: #3b82f6;
+  --color-info-foreground: #ffffff;
+
+  /* Effects */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md:0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  
+  /* Animation */
+  --transition-fast: 150ms;
+  --transition-normal: 250ms;
+  --transition-slow: 350ms;
+  
+  /* Radius */
+  --radius-sm: 0.125rem;
+  --radius-md:0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+  --radius-full: 9999px;
+  
+  /* Spacing */
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+  --spacing-6: 1.5rem;
+  --spacing-8: 2rem;
+  --spacing-12: 3rem;
+  --spacing-16: 4rem;
+  --spacing-20: 5rem;
+  
+  /* Font weights */
+  --font-light: 300;
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  
+  /* Font sizes */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-md:1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  
+  /* Z-index layers */
+  --z-0: 0;
+  --z-10: 10;
+  --z-20: 20;
+  --z-30: 30;
+  --z-40: 40;
+  --z-50: 50;
+  --z-100: 100;
+  
+  /* Header height for sticky positioning */
+  --header-height: 5rem;
+  
+  /* Focus ring */
+  --focus-ring: 0 0 0 3px rgba(59, 130, 246, 0.5);
+}
+
+/* Dark theme */
+.dark-mode {
+  /* Base colors */
+  --color-background: #0f172a;
+  --color-foreground: #f9fafb;
+  --color-muted: #9ca3af;
+  --color-muted-foreground: #d1d5db;
+  --color-card: #1e293b;
+  --color-card-foreground: #f9fafb;
+  --color-border: #334155;
+  --color-input: #1e293b;
+  --color-input-foreground: #f9fafb;
+  
+  /* Adjusted brand colors for dark mode */
+  --color-primary: #3b82f6; /* brighter blue for dark mode */
+  --color-primary-muted: #1d4ed8;
+  
+  --color-secondary: #fbbf24; /* brighter gold for dark mode */
+  --color-secondary-muted: #b45309;
+  
+  /* Status colors adjusted for dark mode */
+  --color-success: #34d399;
+  --color-warning: #fbbf24;
+  --color-error: #f87171;
+  --color-info: #60a5fa;
+  
+  /* Adjusted shadows for dark mode */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  --shadow-md:0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.26);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.25);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.24);
+}
+
+/* Global utility classes using the variables */
+.bg-background { background-color: var(--color-background); }
+.bg-primary { background-color: var(--color-primary); }
+.bg-secondary { background-color: var(--color-secondary); }
+.bg-accent { background-color: var(--color-accent); }
+.bg-muted { background-color: var(--color-muted); }
+.bg-card { background-color: var(--color-card); }
+
+.text-foreground { color: var(--color-foreground); }
+.text-primary { color: var(--color-primary); }
+.text-secondary { color: var(--color-secondary); }
+.text-accent { color: var(--color-accent); }
+.text-muted { color: var(--color-muted); }
+
+.border-border { border-color: var(--color-border); }
+.border-primary { border-color: var(--color-primary); }
+.border-secondary { border-color: var(--color-secondary); }
+
+/* Focus visible styles for accessibility */
+.focus-visible {
+  outline: none !important;
+  box-shadow: var(--focus-ring);
+}
+
+.focus-visible-ring:focus-visible {
+  outline: none !important;
+  box-shadow: var(--focus-ring);
+}
+
+/* Typography scale */
+.text-xs { font-size: var(--text-xs); }
+.text-sm { font-size: var(--text-sm); }
+.text-md { font-size: var(--text-md); }
+.text-lg { font-size: var(--text-lg); }
+.text-xl { font-size: var(--text-xl); }
+.text-2xl { font-size: var(--text-2xl); }
+.text-3xl { font-size: var(--text-3xl); }
+.text-4xl { font-size: var(--text-4xl); }
+.text-5xl { font-size: var(--text-5xl); }
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(10px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-10px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideLeft {
+  from { transform: translateX(10px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideRight {
+  from { transform: translateX(-10px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Animation utility classes */
+.animate-fade-in { animation: fadeIn var(--transition-normal) ease-out; }
+.animate-slide-up { animation: slideUp var(--transition-normal) ease-out; }
+.animate-slide-down { animation: slideDown var(--transition-normal) ease-out; }
+.animate-slide-left { animation: slideLeft var(--transition-normal) ease-out; }
+.animate-slide-right { animation: slideRight var(--transition-normal) ease-out; }
+.animate-pulse { animation: pulse 2s infinite; }
+.animate-spin { animation: spin 1s linear infinite; }
+
+/* High contrast mode support */
+@media (prefers-contrast: more) {
+  :root {
+    --color-primary: #0000ee;
+    --color-secondary: #993300;
+    --color-border: #000000;
+    --focus-ring: 0 0 0 3px rgba(0, 0, 0, 0.8);
+  }
+  
+  .dark-mode {
+    --color-primary: #8cb4ff;
+    --color-secondary: #ffc28c;
+    --color-border: #ffffff;
+    --focus-ring: 0 0 0 3px rgba(255, 255, 255, 0.8);
+  }
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Skip to content accessibility feature */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color-primary);
+  color: var(--color-primary-foreground);
+  padding: 8px 16px;
+  z-index: var(--z-100);
+  text-decoration: none;
+  box-shadow: var(--shadow-md);
+  transition: top var(--transition-fast) ease;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+  :root {
+    --header-height: 4rem;
+  }
+  
+  /* Mobile touch target sizes */
+  button, 
+  .btn, 
+  a.btn, 
+  input[type="button"], 
+  input[type="submit"], 
+  input[type="reset"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Larger text inputs on mobile */
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="number"],
+  input[type="tel"],
+  input[type="url"],
+  input[type="search"],
+  textarea,
+  select {
+    font-size: 16px; /* Prevent iOS zoom */
+    padding: 12px 16px;
+    min-height: 44px;
+  }
+}
+
+/* Print styles */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  
+  nav, footer, .no-print {
+    display: none !important;
+  }
+  
+  main, article {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  a {
+    text-decoration: underline;
+    color: #000000 !important;
+  }
+  
+  a::after {
+    content: " (" attr(href) ") ";
+    font-size: 0.8em;
+    font-weight: normal;
+  }
+  
+  @page {
+    margin: 2cm;
+  }
+}

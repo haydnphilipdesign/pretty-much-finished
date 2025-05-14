@@ -1,0 +1,259 @@
+/**
+ * TransactionFormFix.css
+ * 
+ * This file fixes transparency issues in the transaction form
+ * by making form fields, buttons, and dropdowns more opaque and ensuring better contrast.
+ */
+
+/* ==== FORM FIELDS FIX ==== */
+
+/* Make input fields, selects, and textareas fully opaque with good contrast */
+.transaction-form-container input,
+.transaction-form-container select,
+.transaction-form-container textarea,
+.transaction-form-container [data-radix-select-trigger] {
+  background-color: white !important;
+  border: 1px solid #d1d5db !important; /* gray-300 */
+  color: #1e3a8a !important; /* dark blue text */
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Fix placeholder text color for better readability */
+.transaction-form-container input::placeholder,
+.transaction-form-container textarea::placeholder {
+  color: #6b7280 !important; /* gray-500 */
+}
+
+/* Fix focus states */
+.transaction-form-container input:focus,
+.transaction-form-container select:focus,
+.transaction-form-container textarea:focus,
+.transaction-form-container [data-radix-select-trigger]:focus {
+  border-color: #e9c77b !important; /* gold accent color */
+  box-shadow: 0 0 0 3px rgba(233, 199, 123, 0.3) !important;
+  outline: none !important;
+}
+
+/* ==== DROPDOWN MENUS FIX ==== */
+
+/* Fix dropdown menus to be fully opaque */
+.transaction-form-container [role="listbox"],
+.transaction-form-container [data-radix-select-viewport],
+.transaction-form-container [data-radix-popper-content-wrapper] {
+  background-color: white !important;
+  border: 1px solid #d1d5db !important; /* gray-300 */
+  color: #1e3a8a !important; /* dark blue text */
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+}
+
+/* Fix dropdown items */
+.transaction-form-container [role="option"] {
+  color: #1e3a8a !important; /* dark blue text */
+  background-color: white !important;
+}
+
+/* Fix dropdown item hover/focus state */
+.transaction-form-container [role="option"]:hover,
+.transaction-form-container [role="option"][data-highlighted="true"],
+.transaction-form-container [role="option"]:focus,
+.transaction-form-container [role="option"][data-state="checked"] {
+  background-color: #e9c77b !important; /* gold accent color */
+  color: #1e3a8a !important; /* dark blue text */
+}
+
+/* Ensure the check icon is visible */
+.transaction-form-container [role="option"] svg {
+  color: #1e3a8a !important; /* dark blue text */
+}
+
+/* ==== BUTTONS FIX ==== */
+
+/* Fix primary buttons */
+.transaction-form-container .btn-primary,
+.transaction-form-container button[type="submit"],
+.transaction-form-container .primary-button {
+  background-color: #e9c77b !important; /* gold accent color */
+  color: #1e3a8a !important; /* dark blue text */
+  border: 1px solid #e9c77b !important;
+  font-weight: 600 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* Fix secondary buttons */
+.transaction-form-container .btn-secondary,
+.transaction-form-container .secondary-button {
+  background-color: white !important;
+  color: #1e3a8a !important; /* dark blue text */
+  border: 1px solid #d1d5db !important; /* gray-300 */
+  font-weight: 500 !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* Fix button hover states */
+.transaction-form-container .btn-primary:hover,
+.transaction-form-container button[type="submit"]:hover,
+.transaction-form-container .primary-button:hover {
+  background-color: #f0d28e !important; /* lighter gold */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+.transaction-form-container .btn-secondary:hover,
+.transaction-form-container .secondary-button:hover {
+  background-color: #f9fafb !important; /* gray-50 */
+  border-color: #9ca3af !important; /* gray-400 */
+}
+
+/* ==== CHECKBOXES AND RADIO BUTTONS FIX ==== */
+
+/* Fix checkboxes */
+.transaction-form-container input[type="checkbox"] {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  width: 1.25rem !important;
+  height: 1.25rem !important;
+  background-color: white !important;
+  border: 1px solid #d1d5db !important; /* gray-300 */
+  border-radius: 0.25rem !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: relative !important;
+}
+
+.transaction-form-container input[type="checkbox"]:checked {
+  background-color: #e9c77b !important; /* gold accent color */
+  border-color: #e9c77b !important;
+}
+
+.transaction-form-container input[type="checkbox"]:checked::after {
+  content: "✓" !important;
+  color: #1e3a8a !important; /* dark blue text */
+  position: absolute !important;
+  font-size: 0.875rem !important;
+  line-height: 1 !important;
+}
+
+/* Fix radio buttons */
+.transaction-form-container input[type="radio"] {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  width: 1.25rem !important;
+  height: 1.25rem !important;
+  background-color: white !important;
+  border: 1px solid #d1d5db !important; /* gray-300 */
+  border-radius: 50% !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: relative !important;
+}
+
+.transaction-form-container input[type="radio"]:checked {
+  border-color: #e9c77b !important; /* gold accent color */
+}
+
+.transaction-form-container input[type="radio"]:checked::after {
+  content: "" !important;
+  width: 0.625rem !important;
+  height: 0.625rem !important;
+  border-radius: 50% !important;
+  background-color: #e9c77b !important; /* gold accent color */
+  position: absolute !important;
+}
+
+/* ==== LABELS FIX ==== */
+
+/* Fix labels for better readability */
+.transaction-form-container label {
+  color: #1e3a8a !important; /* dark blue text */
+  font-weight: 500 !important;
+}
+
+/* ==== CARD BACKGROUNDS FIX ==== */
+
+/* Fix card backgrounds to be opaque */
+.transaction-form-container .card,
+.transaction-form-container [class*="glass-effect"],
+.transaction-form-container [class*="glass-card"] {
+  background-color: white !important;
+  border: 1px solid #e5e7eb !important; /* gray-200 */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* Fix headings in cards */
+.transaction-form-container .card h1,
+.transaction-form-container .card h2,
+.transaction-form-container .card h3,
+.transaction-form-container .card h4,
+.transaction-form-container .card h5,
+.transaction-form-container .card h6,
+.transaction-form-container [class*="glass-card"] h1,
+.transaction-form-container [class*="glass-card"] h2,
+.transaction-form-container [class*="glass-card"] h3,
+.transaction-form-container [class*="glass-card"] h4,
+.transaction-form-container [class*="glass-card"] h5,
+.transaction-form-container [class*="glass-card"] h6 {
+  color: #1e3a8a !important; /* dark blue text */
+  text-shadow: none !important;
+}
+
+/* Fix text in cards */
+.transaction-form-container .card p,
+.transaction-form-container [class*="glass-card"] p,
+.transaction-form-container .card span,
+.transaction-form-container [class*="glass-card"] span,
+.transaction-form-container .card div,
+.transaction-form-container [class*="glass-card"] div {
+  color: #1f2937 !important; /* gray-800 */
+}
+
+/* ==== INFO BOXES FIX ==== */
+
+/* Fix info boxes to have proper backgrounds */
+.transaction-form-container .info-box {
+  background-color: #e0f2fe !important; /* blue-100 */
+  border-left: 4px solid #3b82f6 !important; /* blue-500 */
+  color: #1e3a8a !important; /* dark blue text */
+}
+
+.transaction-form-container .warning-box {
+  background-color: #fee2e2 !important; /* red-100 */
+  border-left: 4px solid #ef4444 !important; /* red-500 */
+  color: #7f1d1d !important; /* red-900 */
+}
+
+.transaction-form-container .success-box {
+  background-color: #dcfce7 !important; /* green-100 */
+  border-left: 4px solid #10b981 !important; /* green-500 */
+  color: #064e3b !important; /* green-900 */
+}
+
+/* ==== FORM SECTION BACKGROUNDS FIX ==== */
+
+/* Fix form section backgrounds */
+.transaction-form-container .form-section,
+.transaction-form-container .section-container,
+.transaction-form-container .step-content {
+  background-color: #f9fafb !important; /* gray-50 */
+  border-radius: 0.5rem !important;
+  padding: 1.5rem !important;
+  margin-bottom: 1.5rem !important;
+  border: 1px solid #e5e7eb !important; /* gray-200 */
+}
+
+/* ==== FORM CONTAINER BACKGROUND FIX ==== */
+
+/* Fix the main form container background */
+.transaction-form-container {
+  background-color: #f3f4f6 !important; /* gray-100 */
+}

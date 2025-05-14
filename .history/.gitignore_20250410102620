@@ -1,0 +1,92 @@
+﻿# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Testing
+coverage/
+
+# Production
+build/
+dist/
+api/
+
+# Environment Variables
+.env
+.env.*
+!.env.example
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+debug.log
+
+# IDE
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Local History
+.history/
+.lh/
+
+# Vite
+.vite/
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+.vercel
+public/generated-pdfs/Original_Buyer_2025-04-04T15-28-04-869Z.pdf
+public/generated-pdfs/Original_Buyer_2025-04-04T15-28-43-166Z.pdf
+public/generated-pdfs/Original_Buyer_2025-04-04T15-41-16-076Z.pdf
+public/generated-pdfs/Original_Buyer_2025-04-04T15-51-41-233Z.pdf
+public/generated-pdfs/Original_Buyer_2025-04-04T15-58-47-147Z.pdf
+public/generated-pdfs/Original_DualAgent_2025-04-04T15-28-04-869Z.pdf
+public/generated-pdfs/Original_DualAgent_2025-04-04T15-28-43-166Z.pdf
+public/generated-pdfs/Original_DualAgent_2025-04-04T15-41-16-076Z.pdf
+public/generated-pdfs/Original_DualAgent_2025-04-04T15-51-41-233Z.pdf
+public/generated-pdfs/Original_DualAgent_2025-04-04T15-58-47-147Z.pdf
+public/generated-pdfs/Original_Seller_2025-04-04T15-28-04-869Z.pdf
+public/generated-pdfs/Original_Seller_2025-04-04T15-28-43-166Z.pdf
+public/generated-pdfs/Original_Seller_2025-04-04T15-41-16-076Z.pdf
+public/generated-pdfs/Original_Seller_2025-04-04T15-51-41-233Z.pdf
+public/generated-pdfs/Original_Seller_2025-04-04T15-58-47-147Z.pdf
+public/generated-pdfs/PDF_Buyer_2025-04-04T15-24-47-847Z.pdf
+public/generated-pdfs/PDF_DualAgent_2025-04-04T15-24-47-847Z.pdf
+public/generated-pdfs/PDF_Seller_2025-04-04T15-24-47-847Z.pdf
+public/generated-pdfs/Test_Buyer_2025-04-04T15-01-59-004Z.pdf
+public/generated-pdfs/Test_Buyer_2025-04-04T15-49-46-547Z.pdf
+public/generated-pdfs/Test_Buyer_2025-04-04T15-56-06-673Z.pdf
+public/generated-pdfs/Test_Buyer_2025-04-04T15-59-01-470Z.pdf
+public/generated-pdfs/Test_Buyer_2025-04-04T16-06-17-972Z.pdf
+public/generated-pdfs/Test_Buyer_2025-04-04T16-12-29-320Z.pdf
+public/generated-pdfs/Test_Buyer_2025-04-04T16-37-48-881Z.pdf
+public/generated-pdfs/Test_Buyer_2025-04-04T16-42-00-209Z.pdf
+public/generated-pdfs/Test_Buyer_2025-04-04T16-43-39-482Z.pdf
+public/generated-pdfs/Test_DualAgent_2025-04-04T15-01-59-004Z.pdf
+public/generated-pdfs/Test_DualAgent_2025-04-04T15-49-46-547Z.pdf
+public/generated-pdfs/Test_DualAgent_2025-04-04T15-56-06-673Z.pdf
+public/generated-pdfs/Test_DualAgent_2025-04-04T15-59-01-470Z.pdf
+public/generated-pdfs/Test_DualAgent_2025-04-04T16-06-17-972Z.pdf
+public/generated-pdfs/Test_DualAgent_2025-04-04T16-12-29-320Z.pdf
+public/generated-pdfs/Test_DualAgent_2025-04-04T16-37-48-881Z.pdf
+public/generated-pdfs/Test_DualAgent_2025-04-04T16-42-00-209Z.pdf
+public/generated-pdfs/Test_DualAgent_2025-04-04T16-43-39-482Z.pdf
+public/generated-pdfs/Test_Seller_2025-04-04T15-01-59-004Z.pdf
+public/generated-pdfs/Test_Seller_2025-04-04T15-49-46-547Z.pdf
+public/generated-pdfs/Test_Seller_2025-04-04T15-56-06-673Z.pdf
+public/generated-pdfs/Test_Seller_2025-04-04T15-59-01-470Z.pdf
+public/generated-pdfs/Test_Seller_2025-04-04T16-06-17-972Z.pdf
+public/generated-pdfs/Test_Seller_2025-04-04T16-12-29-320Z.pdf
+public/generated-pdfs/Test_Seller_2025-04-04T16-37-48-881Z.pdf
+public/generated-pdfs/Test_Seller_2025-04-04T16-42-00-209Z.pdf
+public/generated-pdfs/Test_Seller_2025-04-04T16-43-39-482Z.pdf

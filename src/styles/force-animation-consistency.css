@@ -1,0 +1,50 @@
+/**
+ * Force Consistent Animation Values - May 2025
+ * This file overrides all animation values to ensure consistency
+ */
+
+/* Set all motion animations to use same easing function */
+.motion-safe\:animate-fade-in,
+.motion-safe\:animate-fade-up,
+.motion-safe\:animate-fade-down,
+.motion-safe\:animate-slide-in,
+[data-motion],
+[data-animate] {
+  animation-duration: 700ms !important;
+  animation-timing-function: cubic-bezier(0.22, 0.03, 0.36, 1.0) !important;
+}
+
+/* Force framer-motion to use specific values */
+[style*="animation"], 
+[style*="transition"] {
+  transition-duration: 700ms !important;
+  transition-timing-function: cubic-bezier(0.22, 0.03, 0.36, 1.0) !important;
+}
+
+/* Target framer-motion elements directly */
+div[style*="transform"],
+div[style*="opacity"] {
+  transition-property: transform, opacity !important;
+  transition-duration: 700ms !important;
+  transition-timing-function: cubic-bezier(0.22, 0.03, 0.36, 1.0) !important;
+}
+
+/* Normalize all animation delay values */
+[style*="animation-delay"],
+[style*="transition-delay"] {
+  transition-delay: 100ms !important;
+  animation-delay: 100ms !important;
+}
+
+/* Normalize framer-motion animations specifically */
+div[class*="framer-"] {
+  transition-duration: 700ms !important;
+  transition-timing-function: cubic-bezier(0.22, 0.03, 0.36, 1.0) !important;
+}
+
+/* Apply to the page transition wrapper */
+.page-transition-wrapper,
+.transition-wrapper {
+  transition-duration: 700ms !important;
+  transition-timing-function: cubic-bezier(0.22, 0.03, 0.36, 1.0) !important;
+}

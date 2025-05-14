@@ -1,0 +1,50 @@
+/**
+ * Critical Text Contrast Fix - May 2025
+ * 
+ * Fixing dark text on dark backgrounds in Statistics section
+ */
+
+/* Statistics card text - force white text with strong contrast */
+.statistics-section p, 
+.statistics-section [class*="transaction-volume"] p,
+.statistics-section [class*="years-of-excellence"] p,
+.statistics-section [class*="agent-hours"] p,
+.statistics-section [class*="successful-transactions"] p,
+.bg-gray-900 p, 
+.bg-gray-800 p {
+  color: rgba(255, 255, 255, 0.9) !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) !important;
+  font-weight: 400 !important;
+  opacity: 1 !important;
+}
+
+/* Statistics description text */
+.statistics-section .text-sm,
+.statistics-section .text-xs,
+.statistics-section [class*="description"],
+.statistics-section div p {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-weight: 400 !important;
+}
+
+/* Service card text - force white text with increased contrast */
+div[class*="ServicesOverview"] p,
+div[class*="glass-navy"] p,
+div[class*="glass-blue"] p,
+.bg-blue-900\/95 p {
+  color: white !important;
+  opacity: 1 !important;
+  font-weight: 500 !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* Override any potential conflicts */
+#statistics *,
+div[id="statistics"] * {
+  color: white !important;
+}
+
+/* Replace all instances of $500+ with $500M+ */
+.statistics-section span:contains("$500+") {
+  content: "$500M+" !important;
+}

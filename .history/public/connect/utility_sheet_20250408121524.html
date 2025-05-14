@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utility Information Sheet</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        
+        .section {
+            margin-bottom: 20px;
+        }
+        
+        .section h2 {
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 5px;
+        }
+        
+        .service {
+            margin-bottom: 10px;
+        }
+        
+        .service h3 {
+            margin-top: 0;
+        }
+        
+        .service ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .service li {
+            margin-bottom: 5px;
+        }
+        
+        .fields {
+            margin-top: 10px;
+        }
+        
+        .fields label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .fields input,
+        .fields select {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+        
+        .buttons {
+            margin-top: 20px;
+        }
+        
+        .buttons button {
+            margin-right: 10px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .buttons button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Utility Information Sheet</h1>
+    <div class="section">
+        <h2>Main Utilities</h2>
+        <div class="service">
+            <h3>Electric</h3>
+            <ul>
+                <li>Met-ED (800-545-7741)</li>
+                <li>PP&L (800-342-5775)</li>
+            </ul>
+            <div class="fields">
+                <label for="electric-account">Account #:</label>
+                <input type="text" id="electric-account" name="electric-account">
+                <label for="electric-dates">Start/End Dates:</label>
+                <input type="text" id="electric-dates" name="electric-dates">
+                <label for="electric-cost">Monthly Cost:</label>
+                <input type="text" id="electric-cost" name="electric-cost">
+            </div>
+        </div>
+        <div class="service">
+            <h3>Gas / Oil / Propane</h3>
+            <ul>
+                <li>Suburban Propane (610-759-0474)</li>
+                <li>UGI (610-866-0951)</li>
+                <li>Lehigh Fuels (610-266-8990)</li>
+                <li>Reimer Bros (610-863-4105)</li>
+                <li>Lessig Oil + Propane (610-863-3835)</li>
+                <li>AmeriGas (570-424-5901)</li>
+                <li>Tolinos (610-588-3338)</li>
+                <li>Fuel Cell (610-759-0143)</li>
+                <li>Fritch (610-691-1212)</li>
+                <li>Reichenbach (610-434-7234)</li>
+            </ul>
+            <div class="fields">
+                <label for="gas-account">Account #:</label>
+                <input type="text" id="gas-account" name="gas-account">
+                <label for="gas-dates">Start/End Dates:</label>
+                <input type="text" id="gas-dates" name="gas-dates">
+                <label for="gas-cost">Monthly Cost:</label>
+                <input type="text" id="gas-cost" name="gas-cost">
+            </div>
+        </div>
+        <div class="service">
+            <h3>Water</h3>
+            <ul>
+                <li>PA American Water Company (800-565-7292)</li>
+                <li>Easton Suburban Water Comp (610-258-7181)</li>
+                <li>Municipality</li>
+                <li>On Site Well</li>
+            </ul>
+            <div class="fields">
+                <label for="water-account">Account #:</label>
+                <input type="text" id="water-account" name="water-account">
+                <label for="water-dates">Start/End Dates:</label>
+                <input type="text" id="water-dates" name="water-dates">
+                <label for="water-cost">Quarterly Cost:</label>
+                <input type="text" id="water-cost" name="water-cost">
+            </div>
+        </div>
+        <div class="service">
+            <h3>Sewer</h3>
+            <ul>
+                <li>Northampton County Court House (610-559-3000)</li>
+                <li>Lehigh County Authority (610-398-1444)</li>
+                <li>Municipality</li>
+                <li>On-Site Septic</li>
+            </ul>
+            <div class="fields">
+                <label for="sewer-account">Account #:</label>
+                <input type="text" id="sewer-account" name="sewer-account">
+                <label for="sewer-dates">Start/End Dates:</label>
+                <input type="text" id="sewer-dates" name="sewer-dates">
+                <label for="sewer-cost">Quarterly Cost:</label>
+                <input type="text" id="sewer-cost" name="sewer-cost">
+            </div>
+        </div>
+        <div class="service">
+            <h3>Trash</h3>
+            <ul>
+                <li>Allied Waste Services (215-723-0400)</li>
+                <li>Mascaro Sanitation (800-333-4624)</li>
+                <li>McAuliffe (610-767-3152)</li>
+                <li>Reiss Brothers (610-432-7574)</li>
+                <li>Township</li>
+                <li>Waste Management (800-621-2100)</li>
+                <li>Strohl's (610-837-9929)</li>
+                <li>Swint (610-253-8535)</li>
+            </ul>
+            <div class="fields">
+                <label for="trash-account">Account #:</label>
+                <input type="text" id="trash-account" name="trash-account">
+                <label for="trash-dates">Start/End Dates:</label>
+                <input type="text" id="trash-dates" name="trash-dates">
+                <label for="trash-cost">Monthly Cost:</label>
+                <input type="text" id="trash-cost" name="trash-cost">
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <h2>Communication Services</h2>
+        <div class="service">
+            <h3>Cable TV</h3>
+            <ul>
+                <li>Blue Ridge Cable (570-421-0780)</li>
+                <li>Direct TV (888-679-8671)</li>
+                <li>Dish Network (610-381-6315)</li>
+                <li>RCN (800-746-4726)</li>
+                <li>Service Electric (800-232-9100)</li>
+            </ul>
+            <div class="fields">
+                <label for="cable-account">Account #:</label>
+                <input type="text" id="cable-account" name="cable-account">
+                <label for="cable-dates">Start/End Dates:</label>
+                <input type="text" id="cable-dates" name="cable-dates">
+                <label for="cable-cost">Monthly Cost:</label>
+                <input type="text" id="cable-cost" name="cable-cost">
+            </div>
+        </div>
+        <div class="service">
+            <h3>Internet/Phone</h3>
+            <ul>
+                <li>RCN (800-746-4726)</li>
+                <li>Service Electric (610-841-4100)</li>
+                <li>Verizon (800-660-2215)</li>
+                <li>Blue Ridge Cable (570-421-0780)</li>
+                <li>AT&T (800-222-0300)</li>
+            </ul>
+            <div class="fields">
+                <label for="internet-account">Account #:</label>
+                <input type="text" id="internet-account" name="internet-account">
+                <label for="internet-dates">Start/End Dates:</label>
+                <input type="text" id="internet-dates" name="internet-dates">
+                <label for="internet-cost">Monthly Cost:</label>
+                <input type="text" id="internet-cost" name="internet-cost">
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <h2>Property Services</h2>
+        <div class="service">
+            <h3>HOA</h3>
+            <div class="fields">
+                <label for="hoa-name">Company Name:</label>
+                <input type="text" id="hoa-name" name="hoa-name">
+                <label for="hoa-phone">Phone:</label>
+                <input type="text" id="hoa-phone" name="hoa-phone">
+                <label for="hoa-website">Website:</label>
+                <input type="text" id="hoa-website" name="hoa-website">
+                <label for="hoa-start-date">Start Date:</label>
+                <input type="text" id="hoa-start-date" name="hoa-start-date">
+                <label for="hoa-dues">Dues Amount (Monthly/Quarterly/Yearly):</label>
+                <input type="text" id="hoa-dues" name="hoa-dues">
+            </div>
+        </div>
+        <div class="service">
+            <h3>Alarm</h3>
+            <ul>
+                <li>ADT (888-281-1765)</li>
+                <li>Fox Brothers Alarm (610-252-7880)</li>
+            </ul>
+            <div class="fields">
+                <label for="alarm-account">Account #:</label>
+                <input type="text" id="alarm-account" name="alarm-account">
+                <label for="alarm-dates">Start/End Dates:</label>
+                <input type="text" id="alarm-dates" name="alarm-dates">
+                <label for="alarm-cost">Monthly Cost:</label>
+                <input type="text" id="alarm-cost" name="alarm-cost">
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <h2>Additional Services</h2>
+        <div class="service">
+            <h3>Lawn Care</h3>
+            <div class="fields">
+                <label for="lawn-name">Company Name:</label>
+                <input type="text" id="lawn-name" name="lawn-name">
+                <label for="lawn-phone">Phone:</label>
+                <input type="text" id="lawn-phone" name="lawn-phone">
+                <label for="lawn-website">Website:</label>
+                <input type="text" id="lawn-website" name="lawn-website">
+                <label for="lawn-start-date">Start Date:</label>
+                <input type="text" id="lawn-start-date" name="lawn-start-date">
+                <label for="lawn-cost">Monthly Cost:</label>
+                <input type="text" id="lawn-cost" name="lawn-cost">
+            </div>
+        </div>
+        <div class="service">
+            <h3>Pool Care</h3>
+            <div class="fields">
+                <label for="pool-name">Company Name:</label>
+                <input type="text" id="pool-name" name="pool-name">
+                <label for="pool-phone">Phone:</label>
+                <input type="text" id="pool-phone" name="pool-phone">
+                <label for="pool-website">Website:</label>
+                <input type="text" id="pool-website" name="pool-website">
+                <label for="pool-start-date">Start Date:</label>
+                <input type="text" id="pool-start-date" name="pool-start-date">
+                <label for="pool-cost">Monthly Cost:</label>
+                <input type="text" id="pool-cost" name="pool-cost">
+            </div>
+        </div>
+        <div class="service">
+            <h3>Snow Removal</h3>
+            <div class="fields">
+                <label for="snow-name">Company Name:</label>
+                <input type="text" id="snow-name" name="snow-name">
+                <label for="snow-phone">Phone:</label>
+                <input type="text" id="snow-phone" name="snow-phone">
+                <label for="snow-website">Website:</label>
+                <input type="text" id="snow-website" name="snow-website">
+                <label for="snow-start-date">Start Date:</label>
+                <input type="text" id="snow-start-date" name="snow-start-date">
+                <label for="snow-cost">Monthly Cost:</label>
+                <input type="text" id="snow-cost" name="snow-cost">
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <h2>General Information</h2>
+        <div class="fields">
+            <label for="property-address">Property Address:</label>
+            <input type="text" id="property-address" name="property-address">
+            <label for="transaction-link">Transaction Link:</label>
+            <input type="text" id="transaction-link" name="transaction-link">
+            <label for="completed-by">Completed By:</label>
+            <input type="text" id="completed-by" name="completed-by">
+            <label for="date">Date:</label>
+            <input type="text" id="date" name="date">
+            <label for="last-updated">Last Updated Date:</label>
+            <input type="text" id="last-updated" name="last-updated">
+        </div>
+    </div>
+    <div class="buttons">
+        <button onclick="window.print()">Print</button>
+        <button onclick="saveAsPDF()">Save as PDF</button>
+        <button onclick="clearForm()">Clear Form</button>
+    </div>
+
+    <script>
+        function saveAsPDF() {
+            // This function should be implemented using a library like jsPDF or similar
+            alert("Save as PDF functionality is not implemented in this example.");
+        }
+
+        function clearForm() {
+            const inputs = document.querySelectorAll('input');
+            inputs.forEach(input => input.value = '');
+        }
+    </script>
+</body>
+
+</html>

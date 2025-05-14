@@ -1,0 +1,306 @@
+/**
+ * Enhanced Text Contrast System - May 2025
+ * 
+ * This file ensures proper text contrast against all backgrounds and card types
+ * to meet accessibility standards and improve readability.
+ */
+
+
+/* ========== Glass Card Text Contrast Fixes ========== */
+
+
+/* Base text styling for all glass cards */
+
+.glass-card,
+.glass-card-navy,
+.glass-card-blue,
+.glass-card-dark,
+.glass-card-gold,
+.glass-card-white,
+.glass-card-frost,
+.glass-card-light {
+    @apply leading-relaxed;
+}
+
+
+/* Ensure headings have proper contrast */
+
+.glass-card h1,
+.glass-card h2,
+.glass-card h3,
+.glass-card h4,
+.glass-card h5,
+.glass-card h6 {
+    @apply text-gray-900;
+}
+
+.glass-card-white h1,
+.glass-card-white h2,
+.glass-card-white h3,
+.glass-card-white h4,
+.glass-card-white h5,
+.glass-card-white h6,
+.glass-card-frost h1,
+.glass-card-frost h2,
+.glass-card-frost h3,
+.glass-card-frost h4,
+.glass-card-frost h5,
+.glass-card-frost h6 {
+    @apply text-gray-900;
+}
+
+.glass-card-navy h1,
+.glass-card-navy h2,
+.glass-card-navy h3,
+.glass-card-navy h4,
+.glass-card-navy h5,
+.glass-card-navy h6,
+.glass-card-blue h1,
+.glass-card-blue h2,
+.glass-card-blue h3,
+.glass-card-blue h4,
+.glass-card-blue h5,
+.glass-card-blue h6,
+.glass-card-dark h1,
+.glass-card-dark h2,
+.glass-card-dark h3,
+.glass-card-dark h4,
+.glass-card-dark h5,
+.glass-card-dark h6,
+.glass-card-gold h1,
+.glass-card-gold h2,
+.glass-card-gold h3,
+.glass-card-gold h4,
+.glass-card-gold h5,
+.glass-card-gold h6,
+.glass-card-light h1,
+.glass-card-light h2,
+.glass-card-light h3,
+.glass-card-light h4,
+.glass-card-light h5,
+.glass-card-light h6 {
+    @apply text-white;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Ensure paragraphs have proper contrast */
+
+.glass-card p {
+    @apply text-gray-700;
+}
+
+.glass-card-white p,
+.glass-card-frost p {
+    @apply text-gray-700;
+}
+
+.glass-card-navy p,
+.glass-card-blue p,
+.glass-card-dark p,
+.glass-card-light p {
+    @apply text-white text-opacity-90;
+}
+
+.glass-card-gold p {
+    @apply text-gray-900;
+}
+
+
+/* ========== Background Specific Text Contrast ========== */
+
+
+/* Light backgrounds */
+
+.bg-white,
+.bg-gray-50,
+.bg-gray-100,
+.bg-blue-50,
+.bg-blue-100 {
+    @apply text-gray-900;
+}
+
+.bg-white p,
+.bg-gray-50 p,
+.bg-gray-100 p,
+.bg-blue-50 p,
+.bg-blue-100 p {
+    @apply text-gray-700;
+}
+
+
+/* Dark backgrounds */
+
+.bg-blue-600,
+.bg-blue-700,
+.bg-blue-800,
+.bg-blue-900,
+.bg-gray-600,
+.bg-gray-700,
+.bg-gray-800,
+.bg-gray-900,
+.bg-brand-blue,
+.bg-black {
+    @apply text-white;
+}
+
+.bg-blue-600 p,
+.bg-blue-700 p,
+.bg-blue-800 p,
+.bg-blue-900 p,
+.bg-gray-600 p,
+.bg-gray-700 p,
+.bg-gray-800 p,
+.bg-gray-900 p,
+.bg-brand-blue p,
+.bg-black p {
+    @apply text-white text-opacity-90;
+}
+
+
+/* Gold/amber backgrounds */
+
+.bg-brand-gold,
+.bg-amber-300,
+.bg-amber-400,
+.bg-amber-500,
+.bg-yellow-300,
+.bg-yellow-400,
+.bg-yellow-500 {
+    @apply text-gray-900;
+}
+
+.bg-brand-gold p,
+.bg-amber-300 p,
+.bg-amber-400 p,
+.bg-amber-500 p,
+.bg-yellow-300 p,
+.bg-yellow-400 p,
+.bg-yellow-500 p {
+    @apply text-gray-800;
+}
+
+
+/* ========== Component Specific Fixes ========== */
+
+
+/* Navigation items in dark headers */
+
+.bg-brand-blue nav a {
+    @apply text-white hover:text-yellow-300;
+}
+
+
+/* Hero section text */
+
+[data-hero-component="true"] h1,
+[data-hero-component="true"] h2 {
+    @apply text-white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+[data-hero-component="true"] p {
+    @apply text-white text-opacity-90;
+}
+
+
+/* Footer text */
+
+footer p {
+    @apply text-gray-700;
+}
+
+footer h3,
+footer h4 {
+    @apply text-gray-900;
+}
+
+footer a:not(.btn) {
+    @apply text-gray-700 hover:text-blue-700;
+}
+
+
+/* ========== Form Element Contrast ========== */
+
+
+/* Input fields */
+
+input,
+select,
+textarea {
+    @apply text-gray-900 placeholder-gray-500;
+}
+
+
+/* Labels */
+
+label {
+    @apply text-gray-700;
+}
+
+
+/* Dark background form adjustments */
+
+.bg-blue-800 label,
+.bg-blue-900 label,
+.bg-gray-800 label,
+.bg-gray-900 label,
+.bg-brand-blue label,
+.bg-black label {
+    @apply text-white;
+}
+
+
+/* ========== Button Contrast Fixes ========== */
+
+
+/* Primary buttons */
+
+.btn-primary {
+    @apply bg-blue-700 text-white;
+}
+
+.btn-primary:hover {
+    @apply bg-blue-800;
+}
+
+
+/* Secondary buttons */
+
+.btn-secondary {
+    @apply bg-amber-400 text-gray-900;
+}
+
+.btn-secondary:hover {
+    @apply bg-amber-500;
+}
+
+
+/* Outline buttons */
+
+.btn-outline {
+    @apply border-2 border-blue-700 text-blue-700;
+}
+
+.btn-outline:hover {
+    @apply bg-blue-700 text-white;
+}
+
+
+/* Dark background buttons */
+
+.bg-blue-800 .btn-outline,
+.bg-blue-900 .btn-outline,
+.bg-gray-800 .btn-outline,
+.bg-gray-900 .btn-outline,
+.bg-black .btn-outline {
+    @apply border-white text-white;
+}
+
+.bg-blue-800 .btn-outline:hover,
+.bg-blue-900 .btn-outline:hover,
+.bg-gray-800 .btn-outline:hover,
+.bg-gray-900 .btn-outline:hover,
+.bg-black .btn-outline:hover {
+    @apply bg-white text-blue-900;
+}

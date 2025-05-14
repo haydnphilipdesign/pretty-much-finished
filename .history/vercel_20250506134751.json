@@ -1,0 +1,39 @@
+{
+    "version": 2,
+    "buildCommand": "npm run vercel-build",
+    "functions": {
+        "api/generate-pdf.js": {
+            "memory": 1024,
+            "maxDuration": 60
+        },
+        "api/supabase-pdf-upload.js": {
+            "memory": 1024,
+            "maxDuration": 60
+        },
+        "api/update-airtable-attachment.js": {
+            "memory": 1024,
+            "maxDuration": 60
+        }
+    },
+    "routes": [{
+            "src": "/(.*)\\.js",
+            "headers": {
+                "Content-Type": "application/javascript",
+                "X-Content-Type-Options": "nosniff"
+            },
+            "continue": true
+        },
+        {
+            "src": "/index.html",
+            "headers": {
+                "Cache-Control": "no-cache, no-store, must-revalidate"
+            },
+            "continue": true
+        },
+        { "src": "/api/generate-pdf", "dest": "/api/generate-pdf.js" },
+        { "src": "/api/supabase-pdf-upload", "dest": "/api/supabase-pdf-upload.js" },
+        { "src": "/api/update-airtable-attachment", "dest": "/api/update-airtable-attachment.js" },
+        { "handle": "filesystem" },
+        { "src": "/(.*)", "dest": "/index.html" }
+    ]
+}

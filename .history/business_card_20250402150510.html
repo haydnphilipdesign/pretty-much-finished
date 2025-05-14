@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Debbie O'Brien Signature</title>
+  <style>
+    @font-face {
+      font-family: 'Amsterdam Signature';
+      /* Ensure the font file is accessible at this path */
+      src: url('AmsterdamSignature-PKO4P.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    body {
+      /* Using a common sans-serif fallback */
+      font-family: Arial, sans-serif;
+      background-color: #e0e0e0;
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+      margin: 0; /* Added margin reset */
+    }
+
+    .card-wrapper {
+      max-width: 800px;
+      width: 100%;
+      background-color: #ffffff;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: row;
+    }
+
+    .image-section {
+      width: 45%;
+      /* Ensure image section doesn't shrink */
+      flex-shrink: 0;
+    }
+
+    .image-section img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .info-section {
+      width: 55%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .info-top {
+      background-color: #1a3d5c;
+      color: #d4b886;
+      padding: 20px 30px;
+      display: flex;
+      justify-content: space-between;
+      /* Align items to the top to handle multi-line text */
+      align-items: flex-start;
+      /* Allow top section to grow if needed */
+      flex-grow: 1;
+    }
+
+    /* Group for name, title, company */
+    .name-title-group {
+        display: flex;
+        flex-direction: column;
+        /* Prevent shrinking */
+        flex-shrink: 1;
+        /* Allow growing */
+        flex-grow: 1;
+        /* Add some space to the right before the logo */
+        margin-right: 15px;
+    }
+
+
+    .info-top .name {
+      font-family: 'Amsterdam Signature', cursive;
+      font-size: 3.8em;
+      margin: 0 0 5px 0; /* Add margin below name */
+      line-height: 1; /* Adjust line height */
+      /* Explicitly set font-weight to normal */
+      font-weight: normal;
+    }
+
+    /* Added styles for title and company */
+    .info-top .title,
+    .info-top .company {
+        font-family: Arial, sans-serif; /* Use standard font */
+        font-size: 0.9em;
+        margin: 0 0 3px 0; /* Small margin below */
+        line-height: 1.2;
+        color: #d4b886; /* Ensure gold color */
+        font-weight: normal; /* Ensure normal weight */
+    }
+    .info-top .company {
+        font-size: 0.8em; /* Slightly smaller company name */
+        margin-bottom: 0;
+    }
+
+    /* Style for the logo */
+    .info-top .logo-image {
+        width: 80px;
+        height: auto; /* Maintain aspect ratio */
+        flex-shrink: 0; /* Prevent logo from shrinking */
+        /* Align logo vertically if needed, depends on final look */
+        /* align-self: center; */
+    }
+
+
+    .info-bottom {
+      background-color: #d4b886;
+      color: #1a3d5c;
+      padding: 15px 30px;
+      /* Ensure bottom section doesn't grow */
+      flex-shrink: 0;
+    }
+
+    .info-bottom ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .info-bottom li {
+      margin-bottom: 6px;
+      font-size: 0.9em;
+      font-family: Arial, sans-serif; /* Use standard font */
+    }
+     /* Add space before emoji/icon */
+    .info-bottom li::before {
+        content: "";
+        margin-right: 8px;
+    }
+
+    .info-bottom a {
+      color: #1a3d5c;
+      text-decoration: none;
+    }
+
+    .info-bottom a:hover {
+      text-decoration: underline;
+    }
+
+    /* Basic responsive adjustments */
+    @media (max-width: 600px) {
+        .card-wrapper {
+            flex-direction: column;
+        }
+        .image-section,
+        .info-section {
+            width: 100%;
+        }
+        .image-section {
+            max-height: 250px; /* Limit image height on mobile */
+        }
+        .info-top {
+            padding: 15px 20px;
+            align-items: center; /* Center items vertically now */
+        }
+        .info-top .name {
+            font-size: 2.8em; /* Adjust font size */
+        }
+        .info-top .logo-image {
+            width: 60px; /* Smaller logo */
+        }
+        .info-bottom {
+            padding: 15px 20px;
+        }
+        .info-bottom li {
+            font-size: 0.85em;
+        }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="card-wrapper">
+    <div class="image-section">
+      <img src="https://parealestatesupport.com/optimized/debbie.jpg" alt="Debbie O'Brien">
+    </div>
+    <div class="info-section">
+      <div class="info-top">
+        <!-- Group name, title, company -->
+        <div class="name-title-group">
+            <h1 class="name">Debbie O'Brien</h1>
+            <!-- Added Title -->
+            <p class="title">Transaction Coordinator</p>
+            <!-- Added Company Name -->
+            <p class="company">PA Real Estate Support Services</p>
+        </div>
+        <img src="https://parealestatesupport.com/logo-sm.png" alt="Company Logo" class="logo-image">
+      </div>
+      <div class="info-bottom">
+        <ul>
+          <li>🕓 Monday–Friday, 9:00AM–5:00PM</li>
+          <li>☎️ Office: 570.588.4637</li>
+          <li>📧 <a href="mailto:debbie@parealestatesupport.com">debbie@parealestatesupport.com</a></li>
+          <li>🌐 <a href="https://parealestatesupport.com" target="_blank">parealestatesupport.com</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

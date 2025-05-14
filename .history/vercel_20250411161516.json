@@ -1,0 +1,39 @@
+{
+    "version": 2,
+    "buildCommand": "npm run vercel-build",
+    "rewrites": [
+        { "source": "/api/(.*)", "destination": "/api/$1" },
+        { "source": "/(.*)", "destination": "/index.html" }
+    ],
+    "headers": [{
+            "source": "/(.*)\\.js",
+            "headers": [{
+                    "key": "Content-Type",
+                    "value": "application/javascript"
+                },
+                {
+                    "key": "X-Content-Type-Options",
+                    "value": "nosniff"
+                }
+            ]
+        },
+        {
+            "source": "/index.html",
+            "headers": [{
+                "key": "Cache-Control",
+                "value": "no-cache, no-store, must-revalidate"
+            }]
+        }
+    ],
+    "functions": {
+        "api/send-transaction-email-fixed.js": {
+            "memory": 1024,
+            "maxDuration": 60
+        }
+    },
+    "outputDirectory": "build",
+    "includeFiles": [
+        "templates/**",
+        "public/templates/**"
+    ]
+}

@@ -1,0 +1,149 @@
+/**
+ * Critical Text Contrast Fixes - Services Page
+ * 
+ * Simple fixes for text contrast and positioning on the services page
+ * without decorative elements or colors
+ */
+
+/* Fix light backgrounds with dark text on Services page */
+.contentSection-light h2,
+.contentSection-light h3,
+div.mb-8 h2 {
+  color: #0F1C2E !important; /* Very dark blue/almost black for headings */
+  font-weight: 700 !important; /* Bold */
+}
+
+.contentSection-light p,
+div.mb-8 p {
+  color: #333333 !important; /* Dark gray for paragraph text */
+  font-weight: 400 !important; /* Normal */
+}
+
+/* Fix glass card text on light backgrounds */
+.glass-card-light {
+  background-color: #0066CC !important; /* Solid brand blue background */
+  color: white !important;
+  border: none !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !important;
+}
+
+.glass-card-light h3 {
+  color: white !important;
+  font-weight: 600 !important; /* Semibold */
+}
+
+.glass-card-light p,
+.glass-card-light li,
+.glass-card-light span {
+  color: white !important; /* Pure white text */
+}
+
+/* Fix section headers position */
+.contentSection-light,
+[className*="py-24"] {
+  position: relative !important;
+}
+
+.contentSection-light > div.mb-8,
+[className*="py-24"] > div.mb-8 {
+  position: relative !important;
+  z-index: 10 !important;
+  margin-bottom: 2rem !important;
+}
+
+/* Fix service cards grid layout */
+.grid {
+  position: relative !important;
+  z-index: 10 !important;
+}
+
+/* Remove any problematic background elements */
+.bg-transparent,
+.bg-gradient-to-br,
+[className*="radial-gradient"],
+[className*="bg-grid"] {
+  background: none !important;
+  background-image: none !important;
+}
+
+/* Position fix for headings with HeroBadge */
+[class*="mb-12"] {
+  position: relative !important;
+  z-index: 20 !important;
+}
+
+.hero-badge {
+  position: relative !important;
+  z-index: 30 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  background-color: #FFB81C !important;
+  color: #0F1C2E !important;
+  font-weight: 600 !important;
+  font-size: 0.75rem !important;
+  padding: 0.25rem 1rem !important;
+  border-radius: 9999px !important;
+  margin-bottom: 0.75rem !important;
+}
+
+[class*="mb-12"] h2 {
+  display: block !important;
+  position: relative !important;
+  margin-bottom: 0.75rem !important;
+  color: #0066CC !important;
+  font-weight: 700 !important;
+}
+
+[class*="mb-12"] p {
+  color: #333333 !important;
+  position: relative !important;
+  max-width: 48rem !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Strong contrast for list items */
+.glass-card-light li {
+  display: flex !important;
+  align-items: flex-start !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.glass-card-light li > div {
+  background-color: white !important;
+  min-width: 6px !important;
+  min-height: 6px !important;
+  margin-top: 6px !important;
+  margin-right: 8px !important;
+}
+
+/* Ensure service cards have proper spacing */
+.card, 
+.glass-card-light,
+.content-card {
+  padding: 1.5rem !important;
+  margin-bottom: 1rem !important;
+}
+
+/* Fix for light section with gradient issues */
+.contentSection-light,
+[dark="false"] {
+  background-color: white !important;
+}
+
+/* Ensure the Process Steps section stands out */
+.bg-navy-gradient,
+[bgColor="bg-navy-gradient"],
+section[class*="bg-navy-gradient"] {
+  background: linear-gradient(to bottom right, #1e3a8a, #1e40af) !important;
+  color: white !important;
+}
+
+[bgColor="bg-navy-gradient"] h2,
+[bgColor="bg-navy-gradient"] h3 {
+  color: white !important;
+}
+
+[bgColor="bg-navy-gradient"] p {
+  color: #f5f5f5 !important; /* Very light gray for readability */
+}

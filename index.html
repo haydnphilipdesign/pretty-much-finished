@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/logo-flat.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>PA Real Estate Support Services LLC</title>
+    <meta name="description" content="Professional real estate transaction coordination services for real estate professionals.">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+       (function(){
+          emailjs.init({
+            publicKey: "cyZD1Xw8XViSiVp1b",
+            // Prevent headless browser submissions
+            blockHeadless: true,
+            // Block specific suspicious email addresses
+            blockList: {
+              list: [
+                'spam@example.com', 
+                'bot@malicious.com', 
+                'noreply@automated.com'
+              ],
+              watchVariable: 'userEmail'
+            },
+            // Rate limiting: 1 request per 10 seconds
+            limitRate: {
+              id: 'ImPaRESS_contact_form',
+              throttle: 10000
+            }
+          });
+       })();
+    </script>
+  </body>
+</html>

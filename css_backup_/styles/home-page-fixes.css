@@ -1,0 +1,88 @@
+/**
+ * Home Page CSS Fixes
+ * This file contains fixes for styling issues on the Home page
+ */
+
+/* Fix text contrast for home page sections */
+.home-hero h1,
+.home-hero h2 {
+  @apply text-white !important;
+}
+
+.home-hero p {
+  @apply text-blue-100 !important;
+}
+
+/* Make hero buttons consistent */
+.home-hero .btn,
+.home-hero button,
+.home-hero a[role="button"] {
+  @apply rounded-full transition-all duration-300 !important;
+}
+
+/* Ensure proper styling for hero buttons */
+.hero-button,
+.hero-button-inverted,
+a.hero-button,
+a.hero-button-inverted {
+  @apply py-3 px-6 font-medium rounded-full transition-all duration-300 !important;
+}
+
+.hero-button, a.hero-button {
+  @apply bg-blue-600 text-white hover:bg-blue-700 !important;
+}
+
+.hero-button-inverted, a.hero-button-inverted {
+  @apply bg-white text-blue-600 hover:bg-white/90 !important;
+}
+
+/* Fix glass card styling for cards with gradient backgrounds */
+.glass-card-content {
+  @apply text-gray-700 !important;
+}
+
+/* Improve contrast for glass card content */
+.glass-card h3,
+.glass-card-blue h3,
+.glass-card-white h3 {
+  @apply text-brand-blue font-bold mb-4 !important;
+}
+
+.glass-card-navy h3,
+.glass-card-navy h2 {
+  @apply text-white font-bold mb-4 !important;
+}
+
+.glass-card p,
+.glass-card-blue p,
+.glass-card-white p {
+  @apply text-gray-700 !important;
+}
+
+.glass-card-navy p {
+  @apply text-blue-100 !important;
+}
+
+/* Ensure consistent vertical spacing */
+.section {
+  @apply py-16 !important;
+}
+
+/* Fix contrast for all link elements */
+a:not(.btn):not(.hero-button):not([role="button"]):not(.rounded-full) {
+  @apply text-brand-blue hover:text-brand-gold transition-colors duration-300 !important;
+}
+
+.bg-brand-blue a:not(.btn):not(.hero-button):not([role="button"]):not(.rounded-full),
+.bg-gradient-to-br.from-brand-blue a:not(.btn):not(.hero-button):not([role="button"]):not(.rounded-full) {
+  @apply text-white hover:text-blue-200 !important;
+}
+
+/* Consistent footer styling */
+footer {
+  @apply bg-gray-100 text-gray-700 !important;
+}
+
+footer a {
+  @apply text-brand-blue hover:text-brand-gold !important;
+}

@@ -1,0 +1,73 @@
+Table: Transactions
+MLS Number (singleLineText, ID: fld6O2FgIXQU5G27o): No options
+
+Address (singleLineText, ID: fldypnfnHhplWYcCW): No options
+
+Property Status (singleSelect, ID: fldV2eLxz6w0TpLFU): OCCUPIED, VACANT, propertyStatus, vacant
+
+Sale Price (currency, ID: fldhHjBZJISmnP8SK): No options
+
+Winterized (singleSelect, ID: fldExdgBDgdB1i9jy): YES, NO, winterized, no, yes
+
+Update MLS (singleSelect, ID: fldw3GlfvKtyNfIAW): YES, NO, updateMls, yes
+
+Sellers Assist (currency, ID: fldTvXx96Na0zRh6W): No options
+
+Total Commission Percentage (number, ID: fldE8INzEorBtx2uN): No options
+
+Listing Agent Percentage (number, ID: flduuQQT7o6XAGlRe): No options
+
+Buyer’s Agent Percentage (number, ID: fld5KRrToAAt5kOLd): No options
+
+Broker Fee (number, ID: flddRltdGj05Clzpa): No options
+
+Referral Party (singleLineText, ID: fldzVtmn8uylVxuTF): No options
+
+Referral Fee (number, ID: fldewmjoaJVwiMF46): No options
+
+Special Instructions (richText, ID: fldDWN8jU4kdCffzu): No options
+
+Urgent Issues (richText, ID: fldgW16aPdFMdspO6): No options
+
+Additional Information (richText, ID: fld30htJ7euVerCLW): No options
+
+Clients (multipleRecordLinks, ID: fldmPyBwuOO1dgj1g): No options
+
+Agent Name (singleLineText, ID: fldFD4xHD0vxnSOHJ): No options
+
+Broker EIN (singleLineText, ID: fld20VbKbWzdR4Sp7): No options
+
+Agent Role (singleSelect, ID: fldOVyoxz38rWwAFy): BUYERS AGENT, LISITNG AGENT, DUAL AGENT
+
+HOA Name (singleLineText, ID: fld9oG6SMAkh4hvNL): No options
+
+Municipality (singleLineText, ID: fld9Qw4mGeI9kk42F): No options
+
+First Right Name (singleLineText, ID: fldeHKiUreeDs5n4o): No options
+
+Attorney Name (singleLineText, ID: fld4YZ0qKHvRLK4Xg): No options
+
+Home Warranty Company (singleLineText, ID: fldRtNEH89tNNX52B): No options
+
+Home Warranty Cost (currency, ID: fldxH1pCpohty1e2b): No options
+
+Home Warranty Payer (singleLineText, ID: fld61RStU7sCDrG01): No options
+
+Title Company (singleLineText, ID: fldqeArDeRkxiYz9u): No options
+
+Property Access Type (singleSelect, ID: fld7TTQpaC83ehY7H): ELECTRONIC LOCKBOX, COMBO LOCKBOX, KEYPAD, APPOINTMENT ONLY
+
+Lockbox Access Code (singleLineText, ID: fldrh8eB5V8TjSZlR): No options
+
+Table: Clients
+Client Name (singleLineText, ID: fldSqxNOZ9B5PgSab): No options
+
+Client Email (email, ID: flddP6a8EG6qTJdIi): No options
+
+Client Phone (phoneNumber, ID: fldBnh8W6iGW014yY): No options
+
+Client Address (singleLineText, ID: fldz1IpeR1256LhuC): No options
+
+Client Type (singleSelect, ID: fldSY6vbE1zAhJZqd): BUYER, SELLER
+
+Marital Status (singleSelect, ID: fldeK6mjSfxELU0MD): SINGLE, MARRIED, DIVORCED, DIVORCE IN PROGRESS, WIDOWED

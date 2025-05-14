@@ -1,0 +1,5 @@
+County: singleLineText
+Property Type: singleSelect [RESIDENTIAL, COMMERCIAL, LAND]
+Built Before 1978: singleSelect [YES, NO]
+Closing Date: date
+Coordinator Fee Paid By: singleSelect [client, agent]

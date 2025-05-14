@@ -1,0 +1,161 @@
+/**
+ * Enhanced Contrast Fixes
+ * This file contains additional fixes for text contrast issues
+ */
+
+
+/* Add text shadows to improve readability on color backgrounds */
+
+.bg-brand-blue h1,
+.bg-brand-blue h2,
+.bg-blue-gradient h1,
+.bg-blue-gradient h2,
+.bg-navy-gradient h1,
+.bg-navy-gradient h2,
+[data-hero-component="true"] h1,
+[data-hero-component="true"] h2 {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+}
+
+
+/* Improve contrast for glass card text */
+
+.glass-card h3 {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    /* semibold */
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+}
+
+.glass-card p {
+    color: #eff6ff !important;
+    /* text-blue-50 equivalent */
+}
+
+
+/* Better contrast for links in various contexts */
+
+.bg-white a:not(.btn):not(.btn-primary):not(.btn-secondary) {
+    color: #0066CC !important;
+    /* brand-blue */
+}
+
+.bg-white a:not(.btn):not(.btn-primary):not(.btn-secondary):hover {
+    color: #FFB81C !important;
+    /* brand-gold */
+}
+
+.bg-brand-blue a:not(.btn),
+.bg-blue-gradient a:not(.btn),
+.bg-navy-gradient a:not(.btn) {
+    color: #eff6ff !important;
+    /* text-blue-50 equivalent */
+}
+
+.bg-brand-blue a:not(.btn):hover,
+.bg-blue-gradient a:not(.btn):hover,
+.bg-navy-gradient a:not(.btn):hover {
+    color: #FFB81C !important;
+    /* brand-gold */
+}
+
+
+/* Better button contrast */
+
+.btn-primary:hover {
+    background-color: rgba(0, 102, 204, 0.9) !important;
+    /* brand-blue/90 */
+    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3) !important;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(255, 184, 28, 0.9) !important;
+    /* brand-gold/90 */
+    box-shadow: 0 4px 12px rgba(255, 184, 28, 0.3) !important;
+}
+
+
+/* Fix for the "Let me handle the paperwork..." heading in hero section */
+
+.bg-brand-blue [class*="text-white"],
+.bg-blue-gradient [class*="text-white"],
+.bg-navy-gradient [class*="text-white"] {
+    color: #ffffff !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+}
+
+
+/* Improve contrast for "Start a Transaction" button */
+
+a[href*="Start a Transaction"] {
+    background-color: #ffffff !important;
+    color: #0066CC !important;
+    /* brand-blue */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+a[href*="Start a Transaction"]:hover {
+    background-color: #f3f4f6 !important;
+    /* gray-100 equivalent */
+}
+
+
+/* Improve contrast for footer elements */
+
+footer h3,
+footer h4 {
+    color: #0066CC !important;
+    /* brand-blue */
+    font-weight: 600 !important;
+    /* semibold */
+}
+
+
+/* Improve contrast for office hours */
+
+.office-hours {
+    color: #374151 !important;
+    /* text-gray-700 equivalent */
+    font-weight: 500 !important;
+    /* medium */
+}
+
+
+/* Add subtle background to improve text legibility in transparent sections */
+
+.bg-transparent {
+    background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+
+/* Improve navbar text contrast */
+
+nav [class*="text-white"] {
+    font-weight: 500 !important;
+    /* medium */
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+}
+
+
+/* Fix for phone number and email links */
+
+a[href^="tel:"],
+a[href^="mailto:"] {
+    color: #0066CC !important;
+    /* brand-blue */
+}
+
+a[href^="tel:"]:hover,
+a[href^="mailto:"]:hover {
+    color: #FFB81C !important;
+    /* brand-gold */
+}
+
+
+/* Fix for address text */
+
+address,
+.address {
+    color: #374151 !important;
+    /* text-gray-700 equivalent */
+}

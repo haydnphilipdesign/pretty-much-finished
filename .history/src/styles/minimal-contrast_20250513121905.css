@@ -1,0 +1,567 @@
+/**
+ * Minimal Contrast Fixes
+ * Core fixes for text visibility without using problematic Tailwind directives
+ */
+
+
+/* Basic text contrast */
+
+.bg-white,
+.bg-gray-50,
+.bg-gray-100,
+.bg-blue-50,
+.bg-blue-100,
+.service-card,
+.feature-card,
+.card {
+    color: #1e293b !important;
+    /* dark gray text */
+}
+
+
+/* Force dark text on light backgrounds */
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+li,
+label {
+    color: #1e293b;
+}
+
+
+/* Force white text on dark backgrounds */
+
+.bg-blue-600,
+.bg-blue-700,
+.bg-blue-800,
+.bg-blue-900,
+.bg-gray-600,
+.bg-gray-700,
+.bg-gray-800,
+.bg-gray-900,
+.bg-slate-900,
+.bg-black,
+.bg-brand-blue,
+[class*="card-dark"],
+[class*="card-navy"],
+.dark-section {
+    color: #ffffff !important;
+}
+
+
+/* Override any style that might be causing light text on light background */
+
+body {
+    color: #1e293b !important;
+}
+
+
+/* Service cards and sections */
+
+.service-card ul li,
+.service-card p,
+.service-card .service-description,
+div[id*="service"] ul li,
+div[id*="service"] p,
+div[class*="service"] ul li,
+div[class*="service"] p {
+    color: #1f2937 !important;
+}
+
+
+/* "How We'll Work Together" section */
+
+div[id*="work"],
+section[id*="work"],
+div[class*="work"],
+section[class*="work"],
+div[id*="process"],
+section[id*="process"] {
+    background-color: #f3f4f6 !important;
+    /* gray-100 */
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+}
+
+
+/* Section titles visibility */
+
+section h1,
+section h2,
+section h3 {
+    color: #1e293b !important;
+    font-weight: bold !important;
+}
+
+
+/* Dark backgrounds headings */
+
+.bg-blue-600 h1,
+.bg-blue-700 h1,
+.bg-blue-800 h1,
+.bg-blue-900 h1,
+.bg-gray-800 h1,
+.bg-gray-900 h1,
+.bg-brand-blue h1,
+.bg-slate-900 h1,
+.bg-black h1,
+.bg-blue-600 h2,
+.bg-blue-700 h2,
+.bg-blue-800 h2,
+.bg-blue-900 h2,
+.bg-gray-800 h2,
+.bg-gray-900 h2,
+.bg-brand-blue h2,
+.bg-slate-900 h2,
+.bg-black h2,
+.bg-blue-600 h3,
+.bg-blue-700 h3,
+.bg-blue-800 h3,
+.bg-blue-900 h3,
+.bg-gray-800 h3,
+.bg-gray-900 h3,
+.bg-brand-blue h3,
+.bg-slate-900 h3,
+.bg-black h3 {
+    color: #ffffff !important;
+    font-weight: bold !important;
+}
+
+
+/* Card content styling */
+
+.card-content,
+.card-body,
+div[class*="card"] div,
+.feature-content {
+    color: #4b5563 !important;
+    /* gray-600 */
+}
+
+
+/* Fix for light borders on light backgrounds */
+
+.card,
+.border,
+.border-light,
+div[class*="card"],
+.service-card {
+    border: 1px solid #e5e7eb !important;
+    /* gray-200 */
+    background-color: #ffffff !important;
+    /* Force white background */
+}
+
+
+/* Add specific styling for cards in the blue section */
+
+.bg-blue-600 .card,
+.bg-blue-700 .card,
+.bg-blue-800 .card,
+.bg-blue-900 .card,
+.bg-brand-blue .card,
+section[class*="blue"] .card,
+div[class*="blue"] .card {
+    background-color: #ffffff !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+}
+
+
+/* Fix service cards specifically */
+
+.service-card {
+    background-color: #ffffff !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+    padding: 1.5rem !important;
+}
+
+
+/* Fix feature cards in the blue section */
+
+.feature-card,
+div[class*="feature"],
+div[id*="feature"] {
+    background-color: #ffffff !important;
+    border: 1px solid #e5e7eb !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+}
+
+
+/* Additional styles for statistics cards seen in the screenshot */
+
+[class*="statistic"],
+[id*="statistic"],
+.stats-card,
+.stat-card {
+    background-color: #ffffff !important;
+    border: 1px solid #e5e7eb !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+    padding: 1rem !important;
+}
+
+
+/* Additional fix for testimonial cards */
+
+[class*="testimonial"],
+[id*="testimonial"],
+.testimonial {
+    background-color: #ffffff !important;
+    border: 1px solid #e5e7eb !important;
+    border-radius: 0.5rem !important;
+}
+
+
+/* Add explicit background color for blue section cards */
+
+.bg-blue-600 div,
+.bg-blue-700 div,
+.bg-blue-800 div,
+.bg-blue-900 div,
+.bg-brand-blue div,
+section[class*="blue"] div[class*="card"],
+div[class*="blue"] div[class*="card"] {
+    background-color: #ffffff !important;
+}
+
+
+/* Footer styling */
+
+footer,
+footer p,
+footer div,
+footer span {
+    color: #e5e7eb !important;
+    /* gray-200 */
+}
+
+footer a {
+    color: #ffffff !important;
+    font-weight: 500 !important;
+}
+
+
+/* Header and navigation links in dark sections */
+
+header.bg-blue-600,
+header.bg-blue-700,
+header.bg-blue-800,
+header.bg-blue-900,
+header.bg-gray-800,
+header.bg-gray-900,
+header.bg-brand-blue,
+header.bg-black,
+nav.bg-blue-600,
+nav.bg-blue-700,
+nav.bg-blue-800,
+nav.bg-blue-900,
+nav.bg-gray-800,
+nav.bg-gray-900,
+nav.bg-brand-blue,
+nav.bg-black {
+    color: #ffffff !important;
+}
+
+header.bg-blue-600 a,
+header.bg-blue-700 a,
+header.bg-blue-800 a,
+header.bg-blue-900 a,
+header.bg-gray-800 a,
+header.bg-gray-900 a,
+header.bg-brand-blue a,
+header.bg-black a,
+nav.bg-blue-600 a,
+nav.bg-blue-700 a,
+nav.bg-blue-800 a,
+nav.bg-blue-900 a,
+nav.bg-gray-800 a,
+nav.bg-gray-900 a,
+nav.bg-brand-blue a,
+nav.bg-black a {
+    color: #ffffff !important;
+}
+
+
+/* Handle hover states with standard CSS instead of Tailwind directives */
+
+header.bg-blue-600 a:hover,
+header.bg-blue-700 a:hover,
+header.bg-blue-800 a:hover,
+header.bg-blue-900 a:hover,
+header.bg-gray-800 a:hover,
+header.bg-gray-900 a:hover,
+header.bg-brand-blue a:hover,
+header.bg-black a:hover,
+nav.bg-blue-600 a:hover,
+nav.bg-blue-700 a:hover,
+nav.bg-blue-800 a:hover,
+nav.bg-blue-900 a:hover,
+nav.bg-gray-800 a:hover,
+nav.bg-gray-900 a:hover,
+nav.bg-brand-blue a:hover,
+nav.bg-black a:hover {
+    color: #e5e7eb !important;
+    /* gray-200 */
+}
+
+
+/* Fix for nav links */
+
+header nav a,
+nav a,
+.header-nav a,
+.main-nav a,
+.navbar a,
+.navigation a {
+    color: #1f2937 !important;
+    /* gray-800 */
+    font-weight: 500 !important;
+}
+
+
+/* Fix for hover/active nav links */
+
+header nav a:hover,
+nav a:hover,
+.header-nav a:hover,
+.main-nav a:hover,
+.navbar a:hover,
+.navigation a:hover,
+header nav a.active,
+nav a.active,
+.header-nav a.active,
+.main-nav a.active,
+.navbar a.active,
+.navigation a.active {
+    color: #0066CC !important;
+    /* brand-blue */
+    font-weight: 700 !important;
+}
+
+
+/* Process steps/icons stronger visibility */
+
+.step,
+.process-step,
+.icon-container,
+[class*="step"],
+[class*="icon"] {
+    color: #0066CC !important;
+    /* brand-blue */
+}
+
+
+/* Footer hover state */
+
+footer a:hover {
+    color: #e5e7eb !important;
+    /* gray-200 */
+    text-decoration: underline !important;
+}
+
+
+/* Call-to-action buttons */
+
+.btn-primary,
+button[class*="primary"],
+a[class*="primary"] {
+    background-color: #0066CC !important;
+    /* brand-blue */
+    color: #ffffff !important;
+}
+
+.btn-secondary,
+button[class*="secondary"],
+a[class*="secondary"] {
+    background-color: #f3f4f6 !important;
+    /* gray-100 */
+    color: #1f2937 !important;
+    /* gray-800 */
+}
+
+
+/* Add specific styling for the blue section with the feature cards */
+
+section[class*="elevate"],
+div[class*="elevate"],
+.bg-blue-600,
+.bg-blue-700,
+.bg-blue-800,
+.bg-blue-900,
+.bg-brand-blue {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* Style all divs in the blue feature section to ensure they have white backgrounds */
+
+section[class*="elevate"]>div,
+div[class*="elevate"]>div,
+.bg-blue-600>div,
+.bg-blue-700>div,
+.bg-blue-800>div,
+.bg-blue-900>div,
+.bg-brand-blue>div {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    border-radius: 0.5rem !important;
+    overflow: hidden !important;
+}
+
+
+/* Fix for the service statistics cards in blue section */
+
+div[class*="feature-card"],
+div[class*="service-feature"],
+div[class*="service-stat"],
+div[class*="service-card"] {
+    background-color: #ffffff !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+    padding: 1rem !important;
+    border-radius: 0.5rem !important;
+}
+
+
+/* Fix specifically for the core values section with circles/images */
+
+section[id*="values"] .card,
+div[id*="values"] .card,
+section[class*="values"] .card,
+div[class*="values"] .card,
+.value-card {
+    background-color: #ffffff !important;
+    border-radius: 0.75rem !important;
+    box-shadow: 0 4px 8px -2px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+}
+
+
+/* Fix for client testimonial section with avatar images */
+
+section[id*="testimonial"] .card,
+div[id*="testimonial"] .card,
+section[class*="testimonial"] .card,
+div[class*="testimonial"] .card,
+.testimonial-card {
+    background-color: #ffffff !important;
+    border-radius: 0.75rem !important;
+    box-shadow: 0 4px 8px -2px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+    padding: 1.5rem !important;
+}
+
+
+/* Additional styling for call-to-action boxes */
+
+div[class*="cta"],
+section[class*="cta"],
+.call-to-action,
+.cta {
+    background-color: rgba(0, 102, 204, 0.9) !important;
+    /* brand-blue with opacity */
+    border-radius: 0.5rem !important;
+    padding: 2rem !important;
+}
+
+
+/* Fix for the footer section dark background */
+
+footer {
+    background-color: #0F1C2E !important;
+    /* brand-navy */
+    padding: 3rem 0 !important;
+}
+
+
+/* Target specifically the blue section with 4 card grid as seen in screenshot */
+
+section.bg-blue-600,
+section.bg-blue-700,
+section.bg-blue-800,
+section.bg-blue-900,
+section.bg-brand-blue,
+div.bg-blue-600,
+div.bg-blue-700,
+div.bg-blue-800,
+div.bg-blue-900,
+div.bg-brand-blue,
+[id*="elevate"] {
+    position: relative;
+    background-color: #0066CC !important;
+    /* Ensure the blue background is solid */
+    padding: 4rem 0 !important;
+}
+
+
+/* Fix card containers in the blue section - these appear to be the transparent ones */
+
+section.bg-blue-600 [class*="card-container"],
+section.bg-blue-700 [class*="card-container"],
+section.bg-blue-800 [class*="card-container"],
+section.bg-blue-900 [class*="card-container"],
+section.bg-brand-blue [class*="card-container"],
+div.bg-blue-600 [class*="card-container"],
+div.bg-blue-700 [class*="card-container"],
+div.bg-blue-800 [class*="card-container"],
+div.bg-blue-900 [class*="card-container"],
+div.bg-brand-blue [class*="card-container"],
+section[id*="elevate"]>div>div,
+div[id*="elevate"]>div>div {
+    background-color: #ffffff !important;
+    border-radius: 0.5rem !important;
+    box-shadow: 0 4px 10px -2px rgba(0, 0, 0, 0.15) !important;
+    margin: 0.5rem !important;
+    padding: 1.5rem !important;
+}
+
+
+/* Fix any grid items within the blue section that aren't explicitly cards */
+
+section.bg-blue-600>div>div>div,
+section.bg-blue-700>div>div>div,
+section.bg-blue-800>div>div>div,
+section.bg-blue-900>div>div>div,
+section.bg-brand-blue>div>div>div,
+div.bg-blue-600>div>div>div,
+div.bg-blue-700>div>div>div,
+div.bg-blue-800>div>div>div,
+div.bg-blue-900>div>div>div,
+div.bg-brand-blue>div>div>div {
+    background-color: #ffffff !important;
+    border-radius: 0.5rem !important;
+}
+
+
+/* General fix for any grid or card items that might be used */
+
+div[class*="grid"]>div,
+div[class*="flex"]>div[class*="card"],
+div[class*="flex"]>div[class*="feature"],
+div[class*="flex"]>div[class*="box"],
+div[class*="flex"]>div[class*="service"] {
+    background-color: #ffffff !important;
+    border-radius: 0.5rem !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+}
+
+
+/* Fix for icons to ensure they display properly */
+
+[class*="icon-container"],
+[class*="icon-wrapper"],
+[class*="icon-box"] {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+
+/* Add visual indicator class for debugging if needed */
+
+.bg-debug {
+    outline: 2px solid red !important;
+}

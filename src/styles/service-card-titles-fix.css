@@ -1,0 +1,62 @@
+/**
+ * Service Card Titles Fix - May 2025
+ * 
+ * Emergency fix to ensure service card titles are clearly visible
+ */
+
+/* Target service card titles specifically */
+.bg-blue-900\/90 h3,
+.bg-blue-900\/80 h3,
+div[class*="bg-blue-900"] h3,
+[class*="ServicesOverview"] h3 {
+  color: white !important;
+  font-weight: 800 !important;
+  font-size: 1.4rem !important;
+  text-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.5),
+    0 0 2px rgba(0, 0, 0, 0.8) !important;
+  letter-spacing: -0.01em !important;
+  margin-bottom: 0.75rem !important;
+  padding-bottom: 0.25rem !important;
+  position: relative !important;
+}
+
+/* Add accent line below titles */
+div[class*="bg-blue-900"] h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 2px;
+  background-color: rgba(251, 191, 36, 0.6); /* amber color with opacity */
+  border-radius: 1px;
+}
+
+/* Extra emphasis for titles */
+h3 span.block.shadow-text {
+  display: inline-block !important;
+  color: white !important;
+  background: rgba(30, 58, 138, 0.3); /* subtle highlight */
+  padding: 0.1rem 0.3rem !important;
+  margin-bottom: 0.2rem !important;
+  border-radius: 0.25rem !important;
+}
+
+/* Force all card title text to be white */
+[class*="Transaction"] span,
+[class*="Document"] span,
+[class*="Timeline"] span,
+[class*="Compliance"] span {
+  color: white !important;
+  opacity: 1 !important;
+}
+
+/* Specific targeting for each title to ensure they're visible */
+h3:has(span:contains("Transaction")),
+h3:has(span:contains("Document")),
+h3:has(span:contains("Timeline")),
+h3:has(span:contains("Compliance")) {
+  color: white !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6) !important;
+}

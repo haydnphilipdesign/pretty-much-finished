@@ -1,0 +1,33 @@
+{
+    "version": 2,
+    "buildCommand": "npm run vercel-build",
+    "public": true,
+    "functions": {
+        "api/generate-pdf.js": {
+            "memory": 1024,
+            "maxDuration": 60
+        },
+        "api/supabase-pdf-upload.js": {
+            "memory": 1024,
+            "maxDuration": 60
+        },
+        "api/update-airtable-attachment.js": {
+            "memory": 1024,
+            "maxDuration": 60
+        }
+    },
+    "routes": [{
+            "src": "/api/(.*)",
+            "dest": "/api/$1"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/$1"
+        }
+    ],
+    "git": {
+        "deploymentEnabled": {
+            "main": true
+        }
+    }
+}

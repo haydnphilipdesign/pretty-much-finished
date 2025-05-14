@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utility Information Sheet</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        @page {
+            size: letter;
+            margin: 0.5in;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.2;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            font-size: 10px;
+        }
+        
+        .container {
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 0.5in;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 5px;
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        
+        .property-address {
+            margin-bottom: 15px;
+        }
+        
+        .property-address label {
+            display: inline-block;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+        
+        .property-address input {
+            width: calc(100% - 120px);
+            padding: 2px;
+            border: 1px solid #ccc;
+            border-radius: 2px;
+        }
+        
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+        
+        .utility-section {
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            padding: 8px;
+            margin-bottom: 10px;
+            background-color: #f9f9f9;
+        }
+        
+        .utility-section h3 {
+            margin: 0 0 5px 0;
+            font-size: 11px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 3px;
+        }
+        /* Additional styles will be added in subsequent edits */
+        
+        @media print {
+            body {
+                width: 8.5in;
+                height: 11in;
+            }
+            .container {
+                margin: 0;
+                padding: 0.5in;
+            }
+            .utility-section {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-file-alt"></i> Utility Information Sheet</h1>
+        </div>
+
+        <div class="property-address">
+            <label for="property_address"><i class="fas fa-map-marker-alt"></i> Property Address:</label>
+            <input type="text" id="property_address" name="property_address">
+        </div>
+
+        <div class="grid-container">
+            <!-- Basic structure - will be expanded in subsequent edits -->
+            <div class="utility-section">
+                <h3><i class="fas fa-bolt"></i> Electric</h3>
+                <!-- Electric content will be added -->
+            </div>
+
+            <div class="utility-section">
+                <h3><i class="fas fa-tint"></i> Water</h3>
+                <!-- Water content will be added -->
+            </div>
+
+            <div class="utility-section">
+                <h3><i class="fas fa-water"></i> Sewer</h3>
+                <!-- Sewer content will be added -->
+            </div>
+
+            <!-- Additional utility sections will be added in subsequent edits -->
+        </div>
+    </div>
+</body>
+
+</html>

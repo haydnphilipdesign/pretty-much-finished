@@ -1,0 +1,72 @@
+/**
+ * Service Cards Text Contrast Fix - May 2025
+ * 
+ * Emergency fix to ensure service card text is highly readable
+ */
+
+/* Force high contrast for service card text */
+section p {
+  color: white !important;
+  opacity: 1 !important;
+  font-weight: 500 !important;
+}
+
+/* Enhanced service card titles */
+.shadow-text,
+section h3.text-white,
+h3 span.block {
+  color: white !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.01em !important;
+  font-size: 1.35rem !important;
+}
+
+/* Add a subtle light highlight to make titles pop */
+h3 span.block::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.2), rgba(255,255,255,0) 90%);
+  opacity: 0.5;
+  width: 40%;
+  z-index: -1;
+}
+
+/* Make background darker for better text contrast */
+div[class*="bg-blue-900"] {
+  background-color: #1E3A8A !important; /* Solid bg instead of transparent */
+}
+
+/* Remove problematic gradient overlays */
+div[class*="bg-gradient-to-br"] {
+  opacity: 0.3 !important; /* Reduce opacity of any gradient overlay */
+}
+
+/* Add text shadows for better readability */
+section h3,
+section p {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Ensure text is in front of all background elements */
+section div[class*="relative z-10"] > * {
+  position: relative;
+  z-index: 20 !important;
+}
+
+/* Ensure white text remains white */
+section h3.text-white,
+section .text-white {
+  color: white !important;
+}
+
+/* Enhanced icon containers for better contrast with cards */
+div.w-16.h-16 {
+  background: linear-gradient(135deg, #4285F4, #2563EB) !important;
+  border: 2px solid rgba(255, 255, 255, 0.25) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}

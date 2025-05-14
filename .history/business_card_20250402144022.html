@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debbie O'Brien - Transaction Coordinator</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #e0e0e0; /* Lighter background to see card */
+            display: flex;
+            /* Changed justify/align to center the wrapper */
+            justify-content: center;
+            align-items: flex-start; /* Align wrapper to top */
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Added wrapper for centering card and disclaimer */
+        .card-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 800px; /* Match card max-width */
+        }
+
+        .business-card {
+            max-width: 800px;
+            width: 100%;
+            /* Reverted aspect-ratio */
+            aspect-ratio: 16 / 7;
+            display: flex;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            background-color: #ffffff;
+            margin-bottom: 15px; /* Add space below card */
+        }
+
+        .image-section {
+            flex-basis: 45%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-image {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .info-section {
+            flex-basis: 55%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .info-top {
+            background-color: #1a3d5c;
+            color: #d4b886;
+            padding: 20px 30px;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-sizing: border-box;
+        }
+
+        .info-bottom {
+            background-color: #d4b886;
+            color: #1a3d5c;
+            padding: 15px 30px;
+            flex-shrink: 0;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            /* Removed flex-grow */
+        }
+
+        .name {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.8em;
+            font-weight: 700;
+            margin: 0;
+            line-height: 1.1;
+            flex-grow: 1;
+        }
+
+        .logo-image {
+            width: 80px;
+            height: auto;
+            margin-left: 20px;
+            flex-shrink: 0;
+        }
+
+        .contact-info {
+            list-style: none;
+            padding: 0;
+            /* Removed bottom margin */
+            margin: 0;
+        }
+
+        .contact-info li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 6px;
+            font-size: 0.9em;
+            color: #1a3d5c;
+        }
+
+        .contact-info li:last-child {
+            margin-bottom: 0;
+        }
+
+        .contact-info i {
+            font-size: 1.1em;
+            width: 25px;
+            text-align: center;
+            margin-right: 10px;
+            color: #1a3d5c;
+            flex-shrink: 0;
+        }
+
+        .contact-info a {
+            color: #1a3d5c;
+            text-decoration: none;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Updated disclaimer style for outside the box */
+        .disclaimer {
+            font-size: 0.7em; /* Slightly larger font size */
+            line-height: 1.4;
+            color: #555; /* Dark gray color for readability */
+            margin: 0; /* Reset margin */
+            text-align: center; /* Center the text */
+            max-width: 750px; /* Limit width */
+            width: 95%; /* Responsive width */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .card-wrapper {
+                 max-width: 450px; /* Match card max-width */
+            }
+            .business-card {
+                flex-direction: column;
+                aspect-ratio: auto;
+                max-width: 450px;
+                margin-bottom: 10px; /* Adjust space */
+            }
+
+            .image-section {
+                flex-basis: auto;
+                width: 100%;
+                height: 300px;
+            }
+
+            .info-section {
+                flex-basis: auto;
+                width: 100%;
+            }
+
+            .info-top {
+                padding: 15px 20px;
+                min-height: auto;
+                flex-direction: column;
+                align-items: flex-start;
+                text-align: left;
+            }
+
+            .name {
+                font-size: 2.8em;
+                margin-bottom: 10px;
+            }
+
+            .logo-image {
+                width: 60px;
+                margin-left: 0;
+                align-self: flex-end;
+            }
+
+            .info-bottom {
+                padding: 15px 20px;
+                text-align: left;
+                justify-content: flex-start;
+            }
+
+            .contact-info {
+                 margin: 0; /* Reset margin */
+            }
+
+            .contact-info li {
+                font-size: 0.85em;
+                margin-bottom: 5px;
+            }
+             .contact-info i {
+                font-size: 1em;
+                width: 22px;
+                margin-right: 8px;
+            }
+            .disclaimer {
+                font-size: 0.65em;
+                max-width: 430px; /* Adjust max-width */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .image-section {
+                height: 250px;
+            }
+            .name {
+                font-size: 2.4em;
+            }
+            .logo-image {
+                width: 50px;
+            }
+             .contact-info li {
+                font-size: 0.8em;
+                 margin-bottom: 4px;
+            }
+             .contact-info i {
+                font-size: 0.9em;
+                 width: 20px;
+                 margin-right: 6px;
+            }
+            .disclaimer {
+                font-size: 0.6em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Added wrapper div -->
+    <div class="card-wrapper">
+        <div class="business-card">
+            <div class="image-section">
+                <img src="https://parealestatesupport.com/optimized/debbie.jpg" alt="Debbie O'Brien" class="profile-image">
+            </div>
+            <div class="info-section">
+                <div class="info-top">
+                    <h1 class="name">Debbie O'Brien</h1>
+                    <img src="https://parealestatesupport.com/logo-sm.png" alt="Company Logo" class="logo-image">
+                </div>
+                <div class="info-bottom">
+                    <ul class="contact-info">
+                        <li><i class="fas fa-clock"></i> Monday–Friday, 9:00AM–5:00PM</li>
+                        <li><i class="fas fa-phone-alt"></i> Office: 570.588.4637</li>
+                        <li><i class="fas fa-calendar-check"></i> Appts: 800.746.9464</li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:debbie@parealestatesupport.com">debbie@parealestatesupport.com</a></li>
+                        <li><i class="fas fa-globe"></i> <a href="https://parealestatesupport.com" target="_blank">parealestatesupport.com</a></li>
+                    </ul>
+                    <!-- Disclaimer moved outside this div -->
+                </div>
+            </div>
+        </div>
+        <!-- Disclaimer moved here, outside the card -->
+        <p class="disclaimer">
+            PA Real Estate Support Services, LLC puts the security of the client at a high priority. Therefore, we have put efforts into ensuring that the message is error and virus-free. Unfortunately, full security of the email cannot be ensured as, despite our efforts, the data included in emails could be infected, intercepted, or corrupted. Therefore, the recipient should check the email for threats with proper software, as the sender does not accept liability for any damage inflicted by viewing the content of this email.
+        </p>
+    </div> <!-- End card-wrapper -->
+
+</body>
+</html> 

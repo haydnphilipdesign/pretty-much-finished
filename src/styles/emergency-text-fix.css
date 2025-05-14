@@ -1,0 +1,46 @@
+/**
+ * Emergency Header Navigation Fix - May 2025
+ * CRITICAL: This overrides all other navigation styles
+ */
+
+/* Direct force white text on all header nav links */
+header nav a,
+nav a.text-\[\#e9c77b\],
+a[href="/"],
+a[href="/about"],
+a[href="/services"],
+a[href="/work-with-me"],
+header .hidden.md\:flex a {
+  color: white !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9) !important;
+  -webkit-text-fill-color: white !important;
+}
+
+/* Ensure no background elements are interfering */
+header .bg-transparent div.hidden.md\:flex a,
+nav .bg-transparent .text-\[\#e9c77b\] {
+  color: white !important;
+  -webkit-text-fill-color: white !important;
+}
+
+/* Force override for agent portal */
+header a[href="/agent-portal"],
+a.bg-amber-500,
+a.px-6.py-2 {
+  background-color: #f59e0b !important;
+  color: #111827 !important;
+  -webkit-text-fill-color: #111827 !important;
+  text-shadow: none !important;
+}
+
+/* Override any specificity issues */
+body header nav a:not([href="/agent-portal"]) {
+  color: white !important;
+  -webkit-text-fill-color: white !important;
+}
+
+/* Make sure nav text is always bold and readable */
+header .hidden.md\:flex.items-center.space-x-8 a {
+  font-weight: 600 !important;
+  letter-spacing: 0.01em !important;
+}

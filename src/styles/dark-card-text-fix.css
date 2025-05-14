@@ -1,0 +1,47 @@
+/* Dark card text fix
+ * This file contains styling adjustments for better readability on dark cards
+ * Created: May 13, 2025
+ */
+
+/* Improved text contrast for dark backgrounds */
+.glass-card-dark .card-title,
+.glass-card-navy .card-title,
+.glass-card-blue .card-title {
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Enhance secondary text readability */
+.glass-card-dark .card-content,
+.glass-card-navy .card-content,
+.glass-card-blue .card-content {
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+}
+
+/* Improve contrast for smaller text */
+.glass-card-dark .text-sm,
+.glass-card-navy .text-sm,
+.glass-card-blue .text-sm {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 400;
+}
+
+/* Enhanced focus for interactive elements on dark cards */
+.glass-card-dark button:focus,
+.glass-card-navy button:focus,
+.glass-card-blue button:focus,
+.glass-card-dark a:focus,
+.glass-card-navy a:focus,
+.glass-card-blue a:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.3);
+  outline-offset: 2px;
+}
+
+/* Better hover states for interactive elements */
+.glass-card-dark a:hover,
+.glass-card-navy a:hover,
+.glass-card-blue a:hover {
+  color: #FFB81C;
+  text-decoration: underline;
+}

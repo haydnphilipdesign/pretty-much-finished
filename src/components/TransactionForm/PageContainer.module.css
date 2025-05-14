@@ -1,0 +1,128 @@
+.pageContainer {
+  --page-bg-color: #f8fafc;
+  --container-bg-color: #ffffff;
+  --border-color: #e2e8f0;
+  --form-spacing: 1.5rem;
+  --container-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --form-border-radius: 12px;
+  --header-height: 64px;
+  --footer-height: 0px;
+  
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--page-bg-color);
+  padding: 0;
+  position: relative;
+}
+
+/* Desktop styles */
+@media (min-width: 768px) {
+  .pageContainer {
+    padding: 2rem;
+    --footer-height: 80px;
+  }
+}
+
+.mainContent {
+  flex: 1 1 auto;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 1rem;
+  padding-bottom: calc(4rem + env(safe-area-inset-bottom, 0px));
+  position: relative;
+}
+
+/* Desktop styles */
+@media (min-width: 768px) {
+  .mainContent {
+    padding: 0;
+    padding-bottom: 2rem;
+  }
+}
+
+.formContainer {
+  background-color: var(--container-bg-color);
+  border-radius: var(--form-border-radius);
+  overflow: hidden;
+  position: relative;
+  transition: box-shadow 0.3s ease;
+  margin-bottom: var(--footer-height);
+}
+
+/* Different styling for desktop vs mobile */
+@media (min-width: 768px) {
+  .formContainer {
+    border: 1px solid var(--border-color);
+    box-shadow: var(--container-shadow);
+  }
+}
+
+/* Mobile styling - no border radius at top */
+@media (max-width: 767px) {
+  .formContainer {
+    border-radius: 0;
+    border-bottom-left-radius: var(--form-border-radius);
+    border-bottom-right-radius: var(--form-border-radius);
+    margin-top: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03);
+  }
+}
+
+.formHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem var(--form-spacing);
+  border-bottom: 1px solid var(--border-color);
+  background-color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  height: var(--header-height);
+}
+
+.formContent {
+  padding: var(--form-spacing);
+}
+
+/* Make the wizard steps look integrated with the container */
+.wizardContainer {
+  /* No vertical margins so it looks connected to header */
+  margin: 0 calc(var(--form-spacing) * -1);
+  padding: 1rem var(--form-spacing);
+  background-color: rgba(248, 250, 252, 0.5);
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Integration with MobileNavBar */
+@media (max-width: 767px) {
+  .pageContainer {
+    /* Ensure the page extends to the bottom of the screen for proper integration */
+    padding-bottom: 70px; /* Match MobileNavBar height */
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .pageContainer {
+    --page-bg-color: #111827;
+    --container-bg-color: #1f2937;
+    --border-color: #374151;
+    --container-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* Utility class to create visual connection between components */
+.seamlessConnection {
+  margin-bottom: -1px; /* Negative margin to remove visible separator */
+  position: relative;
+  z-index: 1;
+}
+
+/* For active/focus state of elements to show they're part of the same form */
+.formActive {
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+  z-index: 2;
+}

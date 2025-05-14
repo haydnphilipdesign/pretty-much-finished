@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 15px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #2a5f86;
+            padding-bottom: 15px;
+        }
+        .header h1 {
+            color: #2a5f86;
+            margin: 0;
+            font-size: 24px;
+        }
+        .section {
+            margin-bottom: 20px;
+            page-break-inside: avoid;
+        }
+        .section h2 {
+            background-color: #2a5f86;
+            color: white;
+            padding: 8px 15px;
+            margin: 0 0 10px 0;
+            font-size: 16px;
+            border-radius: 4px;
+        }
+        .info-row {
+            display: flex;
+            border-bottom: 1px solid #eee;
+            padding: 4px 0;
+        }
+        .info-label {
+            flex: 0 0 200px;
+            font-weight: bold;
+            color: #555;
+        }
+        .info-value {
+            flex: 1;
+        }
+        .property-address {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .footer {
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+            font-size: 12px;
+            color: #777;
+            text-align: center;
+        }
+        .page-break {
+            page-break-before: always;
+        }
+        .signature-area {
+            margin-top: 30px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .signature {
+            border-bottom: 1px solid #555;
+            display: inline-block;
+            min-width: 300px;
+            margin-bottom: 10px;
+        }
+        .date {
+            text-align: right;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Transaction Submission Form</h1>
+        <div>PA Real Estate Support Services</div>
+    </div>
+    
+    <div class="section">
+        <h2>PROPERTY INFORMATION</h2>
+        <div class="property-address">{{propertyData.address}}</div>
+        <div class="info-row">
+            <div class="info-label">MLS Number:</div>
+            <div class="info-value">{{propertyData.mlsNumber}}</div>
+        </div>
+        <div class="info-row">
+            <div class="info-label">Sale Price:</div>
+            <div class="info-value">${{propertyData.salePrice}}</div>
+        </div>
+        <div class="info-row">
+            <div class="info-label">Closing Date:</div>
+            <div class="info-value">{{propertyData.closingDate}}</div>
+        </div>
+        <div class="info-row">
+            <div class="info-label">Property Status:</div>
+            <div class="info-value">{{propertyData.status}}</div>
+        </div>
+        <div class="info-row">
+            <div class="info-label">Property Type:</div>
+            <div class="info-value">{{propertyData.propertyType}}</div>
+        </div>
+        <div class="info-row">
+            <div class="info-label">Built Before 1978:</div>
+            <div class="info-value">{{propertyData.isBuiltBefore1978}}</div>
+        </div>
+        <div class="info-row">
+            <div class="info-label">Winterized:</div>
+            <div class="info-value">{{propertyData.isWinterized}}</div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>AGENT INFORMATION</h2>
+        <div class="info-row">
+            <div class="info-label">Agent Name:</div>
+            <div class="info-value">{{agentData.name}}</div>
+        </div>
+        <div class="info-row">
+            <div class="info-label">Agent Role:</div>
+            <div class="info-value">{{agentData.role}}</div>
+        </div>
+        <div class="info-row">
+            <div class="info-label">Agent Email:</div>
+            <div class="info-value">{{agentData.email}}</div>
+        </div>
+        <div class="info-row">
+            <div class="info-label">Agent Phone:</div>
+            <div class="info-value">{{agentData.phone}}</div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>CLIENT INFORMATION</h2>
+        {{#if clients.length}}
+        {{#each clients}}
+        <div style="margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px dashed #ccc;">
+            <div class="info-row">
+                <div class="info-label">Client Type:</div>
+                <div class="info-value">{{type}}</div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">Name:</div>
+                <div class="info-value">{{name}}</div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">Email:</div>
+                <div class="info-value">{{email}}</div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">Phone:</div>
+                <div class="info-value">{{phone}}</div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">Address:</div>
+                <div class="info-value">{{address}}</div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">Marital Status:</div>
+                <div class="info-value">{{maritalStatus}}</div>
+            </div>
+        </div>
+        {{/each}}
+        {{else}}
+        <p>No client information provided.</p>
+        {{/if}}
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="section">
+        <h2>COMMISSION INFORMATION</h2>
+        <div class="info-row">
+            <div class="info-label">Total Commission:</div>
+            <div class="info-value">{{commissionData.totalCommissionPercentage}}%</div>
+        </div>
+        <div class="info-row">
+            <div class="info-label">Listing Agent Commission:</div>
+            <div class="info-value">{{commissionData.listingAgentPercentage}}%</div>
+        </div>
+        <div class="info-row">
+            <div class="info-label">Buyer's Agent Commission:</div>
+            <div class="info-value">{{commissionData.buyersAgentPercentage}}%</div>
+        </div>
+        <div class="info-row">
+            <div class="info-label">Seller's Assist:</div>
+            <div class="info-value">${{commissionData.sellersAssist}}</div>
+        </div>
+        <div class="info-row">
+            <div class="info-label">Referral:</div>
+            <div class="info-value">{{#if commissionData.isReferral}}Yes{{else}}No{{/if}}</div>
+        </div>
+        {{#if commissionData.isReferral}}
+        <div class="info-row">
+            <div class="info-label">Referral Party:</div>
+            <div class="info-value">{{commissionData.referralParty}}</div>
+        </div>
+        <div class="info-row">
+            <div class="info-label">Referral Fee:</div>
+            <div class="info-value">{{commissionData.referralFee}}%</div>
+        </div>
+        {{/if}}
+        <div class="info-row">
+            <div class="info-label">Coordinator Fee Paid By:</div>
+            <div class="info-value">{{commissionData.coordinatorFeePaidBy}}</div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>PROPERTY DETAILS</h2>
+        <div class="info-row">
+            <div class="info-label">HOA:</div>
+            <div class="info-value">{{#if propertyDetailsData.resaleCertRequired}}Yes - {{propertyDetailsData.hoaName}}{{else}}No{{/if}}</div>
+        </div>
+        <div class="info-row">
+            <div class="info-label">Municipality:</div>
+            <div class="info-value">{{propertyDetailsData.municipality}}</div>
+        </div>
+        <div class="info-row">
+            <div class="info-label">First Right of Refusal:</div>
+            <div class="info-value">{{#if propertyDetailsData.firstRightOfRefusal}}Yes - {{propertyDetailsData.firstRightName}}{{else}}No{{/if}}</div>
+        </div>
+        <div class="info-row">
+            <div class="info-label">Attorney Representation:</div>
+            <div class="info-value">{{#if propertyDetailsData.attorneyRepresentation}}Yes - {{propertyDetailsData.attorneyName}}{{else}}No{{/if}}</div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>TITLE AND WARRANTY</h2>
+        <div class="info-row">
+            <div class="info-label">Title Company:</div>
+            <div class="info-value">{{titleData.titleCompany}}</div>
+        </div>
+        <div class="info-row">
+            <div class="info-label">Home Warranty:</div>
+            <div class="info-value">{{#if propertyDetailsData.homeWarranty}}Yes{{else}}No{{/if}}</div>
+        </div>
+        {{#if propertyDetailsData.homeWarranty}}
+        <div class="info-row">
+            <div class="info-label">Warranty Company:</div>
+            <div class="info-value">{{propertyDetailsData.warrantyCompany}}</div>
+        </div>
+        <div class="info-row">
+            <div class="info-label">Warranty Cost:</div>
+            <div class="info-value">${{propertyDetailsData.warrantyCost}}</div>
+        </div>
+        <div class="info-row">
+            <div class="info-label">Warranty Paid By:</div>
+            <div class="info-value">{{propertyDetailsData.warrantyPaidBy}}</div>
+        </div>
+        {{/if}}
+    </div>
+    
+    <div class="section">
+        <h2>ADDITIONAL INFORMATION</h2>
+        <div class="info-row">
+            <div class="info-label">Special Instructions:</div>
+            <div class="info-value">{{additionalInfo.specialInstructions}}</div>
+        </div>
+        <div class="info-row">
+            <div class="info-label">Urgent Issues:</div>
+            <div class="info-value">{{additionalInfo.urgentIssues}}</div>
+        </div>
+        <div class="info-row">
+            <div class="info-label">Notes:</div>
+            <div class="info-value">{{additionalInfo.notes}}</div>
+        </div>
+    </div>
+    
+    <div class="signature-area">
+        <p>I confirm that all information provided is accurate and complete to the best of my knowledge.</p>
+        <div>
+            <strong>Agent Signature:</strong> <span class="signature">{{signatureData.signature}}</span>
+        </div>
+        <div class="date">
+            <strong>Date:</strong> {{signatureData.dateSubmitted}}
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>This document was generated by PA Real Estate Support Services.</p>
+        <p>© {{currentYear}} PA Real Estate Support Services | (215) 555-1234</p>
+    </div>
+</body>
+</html>

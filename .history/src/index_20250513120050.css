@@ -1,0 +1,235 @@
+/*
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap');
+@import './styles/contrast-variables.css';
+@import './styles/design-system.css';
+@import './styles/cards.css';
+@import './styles/scrollbar-fix.css';
+@import './styles/css-fixes.css';
+@import './styles/glass-cards.css';
+@import './styles/glass-cards-enhanced.css';
+@import './styles/text-contrast-fixes.css';
+@import './styles/enhanced-contrast.css';
+@import './styles/hero-nav-contrast.css';
+@import './styles/services-page-fixes.css';
+@import './styles/critical-contrast-fixes.css';
+@import './styles/consistent-cards.css';
+@import './styles/transition-fixes.css';
+@import './styles/enhanced-text-readability.css';
+@import './styles/home-page-fixes.css';
+@import './styles/home-page-specific-fixes.css';
+@import './styles/ui-fixes-may2025.css';
+@import './styles/statistics-cards-fix.css';
+
+@import './styles/override.css';
+*/
+
+
+/* Import only the essential contrast fixes to ensure text visibility */
+
+@import './styles/fixed-contrast.css';
+
+/* Tailwind directives */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+@layer base {
+    html,
+    body {
+        @apply text-brand-blue bg-white text-base overflow-x-hidden;
+        width: 100%;
+        max-width: 100%;
+        height: 100%;
+    }
+    #root,
+    .app-root {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+    main {
+        flex: 1 0 auto;
+        display: flex;
+        flex-direction: column;
+    }
+    footer {
+        flex-shrink: 0;
+        width: 100%;
+        position: relative;
+        z-index: 1;
+    }
+    h1 {
+        @apply text-3xl md: text-4xl lg: text-5xl;
+    }
+    h2 {
+        @apply text-2xl md: text-3xl;
+    }
+    h3 {
+        @apply text-xl md: text-2xl;
+    }
+    h4 {
+        @apply text-lg md: text-xl;
+    }
+    h5 {
+        @apply text-base md: text-lg;
+    }
+    h6 {
+        @apply text-sm md: text-base;
+    }
+    p {
+        @apply mb-4 last: mb-0;
+    }
+    a {
+        @apply text-brand-blue hover: text-brand-gold transition-colors duration-300;
+    }
+     ::selection {
+        @apply bg-brand-blue/20 text-brand-blue;
+    }
+}
+
+@layer components {
+    .btn {
+        @apply inline-block px-6 py-2.5 font-semibold transition-all duration-300 relative overflow-hidden rounded-lg;
+    }
+    .btn-primary {
+        @apply bg-brand-blue text-white hover: bg-brand-blue/90 shadow-md hover: shadow-lg;
+    }
+    .btn-secondary {
+        @apply bg-brand-gold text-brand-blue hover: bg-brand-gold/90 shadow-sm hover: shadow-md;
+    }
+    .btn-outline {
+        @apply bg-transparent text-brand-blue border border-brand-blue hover: bg-brand-blue hover: text-white;
+    }
+    .input {
+        @apply w-full px-3 py-2 border border-gray-200 rounded-lg focus: border-brand-gold focus: ring-1 focus: ring-brand-gold/20 focus: outline-none transition-all duration-300;
+    }
+    .card {
+        @apply bg-white rounded-xl shadow-md p-5 transition-all duration-300 hover: shadow-lg;
+    }
+    .section {
+        @apply py-12 md: py-16;
+    }
+    .container {
+        @apply max-w-6xl mx-auto px-4 sm: px-6 lg: px-8;
+    }
+    .animation-class {
+        @apply bg-brand-blue/50 rounded-full hover: bg-brand-blue transition-colors duration-300;
+    }
+    .hero-button-blue {
+        @apply bg-blue-600 hover: bg-blue-700 text-white py-2 rounded-full transition-all duration-300;
+    }
+    .hero-button-white {
+        @apply bg-white hover: bg-white/90 text-blue-600 py-2 rounded-full transition-all duration-300;
+    }
+    .hero-heading {
+        @apply text-3xl sm: text-4xl md: text-5xl font-bold mb-4 leading-tight;
+    }
+    .hero-subheading {
+        @apply text-lg md: text-xl mb-6 text-blue-100 font-light;
+    }
+    .content-section-layout {
+        @apply py-16 px-4 sm: px-6 lg: px-8 max-w-6xl mx-auto overflow-hidden;
+    }
+    .content-card-white {
+        @apply bg-white rounded-xl shadow-md p-6 transition-all duration-300 hover: shadow-lg border border-gray-100;
+    }
+    .content-card-blue {
+        @apply bg-brand-blue/10 backdrop-blur-sm rounded-xl shadow-md p-6 transition-all duration-300 hover: shadow-lg border border-brand-blue/20;
+    }
+    .bg-white,
+    .bg-gray-50,
+    .bg-gray-100,
+    .bg-blue-50,
+    .bg-blue-100 {
+        @apply text-gray-900;
+    }
+    .bg-amber-50,
+    .bg-amber-100,
+    .bg-yellow-50,
+    .bg-yellow-100,
+    .bg-brand-gold,
+    .bg-amber-300,
+    .bg-amber-400,
+    .bg-amber-500,
+    .bg-yellow-300,
+    .bg-yellow-400,
+    .bg-yellow-500 {
+        @apply text-gray-900;
+    }
+    .bg-blue-600,
+    .bg-blue-700,
+    .bg-blue-800,
+    .bg-blue-900,
+    .bg-gray-600,
+    .bg-gray-700,
+    .bg-gray-800,
+    .bg-gray-900,
+    .bg-brand-blue,
+    .bg-slate-900,
+    .bg-black {
+        @apply text-white;
+    }
+    .bg-brand-gold,
+    .bg-amber-400,
+    .bg-amber-500 {
+        @apply text-gray-900 !important;
+    }
+    .bg-white svg,
+    .bg-gray-50 svg,
+    .bg-gray-100 svg {
+        @apply text-gray-900;
+    }
+    .bg-blue-600 svg,
+    .bg-blue-700 svg,
+    .bg-blue-800 svg {
+        @apply text-white;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-slide-up {
+    animation: slideUp 0.5s ease-out forwards;
+}
+
+.animate-scale-in {
+    animation: scaleIn 0.5s ease-out forwards;
+}
+
+// ... (rest of the file also commented out implicitly by the large comment block)
+*/

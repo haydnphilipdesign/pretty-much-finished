@@ -1,0 +1,160 @@
+/**
+ * Button Contrast Enhancements
+ * 
+ * This file contains specific fixes to improve the visibility and contrast of buttons
+ * throughout the website, especially for the "Start a Transaction" and "Agent Portal" buttons.
+ */
+
+
+/* Base button enhancements */
+
+.btn,
+button,
+a.button,
+.button-link,
+[type="button"],
+[type="submit"] {
+    transition: all 0.2s ease-in-out !important;
+}
+
+
+/* Primary Action Button (Start a Transaction) */
+
+.btn-primary,
+.primary-button,
+a[href*="Start a Transaction"],
+a[href*="transaction"],
+.transaction-button {
+    background-color: white !important;
+    color: #0066CC !important;
+    /* brand-blue */
+    font-weight: 600 !important;
+    border: 2px solid rgba(255, 184, 28, 0.5) !important;
+    /* subtle gold border */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 0 0 2px rgba(255, 255, 255, 0.5) !important;
+    transition: all 0.3s cubic-bezier(0.2, 0, 0, 1) !important;
+    position: relative !important;
+    z-index: 1 !important;
+}
+
+.btn-primary:hover,
+.primary-button:hover,
+a[href*="Start a Transaction"]:hover,
+a[href*="transaction"]:hover,
+.transaction-button:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2), 0 0 0 2px rgba(255, 255, 255, 0.8) !important;
+    text-decoration: none !important;
+    background-color: #f8f8f8 !important;
+}
+
+.btn-primary:active,
+.primary-button:active,
+a[href*="Start a Transaction"]:active,
+a[href*="transaction"]:active,
+.transaction-button:active {
+    transform: translateY(-1px) !important;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2), 0 0 0 2px rgba(255, 255, 255, 0.7) !important;
+}
+
+
+/* Agent Portal Button */
+
+.btn-secondary,
+.secondary-button,
+a[href*="Agent Portal"] {
+    background-color: #FFB81C !important;
+    /* brand-gold */
+    color: #0F1C2E !important;
+    /* brand-navy */
+    font-weight: 600 !important;
+    border: 2px solid rgba(255, 255, 255, 0.3) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 0 0 2px rgba(255, 184, 28, 0.3) !important;
+    transition: all 0.3s cubic-bezier(0.2, 0, 0, 1) !important;
+}
+
+.btn-secondary:hover,
+.secondary-button:hover,
+a[href*="Agent Portal"]:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2), 0 0 0 2px rgba(255, 184, 28, 0.5) !important;
+    background-color: #ffc445 !important;
+    /* slightly lighter gold */
+    text-decoration: none !important;
+}
+
+.btn-secondary:active,
+.secondary-button:active,
+a[href*="Agent Portal"]:active {
+    transform: translateY(-1px) !important;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2), 0 0 0 2px rgba(255, 184, 28, 0.4) !important;
+}
+
+
+/* Button with icon enhancements */
+
+.btn-with-icon,
+.button-with-icon,
+a.with-icon,
+button.with-icon,
+.btn-icon,
+.button-icon {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.5rem !important;
+}
+
+
+/* Ensuring icons inside buttons have proper contrast */
+
+.btn svg,
+button svg,
+a.button svg,
+.button-link svg {
+    flex-shrink: 0 !important;
+}
+
+
+/* Rounded button styles */
+
+.btn-rounded,
+.rounded-button,
+.rounded-full,
+a.rounded-full {
+    border-radius: 9999px !important;
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+}
+
+
+/* Focus states for buttons - accessibility improvement */
+
+.btn:focus,
+button:focus,
+a.button:focus,
+.button-link:focus,
+[type="button"]:focus,
+[type="submit"]:focus {
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.4), 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+}
+
+
+/* Hero-specific button adjustments */
+
+.hero-button,
+.hero-section .btn,
+[data-hero-component="true"] .btn,
+.hero-section a.button,
+[data-hero-component="true"] a.button {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25), 0 0 0 2px rgba(255, 255, 255, 0.3) !important;
+}
+
+.hero-button:hover,
+.hero-section .btn:hover,
+[data-hero-component="true"] .btn:hover,
+.hero-section a.button:hover,
+[data-hero-component="true"] a.button:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3), 0 0 0 2px rgba(255, 255, 255, 0.5) !important;
+}

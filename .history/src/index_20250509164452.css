@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap');
+@import './styles/design-system.css';
+@import './styles/cards.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles */
+
+@layer base {
+    body {
+        @apply text-brand-blue bg-white text-base;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply text-brand-blue font-serif;
+    }
+    h1 {
+        @apply text-3xl md: text-4xl lg: text-5xl;
+    }
+    h2 {
+        @apply text-2xl md: text-3xl;
+    }
+    h3 {
+        @apply text-xl md: text-2xl;
+    }
+    h4 {
+        @apply text-lg md: text-xl;
+    }
+    h5 {
+        @apply text-base md: text-lg;
+    }
+    h6 {
+        @apply text-sm md: text-base;
+    }
+    p {
+        @apply text-base leading-relaxed;
+    }
+    a {
+        @apply text-brand-blue hover: text-brand-gold transition-colors duration-300;
+    }
+     ::selection {
+        @apply bg-brand-gold/20 text-brand-blue;
+    }
+}
+
+
+/* Custom utility classes */
+
+@layer components {
+    .btn {
+        @apply inline-block px-6 py-2.5 font-semibold transition-all duration-300 relative overflow-hidden rounded-lg;
+    }
+    .btn-primary {
+        @apply bg-brand-blue text-white hover: bg-brand-blue/90 shadow-md hover: shadow-lg;
+    }
+    .btn-secondary {
+        @apply bg-brand-gold text-brand-blue hover: bg-brand-gold/90 shadow-sm hover: shadow-md;
+    }
+    .btn-outline {
+        @apply bg-transparent text-brand-blue border border-brand-blue hover: bg-brand-blue hover: text-white;
+    }
+    .input {
+        @apply w-full px-3 py-2 border border-gray-200 rounded-lg focus: border-brand-gold focus: ring-1 focus: ring-brand-gold/20 focus: outline-none transition-all duration-300;
+    }
+    .card {
+        @apply bg-white rounded-xl shadow-md p-5 transition-all duration-300 hover: shadow-lg;
+    }
+    .section {
+        @apply py-12 md: py-16;
+    }
+    .container {
+        @apply max-w-6xl mx-auto px-4 sm: px-6 lg: px-8;
+    }
+}
+
+
+/* Animations */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+/* Utility classes for animations */
+
+.animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-slide-up {
+    animation: slideUp 0.5s ease-out forwards;
+}
+
+.animate-scale-in {
+    animation: scaleIn 0.5s ease-out forwards;
+}
+
+
+/* Custom scrollbar */
+
+::-webkit-scrollbar {
+    @apply w-1.5;
+}
+
+::-webkit-scrollbar-track {
+    @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+    @apply bg-brand-blue/50 rounded-full hover: bg-brand-blue transition-colors duration-300;
+}
+
+
+/* Form styles */
+
+.form-group {
+    @apply mb-4;
+}
+
+.form-label {
+    @apply block text-sm font-semibold text-brand-blue mb-1.5;
+}
+
+.form-error {
+    @apply mt-1 text-xs text-brand-red;
+}
+
+
+/* Loading states */
+
+.loading {
+    @apply relative text-transparent !important;
+}
+
+.loading::after {
+    @apply absolute inset-0 bg-brand-blue/10 animate-pulse rounded;
+    content: "";
+}
+
+
+/* Focus styles */
+
+.focus-ring {
+    @apply focus: ring-1 focus: ring-brand-gold focus: ring-offset-1 focus: outline-none;
+}
+
+
+/* Page transition styles */
+
+.page-transitioning {
+    @apply overflow-hidden;
+}
+
+
+/* Page transition animations */
+
+[data-hero-content] {
+    transition-property: opacity, transform;
+    transition-timing-function: ease-in-out;
+}
+
+.page-transitioning [data-hero-content="container"] {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition-duration: 250ms;
+}
+
+.page-transitioning [data-hero-content="badge"] {
+    opacity: 0;
+    transform: translateY(-15px);
+    transition-duration: 250ms;
+}
+
+.page-transitioning [data-hero-content="title"] {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition-duration: 300ms;
+}
+
+.page-transitioning [data-hero-content="subtitle"] {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition-duration: 300ms;
+}
+
+.page-transitioning [data-hero-content="cta"] {
+    opacity: 0;
+    transform: translateY(-15px);
+    transition-duration: 250ms;
+}
+
+
+/* Ensure header is always transparent */
+
+.bg-transparent {
+    background-color: transparent !important;
+}
+
+
+/* Fix for hero section */
+
+[data-hero-component="true"] {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+
+/* Global beautiful styling classes */
+
+.hero-card {
+    @apply bg-white/10 backdrop-blur-sm p-6 rounded-xl shadow-lg border border-white/20 relative;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+}
+
+.hero-card-title {
+    @apply text-xl font-bold text-white mb-4 break-words;
+}
+
+.hero-input {
+    @apply bg-white/10 backdrop-blur-sm border-white/20 focus: border-blue-400 text-white;
+}
+
+.hero-button {
+    @apply bg-blue-600 hover: bg-blue-700 text-white py-2 rounded-full transition-all duration-300;
+}
+
+.hero-button-inverted {
+    @apply bg-white hover: bg-white/90 text-blue-600 py-2 rounded-full transition-all duration-300;
+}
+
+.hero-badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm text-sm font-medium;
+}
+
+.hero-headline {
+    @apply text-3xl sm: text-4xl md: text-5xl font-bold mb-4 leading-tight;
+}
+
+.hero-subheadline {
+    @apply text-lg md: text-xl mb-6 text-blue-100 font-light;
+}
+
+.content-section {
+    @apply py-16 px-4 sm: px-6 lg: px-8 max-w-6xl mx-auto overflow-hidden;
+}
+
+.content-card {
+    @apply bg-white rounded-xl shadow-md p-6 transition-all duration-300 hover: shadow-lg border border-gray-100;
+}
+
+.content-card-dark {
+    @apply bg-brand-blue/10 backdrop-blur-sm rounded-xl shadow-md p-6 transition-all duration-300 hover: shadow-lg border border-brand-blue/20;
+}
+
+
+/* Override for light blue backgrounds to make them more subtle */
+
+.bg-blue-50 {
+    background-color: rgba(239, 246, 255, 0.7) !important;
+}
+
+.bg-blue-100 {
+    background-color: rgba(219, 234, 254, 0.7) !important;
+}

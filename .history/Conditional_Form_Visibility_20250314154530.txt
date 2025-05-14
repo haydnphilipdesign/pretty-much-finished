@@ -1,0 +1,148 @@
+ROLE VISIBILITY KEY:
+- [L] = Listing Agent
+- [B] = Buyer's Agent
+- [D] = Dual Agent
+- [ALL] = All Roles
+
+1. Role Section:
+[ALL] Role Selection (required, selection)
+- "Listing Agent"
+- "Buyer's Agent"
+- "Dual Agent"
+
+
+2. Property Section:
+[L,D] MLS Number (Required , text)
+[ALL] Property Address (required, text)
+[ALL] Sale Price (required, currency)
+[L,D] Property Status (required, radio)
+  - Vacant
+  - Occupied
+[L,D] Winterized Status (Required if "Property Status" = "Vacant", switch)
+[L,D] Update MLS Status to Pending (Required, switch)
+[L,D] Property Access Details (required, textarea)
+
+3. Client Section:
+[ALL] Clients Array (L,B - at least one client required, D - at least two clients required)
+For each client:
+  [ALL] Name (required, text)
+  [ALL] Email (required, email format)
+  [ALL] Phone (required, phone format)
+  [ALL] Address (required, text)
+  [ALL] Marital Status (required, select)
+    - Single
+    - Married
+    - Divorced
+    - Widowed
+  [D] Client Designation (required, select)
+    - Seller
+    - Buyer
+
+
+4. Commission Section:
+[L,D] Total Commission (Required, number)
+[ALL] Seller's Assist Amount (Optional, currency)
+[L,D] Listing Agent Commission (Required, number)
+[ALL] Buyers Agent Commission (Required, number)
+[ALL] Buyer Paid Commission (Optional, currency) - *Change to Broker Fee*
+[ALL] Is Referral (Required, switch)
+[ALL] Referral Party (Required if "Is Referral" = true, text)
+[ALL] Broker EIN (Required if "Is Referral" = true, text)
+[ALL] Referral Fee (Required if "Is Referral" = true, currency)
+
+
+5. Property Details Section:
+[L,D] Resale Certificate Required (Required, switch)
+[L,D] HOA Name (Required if "Resale Certificate" = true, text)
+[ALL] CO Required (Required,switch)
+[ALL] Municipality/Township (Required if "CO Required" = true, text)
+[L,D] First Right of Refusal (Required,switch)
+[L,D] First Right of Refusal Name (Required if "First Right of Refusal" = true, text)
+[ALL] Attorney Representation (Required, switch)
+[ALL] Attorney Name (Required if "Attorney Representation" = true, text)
+
+
+6. Warranty Section:
+[ALL] Home Warranty Purchased (Required, switch)
+[ALL] Home Warranty Company (Required if "Home Warranty Purchased" = true, text)
+[ALL] Warranty Cost (Required if "Home Warranty Purchased" = true, currency)
+[ALL] Warranty Paid By (Required if "Home Warranty Purchased" = true, select)
+    - Seller
+    - Buyer
+    - Agent
+
+
+7. Title Company Section:
+[B,D] Title Company Name (Required, text)
+
+8. Documents Section:
+[ALL] Document Confirmation (required, checkbox)
+Required Documents by Role:
+[L] Listing Agent Required Documents:
+- Agreement of Sale and Addenda (Required)
+- Buyer's Prequalification/Preapproval Letter/Proof of Funds (Required)
+- KW Affiliate Services Addendum (Required)
+- Seller's Property Disclosure (Required)
+- Seller's Estimated Costs (Required)
+- KW Wire Fraud Advisory (Required)
+- Cooperating Broker's Compensation (Required)
+- Referral Agreement & W-9 (Required)
+- Attorney Review Clause (if applicable)
+- Lead Based Paint Disclosure (if applicable) 
+- KW Home Warranty Waiver (if applicable)
+- Dual Agency Disclosure (if applicable)
+
+
+[B] Buyer's Agent Required Documents:
+- Agreement of Sale & Addenda (Required)
+- KW Affiliate Services Disclosure (Required)
+- KW Affiliate Services Addendum (Required)
+- KW Wire Fraud Advisory (Required)
+- KW Home Warranty Waiver (Required)
+- Consumer Notice (Required)
+- Buyer's Agency Contract (Required)
+- Prequalification/Proof of Funds (Required)
+- Seller's Property Disclosure (Required)
+- Deposit Money Notice (Required)
+- Buyer's Estimated Costs (Required)
+- Cooperating Broker's Compensation (Required)
+- Attorney Review Clause (if applicable)
+- KPSS ABA (if applicable)
+- Lead Based Paint Disclosure (if applicable)
+- For Your Protection Notice (if applicable)
+- Referral Agreement & W-9 (if applicable)
+- Dual Agency Disclosure (if applicable)
+
+
+[D] Dual Agent Required Documents:
+- Agreement of Sale & Addenda (Required)
+- KW Affiliate Services Disclosure (Required)
+- KW Affiliate Services Addendum (Required)
+- Consumer Notice (Required)
+- Buyer's Agency Contract (Required)
+- Prequalification/Proof of Funds (Required)
+- Seller's Property Disclosure (Required)
+- Deposit Money Notice (Required)
+- Buyer's Estimated Costs (Required)
+- Seller's Estimated Costs (Required)
+- KW Wire Fraud Advisory (Required)
+- Dual Agency Disclosure (Required)
+- KW Home Warranty Waiver (if applicable)
+- Lead Based Paint Disclosure (if applicable)
+- Attorney Review Clause (if applicable)
+- KPSS ABA (if applicable)
+- For Your Protection Notice (if applicable)
+- Referral Agreement & W-9 (if applicable)
+
+
+9. Additional Info Section:
+[ALL] Special Instructions (optional, textarea)
+[ALL] Urgent Issues (optional, textarea)
+[ALL] Additional Notes (optional, textarea)
+[ALL] Requires Follow-up (optional, switch)
+
+
+10. Signature Section:
+[ALL] Digital Signature (required, text)
+[ALL] Confirm Accuracy (required, checkbox)
+

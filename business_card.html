@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Debbie O'Brien Signature</title>
+  <style>
+    @font-face {
+      font-family: 'Amsterdam Signature';
+      src: url('AmsterdamSignature-PKO4P.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e0e0e0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 5px;
+      margin: 0;
+      min-height: 100vh;
+    }
+
+    .noise-overlay {
+        position: relative;
+    }
+
+    .noise-overlay::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAUVBMVEWFhYWDg4N3d3dtbW17e3t1dXWBgYGHh4d5eXlzc3OLi4ubm5uVlZWPj4+NjY19fX2JiYl/f39ra2uRkZGZmZlpaWmXl5dvb29xcXGTk5NnZ2c8TV1mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVDjL7dSxCsAgDAVQW9jbEURBUQXB/3//dt1fTgaDbmnGxckCBKkKqkqoBEp/70IQMUHIyiCC7J7JOf7/q+HiBI+U4UK0fVKoSpA/qff+0KAoSO+9AKY5AAdPhIFGbbK0QG0AAAD//wMAKnM4yCLOKJUAAAAASUVORK5CYII=');
+        background-repeat: repeat;
+        opacity: 0.12;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    .card-wrapper {
+      width: 250px;
+      height: 125px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      border-radius: 5px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: row;
+      border: 2px solid #1a3d5c;
+      position: relative;
+    }
+
+    .image-section {
+      width: 30%;
+      flex-shrink: 0;
+      border-right: 2px solid #1a3d5c;
+    }
+
+    .image-section img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .info-section {
+      width: 70%;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      position: relative;
+      z-index: 1;
+    }
+
+    .logo-container {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      z-index: 10;
+    }
+
+    .logo-container img {
+      width: 25px;
+      height: auto;
+      display: block;
+    }
+
+    .info-top {
+      background-color: #1a3d5c;
+      color: #d4b886;
+      padding: 5px 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex: 1.3;
+      position: relative;
+      z-index: 1;
+    }
+
+    .name-title-group {
+        display: flex;
+        flex-direction: column;
+        flex-shrink: 1;
+        flex-grow: 1;
+        position: relative;
+        z-index: 1;
+    }
+
+    .info-top .name {
+      font-family: 'Amsterdam Signature', cursive;
+      font-size: 2.2em;
+      margin: 0 0 1px 0;
+      line-height: 0.9;
+      font-weight: normal;
+    }
+
+    .info-top .title,
+    .info-top .company {
+        font-family: Arial, sans-serif;
+        font-size: 0.55em;
+        margin: 0;
+        line-height: 1.1;
+        color: #d4b886;
+        font-weight: normal;
+        padding-top: 1px;
+    }
+
+    .info-top .company {
+        font-size: 0.5em;
+        margin-bottom: 0;
+    }
+
+    .info-bottom {
+      background-color: #d4b886;
+      color: #1a3d5c;
+      padding: 3px 5px 5px 8px;
+      flex: 0.7;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-top: 1px solid #1a3d5c;
+      position: relative;
+      z-index: 1;
+    }
+
+    .info-bottom ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .info-bottom li {
+      margin-bottom: 1px;
+      font-size: 0.5em;
+      font-family: Arial, sans-serif;
+      font-weight: 900;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+    }
+
+    .info-bottom li:last-child {
+        /* Remove bottom margin from last item if needed, though padding handles space */
+        /* margin-bottom: 0; */
+    }
+
+    .info-bottom li .icon {
+        font-size: 1.3em;
+        display: inline-block;
+        margin-right: 4px;
+        flex-shrink: 0;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    }
+
+
+    .info-bottom a {
+      color: #1a3d5c;
+      text-decoration: none;
+    }
+
+    .info-bottom a:hover {
+      text-decoration: underline;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="card-wrapper">
+    <div class="image-section">
+      <img src="https://parealestatesupport.com/optimized/debbie.jpg" alt="Debbie O'Brien">
+    </div>
+    <div class="logo-container">
+      <img src="https://parealestatesupport.com/logo-sm.png" alt="Company Logo">
+    </div>
+    <div class="info-section">
+      <div class="info-top noise-overlay">
+        <div class="name-title-group">
+            <h1 class="name">Debbie O'Brien</h1>
+            <p class="title">Transaction Coordinator</p>
+            <p class="company">PA Real Estate Support Services</p>
+        </div>
+      </div>
+      <div class="info-bottom noise-overlay">
+        <ul>
+          <li><span class="icon">🕓</span> <span class="hours">Monday–Friday, 9:00AM–5:00PM</span></li>
+          <li><span class="icon">☎️</span> <a href="tel:5705884637">570.588.4637</a></li>
+          <li><span class="icon">📧</span> <a href="mailto:debbie@parealestatesupport.com">debbie@parealestatesupport.com</a></li>
+          <li><span class="icon">🌐</span> <a href="https://parealestatesupport.com" target="_blank">parealestatesupport.com</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

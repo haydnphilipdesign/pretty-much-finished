@@ -1,0 +1,214 @@
+/**
+ * Unified Navigation System
+ * Ensures consistent navigation styling with proper text contrast
+ */
+
+
+/* Base header styling */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    transition: all 0.3s ease;
+}
+
+
+/* Header states */
+
+header.transparent {
+    background-color: rgba(15, 28, 46, 0.2);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+header.scrolled {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Navigation link styling - transparent header */
+
+header.transparent nav a {
+    color: #e9c77b !important;
+    font-weight: 500;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease;
+}
+
+header.transparent nav a:hover,
+header.transparent nav a:focus {
+    color: white !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+header.transparent nav a.active {
+    color: #e9c77b !important;
+    font-weight: 600;
+}
+
+
+/* Navigation link styling - scrolled header */
+
+header.scrolled nav a {
+    color: #0F1C2E !important;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+header.scrolled nav a:hover,
+header.scrolled nav a:focus {
+    color: #e9c77b !important;
+}
+
+header.scrolled nav a.active {
+    color: #e9c77b !important;
+    font-weight: 600;
+}
+
+
+/* Mobile navigation */
+
+.mobile-nav {
+    background-color: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.mobile-nav a {
+    color: #0F1C2E !important;
+    font-weight: 500;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+}
+
+.mobile-nav a:hover,
+.mobile-nav a:focus {
+    background-color: rgba(233, 199, 123, 0.1);
+    color: #e9c77b !important;
+}
+
+.mobile-nav a.active {
+    background-color: #e9c77b;
+    color: #0F1C2E !important;
+}
+
+
+/* Navigation buttons */
+
+.nav-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.nav-button-primary {
+    background-color: #0066CC;
+    color: white !important;
+    border: 1px solid transparent;
+}
+
+.nav-button-primary:hover,
+.nav-button-primary:focus {
+    background-color: #004C99;
+    color: white !important;
+}
+
+.nav-button-secondary {
+    background-color: transparent;
+    color: white !important;
+    border: 1px solid white;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.nav-button-secondary:hover,
+.nav-button-secondary:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white !important;
+}
+
+
+/* Scrolled state buttons */
+
+header.scrolled .nav-button-primary {
+    background-color: #0066CC;
+    color: white !important;
+}
+
+header.scrolled .nav-button-primary:hover,
+header.scrolled .nav-button-primary:focus {
+    background-color: #004C99;
+}
+
+header.scrolled .nav-button-secondary {
+    background-color: transparent;
+    color: #0066CC !important;
+    border: 1px solid #0066CC;
+    text-shadow: none;
+}
+
+header.scrolled .nav-button-secondary:hover,
+header.scrolled .nav-button-secondary:focus {
+    background-color: rgba(0, 102, 204, 0.1);
+}
+
+
+/* Navigation dropdown */
+
+.nav-dropdown {
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.nav-dropdown a {
+    color: #0F1C2E !important;
+    text-shadow: none !important;
+}
+
+.nav-dropdown a:hover,
+.nav-dropdown a:focus {
+    background-color: rgba(0, 102, 204, 0.1);
+    color: #0066CC !important;
+}
+
+
+/* Logo styling */
+
+.nav-logo {
+    height: 2.5rem;
+    width: auto;
+}
+
+
+/* Ensure proper contrast for navigation icons */
+
+header nav svg {
+    color: currentColor;
+}
+
+
+/* Ensure proper contrast for mobile menu button */
+
+.mobile-menu-button {
+    color: white !important;
+    background-color: rgba(15, 28, 46, 0.5);
+    border-radius: 0.375rem;
+    padding: 0.5rem;
+}
+
+header.scrolled .mobile-menu-button {
+    color: #0F1C2E !important;
+    background-color: rgba(0, 0, 0, 0.05);
+}

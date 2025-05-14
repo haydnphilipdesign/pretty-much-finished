@@ -1,0 +1,50 @@
+﻿Table,Field ID,Field Name,Type,Options/Details,Required,Visibility
+
+1. Role Section:
+Transactions,fldOVyoxz38rWwAFy,Agent Role,singleSelect,"BUYERS AGENT,LISTING AGENT,DUAL AGENT",1,ALL
+
+2. Property Section:
+Transactions,fld6O2FgIXQU5G27o,MLS Number,singleLineText,N/A,1,ALL
+Transactions,fldypnfnHhplWYcCW,Address,singleLineText,N/A,1,ALL
+Transactions,fldV2eLxz6w0TpLFU,Property Status,singleSelect,"OCCUPIED,VACANT",1,ALL
+Transactions,fldhHjBZJISmnP8SK,Sale Price,currency,N/A,1,ALL
+Transactions,fldExdgBDgdB1i9jy,Winterized,singleSelect,"YES,NO",1,ALL
+Transactions,fldw3GlfvKtyNfIAW,Update MLS,singleSelect,"YES,NO",1,LISTING/DUAL
+Transactions,fld7TTQpaC83ehY7H,Property Access Type,singleSelect,"ELECTRONIC LOCKBOX,COMBO LOCKBOX,KEYPAD,APPOINTMENT ONLY",1,LISTING/DUAL
+Transactions,fldrh8eB5V8TjSZlR,Lockbox Access Code,singleLineText,N/A,1,LISTING/DUAL
+
+3. Client Section:
+Clients,fldSqxNOZ9B5PgSab,Client Name,singleLineText,N/A,1,ALL
+Clients,flddP6a8EG6qTJdIi,Client Email,email,N/A,1,ALL
+Clients,fldBnh8W6iGW014yY,Client Phone,phoneNumber,N/A,1,ALL
+Clients,fldz1IpeR1256LhuC,Client Address,singleLineText,N/A,1,ALL
+Clients,fldSY6vbE1zAhJZqd,Client Type,singleSelect,"BUYER,SELLER",1,DUAL
+Clients,fldeK6mjSfxELU0MD,Marital Status,singleSelect,"SINGLE,MARRIED,DIVORCED,DIVORCE IN PROGRESS,WIDOWED",1,ALL
+
+4. Commission Section:
+Transactions,fldE8INzEorBtx2uN,Total Commission %,number,N/A,1,LISTING/DUAL
+Transactions,flduuQQT7o6XAGlRe,Listing Agent %,number,N/A,1,LISTING/DUAL
+Transactions,fld5KRrToAAt5kOLd,Buyers Agent %,number,N/A,1,ALL
+Transactions,flddRltdGj05Clzpa,Broker Fee,currency,N/A,0,ALL
+Transactions,fldTvXx96Na0zRh6W,Sellers Assist,currency,N/A,0,ALL
+Transactions,fldzVtmn8uylVxuTF,Referral Party,singleLineText,N/A,0,ALL
+Transactions,fld20VbKbWzdR4Sp7,Broker EIN,singleLineText,N/A,0,ALL
+Transactions,fldewmjoaJVwiMF46,Referral Fee,number,N/A,0,ALL
+
+5. Property Details Section:
+Transactions,fld9oG6SMAkh4hvNL,HOA,singleLineText,N/A,0,ALL
+Transactions,fld9Qw4mGeI9kk42F,Municipality,singleLineText,N/A,0,ALL
+Transactions,fldeHKiUreeDs5n4o,First Right of Refusal,singleLineText,N/A,0,ALL
+Transactions,fld4YZ0qKHvRLK4Xg,Attorney,singleLineText,N/A,0,ALL
+Transactions,fldRtNEH89tNNX52B,Warranty Company,singleLineText,N/A,0,ALL
+Transactions,fldxH1pCpohty1e2b,Warranty Cost,currency,N/A,0,ALL
+Transactions,fld61RStU7sCDrG01,Warranty Paid By,singleSelect,"SELLER,BUYER,AGENT",0,ALL
+Transactions,fldqeArDeRkxiYz9u,Title Company,singleLineText,N/A,0,ALL
+
+6. Additional Info Section:
+Transactions,fldDWN8jU4kdCffzu,Special Instructions,richText,N/A,0,ALL
+Transactions,fldgW16aPdFMdspO6,Urgent Issues,richText,N/A,0,ALL
+Transactions,fld30htJ7euVerCLW,Additional Information,richText,N/A,0,ALL
+
+7. Signature Section:
+Transactions,fldFD4xHD0vxnSOHJ,Agent Name,singleLineText,N/A,1,ALL

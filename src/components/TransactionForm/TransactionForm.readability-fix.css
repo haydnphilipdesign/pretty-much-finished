@@ -1,0 +1,125 @@
+/* Form Input Readability Fixes - Apply this after TransactionForm.css */
+
+/* ==== BACKGROUND FIX FOR FORM FIELDS ==== */
+/* Fix input fields with solid backgrounds and better contrast */
+.transaction-form-container input,
+.transaction-form-container select,
+.transaction-form-container textarea {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+  border-color: rgba(255, 255, 255, 0.5) !important;
+  color: #1e3a8a !important; /* Dark blue text for contrast */
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+/* Fix input placeholder text */
+.transaction-form-container input::placeholder,
+.transaction-form-container textarea::placeholder {
+  color: rgba(30, 58, 138, 0.6) !important; /* Dark blue with opacity */
+}
+
+/* ==== RADIX SELECT COMPONENT FIXES ==== */
+/* Specifically target the SelectTrigger component */
+.transaction-form-container [data-radix-select-trigger] {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+  border-color: rgba(255, 255, 255, 0.5) !important;
+  color: #1e3a8a !important;
+}
+
+/* Fix dropdown menus with solid backgrounds */
+.transaction-form-container [role="listbox"],
+.transaction-form-container [data-radix-select-viewport] {
+  background-color: white !important;
+  border: 1px solid rgba(59, 130, 246, 0.5) !important;
+  color: #1e3a8a !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Fix Radix Select styling */
+.transaction-form-container [data-radix-popper-content-wrapper] {
+  background-color: transparent !important;
+}
+
+/* Fix select dropdown items */
+.transaction-form-container [role="option"] {
+  color: #1e3a8a !important;
+}
+
+/* Fix dropdown item hover state */
+.transaction-form-container [role="option"]:hover,
+.transaction-form-container [role="option"][data-highlighted="true"],
+.transaction-form-container [role="option"]:focus,
+.transaction-form-container [role="option"][data-state="checked"] {
+  background-color: rgba(59, 130, 246, 0.2) !important;
+  color: #1e3a8a !important;
+}
+
+/* Ensure the check icon is visible */
+.transaction-form-container [role="option"] svg {
+  color: #1e3a8a !important;
+}
+
+/* Fix select element arrow color for better visibility */
+.transaction-form-container select {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%231e3a8a' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 0.5rem center;
+  background-repeat: no-repeat;
+  background-size: 1.5em 1.5em;
+  padding-right: 2.5rem;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* Better label contrast - keep label styling */
+.transaction-form-container label {
+  color: white !important;
+  font-weight: 600 !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Focus styles for better accessibility */
+.transaction-form-container input:focus,
+.transaction-form-container select:focus,
+.transaction-form-container textarea:focus,
+.transaction-form-container [data-radix-select-trigger]:focus {
+  outline: none !important;
+  border-color: #3b82f6 !important;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3) !important;
+}
+
+/* ==== FORM CARD AND SECTION STYLES ==== */
+/* Fix card backgrounds */
+.transaction-form-container .card,
+.transaction-form-container [class*="glass-effect"] {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Fix checkbox component */
+.transaction-form-container [data-state="checked"] {
+  background-color: rgba(59, 130, 246, 0.9) !important;
+  border-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Fix checkbox check mark */
+.transaction-form-container [data-state="checked"] svg {
+  color: white !important;
+}
+
+/* Fix switch component */
+.transaction-form-container [role="switch"][data-state="checked"] {
+  background-color: rgba(59, 130, 246, 0.9) !important;
+}
+
+/* ==== RADIO GROUP FIX ==== */
+.transaction-form-container [role="radiogroup"] button {
+  color: #1e3a8a !important;
+  background-color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.transaction-form-container [role="radiogroup"] [data-state="checked"] {
+  color: white !important;
+  background-color: #3b82f6 !important;
+}

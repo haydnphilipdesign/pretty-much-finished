@@ -1,0 +1,52 @@
+/**
+ * Dark Sections Text Fix - May 2025
+ * 
+ * Ensuring proper text color in dark sections
+ */
+
+/* Statistics section text */
+.statistics-section h2,
+.statistics-section p,
+.statistics-section span,
+.statistics-section div {
+  color: white !important;
+}
+
+/* Statistics card descriptions */
+.statistics-section .bg-gray-800\/80 p,
+.statistics-section [class*="description"] {
+  color: rgba(255, 255, 255, 0.9) !important;
+  opacity: 1 !important;
+}
+
+/* Force white text in ContactSection with blue background */
+section.bg-gradient-to-b.from-blue-700 h2,
+section.bg-gradient-to-b.from-blue-700 p {
+  color: white !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Ensure statistics values are always amber */
+.statistics-section .text-amber-500,
+.statistics-section [class*="text-amber"] {
+  color: #f59e0b !important; /* amber-500 */
+}
+
+/* Particularly target the $500M+ card */
+.statistics-section *:contains("$500M+"),
+.statistics-section *:contains("$500+"),
+.statistics-section *:contains("Transaction Volume") {
+  color: #f59e0b !important; /* amber-500 */
+}
+
+/* Force all dark-section paragraphs to have proper text color */
+.bg-blue-900 p, 
+.bg-blue-800 p,
+.bg-gray-900 p,
+.bg-gray-800 p,
+.bg-brand-blue p,
+section.from-blue-700 p,
+section.to-blue-800 p {
+  color: white !important;
+  opacity: 0.9 !important;
+}

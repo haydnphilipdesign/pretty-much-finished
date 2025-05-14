@@ -1,0 +1,109 @@
+/**
+ * Hero and Navigation Contrast Fixes
+ * This file specifically addresses contrast issues in the hero section and navigation
+ */
+
+/* Improved contrast for primary navigation */
+header nav a {
+  color: #ffffff !important;
+  font-weight: 500 !important; /* medium */
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+header nav a:hover {
+  color: #FFB81C !important; /* brand-gold */
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Fix for "Let me handle the paperwork..." hero text */
+.hero-headline, 
+.hero-title,
+h1.text-white,
+h2.text-white {
+  color: #ffffff !important;
+  font-weight: 700 !important; /* bold */
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Improved semi-transparent overlay for better text legibility on hero images */
+[data-hero-component="true"]::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2));
+  z-index: 1;
+  pointer-events: none;
+}
+
+[data-hero-component="true"] > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Enhanced contrast for the "Start a Transaction" button */
+a[href*="Start a Transaction"] {
+  background-color: #ffffff !important;
+  color: #0066CC !important; /* brand-blue */
+  font-weight: 600 !important; /* semibold */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+  border: 2px solid var(--brand-gold) !important;
+}
+
+a[href*="Start a Transaction"]:hover {
+  background-color: #FFB81C !important; /* brand-gold */
+  color: #0066CC !important; /* brand-blue */
+  transform: translateY(-2px);
+}
+
+/* Enhanced contrast for agent portal button */
+a[href*="Agent Portal"] {
+  background-color: #FFB81C !important; /* brand-gold */
+  color: #0066CC !important; /* brand-blue */
+  font-weight: 600 !important; /* semibold */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15) !important;
+}
+
+a[href*="Agent Portal"]:hover {
+  background-color: rgba(255, 184, 28, 0.9) !important; /* brand-gold/90 */
+  transform: translateY(-2px);
+}
+
+/* Mobile menu toggle button enhanced contrast */
+[data-mobile-menu-toggle] {
+  color: #ffffff !important;
+  background-color: rgba(0, 102, 204, 0.9) !important; /* brand-blue/90 */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Enhanced header content visibility */
+.bg-brand-blue.py-1 p,
+.bg-brand-blue.py-2 p {
+  color: #ffffff !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Improved contrast for dropdown menus */
+.dropdown-menu {
+  background-color: #ffffff !important;
+  border: 1px solid #e5e7eb !important; /* gray-200 */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+}
+
+.dropdown-menu a {
+  color: #0066CC !important; /* brand-blue */
+  text-shadow: none !important;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f3f4f6 !important; /* gray-100 */
+}
+
+/* Fix any sticky header transparency issues */
+.sticky-header.scrolled {
+  background-color: rgba(0, 102, 204, 0.95) !important; /* brand-blue/95 */
+  backdrop-filter: blur(8px) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}

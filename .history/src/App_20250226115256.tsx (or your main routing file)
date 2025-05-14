@@ -1,0 +1,3 @@
+import AgentPortal from '@/pages/AgentPortal';
+
+<Route path="/agent-portal" element={<AgentPortal />} /> 

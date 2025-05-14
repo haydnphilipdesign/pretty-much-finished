@@ -1,0 +1,118 @@
+/**
+ * Enhanced Text Readability
+ * 
+ * This file contains CSS classes to improve text readability
+ * through shadow effects and improved contrast.
+ */
+
+/* Text shadows for better contrast on hero sections */
+.text-shadow-sm {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.text-shadow-md {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.text-shadow-lg {
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Enhanced contrast for hero text */
+h1.text-white, 
+h2.text-white,
+h3.text-white {
+  --text-opacity: 1 !important;
+  color: rgba(255, 255, 255, var(--text-opacity)) !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Improved readability for light text on dark backgrounds */
+.text-blue-50,
+.text-blue-100,
+.text-blue-200 {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Better contrast for text on colored gradients */
+.bg-blue-gradient h1,
+.bg-blue-gradient h2,
+.bg-blue-gradient h3,
+.bg-navy-gradient h1,
+.bg-navy-gradient h2,
+.bg-navy-gradient h3,
+.bg-gradient-to-br.from-brand-blue h1,
+.bg-gradient-to-br.from-brand-blue h2,
+.bg-gradient-to-br.from-brand-blue h3 {
+  color: white !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.bg-blue-gradient p,
+.bg-navy-gradient p,
+.bg-gradient-to-br.from-brand-blue p {
+  color: rgba(239, 246, 255, 0.9) !important; /* text-blue-50 with 90% opacity */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Enhanced contrast for important UI elements */
+.btn,
+.navbar-link,
+.hero-button,
+.primary-link {
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+/* Improved contrast for light cards on dark backgrounds */
+.glass-card-light h3,
+.glass-card-navy h3,
+.glass-card-blue h3 {
+  color: white !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Fix for text that might be hard to read in light sections */
+.bg-gray-50 h2,
+.bg-gray-50 h3,
+.bg-gray-100 h2,
+.bg-gray-100 h3 {
+  color: #0F1C2E !important; /* brand-navy */
+}
+
+.bg-gray-50 p,
+.bg-gray-100 p {
+  color: #374151 !important; /* gray-700 */
+}
+
+/* Enhanced contrast for card content */
+.glass-card-content {
+  color: rgba(255, 255, 255, 0.9) !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.glass-card-white .glass-card-content,
+.glass-card-frost .glass-card-content {
+  color: #374151 !important; /* gray-700 */
+  text-shadow: none;
+}
+
+/* High contrast for buttons on any background */
+.btn-primary {
+  color: white !important;
+  background-color: #0066CC !important; /* brand-blue */
+}
+
+.btn-secondary {
+  color: #0F1C2E !important; /* brand-navy */
+  background-color: #FFB81C !important; /* brand-gold */
+}
+
+/* Enhance contrast for links */
+a:not(.btn):not(.nav-link):not(.no-underline) {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+a:not(.btn):not(.nav-link):not(.no-underline):hover {
+  text-decoration-thickness: 2px;
+}

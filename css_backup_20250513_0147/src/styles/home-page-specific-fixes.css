@@ -1,0 +1,271 @@
+/**
+ * Home Page Specific Fixes
+ * This file addresses the specific requested changes for the Home page
+ */
+
+
+/* 1. Transform Complex Transactions - Change text color to white */
+
+.glass-card-blue h2.glass-card-title,
+.glass-card-title,
+[className*="glass-blue"] h2 {
+    color: white !important;
+    font-weight: 700 !important;
+}
+
+
+/* 2. Elevate your real estate business section - Add background color */
+
+section.py-24.md\\:py-32 {
+    background-color: #0066CC !important;
+    /* brand-blue */
+}
+
+
+/* Ensure all four cards in this section are the same color */
+
+.grid.grid-cols-1.md\\:grid-cols-2.lg\\:grid-cols-4 .glass-card-navy,
+.grid.grid-cols-1.md\\:grid-cols-2.lg\\:grid-cols-4 [className*="glass-"],
+.grid.grid-cols-1.md\\:grid-cols-2.lg\\:grid-cols-4 .content-card {
+    background-color: rgba(15, 28, 46, 0.8) !important;
+    /* Consistent dark blue for all cards */
+    color: white !important;
+    border: none !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+
+/* 3. Let's Transform Your Business (Statistics section) */
+
+
+/* Ensure cards are consistent - Using attribute selectors instead of class combinators */
+
+[class*="-mt-24"] .glass-card,
+[class*="-mt-24"] [className*="glass-"],
+[class*="-mt-24"] .content-card {
+    background-color: rgba(15, 28, 46, 0.8) !important;
+    /* Matching dark blue */
+    color: white !important;
+    border: none !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+
+/* 4. What Our Clients Say - Add background color */
+
+section.py-20.relative.overflow-hidden.max-w-full.bg-white,
+section[data-section="testimonials"] {
+    background-color: #EEF2F6 !important;
+    /* Light blue-gray background */
+}
+
+
+/* 5. Ready to Streamline Your Transactions - Add background color */
+
+section.py-20.relative.overflow-hidden:last-of-type {
+    background-color: #0066CC !important;
+    /* brand-blue */
+}
+
+
+/* Fix card in this section */
+
+section[data-section="streamline-transactions"] .glass-card-navy,
+section.py-20:last-of-type .glass-card-navy {
+    background-color: rgba(15, 28, 46, 0.8) !important;
+    /* Matching dark blue */
+    color: white !important;
+    border: none !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+}
+
+
+/* Fix text colors in all cards */
+
+.glass-card h2,
+.glass-card h3,
+.glass-card-navy h2,
+.glass-card-navy h3,
+.glass-card-blue h2,
+.glass-card-blue h3,
+.glass-card-light h2,
+.glass-card-light h3,
+.glass-card-dark h2,
+.glass-card-dark h3 {
+    color: white !important;
+    font-weight: 600 !important;
+}
+
+.glass-card p,
+.glass-card-navy p,
+.glass-card-blue p,
+.glass-card-light p,
+.glass-card-dark p {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+
+/* Remove any background gradients/effects that might interfere */
+
+[className*="bg-gradient-"],
+[className*="radial-gradient"],
+[className*="bg-grid"] {
+    background: none !important;
+    background-image: none !important;
+}
+
+
+/* Ensure testimonials section is consistently styled */
+
+.text-center.mb-12 h2 {
+    color: #0F1C2E !important;
+}
+
+.text-center.mb-12 p {
+    color: #333333 !important;
+}
+
+
+/* Fix the testimonials section heading to match background */
+
+section.py-20.relative.overflow-hidden.max-w-full.bg-white .text-center.mb-12 h2 {
+    color: #0F1C2E !important;
+}
+
+section.py-20.relative.overflow-hidden.max-w-full.bg-white .text-center.mb-12 p {
+    color: #333333 !important;
+}
+
+
+/* Fix buttons to ensure text has good contrast against background */
+
+.group.inline-flex.items-center.gap-2.bg-white {
+    color: #0066CC !important;
+}
+
+section[data-section="streamline-transactions"] .glass-card-navy button,
+section.py-20:last-of-type .glass-card-navy button {
+    color: white !important;
+    background: linear-gradient(to right, #0066CC, #0055AA) !important;
+    border: none !important;
+}
+
+
+/* Force all cards in Statistics section to have consistent styling */
+
+.statistics-section .content-card,
+[class*="-mt-24"] .content-card,
+.grid.grid-cols-1.sm\\:grid-cols-2.lg\\:grid-cols-4 .content-card {
+    background-color: rgba(15, 28, 46, 0.8) !important;
+    color: white !important;
+}
+
+
+/* Fix link buttons */
+
+.unified-button {
+    color: white !important;
+}
+
+a[role="button"] {
+    color: white !important;
+}
+
+
+/* Fix testimonials section heading */
+
+section[data-section="testimonials"] .text-center.mb-12 h2 {
+    color: #0F1C2E !important;
+}
+
+section[data-section="testimonials"] .text-center.mb-12 p {
+    color: #333333 !important;
+}
+
+
+/* Fix testimonials background override */
+
+section[data-section="testimonials"] .absolute.inset-0.bg-gradient-to-br {
+    background: #EEF2F6 !important;
+}
+
+
+/* Fix button text for better contrast */
+
+a.group.inline-flex.items-center.gap-2.bg-white.backdrop-blur {
+    color: #0066CC !important;
+    font-weight: 600 !important;
+}
+
+button.bg-gradient-to-r {
+    color: white !important;
+}
+
+
+/* Fix CTA buttons */
+
+section[data-section="streamline-transactions"] button,
+section[data-section="streamline-transactions"] a[role="button"],
+section[data-section="streamline-transactions"] .unified-button {
+    color: white !important;
+    border: 2px solid white !important;
+}
+
+
+/* Fix "View All Services" button */
+
+a.group.inline-flex.items-center.gap-2.bg-white.backdrop-blur.text-brand-blue {
+    color: #0066CC !important;
+    font-weight: 600 !important;
+}
+
+
+/* Global consistent card styling for all sections */
+
+.content-card,
+.glass-card,
+.glass-card-navy,
+.glass-card-blue,
+.glass-card-gold,
+.glass-card-dark,
+.glass-card-light {
+    color: white !important;
+    border: none !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+
+/* Services section - force all cards to match (navy blue) */
+
+.py-24.md\\:py-32 .content-card {
+    background-color: rgba(15, 28, 46, 0.8) !important;
+}
+
+
+/* Force consistent blue buttons */
+
+.bg-brand-blue,
+button.bg-brand-blue,
+a.bg-brand-blue {
+    background-color: #0066CC !important;
+}
+
+
+/* Fix any remaining button text contrast issues */
+
+.unified-button,
+button[class*="bg-gradient"],
+a[class*="bg-gradient"],
+button.bg-brand-blue,
+a.bg-brand-blue {
+    color: white !important;
+}
+
+
+/* Fix white buttons on blue backgrounds */
+
+.bg-white.text-brand-blue,
+button.bg-white,
+a.bg-white {
+    color: #0066CC !important;
+}

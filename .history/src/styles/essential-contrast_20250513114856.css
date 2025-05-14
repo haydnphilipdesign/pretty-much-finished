@@ -1,0 +1,125 @@
+/**
+ * Essential Contrast Fixes
+ * These rules ensure text is visible against its background
+ */
+
+
+/* Force dark text on light backgrounds */
+
+.bg-white,
+section.bg-white,
+div.bg-white,
+.bg-gray-50,
+section.bg-gray-50,
+div.bg-gray-50,
+.bg-gray-100,
+section.bg-gray-100,
+div.bg-gray-100,
+.bg-blue-50,
+.bg-blue-100,
+.bg-yellow-50,
+.bg-yellow-100,
+.service-card,
+
+/* Targeting service cards specifically */
+
+.feature-card,
+.card,
+[class*="card-white"]
+/* Target any class containing "card-white" */
+
+{
+    @apply text-gray-900 !important;
+    /* Forcing dark text */
+}
+
+
+/* Force dark text on various elements that might be in light sections */
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+li,
+a:not(.btn):not([class*="bg-"]),
+label {
+    @apply text-gray-900;
+    /* Default to dark, can be overridden by more specific rules */
+}
+
+
+/* Force white text on dark backgrounds */
+
+.bg-blue-600,
+.bg-blue-700,
+.bg-blue-800,
+.bg-blue-900,
+.bg-gray-600,
+.bg-gray-700,
+.bg-gray-800,
+.bg-gray-900,
+.bg-slate-900,
+.bg-black,
+.bg-brand-blue,
+[class*="card-dark"],
+[class*="card-navy"],
+.dark-section {
+    @apply text-white !important;
+    /* Forcing light text */
+}
+
+
+/* Ensure paragraphs, list items and spans in sections get proper contrast */
+
+section p,
+section li,
+section span,
+.card p,
+.card li,
+.card span {
+    @apply text-gray-700;
+    /* Slightly lighter but still dark and readable */
+}
+
+
+/* Any card on light background gets dark text */
+
+div[class*="card"]:not([class*="dark"]):not([class*="navy"]):not([class*="blue"]) {
+    @apply text-gray-900;
+}
+
+
+/* Specific targeting for service cards bullet points and descriptions */
+
+.service-card ul li,
+.service-card p,
+.service-card .service-description,
+div[id*="service"] ul li,
+div[id*="service"] p,
+div[class*="service"] ul li,
+div[class*="service"] p {
+    @apply text-gray-800 !important;
+}
+
+
+/* Override any style that might be causing light text on light background */
+
+body {
+    color: #1e293b !important;
+    /* Default dark text - Tailwind slate-800 */
+}
+
+
+/* Utility classes to force text colors when needed */
+
+.text-force-dark {
+    @apply text-gray-900 !important;
+}
+
+.text-force-light {
+    @apply text-white !important;
+}

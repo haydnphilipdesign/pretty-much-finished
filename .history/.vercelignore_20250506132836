@@ -1,0 +1,19 @@
+# Exclude unused serverless functions to stay under Hobby plan limit (max 12)
+
+# Unused API files - remove these to stay under the limit
+api/send-to-make.js
+api/pdf-upload.js
+api/fill-pdf.js
+api/simple-email.js
+api/send-transaction-email-fixed.js
+api/health.js
+
+
+# Keep these critical functions (don't add to .vercelignore)
+# api/generate-pdf.js
+# api/supabase-pdf-upload.js
+# pages/api/update-airtable-attachment.js
+# pages/api/supabase-pdf-upload.js
+
+# Entire PDF folder is unused
+api/pdf/ 

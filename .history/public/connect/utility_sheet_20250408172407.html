@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utility Information Sheet</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Root variables */
+        
+         :root {
+            --primary-color: #333333;
+            --secondary-color: #4a90e2;
+            --accent-color: #e74c3c;
+            --light-color: #f8f9fa;
+            --dark-color: #333333;
+            --success-color: #28a745;
+            --warning-color: #ffc107;
+            --border-radius: 3px;
+            --box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+            --transition: all 0.2s ease;
+            --section-border: #e9ecef;
+            --electric-color: #4a90e2;
+            --gas-color: #f5a623;
+            --water-color: #4a90e2;
+            --sewer-color: #9b59b6;
+            --trash-color: #2ecc71;
+            --cable-color: #f5a623;
+            --phone-color: #9b59b6;
+            --hoa-color: #1abc9c;
+            --alarm-color: #e74c3c;
+            --section-padding: 12px;
+            --section-margin: 10px;
+            --font-size-base: 9pt;
+            --font-size-small: 8pt;
+            --print-margin: 0.2in;
+        }
+        
+        @page {
+            size: landscape;
+            margin: var(--print-margin);
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            line-height: 1.2;
+            color: var(--dark-color);
+            margin: 0;
+            padding: 8px;
+            background-color: #f5f7fa;
+            font-size: var(--font-size-base);
+        }
+        
+        #utility-sheet {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 10px;
+            max-width: 100%;
+            margin: 0 auto;
+            page-break-inside: avoid;
+        }
+        /* Optimized header */
+        
+        .header {
+            text-align: center;
+            margin-bottom: 6px;
+            padding-bottom: 4px;
+            border-bottom: 1px solid var(--section-border);
+            position: relative;
+        }
+        
+        .header:before {
+            content: '\f15c';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            font-size: 10px;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #666;
+        }
+        
+        h1 {
+            font-size: 12pt;
+            color: var(--primary-color);
+            margin: 0 0 1px 0;
+            font-weight: 500;
+        }
+        
+        .header p {
+            margin: 0;
+            font-size: var(--font-size-small);
+            color: #666;
+        }
+        
+        .instructions {
+            font-size: var(--font-size-small);
+            color: #666;
+            margin: 4px 0;
+            padding: 4px 6px;
+            background-color: var(--light-color);
+            border-radius: var(--border-radius);
+            border-left: 3px solid var(--secondary-color);
+            line-height: 1.2;
+            display: none;
+            /* Hide in compact view */
+        }
+        
+        h2 {
+            font-size: 10pt;
+            color: var(--primary-color);
+            margin: 0 0 5px 0;
+            padding: 0 0 3px 0;
+            border-bottom: 1px solid var(--section-border);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .section {
+            margin-bottom: var(--section-margin);
+            padding: 12px;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--section-border);
+            background-color: white;
+            transition: var(--transition);
+        }
+        
+        .section:hover {
+            box-shadow: var(--box-shadow);
+        }
+        
+        label {
+            display: block;
+            margin: 5px 0;
+            font-size: var(--font-size-small);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            transition: var(--transition);
+            color: #555;
+            line-height: 1.4;
+        }
+        
+        label:hover {
+            color: var(--secondary-color);
+        }
+        /* Input field styling for printable document */
+        
+        .input-field {
+            display: inline-block;
+            min-width: 120px;
+            padding: 3px 0;
+            margin: 3px 0;
+            border-bottom: 1px solid #bbb;
+            font-size: var(--font-size-small);
+            color: #333;
+            line-height: 1.4;
+            min-height: 18px;
+            position: relative;
+        }
+        
+        .input-field:empty::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-bottom: 1px solid #bbb;
+        }
+        
+        .input-field.cost {
+            min-width: 40px;
+            width: 40px;
+        }
+        
+        .input-field.date {
+            min-width: 70px;
+            width: 70px;
+        }
+        /* Checkbox styling for printable document */
+        
+        .checkbox {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin: 0 4px 0 0;
+            border: 1px solid #999;
+            vertical-align: middle;
+        }
+        
+        .checkbox.checked {
+            background-color: #f2f2f2;
+            position: relative;
+        }
+        
+        .checkbox.checked:after {
+            content: '✓';
+            position: absolute;
+            font-size: var(--font-size-small);
+            top: -2px;
+            left: 1px;
+            color: #666;
+        }
+        
+        .cost-field {
+            margin-top: 6px;
+            padding-top: 4px;
+            border-top: 1px dotted #ddd;
+            font-size: var(--font-size-small);
+            font-weight: 400;
+            line-height: 1.4;
+            display: flex;
+            align-items: center;
+        }
+        
+        .cost-field input[type="text"] {
+            width: 50px;
+            text-align: right;
+            font-weight: normal;
+        }
+        
+        .cost-field .input-field {
+            margin-left: 6px;
+            min-width: 60px;
+        }
+        /* For the HOA section with checkbox options */
+        
+        .payment-frequency {
+            margin-left: 5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        
+        .payment-frequency .checkbox {
+            margin-left: 2px;
+        }
+        /* Service cards cost field alignment */
+        
+        .service-card-body .cost-field {
+            display: flex;
+            align-items: center;
+        }
+        
+        .service-card-body .cost-field label {
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .property-address {
+            margin-bottom: 4px;
+            padding: 4px 6px;
+            border-radius: var(--border-radius);
+            background-color: var(--light-color);
+            border: 1px solid var(--section-border);
+        }
+        
+        .property-address .input-field {
+            width: 100%;
+            max-width: 300px;
+            font-weight: 400;
+            min-height: 15px;
+        }
+        
+        .signature-section {
+            margin-top: 6px;
+            border-top: 1px solid var(--section-border);
+            padding-top: 4px;
+        }
+        
+        .signature-section div {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+        
+        .signature-section label {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .footer {
+            margin-top: 6px;
+            padding-top: 4px;
+            border-top: 1px solid var(--section-border);
+            font-size: 6pt;
+            color: #999;
+            text-align: center;
+        }
+        
+        .footer p {
+            margin: 0 0 2px 0;
+        }
+        
+        .columns {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .column {
+            flex: 1;
+            max-width: 33%;
+        }
+        
+        .utility-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .utility-group .section {
+            flex: 1;
+            margin-bottom: 0;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 10px;
+            justify-content: flex-start;
+        }
+        
+        .action-button {
+            padding: 4px 10px;
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-size: var(--font-size-base);
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            transition: var(--transition);
+        }
+        
+        .action-button:hover {
+            background-color: #e9ecef;
+        }
+        
+        .submit-button {
+            padding: 6px 14px;
+            background-color: var(--success-color);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-size: 9pt;
+            font-weight: 500;
+            margin-top: 10px;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            justify-content: center;
+        }
+        
+        .submit-button:hover {
+            background-color: #218838;
+        }
+        
+        .form-actions {
+            text-align: center;
+            margin-top: 8px;
+            margin-bottom: 8px;
+        }
+        
+        .transaction-link {
+            margin-bottom: 4px;
+            padding: 4px 6px;
+            border-radius: var(--border-radius);
+            background-color: #f8f9fa;
+            border: 1px solid var(--section-border);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .transaction-link select {
+            margin-left: 6px;
+            padding: 4px;
+            font-size: var(--font-size-small);
+            flex: 1;
+            max-width: 250px;
+        }
+        
+        .date-fields {
+            display: none;
+            /* Hide all date fields */
+        }
+        
+        .account-field {
+            margin-top: 6px;
+            font-size: var(--font-size-small);
+            padding: 4px 0;
+            border-top: 1px dotted #ddd;
+            line-height: 1.4;
+            display: flex;
+            align-items: center;
+        }
+        
+        .account-field .input-field {
+            margin-left: 6px;
+            min-width: 200px;
+        }
+        /* Utility section specific styling */
+        
+        .section[data-utility="electric"] {
+            border-left: 3px solid var(--electric-color);
+        }
+        
+        .section[data-utility="gas"] {
+            border-left: 3px solid var(--gas-color);
+        }
+        
+        .section[data-utility="water"] {
+            border-left: 3px solid var(--water-color);
+        }
+        
+        .section[data-utility="sewer"] {
+            border-left: 3px solid var(--sewer-color);
+        }
+        
+        .section[data-utility="trash"] {
+            border-left: 3px solid var(--trash-color);
+        }
+        
+        .section[data-utility="cable"] {
+            border-left: 3px solid var(--cable-color);
+        }
+        
+        .section[data-utility="phone"] {
+            border-left: 3px solid var(--phone-color);
+        }
+        
+        .section[data-utility="hoa"] {
+            border-left: 3px solid var(--hoa-color);
+        }
+        
+        .section[data-utility="alarm"] {
+            border-left: 3px solid var(--alarm-color);
+        }
+        
+        .section[data-utility="additional"] {
+            border-left: 3px solid var(--phone-color);
+        }
+        /* Service Cards Styling */
+        
+        .service-cards {
+            display: flex;
+            gap: 10px;
+            flex-wrap: nowrap;
+        }
+        
+        .service-card {
+            flex: 1;
+            min-width: 150px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            border: 1px solid var(--section-border);
+            transition: var(--transition);
+            background-color: white;
+            margin-bottom: 0;
+        }
+        
+        .service-card:hover {
+            box-shadow: var(--box-shadow);
+        }
+        
+        .service-card-header {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            padding: 2px 4px;
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            border-bottom: 1px solid var(--section-border);
+        }
+        
+        .service-card-header i {
+            font-size: 12px;
+            color: var(--secondary-color);
+        }
+        
+        .service-card-header h3 {
+            margin: 0;
+            font-size: 9px;
+            font-weight: 500;
+        }
+        
+        .service-card-body {
+            padding: 8px;
+        }
+        
+        .service-card:nth-child(1) .service-card-header i {
+            color: var(--trash-color);
+        }
+        
+        .service-card:nth-child(2) .service-card-header i {
+            color: var(--water-color);
+        }
+        
+        .service-card:nth-child(3) .service-card-header i {
+            color: var(--phone-color);
+        }
+        
+        .error-message {
+            color: var(--accent-color);
+            font-size: 9pt;
+            margin-top: 2px;
+            font-weight: 500;
+        }
+        
+        @media screen and (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            #utility-form {
+                padding: 15px;
+            }
+            .columns {
+                flex-direction: column;
+            }
+            .utility-group {
+                flex-direction: column;
+            }
+            input[type="text"] {
+                width: 100%;
+                max-width: 100%;
+            }
+            .property-address input[type="text"] {
+                width: 100%;
+                max-width: 100%;
+            }
+            .signature-section div {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .action-buttons {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .header:before {
+                display: none;
+            }
+            h1 {
+                font-size: 18pt;
+            }
+            .header p {
+                font-size: 10pt;
+            }
+            .service-card {
+                min-width: 100%;
+                margin-bottom: 15px;
+            }
+            .service-cards {
+                flex-direction: column;
+            }
+        }
+        /* Printing optimization */
+        
+        body.printing {
+            font-size: 6.5pt;
+        }
+        
+        body.printing .section {
+            padding: 3px;
+            margin-bottom: 3px;
+        }
+        
+        body.printing h2 {
+            font-size: 7.5pt;
+            margin: 0 0 2px 0;
+            padding: 0 0 1px 0;
+        }
+        
+        body.printing label {
+            margin: 2px 0;
+            font-size: 6.5pt;
+            line-height: 1.2;
+        }
+        
+        body.printing .input-field {
+            min-width: 70px;
+            font-size: 6.5pt;
+            padding: 2px 0;
+            margin: 2px 0;
+            line-height: 1.2;
+        }
+        
+        body.printing .columns {
+            gap: 3px;
+        }
+        
+        body.printing .utility-group {
+            gap: 3px;
+        }
+        
+        body.printing .account-field,
+        body.printing .date-fields,
+        body.printing .cost-field {
+            margin-top: 2px;
+            padding-top: 2px;
+            line-height: 1.2;
+        }
+        
+        @media print {
+            body {
+                margin: 0;
+                padding: 0;
+                font-size: 6.5pt;
+                background-color: white;
+            }
+            #utility-sheet {
+                box-shadow: none;
+                max-width: none;
+                padding: 4px;
+                margin: 0;
+            }
+            .column {
+                max-width: 50%;
+            }
+            .input-field.cost {
+                min-width: 35px;
+                width: 35px;
+            }
+            .input-field.date {
+                min-width: 60px;
+                width: 60px;
+            }
+            .input-field {
+                min-height: 13px;
+                padding: 1px 0;
+                border-bottom: 1px solid #999;
+            }
+            label .input-field {
+                min-width: 100px;
+                min-height: 13px;
+            }
+            .account-field,
+            .cost-field {
+                margin-top: 2px;
+                padding-top: 2px;
+                line-height: 1.2;
+                align-items: center;
+            }
+            .account-field .input-field {
+                margin-left: 2px;
+                min-width: 160px;
+            }
+            .cost-field .input-field {
+                margin-left: 2px;
+            }
+            .payment-frequency {
+                margin-left: 3px;
+                gap: 2px;
+            }
+            .date-fields {
+                display: none;
+            }
+            .section {
+                page-break-inside: avoid;
+                box-shadow: none;
+                border: 1px solid #ddd;
+                padding: 3px;
+                margin-bottom: 3px;
+            }
+            h2 {
+                font-size: 7.5pt;
+                margin: 0 0 2px 0;
+                padding: 0 0 1px 0;
+            }
+            label {
+                margin: 1px 0;
+                font-size: 6.5pt;
+                line-height: 1.2;
+            }
+            .input-field {
+                min-width: 70px;
+                font-size: 6.5pt;
+                line-height: 1.2;
+            }
+            .cost-field,
+            .account-field,
+            .date-fields {
+                margin-top: 2px;
+                padding-top: 2px;
+                line-height: 1.2;
+            }
+            .columns {
+                gap: 3px;
+            }
+            .utility-group {
+                gap: 3px;
+            }
+            .service-card {
+                min-width: 100px;
+            }
+            .service-card-body {
+                padding: 2px;
+            }
+            .instructions,
+            .action-buttons,
+            .form-actions,
+            .transaction-link {
+                display: none;
+            }
+            .header:before {
+                display: none;
+            }
+            button {
+                display: none;
+            }
+            .signature-section {
+                margin-top: 3px;
+                padding-top: 2px;
+            }
+            .footer {
+                margin-top: 3px;
+                padding-top: 2px;
+                font-size: 5pt;
+            }
+            /* Optimize checkboxes for print */
+            .checkbox {
+                width: 8px;
+                height: 8px;
+                margin-right: 2px;
+            }
+            /* Reduce spacing in service cards for print */
+            .service-card-header {
+                padding: 1px 2px;
+            }
+            .service-card-header h3 {
+                font-size: 7pt;
+            }
+            /* Ensure full width */
+            html,
+            body,
+            #utility-sheet {
+                width: 100%;
+                max-width: 100%;
+            }
+            .trash-providers {
+                gap: 2px;
+            }
+            .trash-providers-column label {
+                margin: 1px 0;
+            }
+            .additional-services .service-cards {
+                margin-top: 2px;
+            }
+            .input-field {
+                min-height: 13px;
+                padding: 1px 0;
+            }
+        }
+        
+        .trash-providers {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+        
+        .trash-providers-column {
+            flex: 1;
+            min-width: 120px;
+        }
+        
+        .trash-providers-column label {
+            margin: 2px 0;
+        }
+        
+        .additional-services .service-cards {
+            margin-top: 3px;
+        }
+        /* Make "Other" option input fields visually consistent */
+        
+        label .input-field {
+            display: inline-block;
+            vertical-align: bottom;
+            min-width: 140px;
+            margin-left: 4px;
+            min-height: 15px;
+            border-bottom: 1px solid #bbb;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="utility-sheet">
+        <div class="header">
+            <h1><i class="fas fa-file-alt"></i> Utility Information Sheet</h1>
+            <p>For Home Sellers and Buyers</p>
+        </div>
+
+        <div class="instructions">
+            <i class="fas fa-info-circle"></i> <strong>Sellers:</strong> Complete with accurate utility information to help new homeowners. Include account numbers, contact info, and costs.
+            <br><i class="fas fa-home"></i> <strong>Buyers:</strong> Use this to set up your utility accounts before moving in.
+        </div>
+
+        <div class="action-buttons">
+            <button type="button" id="print-button" class="action-button"><i class="fas fa-print"></i> Print</button>
+            <button type="button" id="save-pdf-button" class="action-button"><i class="fas fa-file-pdf"></i> Save as PDF</button>
+            <button type="button" id="clear-form-button" class="action-button"><i class="fas fa-trash"></i> Clear Form</button>
+        </div>
+
+        <div class="property-address">
+            <label><i class="fas fa-map-marker-alt"></i> <strong>Property Address:</strong> <span class="input-field"></span></label>
+        </div>
+
+        <div class="transaction-link">
+            <i class="fas fa-link"></i>
+            <label>
+                <span class="checkbox"></span> Link to Transaction
+            </label>
+            <span class="input-field">Select Transaction</span>
+        </div>
+
+        <div class="columns">
+            <div class="column">
+                <div class="utility-group">
+                    <div class="section" data-utility="electric">
+                        <h2><i class="fas fa-bolt"></i> Electric</h2>
+                        <label><span class="checkbox"></span> Met-ED (800-545-7741)</label>
+                        <label><span class="checkbox"></span> PP&L (800-342-5775)</label>
+                        <label><span class="checkbox"></span> Other <span class="input-field"></span></label>
+                        <div class="account-field">
+                            Account #: <span class="input-field"></span>
+                        </div>
+                        <div class="cost-field">
+                            Monthly: $ <span class="input-field cost"></span>
+                        </div>
+                    </div>
+                    <div class="section" data-utility="gas">
+                        <h2><i class="fas fa-fire"></i> Gas / Oil / Propane</h2>
+                        <label><span class="checkbox"></span> Suburban Propane (610-759-0474)</label>
+                        <label><span class="checkbox"></span> UGI (610-866-0951)</label>
+                        <label><span class="checkbox"></span> Lehigh Fuels (610-266-8990)</label>
+                        <label><span class="checkbox"></span> Reimer Bros (610-863-4105)</label>
+                        <label><span class="checkbox"></span> Lessig Oil + Propane (610-863-3835)</label>
+                        <label><span class="checkbox"></span> AmeriGas (570-424-5901)</label>
+                        <label><span class="checkbox"></span> Tolinos (610-588-3338)</label>
+                        <label><span class="checkbox"></span> Fuel Cell (610-759-0143)</label>
+                        <label><span class="checkbox"></span> Fritch (610-691-1212)</label>
+                        <label><span class="checkbox"></span> Reichenbach (610-434-7234)</label>
+                        <label><span class="checkbox"></span> Other <span class="input-field"></span></label>
+                        <div class="account-field">
+                            Account #: <span class="input-field"></span>
+                        </div>
+                        <div class="cost-field">
+                            Monthly: $ <span class="input-field cost"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="utility-group">
+                    <div class="section" data-utility="water">
+                        <h2><i class="fas fa-tint"></i> Water</h2>
+                        <label><span class="checkbox"></span> PA American Water Company (800-565-7292)</label>
+                        <label><span class="checkbox"></span> Easton Suburban Water Comp (610-258-7181)</label>
+                        <label><span class="checkbox"></span> Municipality</label>
+                        <label><span class="checkbox"></span> Other <span class="input-field"></span></label>
+                        <label><span class="checkbox"></span> On Site Well</label>
+                        <div class="account-field">
+                            Account #: <span class="input-field"></span>
+                        </div>
+                        <div class="cost-field">
+                            Quarterly: $ <span class="input-field cost"></span>
+                        </div>
+                    </div>
+                    <div class="section" data-utility="sewer">
+                        <h2><i class="fas fa-water"></i> Sewer</h2>
+                        <label><span class="checkbox"></span> Northampton County Court House (610-559-3000)</label>
+                        <label><span class="checkbox"></span> Lehigh County Authority (610-398-1444)</label>
+                        <label><span class="checkbox"></span> Municipality</label>
+                        <label><span class="checkbox"></span> Other <span class="input-field"></span></label>
+                        <label><span class="checkbox"></span> On-Site Septic</label>
+                        <div class="account-field">
+                            Account #: <span class="input-field"></span>
+                        </div>
+                        <div class="cost-field">
+                            Quarterly: $ <span class="input-field cost"></span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="column">
+                <div class="section" data-utility="trash">
+                    <h2><i class="fas fa-trash"></i> Trash</h2>
+                    <div class="trash-providers">
+                        <div class="trash-providers-column">
+                            <label><span class="checkbox"></span> Allied Waste Services (215-723-0400)</label>
+                            <label><span class="checkbox"></span> Mascaro Sanitation (800-333-4624)</label>
+                            <label><span class="checkbox"></span> McAuliffe (610-767-3152)</label>
+                            <label><span class="checkbox"></span> Reiss Brothers (610-432-7574)</label>
+                            <label><span class="checkbox"></span> Township</label>
+                        </div>
+                        <div class="trash-providers-column">
+                            <label><span class="checkbox"></span> Waste Management (800-621-2100)</label>
+                            <label><span class="checkbox"></span> Strohl's (610-837-9929)</label>
+                            <label><span class="checkbox"></span> Swint (610-253-8535)</label>
+                            <label><span class="checkbox"></span> Other <span class="input-field"></span></label>
+                        </div>
+                    </div>
+                    <div class="account-field">
+                        Account #: <span class="input-field"></span>
+                    </div>
+                    <div class="cost-field">
+                        Monthly: $ <span class="input-field cost"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="utility-group">
+                    <div class="section" data-utility="cable">
+                        <h2><i class="fas fa-tv"></i> Cable TV</h2>
+                        <label><span class="checkbox"></span> Blue Ridge Cable (570-421-0780)</label>
+                        <label><span class="checkbox"></span> Direct TV (888-679-8671)</label>
+                        <label><span class="checkbox"></span> Dish Network (610-381-6315)</label>
+                        <label><span class="checkbox"></span> RCN (800-746-4726)</label>
+                        <label><span class="checkbox"></span> Service Electric (800-232-9100)</label>
+                        <label><span class="checkbox"></span> Other <span class="input-field"></span></label>
+                        <div class="account-field">
+                            Account #: <span class="input-field"></span>
+                        </div>
+                        <div class="cost-field">
+                            Monthly: $ <span class="input-field cost"></span>
+                        </div>
+                    </div>
+                    <div class="section" data-utility="phone">
+                        <h2><i class="fas fa-wifi"></i> Internet/Phone</h2>
+                        <label><span class="checkbox"></span> RCN (800-746-4726)</label>
+                        <label><span class="checkbox"></span> Service Electric (610-841-4100)</label>
+                        <label><span class="checkbox"></span> Verizon (800-660-2215)</label>
+                        <label><span class="checkbox"></span> Blue Ridge Cable (570-421-0780)</label>
+                        <label><span class="checkbox"></span> AT&T (800-222-0300)</label>
+                        <label><span class="checkbox"></span> Other <span class="input-field"></span></label>
+                        <div class="account-field">
+                            Account #: <span class="input-field"></span>
+                        </div>
+                        <div class="cost-field">
+                            Monthly: $ <span class="input-field cost"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="utility-group">
+                    <div class="section" data-utility="hoa">
+                        <h2><i class="fas fa-building"></i> HOA</h2>
+                        <label>Company: <span class="input-field"></span></label>
+                        <label>Phone: <span class="input-field"></span></label>
+                        <label>Website: <span class="input-field"></span></label>
+                        <div class="cost-field">
+                            Dues: $ <span class="input-field cost"></span>
+                            <span class="payment-frequency">
+                                <span class="checkbox"></span> Monthly
+                            <span class="checkbox"></span> Quarterly
+                            <span class="checkbox"></span> Yearly
+                            </span>
+                        </div>
+                    </div>
+                    <div class="section" data-utility="alarm">
+                        <h2><i class="fas fa-bell"></i> Alarm</h2>
+                        <label><span class="checkbox"></span> ADT (888-281-1765)</label>
+                        <label><span class="checkbox"></span> Fox Brothers Alarm (610-252-7880)</label>
+                        <label><span class="checkbox"></span> Other <span class="input-field"></span></label>
+                        <label><span class="checkbox"></span> N/A</label>
+                        <div class="account-field">
+                            Account #: <span class="input-field"></span>
+                        </div>
+                        <div class="cost-field">
+                            Monthly: $ <span class="input-field cost"></span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="column">
+                <div class="section" data-utility="additional">
+                    <h2><i class="fas fa-plus-circle"></i> Additional Services</h2>
+                    <div class="additional-services">
+                        <div class="service-cards">
+                            <div class="service-card">
+                                <div class="service-card-header">
+                                    <i class="fas fa-leaf"></i>
+                                    <h3>Lawn Care</h3>
+                                </div>
+                                <div class="service-card-body">
+                                    <label>Company: <span class="input-field"></span></label>
+                                    <label>Phone: <span class="input-field"></span></label>
+                                    <div class="cost-field">
+                                        Monthly: $ <span class="input-field cost"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="service-card">
+                                <div class="service-card-header">
+                                    <i class="fas fa-swimming-pool"></i>
+                                    <h3>Pool Care</h3>
+                                </div>
+                                <div class="service-card-body">
+                                    <label>Company: <span class="input-field"></span></label>
+                                    <label>Phone: <span class="input-field"></span></label>
+                                    <div class="cost-field">
+                                        Monthly: $ <span class="input-field cost"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="service-card">
+                                <div class="service-card-header">
+                                    <i class="fas fa-snowflake"></i>
+                                    <h3>Snow Removal</h3>
+                                </div>
+                                <div class="service-card-body">
+                                    <label>Company: <span class="input-field"></span></label>
+                                    <label>Phone: <span class="input-field"></span></label>
+                                    <div class="cost-field">
+                                        Monthly: $ <span class="input-field cost"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="signature-section">
+            <div>
+                <label><i class="fas fa-user"></i> Completed By: <span class="input-field"></span></label>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><i class="fas fa-info-circle"></i> This document is provided for informational purposes only. Please verify all information with utility providers.</p>
+            <p>Last Updated:
+                <script>
+                    document.write(new Date().toLocaleDateString())
+                </script>
+            </p>
+        </div>
+
+        <div class="form-actions">
+            <button type="button" id="print-pdf-button" class="submit-button"><i class="fas fa-print"></i> Print to PDF</button>
+        </div>
+    </div>
+
+    <script>
+        // Simple print functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            // Print button functionality
+            document.getElementById('print-button').addEventListener('click', () => {
+                // Set up print options
+                const mediaQueryList = window.matchMedia('print');
+                mediaQueryList.addListener(function(mql) {
+                    if (!mql.matches) {
+                        // Printing is done/cancelled
+                        document.body.classList.remove('printing');
+                    }
+                });
+
+                // Add printing class to optimize layout
+                document.body.classList.add('printing');
+                window.print();
+            });
+
+            // Save as PDF button (using print dialog)
+            document.getElementById('save-pdf-button').addEventListener('click', () => {
+                document.body.classList.add('printing');
+                window.print();
+            });
+
+            // Print to PDF button
+            document.getElementById('print-pdf-button').addEventListener('click', () => {
+                document.body.classList.add('printing');
+                window.print();
+            });
+        });
+    </script>
+</body>
+
+</html>

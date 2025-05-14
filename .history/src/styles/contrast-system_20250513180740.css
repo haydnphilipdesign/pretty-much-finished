@@ -1,0 +1,417 @@
+/**
+ * PARESS Automatic Contrast System
+ * 
+ * This system ensures text is always readable regardless of background.
+ * It uses CSS custom properties and utility classes to automatically
+ * adjust text color based on background color.
+ */
+
+:root {
+    /* Base colors */
+    --brand-blue: #0066CC;
+    --brand-gold: #FFB81C;
+    --brand-navy: #0F1C2E;
+    --brand-light: #F8FAFC;
+    --brand-dark: #1E293B;
+    /* Light text colors */
+    --text-light-primary: #FFFFFF;
+    --text-light-secondary: rgba(255, 255, 255, 0.85);
+    --text-light-tertiary: rgba(255, 255, 255, 0.7);
+    /* Dark text colors */
+    --text-dark-primary: #1E293B;
+    --text-dark-secondary: #475569;
+    --text-dark-tertiary: #64748B;
+    /* Glass card colors with proper contrast */
+    --glass-card-blue-bg: rgba(0, 102, 204, 0.85);
+    --glass-card-blue-text: var(--text-light-primary);
+    --glass-card-blue-heading: var(--text-light-primary);
+    --glass-card-navy-bg: rgba(15, 28, 46, 0.85);
+    --glass-card-navy-text: var(--text-light-primary);
+    --glass-card-navy-heading: var(--text-light-primary);
+    --glass-card-white-bg: rgba(255, 255, 255, 0.8);
+    --glass-card-white-text: var(--text-dark-primary);
+    --glass-card-white-heading: var(--brand-blue);
+    --glass-card-gold-bg: rgba(255, 184, 28, 0.85);
+    --glass-card-gold-text: var(--text-dark-primary);
+    --glass-card-gold-heading: var(--brand-navy);
+}
+
+
+/* ===== BACKGROUND COLOR CONTRAST SYSTEM ===== */
+
+
+/* Light backgrounds - use dark text */
+
+.bg-white,
+.bg-gray-50,
+.bg-gray-100,
+.bg-gray-200,
+.bg-blue-50,
+.bg-blue-100,
+.bg-amber-50,
+.bg-amber-100,
+.bg-yellow-50,
+.bg-yellow-100,
+.bg-brand-gold,
+.bg-amber-300,
+.bg-amber-400,
+.bg-yellow-300,
+.bg-yellow-400 {
+    color-scheme: light;
+    --text-primary: var(--text-dark-primary);
+    --text-secondary: var(--text-dark-secondary);
+    --text-tertiary: var(--text-dark-tertiary);
+}
+
+
+/* Dark backgrounds - use light text */
+
+.bg-blue-600,
+.bg-blue-700,
+.bg-blue-800,
+.bg-blue-900,
+.bg-gray-600,
+.bg-gray-700,
+.bg-gray-800,
+.bg-gray-900,
+.bg-brand-blue,
+.bg-brand-navy,
+.bg-slate-800,
+.bg-slate-900,
+.bg-black {
+    color-scheme: dark;
+    --text-primary: var(--text-light-primary);
+    --text-secondary: var(--text-light-secondary);
+    --text-tertiary: var(--text-light-tertiary);
+}
+
+
+/* Apply contrast-based colors to text elements */
+
+[class*="bg-"] h1,
+[class*="bg-"] h2,
+[class*="bg-"] h3,
+[class*="bg-"] h4,
+[class*="bg-"] h5,
+[class*="bg-"] h6 {
+    color: var(--text-primary);
+}
+
+[class*="bg-"] p,
+[class*="bg-"] span:not([class*="text-"]),
+[class*="bg-"] div:not([class*="text-"]) {
+    color: var(--text-secondary);
+}
+
+[class*="bg-"] small,
+[class*="bg-"] .text-sm {
+    color: var(--text-tertiary);
+}
+
+
+/* ===== GLASS CARD CONTRAST SYSTEM ===== */
+
+
+/* Base styles for all glass cards */
+
+.glass-card,
+.glass-card-blue,
+.glass-card-navy,
+.glass-card-white,
+.glass-card-dark,
+.glass-card-frost,
+.glass-card-light,
+.glass-card-gold {
+    border-radius: 1rem;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    line-height: 1.625;
+}
+
+
+/* Light glass cards - use dark text */
+
+.glass-card,
+.glass-card-white,
+.glass-card-frost {
+    color-scheme: light;
+    --text-primary: var(--text-dark-primary);
+    --text-secondary: var(--text-dark-secondary);
+    --text-tertiary: var(--text-dark-tertiary);
+    background-color: var(--glass-card-white-bg);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.glass-card-white h1,
+.glass-card-white h2,
+.glass-card-white h3,
+.glass-card-white h4,
+.glass-card-white h5,
+.glass-card-white h6,
+.glass-card-frost h1,
+.glass-card-frost h2,
+.glass-card-frost h3,
+.glass-card-frost h4,
+.glass-card-frost h5,
+.glass-card-frost h6 {
+    color: #111827;
+}
+
+.glass-card p,
+.glass-card-white p,
+.glass-card-frost p {
+    color: #374151;
+}
+
+
+/* Dark glass cards - use light text */
+
+.glass-card-navy {
+    color-scheme: dark;
+    --text-primary: var(--text-light-primary);
+    --text-secondary: var(--text-light-secondary);
+    --text-tertiary: var(--text-light-tertiary);
+    background-color: var(--glass-card-navy-bg);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.glass-card-navy h2,
+.glass-card-navy h3 {
+    color: var(--glass-card-navy-heading) !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.glass-card-navy p,
+.glass-card-navy li,
+.glass-card-navy span {
+    color: var(--glass-card-navy-text) !important;
+}
+
+.glass-card-blue {
+    color-scheme: dark;
+    --text-primary: var(--text-light-primary);
+    --text-secondary: var(--text-light-secondary);
+    --text-tertiary: var(--text-light-tertiary);
+    background-color: var(--glass-card-blue-bg);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.glass-card-blue h2,
+.glass-card-blue h3 {
+    color: var(--glass-card-blue-heading) !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.glass-card-blue p,
+.glass-card-blue li,
+.glass-card-blue span {
+    color: var(--glass-card-blue-text) !important;
+}
+
+.glass-card-dark {
+    color-scheme: dark;
+    --text-primary: var(--text-light-primary);
+    --text-secondary: var(--text-light-secondary);
+    --text-tertiary: var(--text-light-tertiary);
+    background-color: rgba(30, 41, 59, 0.85);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(71, 85, 105, 0.5);
+}
+
+.glass-card-gold {
+    color-scheme: light;
+    --text-primary: var(--text-dark-primary);
+    --text-secondary: var(--text-dark-secondary);
+    --text-tertiary: var(--text-dark-tertiary);
+    background-color: var(--glass-card-gold-bg);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.glass-card-gold h2,
+.glass-card-gold h3 {
+    color: var(--glass-card-gold-heading) !important;
+}
+
+.glass-card-gold p,
+.glass-card-gold li,
+.glass-card-gold span {
+    color: var(--glass-card-gold-text) !important;
+}
+
+
+/* Apply contrast-based colors to text elements in glass cards */
+
+
+/* Note: These general rules apply only to glass card elements that don't have specific styling */
+
+[class*="glass-card"] h1,
+[class*="glass-card"] h4,
+[class*="glass-card"] h5,
+[class*="glass-card"] h6 {
+    color: var(--text-primary);
+}
+
+[class*="glass-card"] div:not([class*="text-"]) {
+    color: var(--text-secondary);
+}
+
+[class*="glass-card"] small,
+[class*="glass-card"] .text-sm:not([class*="text-"]) {
+    color: var(--text-tertiary);
+}
+
+
+/* ===== BUTTON CONTRAST SYSTEM ===== */
+
+
+/* Light buttons - use dark text */
+
+.btn-primary[class*="bg-white"],
+.btn-primary.bg-gray-50,
+.btn-primary.bg-gray-100,
+.btn-primary.bg-blue-50,
+.btn-primary.bg-blue-100,
+.btn-primary.bg-amber-50,
+.btn-primary.bg-amber-100,
+.btn-primary.bg-yellow-50,
+.btn-primary.bg-yellow-100,
+.btn-primary.bg-amber-300,
+.btn-primary.bg-amber-400,
+.btn-primary.bg-yellow-300,
+.btn-primary.bg-yellow-400,
+.btn-primary.bg-brand-gold,
+.btn-secondary {
+    color: var(--text-dark-primary) !important;
+}
+
+
+/* Dark buttons - use light text */
+
+
+/* Note: Removed bg-blue-700, bg-blue-800, and bg-brand-blue from this list to prevent circular dependency */
+
+.btn-primary,
+.btn-primary.bg-blue-600,
+.btn-primary.bg-blue-900,
+.btn-primary.bg-gray-600,
+.btn-primary.bg-gray-700,
+.btn-primary.bg-gray-800,
+.btn-primary.bg-gray-900,
+.btn-primary.bg-brand-navy,
+.btn-primary.bg-slate-800,
+.btn-primary.bg-slate-900,
+.btn-primary.bg-black {
+    background-color: #1e3a8a;
+    color: var(--text-light-primary) !important;
+}
+
+
+/* ===== LINKS CONTRAST SYSTEM ===== */
+
+
+/* Dark background links */
+
+[color-scheme="dark"] a:not(.btn):not([class*="text-"]) {
+    color: #90CAF9;
+}
+
+[color-scheme="dark"] a:not(.btn):not([class*="text-"]):hover {
+    color: #BBDEFB;
+}
+
+
+/* Light background links */
+
+[color-scheme="light"] a:not(.btn):not([class*="text-"]) {
+    color: var(--brand-blue);
+}
+
+[color-scheme="light"] a:not(.btn):not([class*="text-"]):hover {
+    color: #004C99;
+}
+
+
+/* ===== OVERRIDE CLASSES ===== */
+
+
+/* Use these classes to force specific text colors */
+
+.text-white {
+    color: #FFFFFF !important;
+}
+
+.text-black {
+    color: #000000 !important;
+}
+
+.text-brand-blue {
+    color: var(--brand-blue) !important;
+}
+
+.text-brand-gold {
+    color: var(--brand-gold) !important;
+}
+
+
+/* ===== SPECIFIC COMPONENT FIXES ===== */
+
+
+/* Hero section */
+
+[data-hero-component="true"] h1,
+[data-hero-component="true"] h2 {
+    color: #FFFFFF !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+[data-hero-component="true"] p {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+
+/* Navigation */
+
+nav .text-white {
+    color: #FFFFFF !important;
+}
+
+nav .text-brand-blue {
+    color: var(--brand-blue) !important;
+}
+
+
+/* Footer */
+
+footer h3,
+footer h4 {
+    color: var(--text-dark-primary) !important;
+}
+
+footer p {
+    color: var(--text-dark-secondary) !important;
+}
+
+
+/* Form elements */
+
+input,
+select,
+textarea {
+    color: var(--text-dark-primary) !important;
+}
+
+label {
+    color: var(--text-dark-secondary) !important;
+}
+
+
+/* Dark background form elements */
+
+[color-scheme="dark"] label {
+    color: var(--text-light-secondary) !important;
+}

@@ -1,0 +1,213 @@
+/**
+ * Critical Text Contrast Fixes
+ * 
+ * Simple, essential fixes for text contrast issues across the site
+ * with no decorative elements - just focused on readability
+ */
+
+/* Critical nav text fixes */
+nav a,
+.nav-link,
+header a {
+  color: white !important;
+  font-weight: 500 !important;
+}
+
+/* Critical header text fixes */
+header h1,
+header h2,
+.hero-text,
+.hero-headline,
+.header-title {
+  color: white !important;
+  font-weight: 700 !important;
+}
+
+header p,
+.hero-subtitle,
+.header-subtitle {
+  color: white !important;
+  font-weight: 400 !important;
+}
+
+/* Buttons on blue background */
+header button,
+header a[href*="Transaction"],
+header a[href*="transaction"] {
+  background-color: white !important;
+  color: #0066CC !important;
+  font-weight: 600 !important;
+  padding: 0.75rem 1.5rem !important;
+  border-radius: 9999px !important;
+}
+
+/* Agent Portal button */
+a[href*="Agent Portal"] {
+  background-color: #FFB81C !important;
+  color: #0F1C2E !important;
+  font-weight: 600 !important;
+  padding: 0.75rem 1.5rem !important;
+  border-radius: 9999px !important;
+}
+
+/* Light background sections with dark text */
+.bg-white h2,
+.bg-gray-50 h2,
+.bg-gray-100 h2,
+[className*="bg-white"] h2,
+[className*="bg-gray"] h2 {
+  color: #0F1C2E !important;
+  font-weight: 700 !important;
+}
+
+.bg-white p,
+.bg-gray-50 p,
+.bg-gray-100 p,
+[className*="bg-white"] p,
+[className*="bg-gray"] p {
+  color: #333333 !important;
+  font-weight: 400 !important;
+}
+
+/* Dark background sections with light text */
+.bg-brand-blue h2,
+.bg-blue-900 h2,
+.bg-navy-gradient h2,
+[className*="bg-brand-blue"] h2,
+[className*="bg-blue"] h2,
+[className*="bg-navy"] h2 {
+  color: white !important;
+  font-weight: 700 !important;
+}
+
+.bg-brand-blue p,
+.bg-blue-900 p,
+.bg-navy-gradient p,
+[className*="bg-brand-blue"] p,
+[className*="bg-blue"] p,
+[className*="bg-navy"] p {
+  color: white !important;
+  font-weight: 400 !important;
+}
+
+/* Footer elements */
+footer h2,
+footer h3 {
+  color: #0F1C2E !important;
+  font-weight: 600 !important;
+}
+
+footer p,
+footer a {
+  color: #333333 !important;
+  font-weight: 400 !important;
+}
+
+/* Address and contact info */
+address,
+.contact-info,
+.address,
+[className*="contact"] {
+  color: #333333 !important;
+  font-weight: 400 !important;
+}
+
+/* Glass cards base fixes */
+.glass-card,
+.glass-card-blue,
+.glass-card-navy,
+.glass-card-light {
+  background-color: #0066CC !important;
+  color: white !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !important;
+  border: none !important;
+}
+
+.glass-card h2,
+.glass-card h3,
+.glass-card-blue h2,
+.glass-card-blue h3,
+.glass-card-navy h2,
+.glass-card-navy h3,
+.glass-card-light h2,
+.glass-card-light h3 {
+  color: white !important;
+  font-weight: 600 !important;
+}
+
+.glass-card p,
+.glass-card-blue p,
+.glass-card-navy p,
+.glass-card-light p {
+  color: white !important;
+  font-weight: 400 !important;
+}
+
+/* White glass cards on light backgrounds */
+.glass-card-white,
+.glass-card-frost {
+  background-color: white !important;
+  color: #0F1C2E !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+  border: none !important;
+}
+
+.glass-card-white h2,
+.glass-card-white h3,
+.glass-card-frost h2,
+.glass-card-frost h3 {
+  color: #0F1C2E !important;
+  font-weight: 600 !important;
+}
+
+.glass-card-white p,
+.glass-card-frost p {
+  color: #333333 !important;
+  font-weight: 400 !important;
+}
+
+/* Fix header position in sections */
+.section h2,
+.section-title,
+[className*="py-"] h2 {
+  position: relative !important;
+  display: block !important;
+  margin-bottom: 0.5rem !important;
+}
+
+/* Strong contrast for list items */
+li {
+  margin-bottom: 0.5rem !important;
+}
+
+/* Remove all backgrounds that might be causing problems */
+[className*="bg-gradient"],
+[className*="radial-gradient"],
+[className*="bg-grid"],
+[className*="backdrop-blur"] {
+  background: none !important;
+  background-image: none !important;
+  backdrop-filter: none !important;
+}
+
+/* Clean section backgrounds */
+section,
+.section,
+[className*="py-"] {
+  position: relative !important;
+}
+
+.bg-brand-blue,
+.bg-blue-900,
+.bg-navy-gradient,
+[className*="from-brand-blue"],
+[className*="from-blue"],
+[className*="bg-blue-gradient"] {
+  background-color: #0066CC !important;
+}
+
+.bg-white,
+.bg-gray-50,
+.bg-gray-100 {
+  background-color: white !important;
+}

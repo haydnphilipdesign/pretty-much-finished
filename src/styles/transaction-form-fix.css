@@ -1,0 +1,630 @@
+/**
+ * Transaction Form Transparency Fix
+ *
+ * This file fixes transparency issues in the transaction form
+ * by making form fields, buttons, and dropdowns fully opaque for better readability.
+ *
+ * This CSS uses !important to override any existing styles that might be causing
+ * transparency issues in the transaction form.
+ */
+
+
+/* ==== GLOBAL FORM CONTAINER FIX ==== */
+
+
+/* Ensure the form container has a transparent background */
+
+.transaction-form-container,
+.glass-card-navy .transaction-form-container,
+.glass-card .transaction-form-container,
+.glass-card-blue .transaction-form-container,
+.glass-card-dark .transaction-form-container {
+    background-color: transparent !important;
+    opacity: 1 !important;
+}
+
+
+/* ==== FORM FIELDS FIX ==== */
+
+
+/* Make input fields, selects, and textareas semi-transparent with good contrast */
+
+.transaction-form-container input,
+.transaction-form-container select,
+.transaction-form-container textarea,
+.transaction-form-container [data-radix-select-trigger],
+.glass-card-navy .transaction-form-container input,
+.glass-card-navy .transaction-form-container select,
+.glass-card-navy .transaction-form-container textarea,
+.glass-card-navy .transaction-form-container [data-radix-select-trigger] {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    color: white !important;
+    backdrop-filter: blur(4px) !important;
+    -webkit-backdrop-filter: blur(4px) !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+    opacity: 1 !important;
+}
+
+
+/* Fix placeholder text color for better readability */
+
+.transaction-form-container input::placeholder,
+.transaction-form-container textarea::placeholder,
+.glass-card-navy .transaction-form-container input::placeholder,
+.glass-card-navy .transaction-form-container textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6) !important;
+    opacity: 1 !important;
+}
+
+
+/* Fix focus states */
+
+.transaction-form-container input:focus,
+.transaction-form-container select:focus,
+.transaction-form-container textarea:focus,
+.transaction-form-container [data-radix-select-trigger]:focus,
+.glass-card-navy .transaction-form-container input:focus,
+.glass-card-navy .transaction-form-container select:focus,
+.glass-card-navy .transaction-form-container textarea:focus,
+.glass-card-navy .transaction-form-container [data-radix-select-trigger]:focus {
+    border-color: #e9c77b !important;
+    /* gold accent color */
+    box-shadow: 0 0 0 3px rgba(233, 199, 123, 0.3) !important;
+    outline: none !important;
+    background-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+
+/* Ensure select trigger has the right styling */
+
+.transaction-form-container [data-radix-select-trigger],
+.glass-card-navy .transaction-form-container [data-radix-select-trigger] {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    color: white !important;
+    backdrop-filter: blur(4px) !important;
+    -webkit-backdrop-filter: blur(4px) !important;
+}
+
+
+/* ==== DROPDOWN MENUS FIX ==== */
+
+
+/* Fix dropdown menus to have white background */
+
+.transaction-form-container [role="listbox"],
+.transaction-form-container [data-radix-select-viewport],
+.transaction-form-container [data-radix-popper-content-wrapper],
+.glass-card-navy .transaction-form-container [role="listbox"],
+.glass-card-navy .transaction-form-container [data-radix-select-viewport],
+.glass-card-navy .transaction-form-container [data-radix-popper-content-wrapper],
+
+/* Target all popover content wrappers */
+
+[data-radix-popper-content-wrapper],
+[role="listbox"],
+[data-radix-select-viewport],
+[data-radix-select-content],
+.select-content,
+.popover-content,
+.dropdown-content {
+    background-color: white !important;
+    border: 1px solid #d1d5db !important;
+    /* gray-300 */
+    color: #1e3a8a !important;
+    /* dark blue text */
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+    opacity: 1 !important;
+}
+
+
+/* Fix dropdown items */
+
+.transaction-form-container [role="option"],
+.glass-card-navy .transaction-form-container [role="option"],
+[role="option"],
+[data-radix-select-item],
+.select-item,
+.dropdown-item,
+.menu-item,
+.popover-item {
+    color: #1e3a8a !important;
+    /* dark blue text */
+    background-color: white !important;
+    opacity: 1 !important;
+}
+
+
+/* Fix dropdown item hover/focus state */
+
+.transaction-form-container [role="option"]:hover,
+.transaction-form-container [role="option"][data-highlighted="true"],
+.transaction-form-container [role="option"]:focus,
+.transaction-form-container [role="option"][data-state="checked"],
+.glass-card-navy .transaction-form-container [role="option"]:hover,
+.glass-card-navy .transaction-form-container [role="option"][data-highlighted="true"],
+.glass-card-navy .transaction-form-container [role="option"]:focus,
+.glass-card-navy .transaction-form-container [role="option"][data-state="checked"],
+[role="option"]:hover,
+[role="option"][data-highlighted="true"],
+[role="option"]:focus,
+[role="option"][data-state="checked"],
+[data-radix-select-item]:hover,
+[data-radix-select-item][data-highlighted="true"],
+[data-radix-select-item]:focus,
+[data-radix-select-item][data-state="checked"],
+.select-item:hover,
+.dropdown-item:hover,
+.menu-item:hover,
+.popover-item:hover {
+    background-color: #e9c77b !important;
+    /* gold accent color */
+    color: #1e3a8a !important;
+    /* dark blue text */
+}
+
+
+/* ==== BUTTONS FIX ==== */
+
+
+/* Fix primary buttons */
+
+.transaction-form-container .btn-primary,
+.transaction-form-container button[type="submit"],
+.transaction-form-container .primary-button,
+.glass-card-navy .transaction-form-container .btn-primary,
+.glass-card-navy .transaction-form-container button[type="submit"],
+.glass-card-navy .transaction-form-container .primary-button {
+    background-color: #e9c77b !important;
+    /* gold accent color */
+    color: #1e3a8a !important;
+    /* dark blue text */
+    border: 1px solid #e9c77b !important;
+    font-weight: 600 !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    opacity: 1 !important;
+}
+
+
+/* Fix secondary buttons */
+
+.transaction-form-container .btn-secondary,
+.transaction-form-container .secondary-button,
+.glass-card-navy .transaction-form-container .btn-secondary,
+.glass-card-navy .transaction-form-container .secondary-button {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    color: white !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    font-weight: 500 !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+    backdrop-filter: blur(4px) !important;
+    -webkit-backdrop-filter: blur(4px) !important;
+    opacity: 1 !important;
+}
+
+
+/* Fix button hover states */
+
+.transaction-form-container .btn-primary:hover,
+.transaction-form-container button[type="submit"]:hover,
+.transaction-form-container .primary-button:hover,
+.glass-card-navy .transaction-form-container .btn-primary:hover,
+.glass-card-navy .transaction-form-container button[type="submit"]:hover,
+.glass-card-navy .transaction-form-container .primary-button:hover {
+    background-color: #f0d28e !important;
+    /* lighter gold */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+
+/* ==== LABELS FIX ==== */
+
+
+/* Fix labels for better readability */
+
+.transaction-form-container label,
+.glass-card-navy .transaction-form-container label {
+    color: white !important;
+    font-weight: 500 !important;
+    opacity: 1 !important;
+}
+
+
+/* ==== CARD BACKGROUNDS FIX ==== */
+
+
+/* Fix card backgrounds to be semi-transparent */
+
+.transaction-form-container .card,
+.transaction-form-container [class*="glass-effect"],
+.transaction-form-container [class*="glass-card"],
+.glass-card-navy .transaction-form-container .card,
+.glass-card-navy .transaction-form-container [class*="glass-effect"],
+.glass-card-navy .transaction-form-container [class*="glass-card"] {
+    background-color: rgba(30, 58, 138, 0.7) !important;
+    /* Dark blue with medium opacity */
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    opacity: 1 !important;
+}
+
+
+/* Fix headings in cards */
+
+.transaction-form-container .card h1,
+.transaction-form-container .card h2,
+.transaction-form-container .card h3,
+.transaction-form-container .card h4,
+.transaction-form-container .card h5,
+.transaction-form-container .card h6,
+.transaction-form-container [class*="glass-card"] h1,
+.transaction-form-container [class*="glass-card"] h2,
+.transaction-form-container [class*="glass-card"] h3,
+.transaction-form-container [class*="glass-card"] h4,
+.transaction-form-container [class*="glass-card"] h5,
+.transaction-form-container [class*="glass-card"] h6 {
+    color: white !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+    opacity: 1 !important;
+}
+
+
+/* Fix text in cards */
+
+.transaction-form-container .card p,
+.transaction-form-container [class*="glass-card"] p,
+.transaction-form-container .card span,
+.transaction-form-container [class*="glass-card"] span,
+.transaction-form-container .card div,
+.transaction-form-container [class*="glass-card"] div {
+    color: white !important;
+    opacity: 1 !important;
+}
+
+
+/* ==== ADDITIONAL UI COMPONENTS FIX ==== */
+
+
+/* Fix any other UI components that might be transparent */
+
+.transaction-form-container .radix-select,
+.transaction-form-container .select-container,
+.transaction-form-container .dropdown,
+.transaction-form-container .dropdown-menu,
+.transaction-form-container .menu,
+.transaction-form-container .popover,
+.transaction-form-container .tooltip,
+.transaction-form-container .dialog,
+.transaction-form-container .modal,
+.transaction-form-container .overlay,
+.transaction-form-container .panel,
+.transaction-form-container .accordion,
+.transaction-form-container .tabs,
+.transaction-form-container .tab-panel,
+.transaction-form-container .combobox,
+.transaction-form-container .listbox,
+.transaction-form-container .menu-item,
+.transaction-form-container .option {
+    background-color: rgba(30, 58, 138, 0.8) !important;
+    /* Dark blue with high opacity */
+    color: white !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    opacity: 1 !important;
+}
+
+
+/* ==== DIALOG AND MODAL FIX ==== */
+
+
+/* Fix dialog and modal components to have glass card styling */
+
+[role="dialog"],
+.dialog,
+.modal,
+[data-radix-dialog-content],
+[data-radix-dialog-overlay],
+[data-radix-dialog-portal],
+[data-state="open"],
+.dialog-content,
+.modal-content {
+    background-color: rgba(30, 58, 138, 0.8) !important;
+    /* Dark blue with high opacity */
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: white !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.3) !important;
+    border-radius: 0.75rem !important;
+}
+
+
+/* Fix dialog and modal headings */
+
+[role="dialog"] h1,
+[role="dialog"] h2,
+[role="dialog"] h3,
+[role="dialog"] h4,
+[role="dialog"] h5,
+[role="dialog"] h6,
+.dialog h1,
+.dialog h2,
+.dialog h3,
+.dialog h4,
+.dialog h5,
+.dialog h6,
+.modal h1,
+.modal h2,
+.modal h3,
+.modal h4,
+.modal h5,
+.modal h6 {
+    color: white !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+}
+
+
+/* Fix dialog and modal text */
+
+[role="dialog"] p,
+[role="dialog"] span,
+[role="dialog"] div,
+.dialog p,
+.dialog span,
+.dialog div,
+.modal p,
+.modal span,
+.modal div {
+    color: white !important;
+}
+
+
+/* Fix dialog and modal buttons */
+
+[role="dialog"] button,
+.dialog button,
+.modal button {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    color: white !important;
+}
+
+
+/* Fix dialog and modal button hover states */
+
+[role="dialog"] button:hover,
+.dialog button:hover,
+.modal button:hover {
+    background-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+
+/* ==== RADIX UI DIALOG SPECIFIC FIXES ==== */
+
+
+/* Fix Radix UI Dialog components */
+
+.DialogOverlay,
+.DialogContent,
+[data-radix-dialog-overlay],
+[data-radix-dialog-content] {
+    background-color: rgba(30, 58, 138, 0.8) !important;
+    /* Dark blue with high opacity */
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.3) !important;
+}
+
+
+/* Fix Radix UI Dialog title */
+
+.DialogTitle,
+[data-radix-dialog-title] {
+    color: white !important;
+    font-weight: 600 !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+}
+
+
+/* Fix Radix UI Dialog description */
+
+.DialogDescription,
+[data-radix-dialog-description] {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+
+/* Fix Radix UI Dialog close button */
+
+.DialogClose,
+[data-radix-dialog-close] {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    color: white !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+
+/* Fix Radix UI Dialog close button hover */
+
+.DialogClose:hover,
+[data-radix-dialog-close]:hover {
+    background-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+
+/* ==== SHADCN UI COMPONENTS FIX ==== */
+
+
+/* Fix Shadcn UI Dialog */
+
+/* Use class-based selectors instead of attribute selectors with special characters */
+.shadcn-dialog-overlay,
+.fixed.inset-0.z-50[class*="bg-background"],
+.fixed.inset-0.z-50[class*="bg-black"] {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+}
+
+
+/* Fix Shadcn UI Dialog content */
+
+.shadcn-dialog-content,
+.fixed.z-50.grid.w-full.gap-4.rounded-b-lg.border.bg-background.p-6.shadow-lg.animate-in {
+    background-color: rgba(30, 58, 138, 0.8) !important;
+    /* Dark blue with high opacity */
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.3) !important;
+}
+
+
+/* Fix Shadcn UI Card */
+
+.rounded-lg.border.bg-card.text-card-foreground.shadow-sm {
+    background-color: rgba(30, 58, 138, 0.8) !important;
+    /* Dark blue with high opacity */
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: white !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.3) !important;
+}
+
+
+/* Fix Shadcn UI Card title and content */
+
+.rounded-lg.border.bg-card.text-card-foreground.shadow-sm h1,
+.rounded-lg.border.bg-card.text-card-foreground.shadow-sm h2,
+.rounded-lg.border.bg-card.text-card-foreground.shadow-sm h3,
+.rounded-lg.border.bg-card.text-card-foreground.shadow-sm h4,
+.rounded-lg.border.bg-card.text-card-foreground.shadow-sm h5,
+.rounded-lg.border.bg-card.text-card-foreground.shadow-sm h6,
+.rounded-lg.border.bg-card.text-card-foreground.shadow-sm p,
+.rounded-lg.border.bg-card.text-card-foreground.shadow-sm span,
+.rounded-lg.border.bg-card.text-card-foreground.shadow-sm div {
+    color: white !important;
+}
+
+
+/* ==== POPUP AND MODAL SPECIFIC FIXES ==== */
+
+
+/* Fix any popup or modal that might be used in the transaction form */
+
+.popup,
+.modal,
+.dialog,
+.alert,
+.toast,
+.notification,
+.popover,
+.tooltip,
+.dropdown-menu,
+.menu,
+.panel,
+.drawer,
+.sidebar,
+.overlay,
+.sheet,
+.tray,
+.banner,
+.snackbar,
+.notification-center,
+.alert-dialog,
+.confirmation-dialog,
+.prompt-dialog,
+.message-box,
+.lightbox,
+.gallery,
+.carousel,
+.slideshow,
+.wizard,
+.stepper,
+.tour,
+.guide,
+.coach-mark,
+.spotlight,
+.tooltip-container,
+.popover-container,
+.dialog-container,
+.modal-container,
+.overlay-container,
+.drawer-container,
+.sidebar-container,
+.panel-container,
+.sheet-container,
+.tray-container,
+.banner-container,
+.snackbar-container,
+.notification-container,
+.alert-container,
+.toast-container,
+.message-container,
+.lightbox-container,
+.gallery-container,
+.carousel-container,
+.slideshow-container,
+.wizard-container,
+.stepper-container,
+.tour-container,
+.guide-container,
+.coach-mark-container,
+.spotlight-container {
+    background-color: rgba(30, 58, 138, 0.8) !important;
+    /* Dark blue with high opacity */
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: white !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.3) !important;
+    border-radius: 0.75rem !important;
+}
+
+
+/* Fix any popup or modal content */
+
+.popup-content,
+.modal-content,
+.dialog-content,
+.alert-content,
+.toast-content,
+.notification-content,
+.popover-content,
+.tooltip-content,
+.dropdown-menu-content,
+.menu-content,
+.panel-content,
+.drawer-content,
+.sidebar-content,
+.overlay-content,
+.sheet-content,
+.tray-content,
+.banner-content,
+.snackbar-content,
+.notification-center-content,
+.alert-dialog-content,
+.confirmation-dialog-content,
+.prompt-dialog-content,
+.message-box-content,
+.lightbox-content,
+.gallery-content,
+.carousel-content,
+.slideshow-content,
+.wizard-content,
+.stepper-content,
+.tour-content,
+.guide-content,
+.coach-mark-content,
+.spotlight-content {
+    color: white !important;
+}

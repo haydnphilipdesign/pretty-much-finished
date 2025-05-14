@@ -1,0 +1,75 @@
+/**
+ * Header Text Color Override
+ * Replaces the default gray header text with our brand cream color (#e9c77b)
+ */
+
+
+/* Base header text overrides */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #e9c77b !important;
+}
+
+
+/* Utility class override */
+
+.text-gray-700 {
+    color: #e9c77b !important;
+}
+
+
+/* Specific header text elements */
+
+header .text-gray-700,
+nav .text-gray-700,
+.header-text,
+.section-heading,
+.card-heading {
+    color: #e9c77b !important;
+}
+
+
+/* Dark backgrounds need specific adjustments */
+
+.bg-gray-800 h1,
+.bg-gray-900 h1,
+.bg-gray-800 h2,
+.bg-gray-900 h2,
+.bg-gray-800 h3,
+.bg-gray-900 h3,
+.bg-gray-800 h4,
+.bg-gray-900 h4,
+.bg-gray-800 h5,
+.bg-gray-900 h5,
+.bg-gray-800 h6,
+.bg-gray-900 h6,
+.bg-brand-blue h1,
+.bg-brand-blue h2,
+.bg-brand-blue h3,
+.bg-brand-blue h4,
+.bg-brand-blue h5,
+.bg-brand-blue h6,
+.bg-brand-navy h1,
+.bg-brand-navy h2,
+.bg-brand-navy h3,
+.bg-brand-navy h4,
+.bg-brand-navy h5,
+.bg-brand-navy h6 {
+    color: #e9c77b !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Explicit RGB value override for elements using rgb(55, 65, 81) directly */
+
+[style*="color: rgb(55, 65, 81)"],
+[style*="color:rgb(55, 65, 81)"],
+[style*="color: #374151"],
+[style*="color:#374151"] {
+    color: #e9c77b !important;
+}

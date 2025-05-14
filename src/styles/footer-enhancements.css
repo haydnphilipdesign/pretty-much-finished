@@ -1,0 +1,46 @@
+/**
+ * Footer Styles - May 2025
+ * 
+ * Enhanced footer styles for better readability and visual consistency
+ */
+
+/* Enhanced footer styling */
+footer {
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.03);
+}
+
+/* Footer heading consistency */
+footer h3 {
+  letter-spacing: 0.01em;
+}
+
+/* Footer links hover effect */
+footer a:hover {
+  transform: translateX(2px);
+}
+
+/* Agent Portal button in footer */
+footer a[href="/agent-portal"],
+footer a[href*="agent-portal"] {
+  background-color: #f59e0b !important; /* amber-500 */
+  color: #111827 !important; /* gray-900 */
+  font-weight: 500 !important;
+}
+
+footer a[href="/agent-portal"]:hover,
+footer a[href*="agent-portal"]:hover {
+  background-color: #d97706 !important; /* amber-600 */
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Footer gold accent bars */
+footer h3 span.w-1\.5 {
+  background-color: #f59e0b !important; /* amber-500 */
+}
+
+/* Office hours container */
+footer .bg-white {
+  background-color: rgba(255, 255, 255, 0.7) !important;
+  backdrop-filter: blur(8px);
+}

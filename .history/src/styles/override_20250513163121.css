@@ -1,0 +1,310 @@
+/**
+ * OVERRIDE CSS FILE
+ * This file uses extremely high specificity and !important flags to ensure
+ * it overrides all other styling. Use this as a last resort when other methods fail.
+ */
+
+
+/* Target all glass-card-light elements with maximum specificity */
+
+html body .app-root main section div div div .glass-card-light,
+html body .app-root main section div div div[class*="glass-card-light"],
+html body .app-root main div div div .glass-card-light,
+html body .app-root main div[class*="ContentSection"] div div .glass-card-light,
+html body div div div .glass-card-light,
+.glass-card-light {
+    background-color: #0F1C2E !important;
+    /* Dark navy background */
+    color: white !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.1) !important;
+}
+
+
+/* Target all text within glass-card-light */
+
+html body .app-root main section div div div .glass-card-light *,
+html body .app-root main section div div div[class*="glass-card-light"] *,
+html body .app-root main div div div .glass-card-light *,
+html body .app-root main div[class*="ContentSection"] div div .glass-card-light *,
+html body div div div .glass-card-light *,
+.glass-card-light * {
+    color: white !important;
+}
+
+
+/* Target specific elements for even more control */
+
+.glass-card-light h2,
+.glass-card-light h3,
+.glass-card-light .glass-card-title,
+.glass-card-light .hero-card-title,
+.glass-card-light div[class*="title"],
+.glass-card-light div h3 {
+    color: white !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2) !important;
+    font-weight: 700 !important;
+}
+
+.glass-card-light p,
+.glass-card-light .glass-card-content,
+.glass-card-light .card-content,
+.glass-card-light div p,
+.glass-card-light div[class*="content"],
+p[class*="text-white"],
+p.text-white\/80,
+p.text-white\/90,
+span.text-white\/80 {
+    color: rgba(255, 255, 255, 0.95) !important;
+}
+
+
+/* Fix list items in cards */
+
+.glass-card-light ul li,
+.glass-card-light ol li,
+.glass-card-light div ul li,
+.glass-card-light div ol li,
+ul.space-y-2 li.flex.items-start.text-white\/80,
+ul.space-y-2 li.flex.items-start.text-white\/80.text-sm {
+    color: rgba(255, 255, 255, 0.95) !important;
+}
+
+
+/* Fix the bullet points in lists */
+
+.glass-card-light ul li div,
+.glass-card-light div ul li div,
+div.w-1\\.5.h-1\\.5.bg-brand-gold.rounded-full.mr-2.mt-1\\.5 {
+    background-color: #D4AF37 !important;
+    /* Brand gold */
+}
+
+
+/* Fix icons in cards */
+
+.glass-card-light svg,
+.glass-card-light div svg,
+.glass-card-light div div svg,
+svg.w-8.h-8,
+svg.w-8.h-8[class*="text-brand"] {
+    color: white !important;
+}
+
+
+/* Fix background colors of sections */
+
+div[class*="ProcessSteps"],
+div[bgColor="bg-navy-gradient"],
+.bg-navy-gradient {
+    background-color: #0F1C2E !important;
+    color: white !important;
+}
+
+div[class*="ProcessSteps"] h2,
+div[bgColor="bg-navy-gradient"] h2,
+.bg-navy-gradient h2 {
+    color: white !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+}
+
+div[class*="ProcessSteps"] p,
+div[bgColor="bg-navy-gradient"] p,
+.bg-navy-gradient p {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+
+/* Fix section headings */
+
+div.mb-8 h2.text-3xl.font-bold.text-brand-blue,
+h2.text-3xl.font-bold.text-brand-blue {
+    color: #0F1C2E !important;
+    font-weight: 700 !important;
+}
+
+div.mb-8 p.text-gray-700,
+p.text-gray-700 {
+    color: #333333 !important;
+}
+
+
+/* Remove gradient backgrounds that cause contrast issues */
+
+div.absolute.inset-0.bg-transparent,
+div.absolute.inset-0.bg-gradient-to-br,
+div[class*="radial-gradient"],
+div[class*="bg-grid"] {
+    background: none !important;
+    background-image: none !important;
+    opacity: 0 !important;
+    display: none !important;
+}
+
+
+/* Card icon styling */
+
+div.w-16.h-16.bg-gradient-to-br.from-brand-gold\/20.to-brand-blue\/20.rounded-full {
+    background: rgba(255, 255, 255, 0.2) !important;
+    background-image: none !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+
+/* Blue section text color fixes */
+
+section.py-20.bg-gradient-to-br.from-brand-blue.to-brand-blue\/90 h2,
+section.py-20.bg-gradient-to-br.from-brand-blue.to-brand-blue\/90 div h2,
+h2.text-4xl.md\:text-5xl.font-bold.text-white.mb-6 {
+    color: white !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+}
+
+section.py-20.bg-gradient-to-br.from-brand-blue.to-brand-blue\/90 p,
+section.py-20.bg-gradient-to-br.from-brand-blue.to-brand-blue\/90 div p,
+p.text-xl.text-white\/90 {
+    color: rgba(255, 255, 255, 0.95) !important;
+}
+
+
+/* Force content section background colors */
+
+div[class*="ContentSection"][dark="false"],
+section.py-24.overflow-hidden {
+    background-color: white !important;
+}
+
+div[class*="ContentSection"][dark="true"],
+section.py-20.bg-gradient-to-br.from-brand-blue.to-brand-blue\/90 {
+    background-color: #0066CC !important;
+}
+
+
+/* ELEVATE YOUR REAL ESTATE BUSINESS SECTION */
+
+section.py-24.md\:py-32.overflow-hidden,
+section.py-24.md\:py-32,
+div[class*="ServicesOverview"],
+.py-24.md\:py-32 {
+    background-color: #0066CC !important;
+    /* Brand blue background */
+    position: relative !important;
+    z-index: 1 !important;
+    color: white !important;
+}
+
+
+/* Ensure heading and subtitle have proper contrast */
+
+section.py-24.md\:py-32 h2.text-4xl.md\:text-5xl.font-bold.text-white,
+section.py-24.md\:py-32 h2,
+h2.text-4xl.md\:text-5xl.font-bold.text-white,
+.text-center.mb-16 h2 {
+    color: white !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+    font-weight: 700 !important;
+}
+
+section.py-24.md\:py-32 p.text-lg.text-white\/90,
+section.py-24.md\:py-32 p,
+p.text-lg.text-white\/90,
+.text-center.mb-16 p {
+    color: rgba(255, 255, 255, 0.95) !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+}
+
+
+/* Make the entire Elevate section stand out with a clear background */
+
+div.overflow-hidden>div.absolute.inset-0 {
+    background-color: #0066CC !important;
+    /* Brand blue background */
+    background-image: none !important;
+}
+
+
+/* Target the specific Elevate Your Real Estate Business heading */
+
+h2:contains("Elevate Your Real Estate Business"),
+h2.text-4xl.md\:text-5xl.font-bold.text-white.mb-6:contains("Elevate"),
+h2.text-4xl.md\:text-5xl.font-bold:contains("Elevate") {
+    color: white !important;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4) !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.5px !important;
+}
+
+
+/* PROVEN EXCELLENCE IN NUMBERS SECTION */
+
+section[class*="Statistics"],
+div[class*="Statistics"],
+div[class*="statistics-section"],
+div[class*="Statistics"]>section,
+section.statistics-section,
+section.py-16.md\:py-24 {
+    background-color: #0F1C2E !important;
+    /* Dark navy background */
+    color: white !important;
+    position: relative !important;
+    z-index: 5 !important;
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+}
+
+
+/* Style the heading and subheading */
+
+section[class*="Statistics"] h2,
+div[class*="Statistics"] h2,
+section.statistics-section h2,
+h2:contains("Proven Excellence"),
+div.text-center h2:contains("Proven") {
+    color: #D4AF37 !important;
+    /* Gold color for heading */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4) !important;
+    font-weight: 700 !important;
+}
+
+section[class*="Statistics"] p,
+div[class*="Statistics"] p,
+section.statistics-section p,
+div.text-center p:contains("track record") {
+    color: rgba(255, 255, 255, 0.95) !important;
+}
+
+
+/* Style the statistics cards */
+
+div.grid.grid-cols-1.sm\:grid-cols-2.lg\:grid-cols-4 .glass-card,
+div.grid.grid-cols-1.sm\:grid-cols-2.lg\:grid-cols-4 .glass-card-navy,
+div.grid.grid-cols-1.sm\:grid-cols-2.lg\:grid-cols-4 .glass-card-dark,
+div.grid.grid-cols-1.sm\:grid-cols-2.lg\:grid-cols-4 .glass-card-blue,
+div.grid.grid-cols-1.sm\:grid-cols-2.lg\:grid-cols-4 .glass-card-gold,
+section.statistics-section .card,
+section.statistics-section .content-card {
+    background-color: rgba(212, 175, 55, 0.2) !important;
+    /* Semi-transparent gold */
+    border: 1px solid rgba(212, 175, 55, 0.3) !important;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.1) !important;
+}
+
+
+/* Style the text in statistics cards */
+
+div.grid.grid-cols-1.sm\:grid-cols-2.lg\:grid-cols-4 h3,
+div.grid.grid-cols-1.sm\:grid-cols-2.lg\:grid-cols-4 .glass-card-title,
+section.statistics-section .card h3,
+section.statistics-section .card-title {
+    color: #D4AF37 !important;
+    /* Gold for numbers/headings */
+    font-weight: 700 !important;
+    font-size: 1.75rem !important;
+}
+
+div.grid.grid-cols-1.sm\:grid-cols-2.lg\:grid-cols-4 p,
+div.grid.grid-cols-1.sm\:grid-cols-2.lg\:grid-cols-4 .glass-card-content,
+section.statistics-section .card p,
+section.statistics-section .card-content {
+    color: white !important;
+}

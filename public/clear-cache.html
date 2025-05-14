@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Cache Clearing Page</title>
+    <script>
+        // Force cache clear and reload
+        function clearCacheAndReload() {
+            // Clear application cache
+            if (window.applicationCache) {
+                window.applicationCache.swapCache();
+            }
+
+            // Clear localStorage for this domain
+            try {
+                // Clear all storage
+                localStorage.clear();
+
+                // Specifically target transaction form data
+                localStorage.removeItem('transactionFormDraft');
+                localStorage.removeItem('documentsValidated');
+                localStorage.removeItem('resetDialogOpen');
+
+                console.log("localStorage cleared");
+            } catch (e) {
+                console.error("localStorage clear failed", e);
+            }
+
+            // Clear sessionStorage for this domain
+            try {
+                sessionStorage.clear();
+                console.log("sessionStorage cleared");
+            } catch (e) {
+                console.error("sessionStorage clear failed", e);
+            }
+
+            // Request clearing of browser cache by using a version parameter
+            const clearCacheUrl = window.location.origin + '/?forceCacheClear=' + new Date().getTime();
+
+            // Force reload from server
+            window.location.href = clearCacheUrl;
+        }
+
+        // Run when page loads
+        window.onload = function() {
+            // Auto-clear after 2 seconds
+            setTimeout(clearCacheAndReload, 2000);
+        };
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f7f7f7;
+            flex-direction: column;
+            text-align: center;
+        }
+        
+        .container {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 90%;
+        }
+        
+        h1 {
+            color: #333;
+            margin-top: 0;
+        }
+        
+        p {
+            color: #666;
+            line-height: 1.5;
+        }
+        
+        button {
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+        
+        button:hover {
+            background-color: #3a7bc8;
+        }
+        
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border-left-color: #4a90e2;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Clearing Cache</h1>
+        <p>Your browser cache is being cleared and the application will reload in a moment.</p>
+        <p>This will ensure you're viewing the latest version of the website.</p>
+        <div class="spinner"></div>
+        <p>If you're not redirected automatically, please click the button below:</p>
+        <button onclick="clearCacheAndReload()">Clear Cache and Reload</button>
+    </div>
+</body>
+
+</html>

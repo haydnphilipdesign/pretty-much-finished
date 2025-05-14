@@ -1,0 +1,64 @@
+{
+    "version": 2,
+    "builds": [{
+            "src": "server/api/*.js",
+            "use": "@vercel/node"
+        },
+        {
+            "src": "src/pages/api/*.ts",
+            "use": "@vercel/node"
+        },
+        {
+            "src": "package.json",
+            "use": "@vercel/static-build",
+            "config": {
+                "distDir": "build"
+            }
+        }
+    ],
+    "routes": [{
+            "src": "/api/test-email",
+            "dest": "/src/pages/api/test-email.ts"
+        },
+        {
+            "src": "/api/test-pdf",
+            "dest": "/src/pages/api/test-pdf.ts"
+        },
+        {
+            "src": "/api/generateCoverSheet",
+            "dest": "/server/api/generateCoverSheet.js"
+        },
+        {
+            "src": "/api/sendEmail",
+            "dest": "/server/api/sendEmail.js"
+        },
+        {
+            "src": "/api/(.*)",
+            "dest": "/server/api/$1.js"
+        },
+        {
+            "src": "^/static/(.*)",
+            "dest": "/build/static/$1"
+        },
+        {
+            "src": "^/assets/(.*)",
+            "dest": "/build/assets/$1"
+        },
+        {
+            "src": "^/favicon.ico",
+            "dest": "/build/favicon.ico"
+        },
+        {
+            "src": "^/manifest.json",
+            "dest": "/build/manifest.json"
+        },
+        {
+            "src": "^/robots.txt",
+            "dest": "/build/robots.txt"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/build/index.html"
+        }
+    ]
+}

@@ -1,0 +1,58 @@
+﻿| Field Id              | Field Name                        | Field Type             | Table Name   | Table Id            |
+|-----------------------|-----------------------------------|------------------------|--------------|---------------------|
+| fld6O2FgIXQU5G27o     | MLS Number                        | singleLineText         | Transactions | tblHyCJCpQSgjn0md   |
+| fldypnfnHhplWYcCW     | Address                           | singleLineText         | Transactions | tblHyCJCpQSgjn0md   |
+| fldV2eLxz6w0TpLFU     | Property Status                   | singleSelect           | Transactions | tblHyCJCpQSgjn0md   |
+| fldhHjBZJISmnP8SK     | Sale Price                        | currency               | Transactions | tblHyCJCpQSgjn0md   |
+| fldMplTcAn8Fl4NX8     | Transaction Status                | singleSelect           | Transactions | tblHyCJCpQSgjn0md   |
+| fldExdgBDgdB1i9jy     | Winterized                        | checkbox               | Transactions | tblHyCJCpQSgjn0md   |
+| fldw3GlfvKtyNfIAW     | Update MLS                        | checkbox               | Transactions | tblHyCJCpQSgjn0md   |
+| fldwx7zlKIGGIAxfq     | Commission Base                   | singleSelect           | Transactions | tblHyCJCpQSgjn0md   |
+| fldTvXx96Na0zRh6W     | Sellers Assist                    | currency               | Transactions | tblHyCJCpQSgjn0md   |
+| fldsOqVJDGYKUjD8L     | Total Commission                  | currency               | Transactions | tblHyCJCpQSgjn0md   |
+| fldE8INzEorBtx2uN     | Total Commission Percentage       | number                 | Transactions | tblHyCJCpQSgjn0md   |
+| fldNXNV9Yx2LwJPhN     | Fixed Commission Amount           | currency               | Transactions | tblHyCJCpQSgjn0md   |
+| flduuQQT7o6XAGlRe     | Listing Agent Percentage          | number                 | Transactions | tblHyCJCpQSgjn0md   |
+| fld5KRrToAAt5kOLd     | Buyer’s Agent Percentage          | number                 | Transactions | tblHyCJCpQSgjn0md   |
+| flddRltdGj05Clzpa     | Buyer Paid Percentage             | number                 | Transactions | tblHyCJCpQSgjn0md   |
+| fldLVyXkhqppQ7WpC     | Referral                          | checkbox               | Transactions | tblHyCJCpQSgjn0md   |
+| fldzVtmn8uylVxuTF     | Referral Party                    | singleLineText         | Transactions | tblHyCJCpQSgjn0md   |
+| fldewmjoaJVwiMF46     | Referral Fee                      | number                 | Transactions | tblHyCJCpQSgjn0md   |
+| fldDWN8jU4kdCffzu     | Special Instructions              | richText               | Transactions | tblHyCJCpQSgjn0md   |
+| fldgW16aPdFMdspO6     | Urgent Issues                     | richText               | Transactions | tblHyCJCpQSgjn0md   |
+| fld30htJ7euVerCLW     | Additional Information            | richText               | Transactions | tblHyCJCpQSgjn0md   |
+| fldIG7LFmo1Sro6Oz     | Requires Follow Up                | checkbox               | Transactions | tblHyCJCpQSgjn0md   |
+| fldmPyBwuOO1dgj1g     | Clients                           | multipleRecordLinks    | Transactions | tblHyCJCpQSgjn0md   |
+| fldFD4xHD0vxnSOHJ     | Agent Name                        | singleLineText         | Transactions | tblHyCJCpQSgjn0md   |
+| fldSSndzSwwzeLSph     | Date Submitted                    | date                   | Transactions | tblHyCJCpQSgjn0md   |
+| fldgBdQYZLx6IRdSn     | Terms Accepted                    | checkbox               | Transactions | tblHyCJCpQSgjn0md   |
+| fldlFelkiiGDrSCqe     | Info Confirmed                    | checkbox               | Transactions | tblHyCJCpQSgjn0md   |
+| fldkprQrXSuN7CYeA     | Tasks                             | multipleRecordLinks    | Transactions | tblHyCJCpQSgjn0md   |
+| fldQT0vtCDQ8WDAjA     | Reports (Transaction Progress)    | multipleRecordLinks    | Transactions | tblHyCJCpQSgjn0md   |
+| fldqq2KzTLzVjUPf8     | Reports (Commission Details)      | multipleRecordLinks    | Transactions | tblHyCJCpQSgjn0md   |
+| fld0An8waRWm0CO3a     | Views                             | singleLineText         | Transactions | tblHyCJCpQSgjn0md   |
+| fldFAX233JvBfTOKG     | Automations                       | singleLineText         | Transactions | tblHyCJCpQSgjn0md   |
+| fldXCUEudmBdS1W3q     | Reminders                         | multipleRecordLinks    | Transactions | tblHyCJCpQSgjn0md   |
+| flddPbEJRSgkGwqex     | Checklists                        | multipleRecordLinks    | Transactions | tblHyCJCpQSgjn0md   |
+| fldNIkOPi3mBJGNMZ     | Documents                         | multipleRecordLinks    | Transactions | tblHyCJCpQSgjn0md   |
+| fldeAgU8of89YQx1J     | Integrations                      | singleLineText         | Transactions | tblHyCJCpQSgjn0md   |
+| fld20VbKbWzdR4Sp7     | Broker EIN                        | singleLineText         | Transactions | tblHyCJCpQSgjn0md   |
+| fldOVyoxz38rWwAFy     | Agent Role                        | singleSelect           | Transactions | tblHyCJCpQSgjn0md   |
+| fldw79mq3CuOF9ksI     | End date                          | date                   | Transactions | tblHyCJCpQSgjn0md   |
+| fldzoxd0wLiLfVDwO     | Agents                            | singleLineText         | Transactions | tblHyCJCpQSgjn0md   |
+| fldTfF9mx2JGOPh2y     | Email (To)                        | formula                | Transactions | tblHyCJCpQSgjn0md   |
+| fldFjBa6Kc2p5Q4VB     | Email (CC)                        | formula                | Transactions | tblHyCJCpQSgjn0md   |
+| fldSqxNOZ9B5PgSab     | Client Name                       | singleLineText         | Clients      | tblvdy7T9Hv4SasdI   |
+| flddP6a8EG6qTJdIi     | Client Email                      | singleLineText         | Clients      | tblvdy7T9Hv4SasdI   |
+| fldBnh8W6iGW014yY     | Client Phone                      | singleLineText         | Clients      | tblvdy7T9Hv4SasdI   |
+| fldz1IpeR1256LhuC     | Client Address                    | singleLineText         | Clients      | tblvdy7T9Hv4SasdI   |
+| fldSY6vbE1zAhJZqd     | Client Type                       | singleSelect           | Clients      | tblvdy7T9Hv4SasdI   |
+| fldeK6mjSfxELU0MD     | Marital Status                    | singleSelect           | Clients      | tblvdy7T9Hv4SasdI   |
+| fldKzrdhld2YmPGLN     | Client Index                      | autoNumber             | Clients      | tblvdy7T9Hv4SasdI   |
+| fldYsIpMRHmvRjpUd     | Transactions                      | multipleRecordLinks    | Clients      | tblvdy7T9Hv4SasdI   |
+| fld9V6iCO99MQ1WiE     | Reports                           | multipleRecordLinks    | Clients      | tblvdy7T9Hv4SasdI   |
+| fld6a1Dg4PZ1Vz79V     | Views                             | singleLineText         | Clients      | tblvdy7T9Hv4SasdI   |
+| fldTfOSCBrN5Z8zpS     | Automations                       | singleLineText         | Clients      | tblvdy7T9Hv4SasdI   |
+| fldf2NiyrfTUqpf1R     | Reminders                         | multipleRecordLinks    | Clients      | tblvdy7T9Hv4SasdI   |
+| fldYIcr5GE2KVoltR     | Checklists                        | multipleRecordLinks    | Clients      | tblvdy7T9Hv4SasdI   |
+

@@ -1,0 +1,234 @@
+/**
+ * Enhanced Glass Card System - May 2025
+ * 
+ * This file contains the styling for the enhanced glass card components
+ * with improved visual appearance, text contrast, and accessibility.
+ */
+
+
+/* Glass card base styles */
+
+.glass-card-base {
+    @apply backdrop-blur-md rounded-xl p-6 relative;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1), 0 3px 15px -3px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+
+/* Glass card variants */
+
+.glass-card {
+    @apply glass-card-base bg-white/80 border border-white/30 text-gray-900;
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1), 0 3px 15px -3px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.2) inset;
+}
+
+.glass-card-navy {
+    @apply glass-card-base bg-blue-900/80 border border-blue-800/50 text-white;
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.15), 0 3px 15px -3px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(59, 130, 246, 0.2) inset;
+}
+
+.glass-card-blue {
+    @apply glass-card-base bg-blue-700/80 border border-blue-600/50 text-white;
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.15), 0 3px 15px -3px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(59, 130, 246, 0.2) inset;
+}
+
+.glass-card-dark {
+    @apply glass-card-base bg-gray-900/80 border border-gray-800/50 text-white;
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.15), 0 3px 15px -3px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(75, 85, 99, 0.2) inset;
+}
+
+.glass-card-gold {
+    @apply glass-card-base bg-amber-400/90 border border-amber-300/50 text-gray-900;
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1), 0 3px 15px -3px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(251, 191, 36, 0.4) inset;
+}
+
+.glass-card-white {
+    @apply glass-card-base bg-white/95 border border-white/50 text-gray-900;
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1), 0 3px 15px -3px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+}
+
+.glass-card-frost {
+    @apply glass-card-base bg-blue-50/95 border border-blue-100/50 text-gray-900;
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1), 0 3px 15px -3px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(219, 234, 254, 0.5) inset;
+}
+
+.glass-card-light {
+    @apply glass-card-base bg-gray-800/80 border border-gray-700/50 text-white;
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.15), 0 3px 15px -3px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(75, 85, 99, 0.2) inset;
+}
+
+
+/* Glass card hover effects */
+
+.glass-card:hover,
+.glass-card-navy:hover,
+.glass-card-blue:hover,
+.glass-card-dark:hover,
+.glass-card-gold:hover,
+.glass-card-white:hover,
+.glass-card-frost:hover,
+.glass-card-light:hover {
+    @apply transform -translate-y-1;
+    box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.15), 0 5px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Special glass card for login */
+
+.glass-card-login {
+    @apply glass-card-base bg-white/95 border border-white/50 text-gray-900;
+    box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.1), 0 5px 15px -3px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+}
+
+.glass-card-login:hover {
+    @apply transform -translate-y-1;
+    box-shadow: 0 20px 35px -5px rgba(0, 0, 0, 0.12), 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.6) inset;
+}
+
+
+/* Glass card for home page hero sections */
+
+.hero-glass-card {
+    @apply glass-card-base bg-blue-900/75 border border-blue-800/50 text-white;
+    box-shadow: 0 20px 35px -5px rgba(0, 0, 0, 0.15), 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(59, 130, 246, 0.2) inset;
+}
+
+.hero-glass-card:hover {
+    @apply transform -translate-y-1;
+    box-shadow: 0 25px 40px -5px rgba(0, 0, 0, 0.2), 0 12px 18px -3px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(59, 130, 246, 0.3) inset;
+}
+
+
+/* ========== Utility Helpers ========== */
+
+
+/* Opacity control classes */
+
+.glass-opacity-light {
+    opacity: 0.7 !important;
+}
+
+.glass-opacity-medium {
+    opacity: 0.85 !important;
+}
+
+.glass-opacity-heavy {
+    opacity: 0.95 !important;
+}
+
+
+/* ========== Context-specific adaptations ========== */
+
+
+/* Adjust for hero sections */
+
+[data-hero-component="true"] .glass-card,
+[data-hero-component="true"] .glass-card-navy,
+[data-hero-component="true"] .glass-card-blue {
+    @apply bg-opacity-90;
+}
+
+
+/* Prevent conflicts with other UI components */
+
+.ReactModal__Content .glass-card,
+.dialog-content .glass-card,
+.modal-content .glass-card {
+    @apply shadow-none;
+}
+
+
+/* ========== Ensure paragraph styling is consistent ========== */
+
+.glass-card p,
+.glass-card-white p,
+.glass-card-frost p {
+    @apply text-gray-700 mb-4 last:mb-0;
+}
+
+.glass-card-navy p,
+.glass-card-blue p,
+.glass-card-dark p,
+.glass-card-gold p,
+.glass-card-light p {
+    @apply text-white/90 mb-4 last:mb-0;
+}
+
+
+/* Ensure links have proper hover states */
+
+.glass-card a:not(.btn),
+.glass-card-white a:not(.btn),
+.glass-card-frost a:not(.btn) {
+    @apply text-blue-600 hover:text-blue-800 underline;
+}
+
+.glass-card-navy a:not(.btn),
+.glass-card-blue a:not(.btn),
+.glass-card-dark a:not(.btn),
+.glass-card-light a:not(.btn) {
+    @apply text-blue-200 hover:text-white underline;
+}
+
+.glass-card-gold a:not(.btn) {
+    @apply text-blue-900 hover:text-gray-900 underline;
+}
+
+
+/* ========== Accessibility Enhancements ========== */
+
+
+/* Focus states for interactive elements */
+
+.glass-card:focus-within,
+.glass-card-navy:focus-within,
+.glass-card-blue:focus-within,
+.glass-card-dark:focus-within,
+.glass-card-gold:focus-within,
+.glass-card-white:focus-within,
+.glass-card-frost:focus-within,
+.glass-card-light:focus-within {
+    @apply ring-2 ring-blue-400 ring-offset-2 ring-offset-white/10;
+    outline: none;
+}
+
+
+/* Card title helpers */
+
+.glass-card-title {
+    @apply text-xl font-bold mb-2;
+}
+
+.glass-card-subtitle {
+    @apply text-base font-medium mb-4 opacity-90;
+}
+
+.glass-card-content {
+    @apply text-base leading-relaxed;
+}
+
+
+/* ========== Form Element Fixes ========== */
+
+/* Make form elements opaque for better readability */
+input, select, textarea, button:not([class*="btn"]), .form-select, .form-input, .form-control {
+    background-color: white !important;
+    color: #111827 !important; /* text-gray-900 */
+    border: 1px solid #D1D5DB !important; /* border-gray-300 */
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+/* Dark-themed form elements if needed */
+.dark-theme input, .dark-theme select, .dark-theme textarea,
+.dark-content input, .dark-content select, .dark-content textarea,
+.bg-blue-900 input, .bg-blue-900 select, .bg-blue-900 textarea,
+.bg-gray-900 input, .bg-gray-900 select, .bg-gray-900 textarea,
+.glass-card-navy input, .glass-card-navy select, .glass-card-navy textarea,
+.glass-card-dark input, .glass-card-dark select, .glass-card-dark textarea {
+    background-color: #1F2937 !important; /* bg-gray-800 */
+    color: #FFFFFF !important;
+    border-color: #4B5563 !important; /* border-gray-600 */
+}

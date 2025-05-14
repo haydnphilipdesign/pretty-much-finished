@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debbie O'Brien - Transaction Coordinator</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #e0e0e0; /* Lighter background to see card */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px; /* Add padding for smaller screens */
+            box-sizing: border-box;
+        }
+
+        .business-card {
+            /* Removed fixed width, using max-width and aspect ratio */
+            max-width: 800px;
+            width: 100%;
+            aspect-ratio: 16 / 7; /* Approximate aspect ratio from image */
+            display: flex;
+            border-radius: 10px; /* Slightly rounded corners */
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            background-color: #ffffff; /* Fallback background */
+        }
+
+        .image-section {
+            flex-basis: 45%; /* Adjust width ratio */
+            position: relative;
+            overflow: hidden; /* Ensure image stays within bounds */
+        }
+
+        .profile-image {
+            display: block;
+            width: 100%;
+            height: 100%; /* Fill the section height */
+            object-fit: cover; /* Cover the area, cropping if needed */
+            object-position: center; /* Center the image */
+        }
+
+        .info-section {
+            flex-basis: 55%; /* Adjust width ratio */
+            display: flex;
+            flex-direction: column; /* Stack top and bottom sections */
+        }
+
+        .info-top {
+            background-color: #1a3d5c; /* Dark blue background */
+            color: #d4b886; /* Gold text color */
+            padding: 20px 30px;
+            flex-grow: 1; /* Allow top section to take available space */
+            display: flex;
+            align-items: center; /* Vertically center content */
+            justify-content: space-between; /* Space name and logo */
+            min-height: 50%; /* Ensure it takes at least half the height */
+            box-sizing: border-box;
+        }
+
+        .info-bottom {
+            background-color: #d4b886; /* Beige/gold background */
+            color: #1a3d5c; /* Dark blue text color */
+            padding: 20px 30px;
+            flex-shrink: 0; /* Prevent shrinking */
+            box-sizing: border-box;
+            /* Center content if needed, or adjust padding/margins */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Vertically center the contact info */
+        }
+
+        .name {
+            font-family: 'Dancing Script', cursive; /* Script font for name */
+            font-size: 3.8em; /* Adjusted size */
+            font-weight: 700;
+            margin: 0;
+            line-height: 1.1;
+            flex-grow: 1; /* Allow name to take space */
+        }
+
+        .logo-image {
+            width: 80px; /* Adjust logo size */
+            height: auto;
+            margin-left: 20px; /* Space between name and logo */
+            flex-shrink: 0; /* Prevent logo from shrinking */
+        }
+
+        /* Styles for the new contact info list */
+        .contact-info {
+            list-style: none;
+            padding: 0;
+            margin: 0; /* Reset margin */
+        }
+
+        .contact-info li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px; /* Adjusted space between items */
+            font-size: 0.95em; /* Slightly adjusted font size for more items */
+            color: #1a3d5c; /* Ensure text color */
+        }
+
+        .contact-info li:last-child {
+            margin-bottom: 0;
+        }
+
+        .contact-info i {
+            font-size: 1.2em; /* Adjusted icon size */
+            width: 28px; /* Adjusted width for icons */
+            text-align: center;
+            margin-right: 12px; /* Adjusted space between icon and text */
+            color: #1a3d5c; /* Icon color */
+            flex-shrink: 0; /* Prevent icons from shrinking */
+        }
+
+        /* Style for links in contact info */
+        .contact-info a {
+            color: #1a3d5c; /* Link text color */
+            text-decoration: none;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Remove styles for elements no longer present */
+        /* .title, .company, .quote no longer needed */
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .business-card {
+                flex-direction: column; /* Stack image and info */
+                aspect-ratio: auto; /* Remove fixed aspect ratio */
+                max-width: 450px; /* Limit width on mobile */
+            }
+
+            .image-section {
+                flex-basis: auto; /* Reset basis */
+                width: 100%;
+                height: 300px; /* Fixed height for image on mobile */
+            }
+
+            .info-section {
+                flex-basis: auto; /* Reset basis */
+                width: 100%;
+            }
+
+            .info-top {
+                padding: 15px 20px;
+                min-height: auto; /* Reset min-height */
+                flex-direction: column; /* Stack name and logo */
+                align-items: flex-start; /* Align items left */
+                text-align: left;
+            }
+
+            .name {
+                font-size: 2.8em; /* Adjust size */
+                margin-bottom: 10px; /* Space below name */
+            }
+
+            .logo-image {
+                width: 60px; /* Smaller logo */
+                margin-left: 0; /* Remove margin */
+                align-self: flex-end; /* Move logo to the right */
+            }
+
+            .info-bottom {
+                padding: 15px 20px; /* Adjusted padding */
+                text-align: left;
+                justify-content: flex-start; /* Align items to top on mobile */
+            }
+
+            .contact-info li {
+                font-size: 0.9em; /* Adjust font size */
+                margin-bottom: 6px; /* Adjust space */
+            }
+             .contact-info i {
+                font-size: 1.1em;
+                width: 25px;
+                margin-right: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .image-section {
+                height: 250px; /* Smaller image height */
+            }
+            .name {
+                font-size: 2.4em;
+            }
+            .logo-image {
+                width: 50px;
+            }
+             .contact-info li {
+                font-size: 0.85em; /* Further adjust font size */
+                 margin-bottom: 5px; /* Adjust space */
+            }
+             .contact-info i {
+                font-size: 1em; /* Adjust icon size */
+                 width: 22px; /* Adjust icon width */
+                 margin-right: 8px; /* Adjust space */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="business-card">
+        <div class="image-section">
+            <img src="https://parealestatesupport.com/optimized/debbie.jpg" alt="Debbie O'Brien" class="profile-image">
+        </div>
+        <div class="info-section">
+            <div class="info-top">
+                <h1 class="name">Debbie O'Brien</h1>
+                <img src="https://parealestatesupport.com/logo-sm.png" alt="Company Logo" class="logo-image">
+            </div>
+            <div class="info-bottom">
+                <ul class="contact-info">
+                    <!-- Added Working Hours -->
+                    <li><i class="fas fa-clock"></i> Monday–Friday, 9:00AM–5:00PM</li>
+                    <!-- Existing Office Phone -->
+                    <li><i class="fas fa-phone-alt"></i> Office: 570.588.4637</li>
+                    <!-- Added Appointments Phone -->
+                    <li><i class="fas fa-calendar-check"></i> Appts: 800.746.9464</li>
+                    <!-- Existing Email -->
+                    <li><i class="fas fa-envelope"></i> <a href="mailto:debbie@parealestatesupport.com">debbie@parealestatesupport.com</a></li>
+                    <!-- Existing Website -->
+                    <li><i class="fas fa-globe"></i> <a href="https://parealestatesupport.com" target="_blank">parealestatesupport.com</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html> 

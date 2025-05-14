@@ -1,0 +1,227 @@
+/**
+ * Text Contrast Fixes
+ * This file contains fixes for text contrast issues across the site
+ */
+
+
+/* Ensure text has proper contrast against its background */
+
+.glass-card-blue h3 {
+    color: #ffffff !important;
+}
+
+.glass-card-blue p {
+    color: #eff6ff !important;
+    /* text-blue-50 equivalent */
+}
+
+.glass-card-white h3 {
+    color: #0066CC !important;
+    /* brand-blue */
+}
+
+.glass-card-white p {
+    color: #374151 !important;
+    /* text-gray-700 equivalent */
+}
+
+.glass-card-navy h3,
+.glass-card-navy h2 {
+    color: #ffffff !important;
+}
+
+.glass-card-navy p {
+    color: #eff6ff !important;
+    /* text-blue-50 equivalent */
+}
+
+
+/* Fix for footer text contrast */
+
+footer p,
+footer a:not(.btn) {
+    color: #374151 !important;
+    /* text-gray-700 equivalent */
+}
+
+
+/* Fix for light background sections */
+
+.bg-gray-50 h2,
+.bg-gray-50 h3,
+.bg-gray-100 h2,
+.bg-gray-100 h3 {
+    color: #111827 !important;
+    /* text-gray-900 equivalent */
+}
+
+.bg-gray-50 p,
+.bg-gray-100 p {
+    color: #374151 !important;
+    /* text-gray-700 equivalent */
+}
+
+
+/* Fix for blue background sections */
+
+.bg-brand-blue h2,
+.bg-brand-blue h3,
+.bg-gradient-to-br.from-brand-blue h2,
+.bg-gradient-to-br.from-brand-blue h3,
+.bg-blue-gradient h2,
+.bg-blue-gradient h3,
+.bg-navy-gradient h2,
+.bg-navy-gradient h3 {
+    color: #ffffff !important;
+}
+
+.bg-brand-blue p,
+.bg-gradient-to-br.from-brand-blue p,
+.bg-blue-gradient p,
+.bg-navy-gradient p {
+    color: #eff6ff !important;
+    /* text-blue-50 equivalent */
+}
+
+
+/* Special case for feature cards */
+
+.feature-card h3 {
+    color: #0066CC !important;
+    /* brand-blue */
+}
+
+.feature-card p {
+    color: #374151 !important;
+    /* text-gray-700 equivalent */
+}
+
+
+/* Hero sections need special treatment */
+
+[data-hero-component="true"] h1,
+[data-hero-component="true"] h2 {
+    color: #ffffff !important;
+}
+
+[data-hero-component="true"] p {
+    color: #eff6ff !important;
+    /* text-blue-50 equivalent */
+}
+
+
+/* Fix for navigation items in blue headers */
+
+.bg-brand-blue nav a,
+.bg-blue-gradient nav a,
+.bg-navy-gradient nav a {
+    color: #ffffff !important;
+}
+
+.bg-brand-blue nav a:hover,
+.bg-blue-gradient nav a:hover,
+.bg-navy-gradient nav a:hover {
+    color: #FFB81C !important;
+    /* brand-gold */
+}
+
+
+/* Fix for the tagline and text elements in dark backgrounds */
+
+.header-tagline,
+.dark-bg-text,
+.brand-blue-bg-text {
+    color: #ffffff !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4) !important;
+    font-weight: 500 !important;
+}
+
+
+/* Fix for buttons on all backgrounds */
+
+.btn-primary {
+    background-color: #0066CC !important;
+    /* brand-blue */
+    color: #ffffff !important;
+}
+
+.btn-primary:hover {
+    background-color: rgba(0, 102, 204, 0.9) !important;
+    /* brand-blue/90 */
+}
+
+.btn-secondary {
+    background-color: #FFB81C !important;
+    /* brand-gold */
+    color: #0066CC !important;
+    /* brand-blue */
+}
+
+.btn-secondary:hover {
+    background-color: rgba(255, 184, 28, 0.9) !important;
+    /* brand-gold/90 */
+}
+
+
+/* Fix for text in hero callout section */
+
+.hero-card p,
+.hero-subheadline {
+    color: #eff6ff !important;
+    /* text-blue-50 equivalent */
+}
+
+
+/* Fix for Quick Links section text */
+
+#quick-links a,
+#services a,
+#legal a {
+    color: #374151 !important;
+    /* text-gray-700 equivalent */
+}
+
+#quick-links a:hover,
+#services a:hover,
+#legal a:hover {
+    color: #FFB81C !important;
+    /* brand-gold */
+}
+
+
+/* Fix for philosophy tagline */
+
+.text-brand-blue {
+    color: #0066CC !important;
+    /* brand-blue */
+}
+
+
+/* Fix for contact information */
+
+.contact-info a,
+.contact-info p {
+    color: #374151 !important;
+    /* text-gray-700 equivalent */
+}
+
+
+/* Fix for scrolling button */
+
+.scroll-btn {
+    background-color: #ffffff !important;
+    color: #0066CC !important;
+    /* brand-blue */
+}
+
+
+/* Fix for Agent Portal button */
+
+a[href*="Agent Portal"] {
+    background-color: #FFB81C !important;
+    /* brand-gold */
+    color: #0066CC !important;
+    /* brand-blue */
+    font-weight: 600 !important;
+    /* semibold */
+}

@@ -1,0 +1,131 @@
+/* Refactored Glass Card Styles - Temporarily Minimal */
+
+
+/* Intentionally leaving this minimal to ensure build stability. */
+
+
+/* We will re-add styles carefully. */
+
+.glass-card-placeholder {
+    @apply p-6 border border-dashed border-gray-300 text-gray-500;
+    /* A simple placeholder style */
+}
+
+
+/* Refactored Glass Card Styles */
+
+
+/* Base for common properties - applied to all glass card variants */
+
+.glass-card-base-properties {
+    @apply relative p-6 rounded-2xl transition-all duration-300 ease-linear transform;
+    /* Using Tailwind's 'transform' utility enables GPU acceleration and is a good base. */
+    /* Specific transforms like '-translate-y-1' or 'scale-105' will be on hover states. */
+}
+
+
+/* === Variant 1: For use on DARK background sections === */
+
+
+/* Card appearance: Light/frosted. Text content within card: Light (e.g., white). */
+
+.glass-card-frosted-on-dark {
+    @apply glass-card-base-properties bg-white/25 backdrop-blur-lg border border-white/20 text-white;
+    /* Upped opacity slightly to bg-white/25 from /20 for a bit more presence. Adjust as needed. */
+    /* backdrop-blur-lg is 16px. */
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1), 0 3px 15px -3px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.2) inset, 0 5px 15px -3px rgba(255, 255, 255, 0.15) inset;
+}
+
+.glass-card-frosted-on-dark:hover {
+    @apply -translate-y-1;
+    /* Subtle lift effect */
+    /* Consider adding a scale effect too if desired: @apply -translate-y-1 scale-[1.02]; */
+    box-shadow: 0 15px 40px -5px rgba(0, 0, 0, 0.12), 0 5px 20px -5px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.5) inset, 0 7px 20px -3px rgba(255, 255, 255, 0.3) inset;
+}
+
+
+/* === Variant 2: For use on LIGHT background sections === */
+
+
+/* Card appearance: Subtle dark tint. Text content within card: Dark (e.g., text-gray-800). */
+
+.glass-card-tinted-on-light {
+    @apply glass-card-base-properties bg-gray-900/10 backdrop-blur-lg border border-black/10 text-gray-800;
+    /* A subtle shadow suitable for light backgrounds. */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03), 0 0 0 1px rgba(0, 0, 0, 0.05) inset;
+}
+
+.glass-card-tinted-on-light:hover {
+    @apply -translate-y-1;
+    /* Subtle lift effect */
+    /* Slightly enhance tint and shadow on hover for feedback. */
+    background-color: rgba(0, 0, 0, 0.08);
+    /* Example: Tailwind equivalent would be bg-black/8 */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -2px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(0, 0, 0, 0.07) inset;
+}
+
+
+/* === Optional Variant 3: Prominent Dark Glass Card === */
+
+
+/* For use on medium-light backgrounds or when a stronger dark glass look is desired. */
+
+
+/*
+.glass-card-dark-accent {
+    @apply glass-card-base-properties bg-slate-800/75 backdrop-blur-lg border border-white/15 text-white;
+    box-shadow: 0 10px 25px -5px rgba(0,0,0,0.2), 0 5px 10px -5px rgba(0,0,0,0.15);
+}
+
+.glass-card-dark-accent:hover {
+    @apply -translate-y-1 bg-slate-800/85; // Or just use @apply hover:bg-slate-800/85
+    box-shadow: 0 15px 30px -5px rgba(0,0,0,0.25), 0 8px 15px -5px rgba(0,0,0,0.2);
+}
+*/
+
+
+/* --- Content Styling for Glass Cards --- */
+
+
+/* These classes are intended for elements *inside* the glass cards. */
+
+
+/* They will inherit their base color from the parent card variant. */
+
+.glass-card-title {
+    @apply text-xl font-bold mb-3;
+}
+
+.glass-card-subtitle {
+    @apply text-sm mb-4 opacity-80;
+    /* Consider adjusting opacity or using a lighter shade of the parent's text color. */
+    /* e.g., for .glass-card-frosted-on-dark, subtitle could be text-slate-100 opacity-100 */
+    /* e.g., for .glass-card-tinted-on-light, subtitle could be text-gray-600 opacity-100 */
+}
+
+.glass-card-content {
+    @apply text-base;
+}
+
+
+/* You might not need these specific overrides if the parent card's text color is sufficient. */
+
+
+/* Example: Ensuring title in frosted card is explicitly white (if not already by inheritance) */
+
+
+/*
+.glass-card-frosted-on-dark .glass-card-title {
+    @apply text-white; 
+}
+*/
+
+
+/* Example: Ensuring title in tinted card is explicitly dark (if not already by inheritance) */
+
+
+/*
+.glass-card-tinted-on-light .glass-card-title {
+    @apply text-gray-900;
+}
+*/

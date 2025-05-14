@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utility Information Sheet</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+         :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --success-color: #2ecc71;
+            --warning-color: #f39c12;
+            --border-radius: 8px;
+            --box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        @page {
+            size: landscape;
+            margin: 0.25in;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            line-height: 1.4;
+            color: var(--dark-color);
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f7fa;
+        }
+        
+        #utility-form {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--secondary-color);
+            position: relative;
+        }
+        
+        .header:before {
+            content: '📋';
+            font-size: 24px;
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        h1 {
+            font-size: 24pt;
+            color: var(--primary-color);
+            margin: 0 0 5px 0;
+            font-weight: 600;
+        }
+        
+        .header p {
+            margin: 0;
+            font-size: 12pt;
+            color: var(--secondary-color);
+        }
+        
+        .instructions {
+            font-size: 10pt;
+            color: #666;
+            margin: 15px 0;
+            padding: 10px;
+            background-color: var(--light-color);
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--secondary-color);
+        }
+        
+        h2 {
+            font-size: 12pt;
+            color: var(--primary-color);
+            margin: 0 0 10px 0;
+            padding: 0 0 5px 0;
+            border-bottom: 2px solid var(--secondary-color);
+            font-weight: 500;
+        }
+        
+        .section {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            border: 1px solid #ddd;
+            background-color: white;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+        
+        .section:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        label {
+            display: block;
+            margin: 8px 0;
+            font-size: 10pt;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            transition: var(--transition);
+        }
+        
+        label:hover {
+            color: var(--secondary-color);
+        }
+        
+        input[type="text"],
+        input[type="date"],
+        select {
+            width: 100%;
+            max-width: 200px;
+            padding: 8px 10px;
+            margin: 3px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 10pt;
+            transition: var(--transition);
+        }
+        
+        input[type="text"]:focus,
+        input[type="date"]:focus,
+        select:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+        }
+        
+        input[type="checkbox"] {
+            margin: 0 8px 0 0;
+            transform: scale(1.2);
+            vertical-align: middle;
+            accent-color: var(--secondary-color);
+        }
+        
+        .cost-field {
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px dashed #ddd;
+            font-size: 10pt;
+            font-weight: 500;
+        }
+        
+        .cost-field input[type="text"] {
+            width: 80px;
+            text-align: right;
+            font-weight: bold;
+        }
+        
+        .property-address {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            background-color: var(--light-color);
+            border: 1px solid #ddd;
+        }
+        
+        .property-address input[type="text"] {
+            width: 100%;
+            max-width: 500px;
+            font-weight: 500;
+        }
+        
+        .signature-section {
+            margin-top: 20px;
+            border-top: 2px solid var(--secondary-color);
+            padding-top: 15px;
+        }
+        
+        .footer {
+            margin-top: 20px;
+            padding-top: 10px;
+            border-top: 1px solid #ddd;
+            font-size: 8pt;
+            color: #888;
+            text-align: center;
+        }
+        
+        .columns {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .column {
+            flex: 1;
+        }
+        
+        .utility-group {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .utility-group .section {
+            flex: 1;
+            margin-bottom: 0;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            justify-content: center;
+        }
+        
+        .action-button {
+            padding: 10px 15px;
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-size: 10pt;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: var(--transition);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .action-button:hover {
+            background-color: #dfe6e9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .submit-button {
+            padding: 12px 25px;
+            background-color: var(--success-color);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-size: 12pt;
+            font-weight: 500;
+            margin-top: 20px;
+            transition: var(--transition);
+            box-shadow: var(--box-shadow);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            justify-content: center;
+        }
+        
+        .submit-button:hover {
+            background-color: #27ae60;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(46, 204, 113, 0.3);
+        }
+        
+        .form-actions {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .transaction-link {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            background-color: #e3f2fd;
+            border: 1px solid #bbdefb;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .transaction-link select {
+            margin-left: 10px;
+            padding: 8px;
+            font-size: 10pt;
+            flex: 1;
+            max-width: 300px;
+        }
+        
+        .date-fields {
+            display: flex;
+            gap: 10px;
+            margin-top: 5px;
+            font-size: 9pt;
+        }
+        
+        .date-fields input[type="date"] {
+            width: 130px;
+            font-size: 9pt;
+        }
+        
+        .account-field {
+            margin-top: 5px;
+            font-size: 9pt;
+            padding: 5px 0;
+            border-top: 1px dotted #ddd;
+            border-bottom: 1px dotted #ddd;
+        }
+        /* Utility section specific styling */
+        
+        .section[data-utility="electric"] {
+            border-left: 4px solid #3498db;
+        }
+        
+        .section[data-utility="gas"] {
+            border-left: 4px solid #e74c3c;
+        }
+        
+        .section[data-utility="water"] {
+            border-left: 4px solid #3498db;
+        }
+        
+        .section[data-utility="sewer"] {
+            border-left: 4px solid #8e44ad;
+        }
+        
+        .section[data-utility="trash"] {
+            border-left: 4px solid #2ecc71;
+        }
+        
+        .section[data-utility="cable"] {
+            border-left: 4px solid #f39c12;
+        }
+        
+        .section[data-utility="phone"] {
+            border-left: 4px solid #9b59b6;
+        }
+        
+        .section[data-utility="hoa"] {
+            border-left: 4px solid #1abc9c;
+        }
+        
+        .section[data-utility="alarm"] {
+            border-left: 4px solid #e74c3c;
+        }
+        
+        .section[data-utility="additional"] {
+            border-left: 4px solid #9b59b6;
+        }
+        /* Service Cards Styling */
+        
+        .service-cards {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .service-card {
+            flex: 1;
+            min-width: 250px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            background-color: white;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+        
+        .service-card-header {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 10px 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .service-card-header i {
+            font-size: 18px;
+        }
+        
+        .service-card-header h3 {
+            margin: 0;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .service-card-body {
+            padding: 15px;
+        }
+        
+        .service-card:nth-child(1) .service-card-header {
+            background-color: #27ae60;
+        }
+        
+        .service-card:nth-child(2) .service-card-header {
+            background-color: #3498db;
+        }
+        
+        .service-card:nth-child(3) .service-card-header {
+            background-color: #9b59b6;
+        }
+        
+        .error-message {
+            color: var(--accent-color);
+            font-size: 9pt;
+            margin-top: 2px;
+            font-weight: 500;
+        }
+        
+        @media screen and (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            #utility-form {
+                padding: 15px;
+            }
+            .columns {
+                flex-direction: column;
+            }
+            .utility-group {
+                flex-direction: column;
+            }
+            input[type="text"] {
+                width: 100%;
+                max-width: 100%;
+            }
+            .property-address input[type="text"] {
+                width: 100%;
+                max-width: 100%;
+            }
+            .signature-section div {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .action-buttons {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .header:before {
+                display: none;
+            }
+            h1 {
+                font-size: 18pt;
+            }
+            .header p {
+                font-size: 10pt;
+            }
+        }
+        
+        @media print {
+            body {
+                margin: 0;
+                padding: 0;
+                font-size: 9pt;
+                background-color: white;
+            }
+            #utility-form {
+                box-shadow: none;
+                max-width: none;
+                padding: 0;
+            }
+            .section {
+                page-break-inside: avoid;
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+            input[type="text"],
+            input[type="date"] {
+                border: 1px solid #999;
+                background-color: #fff;
+            }
+            .instructions,
+            .action-buttons,
+            .form-actions,
+            .transaction-link {
+                display: none;
+            }
+            .header:before {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <form id="utility-form">
+        <div class="header">
+            <h1><i class="fas fa-clipboard-list"></i> Utility Information Sheet</h1>
+            <p>For Home Sellers and Buyers</p>
+        </div>
+
+        <div class="instructions">
+            <i class="fas fa-info-circle"></i> <strong>Sellers:</strong> Complete with accurate utility information to help new homeowners. Include account numbers, contact info, and costs.
+            <br><i class="fas fa-home"></i> <strong>Buyers:</strong> Use this to set up your utility accounts before moving in.
+        </div>
+
+        <div class="action-buttons">
+            <button type="button" id="print-button" class="action-button"><i class="fas fa-print"></i> Print</button>
+            <button type="button" id="save-pdf-button" class="action-button"><i class="fas fa-file-pdf"></i> Save as PDF</button>
+            <button type="button" id="clear-form-button" class="action-button"><i class="fas fa-trash-alt"></i> Clear Form</button>
+        </div>
+
+        <div class="property-address">
+            <label><strong><i class="fas fa-map-marker-alt"></i> Property Address:</strong> <input type="text" name="property_address" placeholder="Enter full property address"></label>
+        </div>
+
+        <div class="transaction-link">
+            <i class="fas fa-link"></i>
+            <label>
+                <input type="checkbox" name="link_to_transaction"> Link to Transaction
+            </label>
+            <select name="transaction_id" disabled>
+                <option value="">Select Transaction</option>
+                <!-- This would be populated dynamically -->
+            </select>
+        </div>
+
+        <div class="columns">
+            <div class="column">
+                <div class="utility-group">
+                    <div class="section" data-utility="electric">
+                        <h2><i class="fas fa-bolt"></i> Electric</h2>
+                        <label><input type="checkbox" name="electric_meted"> Met-ED (800-545-7741)</label>
+                        <label><input type="checkbox" name="electric_ppl"> PP&L (800-342-5775)</label>
+                        <label><input type="checkbox" name="electric_other_cb"> Other <input type="text" name="electric_other"></label>
+                        <div class="account-field">
+                            Account #: <input type="text" name="electric_account" placeholder="Account number">
+                        </div>
+                        <div class="date-fields">
+                            <label>Start: <input type="date" name="electric_start_date"></label>
+                            <label>End: <input type="date" name="electric_end_date"></label>
+                        </div>
+                        <div class="cost-field">
+                            Monthly: $ <input type="text" name="electric_cost">
+                        </div>
+                    </div>
+                    <div class="section" data-utility="gas">
+                        <h2><i class="fas fa-fire"></i> Gas / Oil / Propane</h2>
+                        <label><input type="checkbox" name="propane_suburban"> Suburban Propane (610-759-0474)</label>
+                        <label><input type="checkbox" name="propane_ugi"> UGI (610-866-0951)</label>
+                        <label><input type="checkbox" name="propane_lehigh"> Lehigh Fuels (610-266-8990)</label>
+                        <label><input type="checkbox" name="propane_reimer"> Reimer Bros (610-863-4105)</label>
+                        <label><input type="checkbox" name="propane_lessig"> Lessig Oil + Propane (610-863-3835)</label>
+                        <label><input type="checkbox" name="propane_amerigas"> AmeriGas (570-424-5901)</label>
+                        <label><input type="checkbox" name="propane_tolinos"> Tolinos (610-588-3338)</label>
+                        <label><input type="checkbox" name="propane_fuelcell"> Fuel Cell (610-759-0143)</label>
+                        <label><input type="checkbox" name="propane_fritch"> Fritch (610-691-1212)</label>
+                        <label><input type="checkbox" name="propane_reichenbach"> Reichenbach (610-434-7234)</label>
+                        <label><input type="checkbox" name="propane_other_cb"> Other <input type="text" name="propane_other"></label>
+                        <div class="account-field">
+                            Account #: <input type="text" name="propane_account" placeholder="Account number">
+                        </div>
+                        <div class="date-fields">
+                            <label>Start: <input type="date" name="propane_start_date"></label>
+                            <label>End: <input type="date" name="propane_end_date"></label>
+                        </div>
+                        <div class="cost-field">
+                            Monthly: $ <input type="text" name="propane_cost">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="utility-group">
+                    <div class="section" data-utility="water">
+                        <h2><i class="fas fa-tint"></i> Water</h2>
+                        <label><input type="checkbox" name="water_american"> PA American Water Company (800-565-7292)</label>
+                        <label><input type="checkbox" name="water_easton"> Easton Suburban Water Comp (610-258-7181)</label>
+                        <label><input type="checkbox" name="water_municipality"> Municipality</label>
+                        <label><input type="checkbox" name="water_other_cb"> Other <input type="text" name="water_other"></label>
+                        <label><input type="checkbox" name="water_well"> On Site Well</label>
+                        <div class="account-field">
+                            Account #: <input type="text" name="water_account" placeholder="Account number">
+                        </div>
+                        <div class="date-fields">
+                            <label>Start: <input type="date" name="water_start_date"></label>
+                            <label>End: <input type="date" name="water_end_date"></label>
+                        </div>
+                        <div class="cost-field">
+                            Quarterly: $ <input type="text" name="water_cost">
+                        </div>
+                    </div>
+                    <div class="section" data-utility="sewer">
+                        <h2><i class="fas fa-water"></i> Sewer</h2>
+                        <label><input type="checkbox" name="sewer_northampton"> Northampton County Court House (610-559-3000)</label>
+                        <label><input type="checkbox" name="sewer_lehigh"> Lehigh County Authority (610-398-1444)</label>
+                        <label><input type="checkbox" name="sewer_municipality"> Municipality</label>
+                        <label><input type="checkbox" name="sewer_other_cb"> Other <input type="text" name="sewer_other"></label>
+                        <label><input type="checkbox" name="sewer_septic"> On-Site Septic</label>
+                        <div class="account-field">
+                            Account #: <input type="text" name="sewer_account" placeholder="Account number">
+                        </div>
+                        <div class="date-fields">
+                            <label>Start: <input type="date" name="sewer_start_date"></label>
+                            <label>End: <input type="date" name="sewer_end_date"></label>
+                        </div>
+                        <div class="cost-field">
+                            Quarterly: $ <input type="text" name="sewer_cost">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section" data-utility="trash">
+                    <h2><i class="fas fa-trash"></i> Trash</h2>
+                    <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                        <div style="flex: 1;">
+                            <label><input type="checkbox" name="trash_allied"> Allied Waste Services (215-723-0400)</label>
+                            <label><input type="checkbox" name="trash_mascaro"> Mascaro Sanitation (800-333-4624)</label>
+                            <label><input type="checkbox" name="trash_mcauliffe"> McAuliffe (610-767-3152)</label>
+                            <label><input type="checkbox" name="trash_reiss"> Reiss Brothers (610-432-7574)</label>
+                            <label><input type="checkbox" name="trash_township"> Township</label>
+                        </div>
+                        <div style="flex: 1;">
+                            <label><input type="checkbox" name="trash_waste_mgmt"> Waste Management (800-621-2100)</label>
+                            <label><input type="checkbox" name="trash_strohls"> Strohl's (610-837-9929)</label>
+                            <label><input type="checkbox" name="trash_swint"> Swint (610-253-8535)</label>
+                            <label><input type="checkbox" name="trash_other_cb"> Other <input type="text" name="trash_other"></label>
+                        </div>
+                    </div>
+                    <div class="account-field">
+                        Account #: <input type="text" name="trash_account" placeholder="Account number">
+                    </div>
+                    <div class="date-fields">
+                        <label>Start: <input type="date" name="trash_start_date"></label>
+                        <label>End: <input type="date" name="trash_end_date"></label>
+                    </div>
+                    <div class="cost-field">
+                        Monthly: $ <input type="text" name="trash_cost">
+                    </div>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="utility-group">
+                    <div class="section" data-utility="cable">
+                        <h2><i class="fas fa-tv"></i> Cable TV</h2>
+                        <label><input type="checkbox" name="cable_blue_ridge"> Blue Ridge Cable (570-421-0780)</label>
+                        <label><input type="checkbox" name="cable_direct_tv"> Direct TV (888-679-8671)</label>
+                        <label><input type="checkbox" name="cable_dish"> Dish Network (610-381-6315)</label>
+                        <label><input type="checkbox" name="cable_rcn"> RCN (800-746-4726)</label>
+                        <label><input type="checkbox" name="cable_service_electric"> Service Electric (800-232-9100)</label>
+                        <label><input type="checkbox" name="cable_other_cb"> Other <input type="text" name="cable_other"></label>
+                        <div class="account-field">
+                            Account #: <input type="text" name="cable_account" placeholder="Account number">
+                        </div>
+                        <div class="date-fields">
+                            <label>Start: <input type="date" name="cable_start_date"></label>
+                            <label>End: <input type="date" name="cable_end_date"></label>
+                        </div>
+                        <div class="cost-field">
+                            Monthly: $ <input type="text" name="cable_cost">
+                        </div>
+                    </div>
+                    <div class="section" data-utility="phone">
+                        <h2><i class="fas fa-wifi"></i> Internet/Phone</h2>
+                        <label><input type="checkbox" name="phone_rcn"> RCN (800-746-4726)</label>
+                        <label><input type="checkbox" name="phone_service_electric"> Service Electric (610-841-4100)</label>
+                        <label><input type="checkbox" name="phone_verizon"> Verizon (800-660-2215)</label>
+                        <label><input type="checkbox" name="phone_blue_ridge"> Blue Ridge Cable (570-421-0780)</label>
+                        <label><input type="checkbox" name="phone_att"> AT&T (800-222-0300)</label>
+                        <label><input type="checkbox" name="phone_other_cb"> Other <input type="text" name="phone_other"></label>
+                        <div class="account-field">
+                            Account #: <input type="text" name="phone_account" placeholder="Account number">
+                        </div>
+                        <div class="date-fields">
+                            <label>Start: <input type="date" name="phone_start_date"></label>
+                            <label>End: <input type="date" name="phone_end_date"></label>
+                        </div>
+                        <div class="cost-field">
+                            Monthly: $ <input type="text" name="phone_cost">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="utility-group">
+                    <div class="section" data-utility="hoa">
+                        <h2><i class="fas fa-building"></i> HOA</h2>
+                        <label>Company: <input type="text" name="hoa_company"></label>
+                        <label>Phone: <input type="text" name="hoa_phone"></label>
+                        <label>Website: <input type="text" name="hoa_website"></label>
+                        <div class="date-fields">
+                            <label>Start: <input type="date" name="hoa_start_date"></label>
+                        </div>
+                        <div class="cost-field">
+                            Dues: $ <input type="text" name="hoa_dues">
+                            <select name="hoa_dues_frequency" style="font-size: 8pt;">
+                                <option value="monthly">Monthly</option>
+                                <option value="quarterly">Quarterly</option>
+                                <option value="yearly">Yearly</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="section" data-utility="alarm">
+                        <h2><i class="fas fa-bell"></i> Alarm</h2>
+                        <label><input type="checkbox" name="alarm_adt"> ADT (888-281-1765)</label>
+                        <label><input type="checkbox" name="alarm_fox"> Fox Brothers Alarm (610-252-7880)</label>
+                        <label><input type="checkbox" name="alarm_other_cb"> Other <input type="text" name="alarm_other"></label>
+                        <label><input type="checkbox" name="alarm_na"> N/A</label>
+                        <div class="account-field">
+                            Account #: <input type="text" name="alarm_account" placeholder="Account number">
+                        </div>
+                        <div class="date-fields">
+                            <label>Start: <input type="date" name="alarm_start_date"></label>
+                            <label>End: <input type="date" name="alarm_end_date"></label>
+                        </div>
+                        <div class="cost-field">
+                            Monthly: $ <input type="text" name="alarm_cost">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section" data-utility="additional">
+                    <h2><i class="fas fa-plus-circle"></i> Additional Services</h2>
+                    <div class="additional-services">
+                        <div class="service-cards">
+                            <div class="service-card">
+                                <div class="service-card-header">
+                                    <i class="fas fa-leaf"></i>
+                                    <h3>Lawn Care</h3>
+                                </div>
+                                <div class="service-card-body">
+                                    <label>Company: <input type="text" name="lawn_company"></label>
+                                    <label>Phone: <input type="text" name="lawn_phone"></label>
+                                    <label>Website: <input type="text" name="lawn_website"></label>
+                                    <div class="date-fields">
+                                        <label>Start: <input type="date" name="lawn_start_date"></label>
+                                    </div>
+                                    <div class="cost-field">
+                                        <label>Monthly: $ <input type="text" name="lawn_cost"></label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="service-card">
+                                <div class="service-card-header">
+                                    <i class="fas fa-swimming-pool"></i>
+                                    <h3>Pool Care</h3>
+                                </div>
+                                <div class="service-card-body">
+                                    <label>Company: <input type="text" name="pool_company"></label>
+                                    <label>Phone: <input type="text" name="pool_phone"></label>
+                                    <label>Website: <input type="text" name="pool_website"></label>
+                                    <div class="date-fields">
+                                        <label>Start: <input type="date" name="pool_start_date"></label>
+                                    </div>
+                                    <div class="cost-field">
+                                        <label>Monthly: $ <input type="text" name="pool_cost"></label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="service-card">
+                                <div class="service-card-header">
+                                    <i class="fas fa-snowflake"></i>
+                                    <h3>Snow Removal</h3>
+                                </div>
+                                <div class="service-card-body">
+                                    <label>Company: <input type="text" name="snow_company"></label>
+                                    <label>Phone: <input type="text" name="snow_phone"></label>
+                                    <label>Website: <input type="text" name="snow_website"></label>
+                                    <div class="date-fields">
+                                        <label>Start: <input type="date" name="snow_start_date"></label>
+                                    </div>
+                                    <div class="cost-field">
+                                        <label>Monthly: $ <input type="text" name="snow_cost"></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="signature-section">
+            <div style="display: flex; gap: 20px;">
+                <label><i class="fas fa-user"></i> Completed By: <input type="text" name="completed_by" placeholder="Full name"></label>
+                <label><i class="fas fa-calendar-alt"></i> Date: <input type="date" name="date" style="width: 150px;"></label>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><i class="fas fa-info-circle"></i> This document is provided for informational purposes only. Please verify all information with utility providers.</p>
+            <p>Last Updated:
+                <script>
+                    document.write(new Date().toLocaleDateString())
+                </script>
+            </p>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" id="submit-button" class="submit-button"><i class="fas fa-save"></i> Save Utility Information</button>
+        </div>
+    </form>
+
+    <script>
+        // Form submission handling
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('utility-form');
+
+            // Form validation function
+            const validateForm = () => {
+                let isValid = true;
+                const requiredFields = [{
+                    name: 'property_address',
+                    label: 'Property Address'
+                }];
+
+                // Clear previous error messages
+                document.querySelectorAll('.error-message').forEach(el => el.remove());
+
+                // Reset input styles
+                document.querySelectorAll('input').forEach(input => {
+                    input.style.borderColor = '';
+                });
+
+                // Check required fields
+                requiredFields.forEach(field => {
+                    const input = document.querySelector(`[name="${field.name}"]`);
+                    if (input && !input.value.trim()) {
+                        isValid = false;
+                        const errorMsg = document.createElement('div');
+                        errorMsg.className = 'error-message';
+                        errorMsg.textContent = `${field.label} is required`;
+                        errorMsg.style.color = 'red';
+                        errorMsg.style.fontSize = '8pt';
+                        input.parentNode.appendChild(errorMsg);
+                        input.style.borderColor = 'red';
+                    }
+                });
+
+                return isValid;
+            };
+
+            form.addEventListener('submit', async(e) => {
+                e.preventDefault();
+
+                // Validate form before submission
+                if (!validateForm()) {
+                    return;
+                }
+
+                const formData = new FormData(form);
+                try {
+                    // This would be replaced with an actual API endpoint
+                    alert('Form submitted successfully! (API endpoint would be implemented in production)');
+                    localStorage.setItem('utility-form-submitted', 'true');
+                } catch (error) {
+                    console.error('Error submitting form:', error);
+                    alert('Error saving utility information. Please try again.');
+                }
+            });
+
+            // Print button functionality
+            document.getElementById('print-button').addEventListener('click', () => {
+                window.print();
+            });
+
+            // Save as PDF button (simulated)
+            document.getElementById('save-pdf-button').addEventListener('click', () => {
+                alert('PDF generation would be implemented in production. For now, you can use the Print function and save as PDF.');
+            });
+
+            // Clear form button
+            document.getElementById('clear-form-button').addEventListener('click', () => {
+                if (confirm('Are you sure you want to clear all form data?')) {
+                    form.reset();
+                    localStorage.removeItem('utility-form-data');
+                    alert('Form data cleared.');
+                }
+            });
+
+            // Auto-save functionality
+            let autoSaveTimeout;
+
+            const autoSave = () => {
+                clearTimeout(autoSaveTimeout);
+                autoSaveTimeout = setTimeout(() => {
+                    const formData = new FormData(form);
+                    const formDataObj = {};
+
+                    formData.forEach((value, key) => {
+                        formDataObj[key] = value;
+                    });
+
+                    localStorage.setItem('utility-form-data', JSON.stringify(formDataObj));
+                    console.log('Form auto-saved at', new Date().toLocaleTimeString());
+                }, 2000);
+            };
+
+            // Add event listeners to all form inputs
+            document.querySelectorAll('#utility-form input, #utility-form select').forEach(input => {
+                input.addEventListener('input', autoSave);
+                input.addEventListener('change', autoSave);
+            });
+
+            // Load saved data on page load
+            const savedData = localStorage.getItem('utility-form-data');
+            if (savedData) {
+                try {
+                    const data = JSON.parse(savedData);
+                    Object.entries(data).forEach(([name, value]) => {
+                        const input = document.querySelector(`[name="${name}"]`);
+                        if (input) {
+                            if (input.type === 'checkbox') {
+                                input.checked = value === 'true';
+                            } else {
+                                input.value = value;
+                            }
+                        }
+                    });
+                    console.log('Loaded saved form data');
+                } catch (error) {
+                    console.error('Error loading saved form data:', error);
+                }
+            }
+
+            // Enable/disable transaction selection based on checkbox
+            document.querySelector('[name="link_to_transaction"]').addEventListener('change', function() {
+                document.querySelector('[name="transaction_id"]').disabled = !this.checked;
+            });
+        });
+    </script>
+</body>
+
+</html>

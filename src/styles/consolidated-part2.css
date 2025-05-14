@@ -1,0 +1,442 @@
+/**
+ * Consolidated CSS Part 2
+ * Continuation of the consolidated CSS file
+ */
+
+
+/* ===== HEADER AND NAVIGATION ===== */
+
+
+/* Header styles */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    transition: all 0.3s ease;
+}
+
+
+/* Header states */
+
+header.transparent {
+    background-color: rgba(15, 28, 46, 0.2);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+header.scrolled {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Navigation link styling - transparent header */
+
+header.transparent nav a {
+    color: white !important;
+    font-weight: 500;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease;
+}
+
+header.transparent nav a:hover,
+header.transparent nav a:focus {
+    color: #FFB81C !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+header.transparent nav a.active {
+    color: #FFB81C !important;
+    font-weight: 600;
+}
+
+
+/* Navigation link styling - scrolled header */
+
+header.scrolled nav a {
+    color: #0F1C2E !important;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+header.scrolled nav a:hover,
+header.scrolled nav a:focus {
+    color: #0066CC !important;
+}
+
+header.scrolled nav a.active {
+    color: #0066CC !important;
+    font-weight: 600;
+}
+
+
+/* Mobile navigation */
+
+.mobile-nav {
+    background-color: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.mobile-nav a {
+    color: #0F1C2E !important;
+    font-weight: 500;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+}
+
+.mobile-nav a:hover,
+.mobile-nav a:focus {
+    background-color: rgba(0, 102, 204, 0.1);
+    color: #0066CC !important;
+}
+
+.mobile-nav a.active {
+    background-color: #0066CC;
+    color: white !important;
+}
+
+
+/* ===== FOOTER STYLES ===== */
+
+footer {
+    background-color: #F3F4F6;
+    color: #374151;
+    padding: 3rem 0;
+}
+
+footer h3 {
+    color: #0066CC !important;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+footer p,
+footer a:not(.btn) {
+    color: #374151 !important;
+}
+
+footer a:not(.btn):hover {
+    color: #0066CC !important;
+}
+
+
+/* ===== SECTION SPECIFIC STYLES ===== */
+
+
+/* Blue sections */
+
+.bg-brand-blue h2,
+.bg-brand-blue h3,
+.bg-gradient-to-br.from-brand-blue h2,
+.bg-gradient-to-br.from-brand-blue h3,
+.bg-blue-gradient h2,
+.bg-blue-gradient h3,
+.bg-navy-gradient h2,
+.bg-navy-gradient h3 {
+    color: #ffffff !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.bg-brand-blue p,
+.bg-gradient-to-br.from-brand-blue p,
+.bg-blue-gradient p,
+.bg-navy-gradient p {
+    color: #eff6ff !important;
+}
+
+
+/* Light background sections */
+
+.bg-gray-50 h2,
+.bg-gray-50 h3,
+.bg-gray-100 h2,
+.bg-gray-100 h3 {
+    color: #111827 !important;
+}
+
+.bg-gray-50 p,
+.bg-gray-100 p {
+    color: #374151 !important;
+}
+
+
+/* Feature cards */
+
+.feature-card h3 {
+    color: #0066CC !important;
+}
+
+.feature-card p {
+    color: #374151 !important;
+}
+
+
+/* Statistics section */
+
+section[class*="Statistics"],
+div[class*="Statistics"],
+section.statistics-section {
+    background-color: #0F1C2E !important;
+    color: white !important;
+    position: relative !important;
+    z-index: 5 !important;
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+}
+
+section[class*="Statistics"] h2,
+div[class*="Statistics"] h2,
+section.statistics-section h2 {
+    color: #D4AF37 !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4) !important;
+    font-weight: 700 !important;
+}
+
+section[class*="Statistics"] p,
+div[class*="Statistics"] p,
+section.statistics-section p {
+    color: rgba(255, 255, 255, 0.95) !important;
+}
+
+
+/* Services section */
+
+section.py-24.md\:py-32.overflow-hidden,
+section.py-24.md\:py-32,
+div[class*="ServicesOverview"] {
+    background-color: #0066CC !important;
+    position: relative !important;
+    z-index: 1 !important;
+    color: white !important;
+}
+
+section.py-24.md\:py-32 h2,
+h2.text-4xl.md\:text-5xl.font-bold.text-white {
+    color: white !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+    font-weight: 700 !important;
+}
+
+section.py-24.md\:py-32 p,
+p.text-lg.text-white\/90 {
+    color: rgba(255, 255, 255, 0.95) !important;
+}
+
+
+/* ===== UTILITY CLASSES ===== */
+
+
+/* Text colors */
+
+.text-white {
+    color: #FFFFFF !important;
+}
+
+.text-brand-blue {
+    color: #0066CC !important;
+}
+
+.text-brand-gold {
+    color: #FFB81C !important;
+}
+
+.text-brand-navy {
+    color: #0F1C2E !important;
+}
+
+.text-gray-700 {
+    color: #374151 !important;
+}
+
+.text-gray-900 {
+    color: #111827 !important;
+}
+
+
+/* Background colors */
+
+.bg-white {
+    background-color: #FFFFFF !important;
+}
+
+.bg-brand-blue {
+    background-color: #0066CC !important;
+}
+
+.bg-brand-gold {
+    background-color: #FFB81C !important;
+}
+
+.bg-brand-navy {
+    background-color: #0F1C2E !important;
+}
+
+.bg-gray-50 {
+    background-color: #F9FAFB !important;
+}
+
+.bg-gray-100 {
+    background-color: #F3F4F6 !important;
+}
+
+
+/* Opacity utilities */
+
+.bg-opacity-70 {
+    --tw-bg-opacity: 0.7 !important;
+}
+
+.bg-opacity-85 {
+    --tw-bg-opacity: 0.85 !important;
+}
+
+.bg-opacity-95 {
+    --tw-bg-opacity: 0.95 !important;
+}
+
+
+/* Shadow utilities */
+
+.shadow-sm {
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
+}
+
+.shadow {
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06) !important;
+}
+
+.shadow-md {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+}
+
+.shadow-lg {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+}
+
+.shadow-xl {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+}
+
+
+/* Spacing utilities */
+
+.mt-0 {
+    margin-top: 0 !important;
+}
+
+.mb-0 {
+    margin-bottom: 0 !important;
+}
+
+.my-0 {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.pt-0 {
+    padding-top: 0 !important;
+}
+
+.pb-0 {
+    padding-bottom: 0 !important;
+}
+
+.py-0 {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+
+/* ===== RESPONSIVE FIXES ===== */
+
+@media (max-width: 640px) {
+    .glass-card,
+    .glass-card-blue,
+    .glass-card-navy,
+    .glass-card-white,
+    .glass-card-dark,
+    .glass-card-frost,
+    .glass-card-light,
+    .glass-card-gold {
+        padding: 1.25rem !important;
+    }
+    h1,
+    .hero-headline {
+        font-size: 2rem !important;
+    }
+    h2 {
+        font-size: 1.5rem !important;
+    }
+    .container {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+}
+
+
+/* ===== CRITICAL CONTRAST FIXES ===== */
+
+
+/* Ensure all text in glass cards has proper contrast */
+
+.glass-card-blue *,
+.glass-card-navy *,
+.glass-card-dark * {
+    color: white !important;
+}
+
+.glass-card-white *,
+.glass-card-frost * {
+    color: #1A1A1A !important;
+}
+
+.glass-card-white h2,
+.glass-card-white h3,
+.glass-card-frost h2,
+.glass-card-frost h3 {
+    color: #0066CC !important;
+}
+
+
+/* Fix for navigation links */
+
+header nav a {
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+
+/* Fix for hero text */
+
+[data-hero-component="true"] * {
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+
+/* Fix for buttons */
+
+.btn-primary,
+.btn-secondary,
+.btn-outline {
+    text-shadow: none !important;
+}
+
+
+/* Fix for footer */
+
+footer * {
+    text-shadow: none !important;
+}
+
+
+/* Fix for statistics section */
+
+.statistics-section .card * {
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}

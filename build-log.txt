@@ -1,0 +1,57 @@
+
+> pa-real-estate-support-services@1.0.0 build
+> vite build
+
+[36mvite v6.3.5 [32mbuilding for production...[36m[39m
+transforming...
+[32m✓[39m 363 modules transformed.
+
+✨ [vite-plugin-compression]:algorithm=gzip - compressed file successfully: 
+dist/C:/Users/haydn/OneDrive/Documents/Development/Web/PARESS_AGENT_PORTAL/pa-real-estate-support-services/assets/router-B9M9Y9Wt.js.gz                          19.57kb / gzip: 7.17kb
+dist/C:/Users/haydn/OneDrive/Documents/Development/Web/PARESS_AGENT_PORTAL/pa-real-estate-support-services/clear-cache.html.gz                                   4.05kb / gzip: 1.33kb
+dist/C:/Users/haydn/OneDrive/Documents/Development/Web/PARESS_AGENT_PORTAL/pa-real-estate-support-services/connect/index.html.gz                                 14.12kb / gzip: 3.72kb
+dist/C:/Users/haydn/OneDrive/Documents/Development/Web/PARESS_AGENT_PORTAL/pa-real-estate-support-services/connect/new.html.gz                                   1.64kb / gzip: 0.63kb
+dist/C:/Users/haydn/OneDrive/Documents/Development/Web/PARESS_AGENT_PORTAL/pa-real-estate-support-services/connect/styles.css.gz                                 7.29kb / gzip: 1.82kb
+dist/C:/Users/haydn/OneDrive/Documents/Development/Web/PARESS_AGENT_PORTAL/pa-real-estate-support-services/fix-images.html.gz                                    3.73kb / gzip: 1.28kb
+dist/C:/Users/haydn/OneDrive/Documents/Development/Web/PARESS_AGENT_PORTAL/pa-real-estate-support-services/connect/new_utilities.html.gz                         29.34kb / gzip: 3.31kb
+dist/C:/Users/haydn/OneDrive/Documents/Development/Web/PARESS_AGENT_PORTAL/pa-real-estate-support-services/connect/utility_information_sheet_corrected.html.gz   29.34kb / gzip: 3.51kb
+dist/C:/Users/haydn/OneDrive/Documents/Development/Web/PARESS_AGENT_PORTAL/pa-real-estate-support-services/index.html.gz                                         1.78kb / gzip: 0.79kb
+dist/C:/Users/haydn/OneDrive/Documents/Development/Web/PARESS_AGENT_PORTAL/pa-real-estate-support-services/debbie_signature_fixed.html.gz                        3.85kb / gzip: 1.21kb
+dist/C:/Users/haydn/OneDrive/Documents/Development/Web/PARESS_AGENT_PORTAL/pa-real-estate-support-services/outlook-signature-transparent-links.html.gz           2.78kb / gzip: 0.73kb
+dist/C:/Users/haydn/OneDrive/Documents/Development/Web/PARESS_AGENT_PORTAL/pa-real-estate-support-services/connect/utility_information_sheet_recreated.html.gz   3.09kb / gzip: 0.92kb
+dist/C:/Users/haydn/OneDrive/Documents/Development/Web/PARESS_AGENT_PORTAL/pa-real-estate-support-services/one-page-utility-sheet.html.gz                        20.39kb / gzip: 2.64kb
+dist/C:/Users/haydn/OneDrive/Documents/Development/Web/PARESS_AGENT_PORTAL/pa-real-estate-support-services/outlook-signature-updated.html.gz                     2.13kb / gzip: 0.80kb
+dist/C:/Users/haydn/OneDrive/Documents/Development/Web/PARESS_AGENT_PORTAL/pa-real-estate-support-services/connect/utility_sheet.html.gz                         38.35kb / gzip: 5.40kb
+dist/C:/Users/haydn/OneDrive/Documents/Development/Web/PARESS_AGENT_PORTAL/pa-real-estate-support-services/outlook-signature-overlay.html.gz                     4.30kb / gzip: 1.11kb
+dist/C:/Users/haydn/OneDrive/Documents/Development/Web/PARESS_AGENT_PORTAL/pa-real-estate-support-services/refresh.html.gz                                       3.02kb / gzip: 1.12kb
+dist/C:/Users/haydn/OneDrive/Documents/Development/Web/PARESS_AGENT_PORTAL/pa-real-estate-support-services/signature-with-links.html.gz                          1.97kb / gzip: 0.75kb
+dist/C:/Users/haydn/OneDrive/Documents/Development/Web/PARESS_AGENT_PORTAL/pa-real-estate-support-services/outlook-signature-with-links.html.gz                  1.82kb / gzip: 0.75kb
+dist/C:/Users/haydn/OneDrive/Documents/Development/Web/PARESS_AGENT_PORTAL/pa-real-estate-support-services/templates/transaction-email-template.html.gz          4.15kb / gzip: 1.08kb
+dist/C:/Users/haydn/OneDrive/Documents/Development/Web/PARESS_AGENT_PORTAL/pa-real-estate-support-services/templates/transaction-pdf-template.html.gz            10.47kb / gzip: 1.84kb
+dist/C:/Users/haydn/OneDrive/Documents/Development/Web/PARESS_AGENT_PORTAL/pa-real-estate-support-services/version.html.gz                                       3.21kb / gzip: 1.13kb
+dist/C:/Users/haydn/OneDrive/Documents/Development/Web/PARESS_AGENT_PORTAL/pa-real-estate-support-services/templates/DualAgent.html.gz                           60.99kb / gzip: 7.03kb
+dist/C:/Users/haydn/OneDrive/Documents/Development/Web/PARESS_AGENT_PORTAL/pa-real-estate-support-services/templates/Buyer.html.gz                               55.15kb / gzip: 6.81kb
+dist/C:/Users/haydn/OneDrive/Documents/Development/Web/PARESS_AGENT_PORTAL/pa-real-estate-support-services/templates/Seller.html.gz                              60.20kb / gzip: 7.27kb
+dist/C:/Users/haydn/OneDrive/Documents/Development/Web/PARESS_AGENT_PORTAL/pa-real-estate-support-services/assets/ui-DxDQBhsL.js.gz                              137.93kb / gzip: 43.61kb
+dist/C:/Users/haydn/OneDrive/Documents/Development/Web/PARESS_AGENT_PORTAL/pa-real-estate-support-services/assets/framer-DuMwfx6r.js.gz                          113.97kb / gzip: 36.47kb
+dist/C:/Users/haydn/OneDrive/Documents/Development/Web/PARESS_AGENT_PORTAL/pa-real-estate-support-services/assets/react-CJNAyH7A.js.gz                           136.51kb / gzip: 44.04kb
+dist/C:/Users/haydn/OneDrive/Documents/Development/Web/PARESS_AGENT_PORTAL/pa-real-estate-support-services/assets/index-CYeJNX9s.css.gz                          494.42kb / gzip: 49.11kb
+dist/C:/Users/haydn/OneDrive/Documents/Development/Web/PARESS_AGENT_PORTAL/pa-real-estate-support-services/assets/index-r0z7ZCfO.js.gz                           418.72kb / gzip: 100.98kb
+dist/C:/Users/haydn/OneDrive/Documents/Development/Web/PARESS_AGENT_PORTAL/pa-real-estate-support-services/assets/pdfService-Zgicac7U.js.gz                      416.37kb / gzip: 172.32kb
+dist/C:/Users/haydn/OneDrive/Documents/Development/Web/PARESS_AGENT_PORTAL/pa-real-estate-support-services/stats.html.gz                                         1455.55kb / gzip: 137.65kb
+
+
+✗ Build failed in 2.53s
+error during build:
+[vite:css] [postcss] C:\Users\haydn\OneDrive\Documents\Development\Web\PARESS_AGENT_PORTAL\pa-real-estate-support-services\src\styles_new\page-specific.css:139:5: The `focus:` class does not exist. If `focus:` is a custom class, make sure it is defined within a `@layer` directive.
+file: C:\Users\haydn\OneDrive\Documents\Development\Web\PARESS_AGENT_PORTAL\pa-real-estate-support-services\src\styles_new\page-specific.css:139:4 (C:/Users/haydn/OneDrive/Documents/Development/Web/PARESS_AGENT_PORTAL/pa-real-estate-support-services/src/index.css)
+    at Input.error (C:\Users\haydn\OneDrive\Documents\Development\Web\PARESS_AGENT_PORTAL\pa-real-estate-support-services\node_modules\postcss\lib\input.js:113:16)
+    at AtRule.error (C:\Users\haydn\OneDrive\Documents\Development\Web\PARESS_AGENT_PORTAL\pa-real-estate-support-services\node_modules\postcss\lib\node.js:149:32)
+    at processApply (C:\Users\haydn\OneDrive\Documents\Development\Web\PARESS_AGENT_PORTAL\pa-real-estate-support-services\node_modules\tailwindcss\lib\lib\expandApplyAtRules.js:380:29)
+    at C:\Users\haydn\OneDrive\Documents\Development\Web\PARESS_AGENT_PORTAL\pa-real-estate-support-services\node_modules\tailwindcss\lib\lib\expandApplyAtRules.js:551:9
+    at C:\Users\haydn\OneDrive\Documents\Development\Web\PARESS_AGENT_PORTAL\pa-real-estate-support-services\node_modules\tailwindcss\lib\processTailwindFeatures.js:55:50
+    at async plugins (C:\Users\haydn\OneDrive\Documents\Development\Web\PARESS_AGENT_PORTAL\pa-real-estate-support-services\node_modules\tailwindcss\lib\plugin.js:38:17)
+    at async LazyResult.runAsync (C:\Users\haydn\OneDrive\Documents\Development\Web\PARESS_AGENT_PORTAL\pa-real-estate-support-services\node_modules\postcss\lib\lazy-result.js:293:11)
+    at async runPostCSS (file:///C:/Users/haydn/OneDrive/Documents/Development/Web/PARESS_AGENT_PORTAL/pa-real-estate-support-services/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:43824:21)
+    at async compilePostCSS (file:///C:/Users/haydn/OneDrive/Documents/Development/Web/PARESS_AGENT_PORTAL/pa-real-estate-support-services/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:43794:18)
+    at async compileCSS (file:///C:/Users/haydn/OneDrive/Documents/Development/Web/PARESS_AGENT_PORTAL/pa-real-estate-support-services/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:43649:27)

@@ -1,0 +1,137 @@
+/* Responsive Utilities
+ * Utility classes for responsive integration between components
+ */
+
+/* Container responsive behavior */
+.transaction-container.mobile-container {
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+}
+
+.transaction-container.tablet-container {
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  padding: 1rem;
+}
+
+.transaction-container.desktop-container {
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+}
+
+/* Form component responsive behaviors */
+@media (max-width: 767px) {
+  /* Mobile specific adjustments */
+  .form-container {
+    margin-top: 0;
+  }
+  
+  .mobile-header {
+    border-bottom-width: 1px;
+    padding: 0.75rem 1rem;
+    height: 56px;
+  }
+  
+  .mobile-wizard {
+    padding: 0.75rem 1rem;
+    border-bottom-width: 1px;
+  }
+  
+  /* Component spacing for mobile */
+  .space-y-responsive {
+    margin-top: 1rem;
+    margin-bottom: 4rem; /* Allow space for mobile nav */
+  }
+  
+  /* Special case for mobile keyboards */
+  @media (max-height: 580px) {
+    .keyboard-open .mobile-nav-bar {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* Tablet specific adjustments */
+  .tablet-header {
+    padding: 1rem 1.5rem;
+  }
+  
+  .space-y-responsive {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* Desktop specific adjustments */
+  .desktop-header {
+    padding: 1.25rem 2rem;
+  }
+  
+  .desktop-wizard {
+    padding: 1.25rem 2rem;
+  }
+  
+  .space-y-responsive {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+/* Consistent visual integration across all components */
+.integration-shadow {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.integration-border {
+  border-color: var(--border-color, #e2e8f0);
+  border-style: solid;
+}
+
+.integration-border-bottom {
+  border-bottom: 1px solid var(--border-color, #e2e8f0);
+}
+
+.integration-border-top {
+  border-top: 1px solid var(--border-color, #e2e8f0);
+}
+
+/* Active/focused element to show integration */
+.integration-focus {
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+}
+
+/* Shared colors for visual integration */
+.integration-bg-primary {
+  background-color: var(--primary-color, #3b82f6);
+  color: white;
+}
+
+.integration-bg-secondary {
+  background-color: var(--secondary-color, #f8fafc);
+}
+
+/* Dark mode integration */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --border-color: #374151;
+    --primary-color: #3b82f6;
+    --secondary-color: #1f2937;
+  }
+  
+  .integration-border {
+    border-color: var(--border-color, #374151);
+  }
+  
+  .integration-bg-secondary {
+    background-color: var(--secondary-color, #1f2937);
+  }
+  
+  .integration-shadow {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  }
+}

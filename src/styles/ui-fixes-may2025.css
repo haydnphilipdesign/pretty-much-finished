@@ -1,0 +1,312 @@
+/**
+ * UI Fixes - May 2025
+ * Addressing specific UI contrast and consistency issues
+ */
+
+
+/* Fix "View All Services" button text contrast */
+
+a.group.inline-flex.items-center.gap-2.bg-white.backdrop-blur.text-brand-blue,
+a.group.inline-flex.items-center.gap-2.bg-white.backdrop-blur {
+    color: #0066CC !important;
+    /* Ensure text is dark blue against white background */
+    font-weight: 600 !important;
+}
+
+
+/* Fix the "Elevate Your Real Estate Business" heading contrast */
+
+.py-24.md\:py-32 .text-center.mb-16 h2,
+section.py-24.md\:py-32 h2.text-4xl.md\:text-5xl.font-bold.text-white,
+h2.text-4xl.md\:text-5xl.font-bold.text-white.mb-6 {
+    color: white !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+    /* Enhanced text shadow for better readability */
+    font-weight: 700 !important;
+}
+
+
+/* CRITICAL FIX: Elevate Your Real Estate Business text is same color as background */
+
+h1.text-4xl.md\:text-5xl.font-bold,
+h1.text-5xl.md\:text-6xl.font-bold,
+h2.text-4xl.md\:text-5xl.font-bold {
+    color: #0F1C2E !important;
+    /* Dark navy text color */
+    text-shadow: 0 2px 6px rgba(255, 255, 255, 0.7) !important;
+    /* White shadow for contrast */
+    font-weight: 700 !important;
+    letter-spacing: 0.5px !important;
+    /* Improve readability */
+}
+
+
+/* Make all service cards in the "Elevate Your Real Estate Business" section match */
+
+.grid.grid-cols-1.md\:grid-cols-2.lg\:grid-cols-4.gap-8 .glass-card-navy,
+.grid.grid-cols-1.md\:grid-cols-2.lg\:grid-cols-4.gap-8 .glass-card-blue,
+.grid.grid-cols-1.md\:grid-cols-2.lg\:grid-cols-4.gap-8 .glass-card-gold,
+.grid.grid-cols-1.md\:grid-cols-2.lg\:grid-cols-4.gap-8 .glass-card-dark {
+    background-color: rgba(15, 28, 46, 0.8) !important;
+    /* Same dark blue for all cards */
+    color: white !important;
+    border: none !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+
+/* Ensure consistent text color inside cards */
+
+.glass-card-navy .glass-card-title,
+.glass-card-blue .glass-card-title,
+.glass-card-gold .glass-card-title,
+.glass-card-dark .glass-card-title,
+.glass-card-navy .glass-card-content,
+.glass-card-blue .glass-card-content,
+.glass-card-gold .glass-card-content,
+.glass-card-dark .glass-card-content {
+    color: white !important;
+}
+
+
+/* Fix button text contrast across the site */
+
+.unified-button[variant="hero"],
+.unified-button.bg-white {
+    color: #0066CC !important;
+    /* Blue text on white background */
+}
+
+.unified-button:not([variant="hero"]):not(.bg-white),
+button.bg-brand-blue,
+a.bg-brand-blue,
+button.bg-brand-gold,
+a.bg-brand-gold {
+    color: white !important;
+    /* White text on colored backgrounds */
+}
+
+
+/* Fix contrast for card inner content */
+
+.glass-card p,
+.glass-card-navy p,
+.glass-card-blue p,
+.glass-card-gold p,
+.glass-card-dark p {
+    color: rgba(255, 255, 255, 0.95) !important;
+    /* Slightly brighter for better readability */
+}
+
+
+/* Fix: Remove white background behind "What Our Clients Say" heading */
+
+section[data-section="testimonials"] {
+    background: #EEF2F6 !important;
+    /* Light blue-gray background */
+}
+
+section[data-section="testimonials"] .text-center.mb-12 {
+    background: transparent !important;
+    /* Remove any background */
+}
+
+section[data-section="testimonials"] h2.text-3xl.md\:text-4xl.font-bold.text-brand-blue.mb-4,
+section.py-20.relative.overflow-hidden.max-w-full.bg-white h2.text-3xl.md\:text-4xl.font-bold.text-brand-blue.mb-4 {
+    background: transparent !important;
+    color: #0F1C2E !important;
+    font-weight: 700 !important;
+}
+
+section[data-section="testimonials"] p.text-lg.text-gray-600.max-w-2xl.mx-auto {
+    background: transparent !important;
+    color: #333333 !important;
+}
+
+
+/* Fix: Make all three cards match in the "Let's Transform Your Business" section */
+
+section .grid.grid-cols-1.md\:grid-cols-3.gap-8 .glass-card-navy,
+section .grid.grid-cols-1.md\:grid-cols-3.gap-8 .glass-card-blue,
+section .grid.grid-cols-1.md\:grid-cols-3.gap-8 .glass-card-frost {
+    background-color: #0066CC !important;
+    /* Consistent brand blue for all cards */
+    color: white !important;
+    border: none !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+
+/* Fix the text in frost cards to be white (previously it could be darker) */
+
+.glass-card-frost .text-sm.text-white\/80 p,
+.glass-card-frost p.glass-card-content.mb-4.font-medium {
+    color: white !important;
+}
+
+.glass-card-frost .text-sm.text-white\/80 p[class="text-gray-600"] {
+    color: white !important;
+    /* Override any gray text in frost cards */
+}
+
+
+/* Fix overall consistency */
+
+.card,
+.content-card {
+    background-color: #0066CC !important;
+    color: white !important;
+}
+
+
+/* Fix inconsistent text colors in Transform Your Business section */
+
+.text-gray-600,
+section .text-lg.text-gray-600.max-w-2xl.mx-auto {
+    color: #333333 !important;
+}
+
+
+/* Fix any remaining heading legibility issues */
+
+h1,
+h2 {
+    font-weight: 700 !important;
+}
+
+
+/* ADDITIONAL FIXES - MAY 2025 */
+
+
+/* Fix: Make "Ready to streamline your transactions?" text white */
+
+h2.glass-card-title.text-4xl.md\:text-5xl.text-center.mb-6 {
+    color: white !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4) !important;
+    font-weight: 700 !important;
+}
+
+
+/* Fix: Remove white background from "Let's Transform Your Business" section */
+
+section.py-24.relative.overflow-hidden.bg-white .text-center.mb-16 {
+    background: transparent !important;
+}
+
+section.py-24.relative.overflow-hidden.bg-white h2.text-3xl.md\:text-4xl.font-bold.text-brand-blue.mb-4 {
+    background: transparent !important;
+}
+
+section.py-24.relative.overflow-hidden.bg-white p.text-lg.text-gray-600.max-w-2xl.mx-auto {
+    background: transparent !important;
+}
+
+
+/* Ensure the background of the entire section is consistent */
+
+section.py-24.relative.overflow-hidden.bg-white {
+    background-color: #f5f7fa !important;
+    /* Light gray-blue background */
+}
+
+
+/* Set consistent background for the section */
+
+.absolute.inset-0.bg-gradient-to-br.from-gray-50.to-white {
+    background: #f5f7fa !important;
+    background-image: none !important;
+}
+
+
+/* Ensure subheadings in key sections have proper contrast */
+
+.text-center.mb-16 p,
+section.py-24.md\:py-32 p,
+div[class*="ServicesOverview"] p,
+div[class*="Statistics"] p,
+section.statistics-section p {
+    color: rgba(255, 255, 255, 0.95) !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+}
+
+
+/* Make headings stand out with proper text color */
+
+.text-center.mb-16 h2,
+section.py-24.md\:py-32 h2,
+div[class*="ServicesOverview"] h2,
+section.statistics-section h2:not(.text-\[\#FFB81C\]) {
+    color: white !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.35) !important;
+    font-weight: 700 !important;
+}
+
+
+/* Apply the new brand cream accent color throughout the site */
+
+.accent-element,
+.accent-color,
+.accent-text {
+    color: #e9c77b !important;
+}
+
+.accent-bg,
+.accent-background {
+    background-color: #e9c77b !important;
+}
+
+.accent-border {
+    border-color: #e9c77b !important;
+}
+
+
+/* Replace brand-gold with brand-cream in key accent locations */
+
+.glass-card-title .text-brand-gold,
+.glass-card-navy .text-brand-gold,
+.content-card .text-brand-gold,
+.statistics-section .text-[#FFB81C],
+span.text-brand-gold.font-bold,
+div.text-brand-gold.font-semibold {
+    color: #e9c77b !important;
+}
+
+
+/* Update icon containers that used gold to use cream */
+
+.bg-brand-gold/20,
+.bg-[rgba(255, 184, 28, 0.15)],
+div.w-12.h-12.bg-gradient-to-br.from-brand-gold\/20.to-brand-blue\/20 {
+    background-color: rgba(233, 199, 123, 0.2) !important;
+    background-image: none !important;
+}
+
+
+/* Update border colors using gold to use cream */
+
+.border-[rgba(255, 184, 28, 0.3)],
+.border-brand-gold,
+.border-brand-gold/30 {
+    border-color: rgba(233, 199, 123, 0.3) !important;
+}
+
+
+/* Update buttons using brand-gold to use cream */
+
+a.bg-brand-gold,
+button.bg-brand-gold,
+.bg-gradient-to-r.from-brand-gold {
+    background: #e9c77b !important;
+    background-image: none !important;
+}
+
+
+/* Make "let's get started" button use the new color */
+
+.glass-card-cta a,
+.glass-card-cta button,
+.glass-card-navy a.bg-white,
+a.inline-flex.items-center.gap-2.bg-white.rounded-xl {
+    border: 2px solid #e9c77b !important;
+    color: #0F1C2E !important;
+}

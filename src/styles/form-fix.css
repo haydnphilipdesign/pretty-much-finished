@@ -1,0 +1,87 @@
+/**
+ * Form Opacity Fix - May 2025
+ * 
+ * This file fixes transparency issues in form elements within glass cards
+ * by applying solid background colors and ensuring proper text contrast.
+ */
+
+/* Target all form elements in glass cards with !important to override any existing styles */
+.glass-card input,
+.glass-card-navy input,
+.glass-card-blue input,
+.glass-card-dark input,
+.glass-card-gold input,
+.glass-card-white input, 
+.glass-card-frost input,
+.glass-card-light input,
+.glass-card select,
+.glass-card-navy select,
+.glass-card-blue select,
+.glass-card-dark select,
+.glass-card-gold select,
+.glass-card-white select,
+.glass-card-frost select,
+.glass-card-light select,
+.glass-card textarea,
+.glass-card-navy textarea,
+.glass-card-blue textarea,
+.glass-card-dark textarea,
+.glass-card-gold textarea,
+.glass-card-white textarea,
+.glass-card-frost textarea,
+.glass-card-light textarea,
+/* Include button elements too */
+.glass-card button:not(.btn-primary):not(.btn-secondary),
+.glass-card-navy button:not(.btn-primary):not(.btn-secondary),
+.glass-card-blue button:not(.btn-primary):not(.btn-secondary),
+.glass-card-dark button:not(.btn-primary):not(.btn-secondary),
+.glass-card-gold button:not(.btn-primary):not(.btn-secondary),
+.glass-card-white button:not(.btn-primary):not(.btn-secondary),
+.glass-card-frost button:not(.btn-primary):not(.btn-secondary),
+.glass-card-light button:not(.btn-primary):not(.btn-secondary) {
+    background-color: #FFFFFF !important;
+    color: #111827 !important; /* text-gray-900 */
+    border: 1px solid #D1D5DB !important; /* border-gray-300 */
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+/* Dark inputs for dark cards */
+.dark-input input,
+.dark-input select,
+.dark-input textarea,
+.dark-input button:not(.btn-primary):not(.btn-secondary) {
+    background-color: #1F2937 !important; /* bg-gray-800 */
+    color: #FFFFFF !important;
+    border: 1px solid #4B5563 !important; /* border-gray-600 */
+}
+
+/* Style for focused inputs */
+.glass-card input:focus,
+.glass-card-navy input:focus,
+.glass-card-blue input:focus,
+.glass-card-dark input:focus,
+.glass-card-gold input:focus,
+.glass-card-white input:focus,
+.glass-card-frost input:focus,
+.glass-card-light input:focus,
+.glass-card select:focus,
+.glass-card-navy select:focus,
+.glass-card-blue select:focus,
+.glass-card-dark select:focus,
+.glass-card-gold select:focus,
+.glass-card-white select:focus,
+.glass-card-frost select:focus,
+.glass-card-light select:focus,
+.glass-card textarea:focus,
+.glass-card-navy textarea:focus,
+.glass-card-blue textarea:focus,
+.glass-card-dark textarea:focus,
+.glass-card-gold textarea:focus,
+.glass-card-white textarea:focus,
+.glass-card-frost textarea:focus,
+.glass-card-light textarea:focus {
+    outline: none !important;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5) !important; /* ring-2 ring-blue-500 */
+    border-color: #3B82F6 !important; /* border-blue-500 */
+}

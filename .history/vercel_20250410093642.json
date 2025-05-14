@@ -1,0 +1,43 @@
+{
+    "version": 2,
+    "builds": [{
+            "src": "server/api/*.js",
+            "use": "@vercel/node"
+        },
+        {
+            "src": "package.json",
+            "use": "@vercel/static-build",
+            "config": {
+                "distDir": "build"
+            }
+        }
+    ],
+    "routes": [{
+            "src": "/api/server-cover-sheet",
+            "dest": "server/api/generateCoverSheet.js"
+        },
+        {
+            "src": "/api/generateCoverSheet",
+            "dest": "src/pages/api/generateCoverSheet.js"
+        },
+        {
+            "src": "/api/server-send-email",
+            "dest": "server/api/sendEmail.js"
+        },
+        {
+            "src": "/api/sendEmail",
+            "dest": "src/pages/api/sendEmail.js"
+        },
+        {
+            "src": "/api/(.*)",
+            "dest": "server/api/$1.js"
+        },
+        {
+            "handle": "filesystem"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/index.html"
+        }
+    ]
+}

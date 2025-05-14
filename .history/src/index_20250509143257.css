@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Merriweather:wght@400;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles */
+
+@layer base {
+    body {
+        @apply text-brand-blue bg-white;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply text-brand-blue font-serif;
+    }
+    a {
+        @apply text-brand-blue hover: text-brand-gold transition-colors duration-300;
+    }
+     ::selection {
+        @apply bg-brand-gold/20 text-brand-blue;
+    }
+}
+
+
+/* Custom utility classes */
+
+@layer components {
+    .btn {
+        @apply inline-block px-8 py-3 font-semibold transition-all duration-300 relative overflow-hidden rounded-lg;
+    }
+    .btn-primary {
+        @apply bg-brand-blue text-white hover: bg-brand-blue/90 shadow-lg hover: shadow-xl;
+    }
+    .btn-secondary {
+        @apply bg-brand-gold text-brand-blue hover: bg-brand-gold/90 shadow-md hover: shadow-lg;
+    }
+    .btn-outline {
+        @apply bg-transparent text-brand-blue border-2 border-brand-blue hover: bg-brand-blue hover: text-white;
+    }
+    .input {
+        @apply w-full px-4 py-2 border-2 border-gray-200 rounded-lg focus: border-brand-gold focus: ring-2 focus: ring-brand-gold/20 focus: outline-none transition-all duration-300;
+    }
+    .card {
+        @apply bg-white rounded-xl shadow-lg p-6 transition-all duration-300 hover: shadow-xl;
+    }
+    .section {
+        @apply py-16 md: py-24;
+    }
+    .container {
+        @apply max-w-7xl mx-auto px-4 sm: px-6 lg: px-8;
+    }
+}
+
+
+/* Animations */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+/* Utility classes for animations */
+
+.animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-slide-up {
+    animation: slideUp 0.5s ease-out forwards;
+}
+
+.animate-scale-in {
+    animation: scaleIn 0.5s ease-out forwards;
+}
+
+
+/* Custom scrollbar */
+
+::-webkit-scrollbar {
+    @apply w-2;
+}
+
+::-webkit-scrollbar-track {
+    @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+    @apply bg-brand-blue/50 rounded-full hover: bg-brand-blue transition-colors duration-300;
+}
+
+
+/* Form styles */
+
+.form-group {
+    @apply mb-6;
+}
+
+.form-label {
+    @apply block text-sm font-semibold text-brand-blue mb-2;
+}
+
+.form-error {
+    @apply mt-1 text-sm text-brand-red;
+}
+
+
+/* Loading states */
+
+.loading {
+    @apply relative text-transparent !important;
+}
+
+.loading::after {
+    @apply absolute inset-0 bg-brand-blue/10 animate-pulse rounded;
+    content: "";
+}
+
+
+/* Focus styles */
+
+.focus-ring {
+    @apply focus: ring-2 focus: ring-brand-gold focus: ring-offset-2 focus: outline-none;
+}
+
+
+/* Page transition styles */
+
+.page-transitioning {
+    @apply overflow-hidden;
+}
+
+
+/* Ensure header is always transparent */
+
+.bg-transparent {
+    background-color: transparent !important;
+}
+
+
+/* Fix for hero section */
+
+[data-hero-component="true"] {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+
+/* Global beautiful styling classes */
+
+.hero-card {
+    @apply bg-white/10 p-6 rounded-2xl shadow-2xl border border-white/20 relative;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+}
+
+.hero-card-title {
+    @apply text-2xl font-bold text-center mb-6 text-white;
+}
+
+.hero-input {
+    @apply bg-white/10 backdrop-blur-sm border-white/20 focus: border-blue-400 text-white;
+}
+
+.hero-button {
+    @apply bg-blue-600 hover: bg-blue-700 text-white py-2 rounded-full transition-all duration-300;
+}
+
+.hero-badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm text-sm font-medium;
+}
+
+.hero-headline {
+    @apply text-4xl sm: text-5xl md: text-6xl font-bold mb-4 md: mb-6 leading-tight;
+}
+
+.hero-subheadline {
+    @apply text-xl md: text-2xl mb-6 md: mb-8 text-blue-100 font-light;
+}
+
+.content-section {
+    @apply py-16 px-4 sm: px-6 lg: px-8 max-w-7xl mx-auto;
+}
+
+.content-card {
+    @apply bg-white rounded-xl shadow-lg p-6 transition-all duration-300 hover: shadow-xl border border-gray-100;
+}
+
+.content-card-dark {
+    @apply bg-brand-blue/10 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover: shadow-xl border border-brand-blue/20;
+}

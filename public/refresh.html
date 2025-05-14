@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Hard Refresh</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        h1 {
+            color: #2563eb;
+        }
+        
+        .card {
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        button:hover {
+            background: #1d4ed8;
+        }
+        
+        .steps {
+            margin-top: 30px;
+        }
+        
+        .steps li {
+            margin-bottom: 10px;
+        }
+        
+        code {
+            background: #f1f5f9;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Cache Clearing Utility</h1>
+
+    <div class="card">
+        <h2>Your browser is displaying old content</h2>
+        <p>The website has been updated, but your browser is showing an older version from its cache.</p>
+        <p>Click the button below to perform a hard refresh and clear any stored form data:</p>
+        <button onclick="clearCacheAndData()">Clear Cache and Refresh</button>
+    </div>
+
+    <div class="steps">
+        <h3>If the button above doesn't work, try these manual steps:</h3>
+        <ol>
+            <li>For Windows: Press <code>Ctrl+F5</code> or <code>Ctrl+Shift+R</code></li>
+            <li>For Mac: Press <code>Cmd+Shift+R</code> or <code>Shift</code> while clicking the refresh button</li>
+            <li>Clear your browser cache from your browser settings</li>
+            <li>Try opening the site in a private/incognito window</li>
+        </ol>
+    </div>
+
+    <script>
+        function clearCacheAndData() {
+            // Clear localStorage
+            localStorage.clear();
+
+            // Clear sessionStorage
+            sessionStorage.clear();
+
+            // Force a hard refresh
+            window.location.href = "/?nocache=" + new Date().getTime();
+        }
+
+        // Also try to clear form-specific storage
+        try {
+            localStorage.removeItem('transactionFormDraft');
+            localStorage.removeItem('documentsValidated');
+            console.log("Form data cleared");
+        } catch (e) {
+            console.log("Error clearing form data:", e);
+        }
+    </script>
+</body>
+
+</html>

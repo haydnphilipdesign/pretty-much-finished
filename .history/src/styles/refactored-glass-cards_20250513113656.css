@@ -1,0 +1,54 @@
+/* Refactored Glass Card Styles */
+
+
+/* Base for common properties - can be extended or applied alongside variants */
+
+.glass-card-base-properties {
+    @apply relative p-6 rounded-2xl transition-all duration-300 ease-linear transform;
+    /* transform for translateZ(0) behavior, can be adjusted if causing issues */
+}
+
+
+/* Default Glass Card (from original glass-cards.css) */
+
+.glass-card-default {
+    @apply glass-card-base-properties bg-white/20 backdrop-blur-lg border border-white/20 text-white;
+    /* backdrop-blur-lg is 16px. Original was blur(16px) !important */
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1), 0 3px 15px -3px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.2) inset, 0 5px 15px -3px rgba(255, 255, 255, 0.15) inset;
+}
+
+.glass-card-default:hover {
+    @apply -translate-y-1;
+    box-shadow: 0 15px 40px -5px rgba(0, 0, 0, 0.12), 0 5px 20px -5px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.5) inset, 0 7px 20px -3px rgba(255, 255, 255, 0.3) inset;
+}
+
+
+/* We will add other refactored variants (navy, blue, dark, gold, frost, enhanced versions etc.) here based on your preference. */
+
+
+/* Content Styling for Glass Cards (can be generalized) */
+
+.glass-card-title {
+    @apply text-xl font-bold mb-3;
+    /* Default color will be inherited or set by variant */
+}
+
+.glass-card-subtitle {
+    @apply text-sm mb-4 opacity-80;
+    /* Default color will be inherited or set by variant */
+}
+
+.glass-card-content {
+    @apply text-base;
+    /* Default color will be inherited or set by variant */
+}
+
+
+/* Example: Specific text color for default card title if needed, though text-white on .glass-card-default should cover it */
+
+
+/*
+.glass-card-default .glass-card-title {
+    @apply text-white;
+}
+*/

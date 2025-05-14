@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utility Information Sheet</title>
+    <style>
+        @page {
+            size: landscape;
+            margin: 0.25in;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.1;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 5px;
+            padding-bottom: 3px;
+            border-bottom: 1px solid #999;
+        }
+        
+        h1 {
+            font-size: 14pt;
+            color: #333;
+            margin: 0 0 2px 0;
+        }
+        
+        .header p {
+            margin: 0;
+            font-size: 10pt;
+        }
+        
+        .instructions {
+            font-size: 8pt;
+            color: #666;
+            margin: 5px 0;
+            padding: 3px;
+        }
+        
+        h2 {
+            font-size: 10pt;
+            color: #333;
+            margin: 0;
+            padding: 0 0 2px 0;
+            border-bottom: 1px solid #ccc;
+        }
+        
+        .section {
+            margin-bottom: 5px;
+            padding: 3px;
+            border: 1px solid #ccc;
+        }
+        
+        label {
+            display: block;
+            margin: 1px 0;
+            font-size: 9pt;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        input[type="text"],
+        input[type="date"] {
+            width: 120px;
+            padding: 1px 2px;
+            margin-left: 2px;
+            border: 1px solid #999;
+            font-size: 9pt;
+        }
+        
+        input[type="checkbox"] {
+            margin: 0 2px 0 0;
+            transform: scale(0.8);
+            vertical-align: middle;
+        }
+        
+        .cost-field {
+            margin-top: 2px;
+            padding-top: 2px;
+            border-top: 1px dotted #ccc;
+            font-size: 9pt;
+        }
+        
+        .cost-field input[type="text"] {
+            width: 60px;
+        }
+        
+        .property-address {
+            margin-bottom: 5px;
+            padding: 3px;
+            border: 1px solid #999;
+        }
+        
+        .property-address input[type="text"] {
+            width: 400px;
+        }
+        
+        .signature-section {
+            margin-top: 5px;
+            border-top: 1px solid #999;
+            padding-top: 3px;
+        }
+        
+        .footer {
+            margin-top: 5px;
+            padding-top: 3px;
+            border-top: 1px solid #ccc;
+            font-size: 7pt;
+            color: #666;
+            text-align: center;
+        }
+        
+        .columns {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 5px;
+        }
+        
+        .column {
+            flex: 1;
+        }
+        
+        .utility-group {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 5px;
+        }
+        
+        .utility-group .section {
+            flex: 1;
+            margin-bottom: 0;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+            justify-content: center;
+        }
+        
+        .action-button {
+            padding: 5px 10px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 9pt;
+        }
+        
+        .action-button:hover {
+            background-color: #e0e0e0;
+        }
+        
+        .submit-button {
+            padding: 8px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 10pt;
+            margin-top: 10px;
+        }
+        
+        .submit-button:hover {
+            background-color: #45a049;
+        }
+        
+        .form-actions {
+            text-align: center;
+            margin-top: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .transaction-link {
+            margin-bottom: 10px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+        
+        .transaction-link select {
+            margin-left: 10px;
+            padding: 2px;
+            font-size: 9pt;
+        }
+        
+        .date-fields {
+            display: flex;
+            gap: 5px;
+            margin-top: 2px;
+            font-size: 8pt;
+        }
+        
+        .date-fields input[type="date"] {
+            width: 90px;
+            font-size: 8pt;
+        }
+        
+        .account-field {
+            margin-top: 2px;
+            font-size: 8pt;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .columns {
+                flex-direction: column;
+            }
+            .utility-group {
+                flex-direction: column;
+            }
+            input[type="text"] {
+                width: 100%;
+                max-width: 200px;
+            }
+            .property-address input[type="text"] {
+                width: 100%;
+                max-width: 300px;
+            }
+            .signature-section div {
+                flex-direction: column;
+                gap: 5px;
+            }
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        
+        @media print {
+            body {
+                margin: 0;
+                padding: 0;
+                font-size: 9pt;
+            }
+            .section {
+                page-break-inside: avoid;
+            }
+            input[type="text"],
+            input[type="date"] {
+                border: 1px solid #999;
+                background-color: #fff;
+            }
+            .instructions,
+            .action-buttons,
+            .form-actions,
+            .transaction-link {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <form id="utility-form">
+        <div class="header">
+            <h1>Utility Information Sheet</h1>
+            <p>For Home Sellers and Buyers</p>
+        </div>
+
+        <div class="instructions">
+            <strong>Sellers:</strong> Complete with accurate utility information to help new homeowners. Include account numbers, contact info, and costs.
+            <strong>Buyers:</strong> Use this to set up your utility accounts before moving in.
+        </div>
+
+        <div class="action-buttons">
+            <button type="button" id="print-button" class="action-button">Print</button>
+            <button type="button" id="save-pdf-button" class="action-button">Save as PDF</button>
+            <button type="button" id="clear-form-button" class="action-button">Clear Form</button>
+        </div>
+
+        <div class="property-address">
+            <label><strong>Property Address:</strong> <input type="text" name="property_address" placeholder="Enter full property address"></label>
+        </div>
+
+        <div class="transaction-link">
+            <label>
+            <input type="checkbox" name="link_to_transaction"> Link to Transaction
+        </label>
+            <select name="transaction_id" disabled>
+            <option value="">Select Transaction</option>
+            <!-- This would be populated dynamically -->
+        </select>
+        </div>
+
+        <div class="columns">
+            <div class="column">
+                <div class="utility-group">
+                    <div class="section">
+                        <h2>Electric</h2>
+                        <label><input type="checkbox" name="electric_meted"> Met-ED (800-545-7741)</label>
+                        <label><input type="checkbox" name="electric_ppl"> PP&L (800-342-5775)</label>
+                        <label><input type="checkbox" name="electric_other_cb"> Other <input type="text" name="electric_other"></label>
+                        <div class="account-field">
+                            Account #: <input type="text" name="electric_account" placeholder="Account number">
+                        </div>
+                        <div class="date-fields">
+                            <label>Start: <input type="date" name="electric_start_date"></label>
+                            <label>End: <input type="date" name="electric_end_date"></label>
+                        </div>
+                        <div class="cost-field">
+                            Monthly: $ <input type="text" name="electric_cost">
+                        </div>
+                    </div>
+                    <div class="section">
+                        <h2>Gas / Oil / Propane</h2>
+                        <label><input type="checkbox" name="propane_suburban"> Suburban Propane (610-759-0474)</label>
+                        <label><input type="checkbox" name="propane_ugi"> UGI (610-866-0951)</label>
+                        <label><input type="checkbox" name="propane_lehigh"> Lehigh Fuels (610-266-8990)</label>
+                        <label><input type="checkbox" name="propane_reimer"> Reimer Bros (610-863-4105)</label>
+                        <label><input type="checkbox" name="propane_lessig"> Lessig Oil + Propane (610-863-3835)</label>
+                        <label><input type="checkbox" name="propane_amerigas"> AmeriGas (570-424-5901)</label>
+                        <label><input type="checkbox" name="propane_tolinos"> Tolinos (610-588-3338)</label>
+                        <label><input type="checkbox" name="propane_fuelcell"> Fuel Cell (610-759-0143)</label>
+                        <label><input type="checkbox" name="propane_fritch"> Fritch (610-691-1212)</label>
+                        <label><input type="checkbox" name="propane_reichenbach"> Reichenbach (610-434-7234)</label>
+                        <label><input type="checkbox" name="propane_other_cb"> Other <input type="text" name="propane_other"></label>
+                        <div class="account-field">
+                            Account #: <input type="text" name="propane_account" placeholder="Account number">
+                        </div>
+                        <div class="date-fields">
+                            <label>Start: <input type="date" name="propane_start_date"></label>
+                            <label>End: <input type="date" name="propane_end_date"></label>
+                        </div>
+                        <div class="cost-field">
+                            Monthly: $ <input type="text" name="propane_cost">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="utility-group">
+                    <div class="section">
+                        <h2>Water</h2>
+                        <label><input type="checkbox" name="water_american"> PA American Water Company (800-565-7292)</label>
+                        <label><input type="checkbox" name="water_easton"> Easton Suburban Water Comp (610-258-7181)</label>
+                        <label><input type="checkbox" name="water_municipality"> Municipality</label>
+                        <label><input type="checkbox" name="water_other_cb"> Other <input type="text" name="water_other"></label>
+                        <label><input type="checkbox" name="water_well"> On Site Well</label>
+                        <div class="account-field">
+                            Account #: <input type="text" name="water_account" placeholder="Account number">
+                        </div>
+                        <div class="date-fields">
+                            <label>Start: <input type="date" name="water_start_date"></label>
+                            <label>End: <input type="date" name="water_end_date"></label>
+                        </div>
+                        <div class="cost-field">
+                            Quarterly: $ <input type="text" name="water_cost">
+                        </div>
+                    </div>
+                    <div class="section">
+                        <h2>Sewer</h2>
+                        <label><input type="checkbox" name="sewer_northampton"> Northampton County Court House (610-559-3000)</label>
+                        <label><input type="checkbox" name="sewer_lehigh"> Lehigh County Authority (610-398-1444)</label>
+                        <label><input type="checkbox" name="sewer_municipality"> Municipality</label>
+                        <label><input type="checkbox" name="sewer_other_cb"> Other <input type="text" name="sewer_other"></label>
+                        <label><input type="checkbox" name="sewer_septic"> On-Site Septic</label>
+                        <div class="account-field">
+                            Account #: <input type="text" name="sewer_account" placeholder="Account number">
+                        </div>
+                        <div class="date-fields">
+                            <label>Start: <input type="date" name="sewer_start_date"></label>
+                            <label>End: <input type="date" name="sewer_end_date"></label>
+                        </div>
+                        <div class="cost-field">
+                            Quarterly: $ <input type="text" name="sewer_cost">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>Trash</h2>
+                    <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                        <div style="flex: 1;">
+                            <label><input type="checkbox" name="trash_allied"> Allied Waste Services (215-723-0400)</label>
+                            <label><input type="checkbox" name="trash_mascaro"> Mascaro Sanitation (800-333-4624)</label>
+                            <label><input type="checkbox" name="trash_mcauliffe"> McAuliffe (610-767-3152)</label>
+                            <label><input type="checkbox" name="trash_reiss"> Reiss Brothers (610-432-7574)</label>
+                            <label><input type="checkbox" name="trash_township"> Township</label>
+                        </div>
+                        <div style="flex: 1;">
+                            <label><input type="checkbox" name="trash_waste_mgmt"> Waste Management (800-621-2100)</label>
+                            <label><input type="checkbox" name="trash_strohls"> Strohl's (610-837-9929)</label>
+                            <label><input type="checkbox" name="trash_swint"> Swint (610-253-8535)</label>
+                            <label><input type="checkbox" name="trash_other_cb"> Other <input type="text" name="trash_other"></label>
+                        </div>
+                    </div>
+                    <div class="account-field">
+                        Account #: <input type="text" name="trash_account" placeholder="Account number">
+                    </div>
+                    <div class="date-fields">
+                        <label>Start: <input type="date" name="trash_start_date"></label>
+                        <label>End: <input type="date" name="trash_end_date"></label>
+                    </div>
+                    <div class="cost-field">
+                        Monthly: $ <input type="text" name="trash_cost">
+                    </div>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="utility-group">
+                    <div class="section">
+                        <h2>Cable TV</h2>
+                        <label><input type="checkbox" name="cable_blue_ridge"> Blue Ridge Cable (570-421-0780)</label>
+                        <label><input type="checkbox" name="cable_direct_tv"> Direct TV (888-679-8671)</label>
+                        <label><input type="checkbox" name="cable_dish"> Dish Network (610-381-6315)</label>
+                        <label><input type="checkbox" name="cable_rcn"> RCN (800-746-4726)</label>
+                        <label><input type="checkbox" name="cable_service_electric"> Service Electric (800-232-9100)</label>
+                        <label><input type="checkbox" name="cable_other_cb"> Other <input type="text" name="cable_other"></label>
+                        <div class="account-field">
+                            Account #: <input type="text" name="cable_account" placeholder="Account number">
+                        </div>
+                        <div class="date-fields">
+                            <label>Start: <input type="date" name="cable_start_date"></label>
+                            <label>End: <input type="date" name="cable_end_date"></label>
+                        </div>
+                        <div class="cost-field">
+                            Monthly: $ <input type="text" name="cable_cost">
+                        </div>
+                    </div>
+                    <div class="section">
+                        <h2>Internet/Phone</h2>
+                        <label><input type="checkbox" name="phone_rcn"> RCN (800-746-4726)</label>
+                        <label><input type="checkbox" name="phone_service_electric"> Service Electric (610-841-4100)</label>
+                        <label><input type="checkbox" name="phone_verizon"> Verizon (800-660-2215)</label>
+                        <label><input type="checkbox" name="phone_blue_ridge"> Blue Ridge Cable (570-421-0780)</label>
+                        <label><input type="checkbox" name="phone_att"> AT&T (800-222-0300)</label>
+                        <label><input type="checkbox" name="phone_other_cb"> Other <input type="text" name="phone_other"></label>
+                        <div class="account-field">
+                            Account #: <input type="text" name="phone_account" placeholder="Account number">
+                        </div>
+                        <div class="date-fields">
+                            <label>Start: <input type="date" name="phone_start_date"></label>
+                            <label>End: <input type="date" name="phone_end_date"></label>
+                        </div>
+                        <div class="cost-field">
+                            Monthly: $ <input type="text" name="phone_cost">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="utility-group">
+                    <div class="section">
+                        <h2>HOA</h2>
+                        <label>Company: <input type="text" name="hoa_company"></label>
+                        <label>Phone: <input type="text" name="hoa_phone"></label>
+                        <label>Website: <input type="text" name="hoa_website"></label>
+                        <div class="date-fields">
+                            <label>Start: <input type="date" name="hoa_start_date"></label>
+                        </div>
+                        <div class="cost-field">
+                            Dues: $ <input type="text" name="hoa_dues">
+                            <select name="hoa_dues_frequency" style="font-size: 8pt;">
+                                <option value="monthly">Monthly</option>
+                                <option value="quarterly">Quarterly</option>
+                                <option value="yearly">Yearly</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="section">
+                        <h2>Alarm</h2>
+                        <label><input type="checkbox" name="alarm_adt"> ADT (888-281-1765)</label>
+                        <label><input type="checkbox" name="alarm_fox"> Fox Brothers Alarm (610-252-7880)</label>
+                        <label><input type="checkbox" name="alarm_other_cb"> Other <input type="text" name="alarm_other"></label>
+                        <label><input type="checkbox" name="alarm_na"> N/A</label>
+                        <div class="account-field">
+                            Account #: <input type="text" name="alarm_account" placeholder="Account number">
+                        </div>
+                        <div class="date-fields">
+                            <label>Start: <input type="date" name="alarm_start_date"></label>
+                            <label>End: <input type="date" name="alarm_end_date"></label>
+                        </div>
+                        <div class="cost-field">
+                            Monthly: $ <input type="text" name="alarm_cost">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>Additional Services</h2>
+                    <div style="display: flex; gap: 5px;" class="additional-services">
+                        <div style="flex: 1;">
+                            <h2 style="font-size: 9pt;">Lawn Care</h2>
+                            <label>Company: <input type="text" style="width: 100px;" name="lawn_company"></label>
+                            <label>Phone: <input type="text" style="width: 100px;" name="lawn_phone"></label>
+                            <label>Website: <input type="text" style="width: 100px;" name="lawn_website"></label>
+                            <div class="date-fields" style="margin-top: 5px;">
+                                <label>Start: <input type="date" name="lawn_start_date" style="width: 90px;"></label>
+                            </div>
+                            <label>Monthly: $ <input type="text" style="width: 50px;" name="lawn_cost"></label>
+                        </div>
+                        <div style="flex: 1;">
+                            <h2 style="font-size: 9pt;">Pool Care</h2>
+                            <label>Company: <input type="text" style="width: 100px;" name="pool_company"></label>
+                            <label>Phone: <input type="text" style="width: 100px;" name="pool_phone"></label>
+                            <label>Website: <input type="text" style="width: 100px;" name="pool_website"></label>
+                            <div class="date-fields" style="margin-top: 5px;">
+                                <label>Start: <input type="date" name="pool_start_date" style="width: 90px;"></label>
+                            </div>
+                            <label>Monthly: $ <input type="text" style="width: 50px;" name="pool_cost"></label>
+                        </div>
+                        <div style="flex: 1;">
+                            <h2 style="font-size: 9pt;">Snow Removal</h2>
+                            <label>Company: <input type="text" style="width: 100px;" name="snow_company"></label>
+                            <label>Phone: <input type="text" style="width: 100px;" name="snow_phone"></label>
+                            <label>Website: <input type="text" style="width: 100px;" name="snow_website"></label>
+                            <div class="date-fields" style="margin-top: 5px;">
+                                <label>Start: <input type="date" name="snow_start_date" style="width: 90px;"></label>
+                            </div>
+                            <label>Monthly: $ <input type="text" style="width: 50px;" name="snow_cost"></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="signature-section">
+            <div style="display: flex; gap: 20px;">
+                <label>Completed By: <input type="text" name="completed_by" placeholder="Full name"></label>
+                <label>Date: <input type="text" name="date" placeholder="MM/DD/YYYY" style="width: 100px;"></label>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>This document is provided for informational purposes only. Please verify all information with utility providers.</p>
+            <p>Last Updated:
+                <script>
+                    document.write(new Date().toLocaleDateString())
+                </script>
+            </p>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" id="submit-button" class="submit-button">Save Utility Information</button>
+        </div>
+    </form>
+
+    <script>
+        // Form submission handling
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('utility-form');
+
+            form.addEventListener('submit', async(e) => {
+                e.preventDefault();
+
+                const formData = new FormData(form);
+                try {
+                    // This would be replaced with an actual API endpoint
+                    alert('Form submitted successfully! (API endpoint would be implemented in production)');
+                    localStorage.setItem('utility-form-submitted', 'true');
+                } catch (error) {
+                    console.error('Error submitting form:', error);
+                    alert('Error saving utility information. Please try again.');
+                }
+            });
+
+            // Print button functionality
+            document.getElementById('print-button').addEventListener('click', () => {
+                window.print();
+            });
+
+            // Save as PDF button (simulated)
+            document.getElementById('save-pdf-button').addEventListener('click', () => {
+                alert('PDF generation would be implemented in production. For now, you can use the Print function and save as PDF.');
+            });
+
+            // Clear form button
+            document.getElementById('clear-form-button').addEventListener('click', () => {
+                if (confirm('Are you sure you want to clear all form data?')) {
+                    form.reset();
+                    localStorage.removeItem('utility-form-data');
+                    alert('Form data cleared.');
+                }
+            });
+
+            // Auto-save functionality
+            let autoSaveTimeout;
+
+            const autoSave = () => {
+                clearTimeout(autoSaveTimeout);
+                autoSaveTimeout = setTimeout(() => {
+                    const formData = new FormData(form);
+                    const formDataObj = {};
+
+                    formData.forEach((value, key) => {
+                        formDataObj[key] = value;
+                    });
+
+                    localStorage.setItem('utility-form-data', JSON.stringify(formDataObj));
+                    console.log('Form auto-saved at', new Date().toLocaleTimeString());
+                }, 2000);
+            };
+
+            // Add event listeners to all form inputs
+            document.querySelectorAll('#utility-form input, #utility-form select').forEach(input => {
+                input.addEventListener('input', autoSave);
+                input.addEventListener('change', autoSave);
+            });
+
+            // Load saved data on page load
+            const savedData = localStorage.getItem('utility-form-data');
+            if (savedData) {
+                try {
+                    const data = JSON.parse(savedData);
+                    Object.entries(data).forEach(([name, value]) => {
+                        const input = document.querySelector(`[name="${name}"]`);
+                        if (input) {
+                            if (input.type === 'checkbox') {
+                                input.checked = value === 'true';
+                            } else {
+                                input.value = value;
+                            }
+                        }
+                    });
+                    console.log('Loaded saved form data');
+                } catch (error) {
+                    console.error('Error loading saved form data:', error);
+                }
+            }
+
+            // Enable/disable transaction selection based on checkbox
+            document.querySelector('[name="link_to_transaction"]').addEventListener('change', function() {
+                document.querySelector('[name="transaction_id"]').disabled = !this.checked;
+            });
+        });
+    </script>
+</body>
+
+</html>
